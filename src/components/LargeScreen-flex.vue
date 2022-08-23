@@ -1,6 +1,6 @@
 <template>
   <div class="flex-container">
-    <div class="juzhong functionArea-left" >左侧功能区</div>
+    <div class="juzhong functionArea-left">左侧功能区</div>
     <div class="container">
       <div class="juzhong header">头部</div>
       <div class="main">
@@ -47,8 +47,10 @@ export default {
   computed: {
     modelAreaWidth() {
       // 模块区默认宽度为6格
-      const ratio = 6 / this.screenRatio;
-
+      let ratio = 6 / this.screenRatio;
+      if (ratio > 3) {
+        ratio = 3;
+      }
       return ratio;
     },
   },
@@ -65,9 +67,8 @@ export default {
     this.setMode();
   },
   methods: {
-    setMode(width = window.screen.width) {
+    setMode(width = document.documentElement.clientWidth) {
       this.screenRatio = Math.ceil(width / 1920); // 向上取整倍率
-      console.log(this.screenRatio);
     },
   },
 };
@@ -97,8 +98,8 @@ export default {
   font-size: 30px;
 }
 .functionArea-left {
-  // .unit_w(1);
-  width:100px;
+  .unit_w(1);
+  //width: 100px;
   background: #848484;
 }
 .functionArea-right {
