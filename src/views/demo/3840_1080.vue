@@ -1,9 +1,6 @@
 <template>
   <div>
-    <screen_header
-      v-if="layout.header"
-      :options="layout.header"
-    />
+    <screen_header v-if="$config.layout['3840_1080'].header" :options="$config.layout['3840_1080'].header" />
   </div>
 </template>
 
@@ -12,11 +9,9 @@ export default {
   components: {
     screen_header: () => import('@/components/header/screen_header.vue'),
   },
-  computed:{
-    layout(){
-      return this.$store.state.config.layout['1920_1080']
-    }
-  }
+  computed: {
+    
+  },
 };
 </script>
 

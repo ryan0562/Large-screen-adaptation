@@ -26,7 +26,9 @@ export default {
 <style lang="less" scoped>
 .headerBox {
   display: flex;
-
+  .left,.right{
+    flex: 1;
+  }
   .main {
     width: 1450px;
     background: var(--header_main-bg);

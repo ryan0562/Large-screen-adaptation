@@ -22,7 +22,7 @@
 * 布局
 */
 let layout = {
-  "1920_1080": {
+  "3840_1080": {
     visible: true, //默认为true
     styles: {
       width: "3840px",
@@ -31,6 +31,7 @@ let layout = {
     },
     header: {
       visible: true, //默认为true
+      title: '上海化学工业区一网统管',
       styles: {
         top: 0,
         left: 0,
@@ -923,6 +924,8 @@ let layout = {
     }
   }
 };
+
+let useLayout = '3840_1080';
 /**
 * 皮肤
 */
@@ -930,5 +933,6 @@ let theme = 'default';
 
 export default {
   layout,
-  theme
+  useLayout,
+  theme,
 };
