@@ -1,0 +1,176 @@
+/* el-table */
+// .el-table {
+//   font-size: 16px;
+//   background: transparent;
+//   @include mixColor($color-6, $color-ac);
+//   &::before{
+//     @include mixBgColor($transparent, $transparent);
+//   }
+//   thead {
+//     @include mixColor($color-6, $dark-1);
+//     @include mixBgColor($color-ec, $dark-5);
+//     th {
+//       font-weight: 400;
+//       font-size: 18px;
+//     }
+//   }
+//   th,tr{
+//     background-color: transparent;
+//   }
+// }
+// .el-table td,
+// .el-table th.is-leaf {
+//   @include mixBrColor($color-d, rgba(22, 69, 109, 0.5));
+// }
+// .el-table__empty-block {
+//   border: 0;
+//   // border-bottom: 1px solid;
+//   // @include mixBrColor($color-d, $dark-5);
+//   .el-table__empty-text {
+//     @include mixColor($color-6, $color-dc);
+//   }
+// }
+// .el-table tbody {
+//   tr:nth-of-type(odd) {
+//     @include mixColor($color-6, $color-dc);
+//   }
+//   tr:nth-of-type(even) {
+//     @include mixBgColor($color-ec, rgba(22, 69, 109, 0.5));
+//     @include mixColor($color-6, $color-ac);
+//   }
+//   tr:hover > td {
+//     background-color: transparent !important;
+//   }
+// }
+
+// /* pagination */
+// .el-pagination {
+//   text-align: right;
+//   .el-pager li{
+//     font-size: 16px;
+//     @include mixColor($color-6, $color-cc);
+//     @include mixBgColor($white, #011626);
+//     &.active{
+//       @include mixColor($primary, $dark-1);
+//     }
+//     &:last-child{
+//       font-size: 16px;
+//     }
+//   }
+//   .btn-prev,
+//   .btn-next{
+//     @include mixColor($color-6, $white);
+//     @include mixBgColor($white, #011626);
+//     .el-icon{
+//       font-size: 16px;
+//     }
+//   }
+//   button:disabled{
+//     @include mixColor($color-c, $color-c);
+//   }
+// }
+// .el-pagination__total,
+// .el-pagination__jump {
+//   @include mixColor($color-6, $color-cc);
+// }
+.el-table--scrollable-y .el-table__body-wrapper {
+  // scrollbar-color: transparent transparent;
+  // scrollbar-track-color: transparent;
+  // -ms-scrollbar-track-color: transparent;
+}
+.custom-stripe-table {
+  &.el-table {
+    color: #FFF;
+    background-color: transparent!important;
+    &::before {
+      display: none!important;
+    }
+     tr {
+      background-color: transparent!important;
+    }
+    th {
+      background-color: rgba(21, 98, 182, 0.15)!important;
+      color: #89D1FF!important;
+    }
+  }
+  .el-table__expanded-cell {
+    background-color: transparent!important;
+  }
+  &.el-table--striped .el-table__body tr.el-table__row--striped td {
+    background-color: rgba(9, 163, 251, 0.1)!important;
+  }
+  &.el-table--enable-row-hover .el-table__body tr:hover>td {
+    background-color: rgba(9, 163, 251, 0.3)!important;
+  }
+  &.el-table th>.cell {
+    padding: 0!important;
+  }
+  &.el-table td, &.el-table th.is-leaf {
+    border: 0!important;
+  }
+  &.el-table .cell {
+    padding-right: 4px;
+  }
+  .el-table__body tr.hover-row.current-row>td, .el-table__body tr.hover-row.el-table__row--striped.current-row>td, .el-table__body tr.hover-row.el-table__row--striped>td, .el-table__body tr.hover-row>td {
+    background-color: rgba(9, 163, 251, 0.3)!important;
+  }
+  .el-table__fixed-right::before, .el-table__fixed::before {
+    display: none;
+  }
+}
+
+.custom-table-small {
+  &.el-table {
+    color: #FFF;
+    background-color: transparent;
+    &::before {
+      display: none;
+    }
+     tr {
+      // background-color: transparent;
+      background-color: rgba(21, 98, 182, 0.15)!important;
+
+      &.el-table__row.current-row {
+        >td {
+          background-color: rgba(9, 163, 251, 0.3)!important;
+        }
+      }
+    }
+    th {
+      background-color: rgba(21, 98, 182, 0.5)!important;
+      color: #89D1FF!important;
+    }
+  }
+  &.el-table--border, .el-table--group {
+    border: 0!important;
+  }
+  .el-table__expanded-cell {
+    background-color: transparent;
+  }
+  &.el-table--enable-row-hover .el-table__body tr:hover>td {
+    background-color: rgba(9, 163, 251, 0.3)!important;
+  }
+  &.el-table th>.cell {
+    padding: 0!important;
+  }
+  &.el-table td, &.el-table th {
+    padding: 4px 0;
+  }
+  &.el-table td, &.el-table th.is-leaf {
+    border: 2px solid #0e2236!important;
+  }
+  &.el-table .cell {
+    padding-right: 2px;
+  }
+  .el-table__body tr.hover-row.current-row>td, .el-table__body tr.hover-row.el-table__row--striped.current-row>td, .el-table__body tr.hover-row.el-table__row--striped>td, .el-table__body tr.hover-row>td {
+    background-color: rgba(9, 163, 251, 0.3)!important;
+  }
+  &.el-table--border::after, .el-table--group::after, &.el-table::before {
+    display: none;
+  }
+}
+
+
+.el-table__empty-text {
+  flex: 1;
+}

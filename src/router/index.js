@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Blank from '@/components/Blank.vue'
+import Blank from '@/components/layout/Blank.vue'
 
 Vue.use(VueRouter)
 
@@ -15,10 +15,11 @@ const routes = [
     path: '/demo',
     name: 'demo',
     component:Blank,
+    redirect: '/demo/menu',
     children: [
       {
-        path: '',
-        name: 'demo',
+        path: 'menu',
+        name: 'demoMenu',
         component: () => import('@/views/demo/index.vue'),
       },
       {

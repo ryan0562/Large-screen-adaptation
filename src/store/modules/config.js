@@ -2,7 +2,7 @@ import config from "/public/config.js";
 
 export default{
   state: {
-    config,
+    ...config,
   },
   getters: {
   },

@@ -1,0 +1,16 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="124.5px" height="65px">
+<defs>
+<linearGradient id="PSgrad_0" x1="0%" x2="0%" y1="100%" y2="0%">
+  <stop offset="0%" stop-color="rgb(0,150,255)" stop-opacity="1" />
+  <stop offset="100%" stop-color="rgb(6,248,244)" stop-opacity="1" />
+</linearGradient>
+
+</defs>
+<path fill-rule="evenodd"  stroke="rgb(17, 58, 89)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.8" fill="rgb(13, 35, 62)"
+ d="M120.356,63.492 L121.853,59.740 L121.946,4.297 L120.558,0.769 L3.443,0.599 L2.020,4.090 L1.927,59.534 L3.388,63.322 L120.356,63.492 Z"/>
+<path fill-rule="evenodd"  fill="url(#PSgrad_0)"
+ d="M123.989,5.895 L123.020,6.393 L122.897,59.017 L123.864,59.022 L123.858,61.036 L118.335,64.497 L116.883,64.493 L122.177,61.531 L122.314,3.751 L118.145,1.752 L118.145,1.753 L117.662,0.744 L118.631,0.747 L123.994,3.882 L123.989,5.895 ZM5.474,64.250 L0.003,60.735 L0.008,58.722 L0.976,58.727 L1.100,6.104 L0.133,5.595 L0.139,3.582 L5.554,0.500 L6.523,0.502 L6.036,1.507 L6.036,1.507 L1.820,3.466 L1.683,61.246 L6.926,64.254 L5.474,64.250 Z"/>
+</svg>
