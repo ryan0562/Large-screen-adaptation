@@ -9,8 +9,10 @@ import '@/styles/index.less'
 
 Vue.config.productionTip = false
 
-Vue.prototype.$config = config
-window.$config = config
+Vue.prototype.$config = window.$config = config
+
+Vue.prototype.$layout = window.$config = config.layout[config.useLayout]
+
 
 new Vue({
   router,
