@@ -1,9 +1,8 @@
 <template>
   <div>
-    <top-bar
+    <screen_header
       v-if="layout.header"
-      :style="layout.header.styles"
-      :layout="layout.header"
+      :options="layout.header"
     />
   </div>
 </template>
@@ -11,11 +10,11 @@
 <script>
 export default {
   components: {
-    topBar: () => import('@/components/topbar/topbar.vue'),
+    screen_header: () => import('@/components/header/screen_header.vue'),
   },
   computed:{
     layout(){
-      return this.$store.state.config['1920_1080']
+      return this.$store.state.config.layout['1920_1080']
     }
   }
 };

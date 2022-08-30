@@ -18,24 +18,24 @@
 // 综合治理 => panels/securityEmergency/index
 // 安全文化 => panels/safetyCulture/index
 
+/**
+* 布局
+*/
 let layout = {
   "1920_1080": {
-    id: 0,
-    name: 'stage',
-    source: 'evc',
-    offset: ['0', '0'], //非空
-    size: ['3840px', '1080px'], //非空
-    zindex: 0, //默认为0
     visible: true, //默认为true
-    // class: 'collaped',
-    fill: '#FFF',
+    styles: {
+      width: "3840px",
+      height: "1080px",
+      zIndex: "0",
+    },
     header: {
       visible: true, //默认为true
       styles: {
         top: 0,
         left: 0,
         width: '100%',
-        height: '98px',
+        height: '100px',
         zIndex: 20,
       },
     },
@@ -923,8 +923,12 @@ let layout = {
     }
   }
 };
-layout.getObjByScence = function (scence, nameId) {
-  let _scenceData = layout[`set${window.MTI.layout}`]['scence'][scence];
-  // debugger
+/**
+* 皮肤
+*/
+let theme = 'default';
+
+export default {
+  layout,
+  theme
 };
-export default layout;
