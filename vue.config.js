@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
+  publicPath:'/',
   productionSourceMap: false,//生产环境map
   devServer: {
     port: 8010, // 端口号

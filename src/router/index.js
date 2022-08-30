@@ -31,6 +31,11 @@ const routes = [
         name: 'LargescreenFlex',
         component: () => import('@/views/demo/LargeScreen-flex.vue')
       },
+      {
+        path: '3840_1080',
+        name: '3840_1080',
+        component: () => import('@/views/demo/3840_1080.vue')
+      },
     ]
   },
 
