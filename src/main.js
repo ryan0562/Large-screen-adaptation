@@ -5,8 +5,13 @@ import store from './store'
 
 import '@/styles/index.less'
 
+/* filter */
+import filters from './filters';
+Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
+
 /* dayjs */
 import "@/plugins/dayjs.js";
+
 /* 配置文件 */
 const config = window.$config
 Vue.prototype.$config = window.$config = config

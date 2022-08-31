@@ -2,19 +2,28 @@
   <div class="headerBox" :style="options.styles">
     <div class="left">
       <div class="date-wrapper">
-        <span>{{ dateMsg.time }}</span
-        ><span>{{ dateMsg.week }}</span
-        ><span>{{ dateMsg.date }}</span>
+        <span>{{ dateMsg.time }}</span>
+        <span>{{ dateMsg.week }}</span>
+        <span>{{ dateMsg.date }}</span>
       </div>
     </div>
     <div class="main">
       <div class="tit">{{ $layout.header.title }}</div>
     </div>
-    <div class="right"></div>
+    <div class="right">
+      <div class="weather-wrapper">
+        <span>温度：{{ weather['温度'] | unitFil(1, '℃') }}</span>
+        <span>湿度：{{ weather['湿度'] | unitFil(2, '%') }}</span>
+        <span>风向：{{ weather['风向'] || '/' }}</span>
+        <span>风速：{{ weather['风速'] | unitFil(2, 'm/s') }}</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import environmentalTesting from '@/api/environmentalTesting.js';
+
 export default {
   name: 'Header',
   props: {
@@ -30,16 +39,40 @@ export default {
   },
   data() {
     return {
-      dateMsg: {},
+      // 日期数据
+      dateMsg: {
+        date: null,
+        week: null,
+        time: null,
+      },
+      // 日期定时器标记
       dataMsgFlag: null,
+      // 天气数据
+      weather:{}
     };
   },
   created() {
-    // this.dataMsgFlag = setInterval(() => {
-    //   this.updateDate();
-    // }, 1000);
+    this.startTime();
+    this.updateWeather();
+  },
+  destroyed() {
+    clearInterval(this.dataMsgFlag);
   },
   methods: {
+    // 更新气候
+    updateWeather() {
+      environmentalTesting.selectKscAir({}).then(res => {
+        this.weather = res || {};
+      });
+    },
+    // 显示时间
+    startTime() {
+      this.updateDate();
+      this.dataMsgFlag = setInterval(() => {
+        this.updateDate();
+      }, 1000);
+    },
+    // 更新时间
     updateDate() {
       let date = this.$dayjs();
       let dateMap = {
@@ -65,6 +98,7 @@ export default {
   .left,
   .right {
     flex: 1;
+    position: relative;
     border-bottom: 2px solid #5fc4fd;
   }
   .left {
@@ -87,6 +121,26 @@ export default {
   }
   .right {
     height: 68px;
+    .weather-wrapper {
+      position: absolute;
+      top: 18px;
+      right: 168px;
+      font-size: 18px;
+      font-family: DIN;
+      font-weight: 500;
+      color: #ddedfd;
+      span {
+        margin-left: 16px;
+        vertical-align: middle;
+      }
+      .weather-icon {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-size: 100% 100%;
+        vertical-align: middle;
+      }
+    }
   }
   .main {
     width: 1348px;

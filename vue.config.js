@@ -6,14 +6,13 @@ module.exports = defineConfig({
     port: 8010, // 端口号
     host: '0.0.0.0',
     proxy: {
-      // "/lanhei/": {
-      //   target: "http://10.168.4.152/",
-      //   changeOrigin: true,
-      //   ws: false,
-      //   pathRewrite: {
-      //     "^/lanhei/": "lanhei/",
-      //   },
-      // },
+      "/shjspj": {
+        target: "http://10.168.4.152:9080",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/lanhei": "",
+        },
+      },
     }
   }
 }
