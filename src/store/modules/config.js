@@ -1,4 +1,4 @@
-import config from "/public/config.js";
+// import config from "/public/config.js";
 
 export default{
   state: {

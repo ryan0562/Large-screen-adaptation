@@ -931,8 +931,11 @@ let useLayout = '3840_1080';
 */
 let theme = 'default';
 
-export default {
+const config = {
   layout,
   useLayout,
   theme,
 };
+
+window.$config = config
+// export default config

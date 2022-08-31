@@ -33,7 +33,7 @@ export default {
     flex: 1;
   }
   .main {
-    width: 1450px;
+    width: 1349px;
     height: 100px;
     line-height: 88px;
     text-align: center;
@@ -46,7 +46,6 @@ export default {
       background: var(--header_main-color);
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-left: -90px;
     }
   }
 }
