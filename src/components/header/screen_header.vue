@@ -99,7 +99,7 @@ export default {
   .right {
     flex: 1;
     position: relative;
-    border-bottom: 2px solid #5fc4fd;
+    border-bottom: 2px solid #40a5de;
   }
   .left {
     height: 66px;

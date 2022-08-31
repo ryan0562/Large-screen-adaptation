@@ -2,7 +2,7 @@
   <div>
     <router-link to="/demo/largeScreen-grid">largeScreen-grid</router-link>
     <router-link to="/demo/largeScreen-flex">largeScreen-flex</router-link>
-    <router-link to="/demo/3840_1080">3840_1080</router-link>
+    <router-link to="/demo/P1">3840_1080</router-link>
   </div>
 </template>
 
