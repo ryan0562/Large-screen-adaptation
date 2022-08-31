@@ -28,6 +28,8 @@ let layout = {
       width: "3840px",
       height: "1080px",
       zIndex: "0",
+      background:'#000',
+      color:'#fff'
     },
     header: {
       visible: true, //默认为true

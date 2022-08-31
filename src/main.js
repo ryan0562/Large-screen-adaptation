@@ -5,15 +5,14 @@ import store from './store'
 
 import '@/styles/index.less'
 
-
-Vue.config.productionTip = false
-
-
+/* dayjs */
+import "@/plugins/dayjs.js";
+/* 配置文件 */
 const config = window.$config
 Vue.prototype.$config = window.$config = config
 Vue.prototype.$layout = window.$layout = config.layout[config.useLayout]
 
-
+Vue.config.productionTip = false
 new Vue({
   router,
   store,

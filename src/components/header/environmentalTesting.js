@@ -1,4 +1,4 @@
-import Axios from '@/axios';
+import Axios from '@/utils/axios';
 const CONFIG = window.MTI[process.env.NODE_ENV];
 
 export default {

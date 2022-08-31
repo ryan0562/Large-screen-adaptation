@@ -1,12 +1,12 @@
 "use strict";
 import Axios from "axios";
-import router from "../router";
+import router from "../../router";
 import { Message } from "element-ui";
 import getQueryParam from '@/utils/getQueryParam.js';
 
 import Vue from "vue";
 import Vuex from "vuex";
-import store from "../store";
+import store from "../../store";
 // import Cookie from "@/utils/cookie.js";
 
 Vue.use(Vuex);
