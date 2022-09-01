@@ -1,8 +1,8 @@
-// import config from "/public/config.js";
+
 
 export default{
   state: {
-    // ...config,
+    ...window.$config
   },
   getters: {
   },
