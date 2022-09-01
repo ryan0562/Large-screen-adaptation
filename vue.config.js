@@ -22,7 +22,7 @@ module.exports = defineConfig({
       preProcessor: "less",
       patterns: [
         // 全局变量路径
-        path.resolve(__dirname, "./src/styles/global.less"),
+        path.resolve(__dirname, "./src/styles/var.less"),
       ],
     },
   },
