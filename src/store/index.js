@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import config from './modules/config.js'
-
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    $config:window.$config, //双向绑定用，勿删
   },
   getters: {
   },
@@ -15,6 +14,5 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
-    config
   }
 })
