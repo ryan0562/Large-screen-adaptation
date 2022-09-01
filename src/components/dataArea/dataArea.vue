@@ -4,9 +4,9 @@
     <div class="tit">{{ data.title }}</div>
     <div class="line"></div>
     <template v-for="(item, index) in data.modules">
-
-      <component v-bind:is="item.name" :key="index"></component>
-
+      <dataBlock :key="index">
+        <component v-bind="item.component"></component>
+      </dataBlock>
     </template>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   components: {
     aaa: () => import('@/components/modules/a.vue'),
     bbb: () => import('@/components/modules/b.vue'),
-    block: () => import('./block.vue'),
+    dataBlock: () => import('./dataBlock.vue'),
   },
   props: {
     data: {

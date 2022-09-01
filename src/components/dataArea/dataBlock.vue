@@ -1,22 +1,10 @@
 <template>
-  <div
-    class="col-block"
-    :style="{width, height, marginTop}"
-  >
-    <div
-      class="title"
-      v-if="(!!title) || showLabel"
-      :title="title"
-    >
+  <div class="col-block" :style="styles">
+    <div class="title" v-if="showTitle" :title="title">
       <span class="out-circle">
         <span class="in-circle"></span>
       </span>
-      <span
-        class="title-name ell"
-        v-if="!!title"
-        v-html="title"
-        @click="$emit('title-click')"
-      ></span>
+      <span class="title-name ell" v-if="!!title" v-html="title" @click="$emit('title-click')"></span>
       <span class="title-right">
         <slot name="headerright"></slot>
       </span>
@@ -30,26 +18,20 @@ export default {
   name: '',
   components: {},
   props: {
-    width: {
-      type: String,
-      default: '100%'
-    },
-    height: {
-      type: String,
-      default: '100px'
+    styles: {
+      type: Object,
+      default() {
+        return {};
+      },
     },
     title: {
       type: String,
-      default: ''
+      default: '',
     },
-    marginTop: {
-      type: String,
-      default: '12px'
-    },
-    showLabel: {
+    showTitle: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {};
@@ -58,18 +40,17 @@ export default {
   created() {},
   mounted() {},
   watch: {},
-  methods: {}
+  methods: {},
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
 .col-block {
   position: relative;
   border: 1px solid transparent;
   border-left-color: #0d3750;
   border-right-color: #0d3750;
   background-color: #11233c;
-  // @include bgImg("~@/assets/images/components/mainCol/bg1.png");
   &:before {
     content: '';
     width: 100%;
@@ -77,7 +58,6 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    @include bgImg('~@/assets/images/components/mainCol/bg-line.png');
   }
   &:after {
     content: '';
@@ -86,7 +66,6 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    @include bgImg('~@/assets/images/components/mainCol/bg-line.png');
   }
   .title {
     padding-top: 10px;
@@ -106,7 +85,6 @@ export default {
       border-radius: 50%;
       text-align: center;
       margin-right: 5px;
-      @include flex();
       .in-circle {
         width: 6px;
         height: 6px;

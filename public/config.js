@@ -63,13 +63,24 @@ let layout = {
           },
           modules: [
             {
-              componentName: 'aaa',
-              styles:{
-                width:"133px",
+              showTitle: true,
+              title: '实时警情',
+              component: {
+                is: 'aaa',
+              },
+              styles: {
+                height: "133px",
               }
             },
             {
-              componentName: 'bbb',
+              showTitle: true,
+              title: '视频监控',
+              styles: {
+                height: "242px",
+              },
+              component: {
+                is: 'aaa',
+              },
             },
           ]
         },
