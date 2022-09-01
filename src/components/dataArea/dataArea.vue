@@ -3,11 +3,21 @@
     <div class="mark"></div>
     <div class="tit">{{ data.title }}</div>
     <div class="line"></div>
+    <template v-for="(item, index) in data.modules">
+
+      <component v-bind:is="item.name" :key="index"></component>
+
+    </template>
   </div>
 </template>
 
 <script>
 export default {
+  components: {
+    aaa: () => import('@/components/modules/a.vue'),
+    bbb: () => import('@/components/modules/b.vue'),
+    block: () => import('./block.vue'),
+  },
   props: {
     data: {
       type: Object,
@@ -45,7 +55,7 @@ export default {
   .line {
     width: 100%;
     height: 20px;
-    background: var(--dataArea_mark_line-background)
+    background: var(--dataArea_mark_line-background);
   }
 }
 </style>

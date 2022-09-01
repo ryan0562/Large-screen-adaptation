@@ -11,7 +11,7 @@ import { mapState } from 'vuex';
 export default {
   components: {
     screen_header: () => import('@/components/header/screen_header.vue'),
-    dataArea: () => import('@/components/dataArea.vue'),
+    dataArea: () => import('@/components/dataArea/dataArea.vue'),
   },
 };
 </script>

@@ -52,7 +52,7 @@ let layout = {
       // 一级页面
       scence1: [
         {
-          title:'公共安全',
+          title: '公共安全',
           styles: {
             width: "440px",
             height: "972px",
@@ -60,10 +60,21 @@ let layout = {
             left: '20px',
             position: 'absolute',
             zIndex: 1,
-          }
+          },
+          modules: [
+            {
+              componentName: 'aaa',
+              styles:{
+                width:"133px",
+              }
+            },
+            {
+              componentName: 'bbb',
+            },
+          ]
         },
         {
-          title:'生产运行',
+          title: '生产运行',
           styles: {
             width: "440px",
             height: "972px",
