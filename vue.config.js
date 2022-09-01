@@ -1,6 +1,8 @@
 const { defineConfig } = require('@vue/cli-service')
+const path = require('path')
+
 module.exports = defineConfig({
-  publicPath:'/',
+  publicPath: '/',
   productionSourceMap: false,//生产环境map
   devServer: {
     port: 8010, // 端口号
@@ -14,6 +16,15 @@ module.exports = defineConfig({
         },
       },
     }
-  }
+  },
+  pluginOptions: {
+    "style-resources-loader": {
+      preProcessor: "less",
+      patterns: [
+        // 全局变量路径
+        path.resolve(__dirname, "./src/styles/global.less"),
+      ],
+    },
+  },
 }
 )

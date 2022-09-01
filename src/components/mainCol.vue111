@@ -1,0 +1,176 @@
+// /*
+//  * @Author: wucheng
+//  * @Date: 2021-04-14 17:51:48
+//  * @Last Modified by: lifan
+//  * @Last Modified time: 2022-08-25 10:40:47
+//  */
+// <template>
+//   <div
+//     class="main-col"
+//     :style="{width, height}"
+//     :class="{'close':closed}"
+//   >
+//     <!-- <div v-if="core" class="core" @click="changeColStatus"></div> -->
+//     <div
+//       class="main-bg"
+//       ref="slots"
+//       @click="openPage"
+//     >
+//       <div
+//         class="title"
+//         @click="$emit('close')"
+//       ><span>{{msg.name}}</span></div>
+//       <div class="line"></div>
+//       <div class="title-right">
+//         <slot name="headerright"></slot>
+//       </div>
+//       <slot></slot>
+//     </div>
+//     <!-- <mti-watermark :zIndex="2"></mti-watermark> -->
+//   </div>
+// </template>
+
+// <script>
+// import { mapMutations } from 'vuex';
+// export default {
+//   name: '',
+//   components: {},
+//   props: {
+//     width: {
+//       type: String,
+//       default: '440px'
+//     },
+//     height: {
+//       type: String,
+//       default: '100%'
+//     },
+//     msg: {
+//       type: Object,
+//       default: () => {
+//         return {};
+//       }
+//     },
+//     core: {
+//       type: Boolean,
+//       default: true
+//     }
+//   },
+//   data() {
+//     return {
+//       show: false,
+//       closed: true
+//     };
+//   },
+//   computed: {},
+//   created() {},
+//   mounted() {
+//     // setTimeout(()=>{
+//     //   this.changeColStatus()
+//     // },500)
+//   },
+//   watch: {},
+//   methods: {
+//     ...mapMutations(['setFirstPageTitle', 'setComponentId']),
+//     openPage() {
+//       if (['公用工程', '能源管理'].includes(this.msg.name)) {
+//         this.$bus.$emit('clearFeature');
+//         this.$bus.$emit('showDiaopai', false);
+//         this.setFirstPageTitle('公用工程-水');
+//         this.setComponentId('publicProject');
+//       }
+//     }
+//     // changeColStatus() {
+//     //   this.show = !this.show;
+//     //   this.closed = !this.closed;
+//     // },
+//   },
+//   beforeDestroy() {
+//     // this.changeColStatus()
+//   }
+// };
+// </script>
+// <style lang="less" scoped>
+// @font-face {
+//   font-family: 'myTitle';
+//   src: url('~@/styles/theme/common/fonts/DOUYUFONT.OTF');
+//   font-weight: bold;
+// }
+// .main-col {
+//   width: 100%;
+//   height: 100%;
+//   // &.close{
+//   //   .main-bg{
+//   //     transform: rotateY(90deg);
+//   //   }
+//   //   .core{
+//   //     left:0;
+//   //   }
+//   // }
+//   .core {
+//     width: 28px;
+//     height: 36px;
+//     margin: 0 auto;
+//     margin-bottom: 6px;
+//     cursor: pointer;
+//     background: url('~@/assets/images/components/mainCol/dian.png');
+//     position: absolute;
+//     top: -40px;
+//     left: 206px;
+//     transition: left 0.8s;
+//   }
+
+//   .main-bg {
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(16, 28, 49, 0.8);
+//     background: url('~@/assets/images/components/mainCol/bg.png') no-repeat;
+//     transition: transform 1s;
+//     display: flex;
+//     flex-direction: column;
+//     overflow: hidden;
+//     .title {
+//       width: 231px;
+//       text-align: center;
+//       height: 40px;
+//       background: url('~@/assets/images/components/mainCol/head.png') no-repeat;
+//       margin: 0 auto;
+//       font-size: 20px;
+//       cursor: pointer;
+//       position: relative;
+//       word-break: keep-all;
+
+//       span {
+//         display: inline-block;
+//         line-height: 40px;
+//         color: #ffffff;
+//         // background: linear-gradient(0deg, #fff 0%, #fff 70.92285%);
+//         // -webkit-background-clip: text;
+//         // -webkit-text-fill-color: transparent;
+//         font-family: 'myTitle';
+//         font-weight: 900;
+//         letter-spacing: 2px;
+//         position: absolute;
+//         width: 400px;
+//         transform: translateX(-50%);
+//       }
+//     }
+//     .line {
+//       width: 100%;
+//       height: 20px;
+//       background-image: url('~@/assets/images/components/mainCol/line.png');
+//       background-repeat: no-repeat no-repeat;
+//       background-position: center bottom;
+//     }
+//     ::v-deep {
+//       .content {
+//         height: calc(100% - 60px) !important;
+//       }
+//     }
+//   }
+//   .title-right {
+//     position: absolute;
+//     right: 20px;
+//     top: 10px;
+//   }
+// }
+// </style>

@@ -33,7 +33,7 @@ let layout = {
     },
     header: {
       visible: true, //默认为true
-      title: '上海化学工业区一网统管',
+      title: '黑色主题模板',
       styles: {
         top: 0,
         left: 0,
@@ -48,7 +48,7 @@ let layout = {
       zindex: 0, //默认为0
       visible: true //默认为true
     },
-    scence: {
+    dataArea: {
       // 一级页面
       scence1: [
         {
