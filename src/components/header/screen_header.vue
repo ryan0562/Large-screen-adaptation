@@ -147,7 +147,7 @@ export default {
     height: 100px;
     line-height: 88px;
     text-align: center;
-    background: url("@{theme-path}/header/bg-head.png");
+    background: var(--header_main-background);
     font-size: var(--header_main-fontSize);
     font-family: FZZhengHeiS-B-GB;
     font-weight: 900;
