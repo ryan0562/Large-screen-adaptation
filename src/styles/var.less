@@ -1,17 +1,7 @@
-// 默认主题:'default'
-[data-theme="default"] {
-  // 头部
-  --header_main-background: url('./asset/header/bg-head.png');
-  --header_main-color: linear-gradient(0deg, #00ccff 0%, #b9e8ff 70.92285%);
-  --header_main-fontSize: 40px;
 
-  // 数据区
-  --dataArea_background: url('./asset/dataArea/bg.png');
-}
+
+// 默认主题:'default'
+@import '~@/styles/theme/default/index.less';
 
 // 黄色主题：'yellow'
-[data-theme="yellow"] {
-  --header_main-background: url('./asset/header/bg-head.png');
-  --header_main-color: linear-gradient(0deg, #fff200 0%, #ffc7b9 70.92285%);
-  --header_main-fontSize: 40px;
-}
+@import '~@/styles/theme/yellow/index.less';
