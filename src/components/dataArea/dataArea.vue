@@ -3,19 +3,13 @@
     <div class="mark"></div>
     <div class="tit">{{ data.title }}</div>
     <div class="line"></div>
-    <template v-for="(item, index) in data.modules">
-      <dataBlock :key="index">
-        <component v-bind="item.component"></component>
-      </dataBlock>
-    </template>
+    <dataBlock v-for="(item, index) in data.modules" :key="index" v-bind="item" />
   </div>
 </template>
 
 <script>
 export default {
   components: {
-    aaa: () => import('@/components/modules/a.vue'),
-    bbb: () => import('@/components/modules/b.vue'),
     dataBlock: () => import('./dataBlock.vue'),
   },
   props: {

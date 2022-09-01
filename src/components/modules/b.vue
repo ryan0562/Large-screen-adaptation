@@ -1,5 +1,7 @@
 <template>
-  <div class="abox"></div>
+  <div class="bbox">
+    <div style="height:300px"></div>
+  </div>
 </template>
 
 <script>
@@ -10,7 +12,7 @@
 </script>
 
 <style lang="less" scoped>
-  .abox {
+  .bbox {
     width: 100%;
     height: 100%;
     background: #ccc;

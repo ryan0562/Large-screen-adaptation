@@ -60,26 +60,29 @@ let layout = {
             left: '20px',
             position: 'absolute',
             zIndex: 1,
+            padding: '0 20px'
           },
           modules: [
             {
-              showTitle: true,
+              showHeader: true,
               title: '实时警情',
               component: {
                 is: 'aaa',
               },
               styles: {
                 height: "133px",
+                marginTop: '12px',
               }
             },
             {
-              showTitle: true,
+              showHeader: true,
               title: '视频监控',
               styles: {
                 height: "242px",
+                marginTop: '12px',
               },
               component: {
-                is: 'aaa',
+                is: 'bbb',
               },
             },
           ]
