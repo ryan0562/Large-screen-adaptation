@@ -1,8 +1,8 @@
 <template>
   <div>
     <screen_header v-if="$layout.header" :options="$layout.header" />
-      <!-- v-for="(item, index) in $layout.dataArea[$config.useScreen]" :key="index" -->
-    <dataArea :data="$layout.dataArea[$config.useScreen][0]"/>
+      
+    <dataArea v-for="(item, index) in $layout.dataArea[$config.useScreen]" :key="index" :data="item"/>
   </div>
 </template>
 

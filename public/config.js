@@ -52,11 +52,23 @@ let layout = {
       // 一级页面
       scence1: [
         {
+          title:'公共安全',
           styles: {
             width: "440px",
             height: "972px",
             top: '93px',
             left: '20px',
+            position: 'absolute',
+            zIndex: 1,
+          }
+        },
+        {
+          title:'生产运行',
+          styles: {
+            width: "440px",
+            height: "972px",
+            top: '93px',
+            left: '472px',
             position: 'absolute',
             zIndex: 1,
           }
