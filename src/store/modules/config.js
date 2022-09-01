@@ -2,7 +2,7 @@
 
 export default{
   state: {
-    ...config,
+    // ...config,
   },
   getters: {
   },
