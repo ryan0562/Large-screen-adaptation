@@ -1,4 +1,6 @@
 import 'animate.css'
+import './custom.less'
+
 import Vue from 'vue'
 
 // 前缀

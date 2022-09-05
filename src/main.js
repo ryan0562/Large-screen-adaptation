@@ -3,10 +3,14 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+/* element-ui */
+import 'element-ui/lib/theme-chalk/index.css';
+
 /* animate.css */
-import animateCSS from '@/plugins/animate.js'
+import animateCSS from '@/plugins/animate/animate.js'
 Vue.prototype.$animateCSS = animateCSS;
 /* 样式 */
+
 import '@/styles/index.less'
 
 /* filter */

@@ -61,9 +61,15 @@ export default {
   methods: {
     // 更新气候
     updateWeather() {
-      environmentalTesting.selectKscAir({}).then((res) => {
-        this.weather = res || {};
-      });
+      this.weather = {
+        温度: 25,
+        湿度: 10,
+        风向: "东北",
+        风速: 33,
+      };
+      // environmentalTesting.selectKscAir({}).then((res) => {
+      //   this.weather = res || {};
+      // });
     },
     // 显示时间
     startTime() {
@@ -95,6 +101,7 @@ export default {
 <style lang="less" scoped>
 .headerBox {
   display: flex;
+  overflow: hidden;
   .left,
   .right {
     flex: 1;

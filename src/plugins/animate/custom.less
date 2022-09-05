@@ -1,0 +1,19 @@
+.animate__widthOut {
+  animation-name: widthOut;
+}
+
+@keyframes widthOut {
+  from {
+    transform: perspective(400px);
+  }
+
+  30% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    width: 440px;
+  }
+
+  to {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    width: 0;
+  }
+}
