@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     toggleFold(el) {
-      this.$animateCSS(el, 'widthOut').then((res) => {
+      this.$animateCSS(el, this.data.animate || this.$config.animate).then((res) => {
         // this.$animateCSS(el, 'widthOut')
         this.$refs['dataArea'].style.display = 'none';
       });

@@ -18,6 +18,14 @@
 // 综合治理 => panels/securityEmergency/index
 // 安全文化 => panels/safetyCulture/index
 
+
+//使用策略
+let useLayout = '3840_1080';
+let useScreen = 'scence1';//使用策略下的哪个幕布
+let theme = 'default';//使用皮肤
+let animate = 'widthOut'; //使用切屏的动画
+
+
 /**
 * 布局
 */
@@ -60,6 +68,7 @@ let layout = {
         {
           id:'1',
           title: '公共安全',
+          animate:'flipOutX',
           modules: [
             {
               showHeader: true,
@@ -95,10 +104,6 @@ let layout = {
 };
 
 
-//使用策略
-let useLayout = '3840_1080';
-let useScreen = 'scence1';//使用策略下的哪个幕布
-let theme = 'default';//使用皮肤
 
 
 const config = {
@@ -106,6 +111,7 @@ const config = {
   useScreen,//使用策略下的哪个幕布
   theme,
   layout,
+  animate,
 };
 
 window.$config = config
