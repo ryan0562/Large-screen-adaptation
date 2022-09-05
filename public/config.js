@@ -52,6 +52,7 @@ let layout = {
       // 一级页面
       scence1: [
         {
+          id:'1',
           title: '公共安全',
           styles: {
             width: "440px",
@@ -88,6 +89,7 @@ let layout = {
           ]
         },
         {
+          id:'2',
           title: '生产运行',
           styles: {
             width: "440px",

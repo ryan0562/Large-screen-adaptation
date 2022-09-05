@@ -1,6 +1,6 @@
 <template>
-  <div class="dataAreaBox" :style="data.styles">
-    <div class="mark"></div>
+  <div :class="['dataAreaBox', `dataAreaBox_${data.id}` ]" :style="data.styles">
+    <div class="mark" @click="toggleFold(`.dataAreaBox_${data.id}`)"></div>
     <div class="tit">{{ data.title }}</div>
     <div class="line"></div>
     <dataBlock v-for="(item, index) in data.modules" :key="index" v-bind="item" />
@@ -21,6 +21,11 @@ export default {
       },
     },
   },
+  methods:{
+    toggleFold(el){
+      this.$animateCSS(el,'flipOutY')
+    }
+  }
 };
 </script>
 
