@@ -41,13 +41,27 @@ let layout = {
     },
     header: {
       visible: true, //默认为true
-      title: '黑色主题模板',
+      title: '黑色主题模板111',
       styles: {
         top: 0,
         left: 0,
         width: '100%',
         height: '100px',
         zIndex: 20,
+      },
+      date: {
+        visible: true, //默认为true
+        styles: {
+          top: '15px',
+          left: '80px',
+        },
+      },
+      weather: {
+        visible: true, //默认为true
+        styles: {
+          top: '15px',
+          right: '168px',
+        },
       },
     },
     map: {
@@ -57,7 +71,7 @@ let layout = {
       visible: true //默认为true
     },
     dataArea: {
-      styles:{
+      styles: {
         top: '93px',
         left: '20px',
         position: 'absolute',
@@ -66,9 +80,9 @@ let layout = {
       // 一级页面
       scence1: [
         {
-          id:'1',
+          id: '1',
           title: '公共安全',
-          animate:'flipOutX',
+          animate: 'flipOutX',
           modules: [
             {
               showHeader: true,
@@ -95,12 +109,12 @@ let layout = {
           ]
         },
         {
-          id:'2',
+          id: '2',
           title: '生产运行',
         },
       ],
     }
-  }
+  },
 };
 
 

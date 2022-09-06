@@ -48,7 +48,7 @@ const animateCSS = (element, animation, hasRemove = true) =>
       event.stopPropagation();
 
       if (hasRemove) node.classList.remove(`${prefix}animated`, animationName);
-      resolve('Animation ended');
+      resolve(element);
     }
 
     node.addEventListener('animationend', handleAnimationEnd, { once: true });

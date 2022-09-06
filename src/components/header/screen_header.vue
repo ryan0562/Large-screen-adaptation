@@ -1,7 +1,7 @@
 <template>
   <div class="headerBox" :style="options.styles">
     <div class="left">
-      <div class="date-wrapper">
+      <div class="date-wrapper" v-if="options.date.visible" :style="options.date.styles">
         <span>{{ dateMsg.time }}</span>
         <span>{{ dateMsg.week }}</span>
         <span>{{ dateMsg.date }}</span>
@@ -11,7 +11,7 @@
       <div class="tit">{{ $layout.header.title }}</div>
     </div>
     <div class="right">
-      <div class="weather-wrapper">
+      <div class="weather-wrapper" v-if="options.weather.visible" :style="options.weather.styles">
         <span>温度：{{ weather['温度'] | unitFil(1, '℃') }}</span>
         <span>湿度：{{ weather['湿度'] | unitFil(2, '%') }}</span>
         <span>风向：{{ weather['风向'] || '/' }}</span>
@@ -64,7 +64,7 @@ export default {
       this.weather = {
         温度: 25,
         湿度: 10,
-        风向: "东北",
+        风向: '东北',
         风速: 33,
       };
       // environmentalTesting.selectKscAir({}).then((res) => {
@@ -112,8 +112,6 @@ export default {
     height: 66px;
     .date-wrapper {
       position: absolute;
-      top: 15px;
-      left: 80px;
       font-size: 20px;
       font-family: DIN;
       font-weight: 500;
