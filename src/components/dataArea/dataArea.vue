@@ -1,5 +1,5 @@
 <template>
-  <div :class="['dataAreaBox', `dataAreaBox_${data.id}`]" :style="data.styles" v-if="data.visible">
+  <div class="dataAreaBox">
     <div class="tit">{{ dataAreaModule.title }}</div>
     <div class="line"></div>
     <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" v-bind="item" />
@@ -19,12 +19,13 @@ export default {
         return {};
       },
     },
+    id: {
+      type: [String, Number],
+      required: true,
+    },
   },
   computed: {
     dataAreaModule() {
-      // if(!this.data.moduleId){
-      //   return this.data
-      // }
       return this.$layout.dataAreaModules[this.data.moduleId] || {};
     },
   },
@@ -38,6 +39,7 @@ export default {
   height: 100%;
   padding: 0 20px;
   position: absolute;
+  transition: all 1s ease;
   .tit {
     background: var(--dataArea_mark_title-background);
     height: 40px;

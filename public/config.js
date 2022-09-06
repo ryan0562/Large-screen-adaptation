@@ -23,7 +23,11 @@
 let useLayout = '3840_1080';
 let useScreen = 'scence1';//使用策略下的哪个幕布
 let theme = 'default';//使用皮肤
-let animate = 'widthOut'; //使用切屏的动画
+let animateIn = 'rotateYIn'; //使用切屏的动画
+let animateOut = 'rotateYOut'; //使用切屏的动画
+
+
+
 
 
 /**
@@ -74,7 +78,6 @@ let layout = {
       1: {
         visible: true,
         moduleId: 'safe',
-        animate: 'flipOutX',
         styles: {
           width: '440px',
           height: '972px',
@@ -175,7 +178,8 @@ const config = {
   useScreen,//使用策略下的哪个幕布
   theme,
   layout,
-  animate,
+  animateIn,
+  animateOut,
 };
 
 window.$config = config

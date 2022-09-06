@@ -1,5 +1,5 @@
 <template>
-  <div class="mark" :style="`left:${left}`" @click="toggleFold(`.dataAreaBox_${data.id}`)"></div>
+  <div class="mark" :style="`left:${left}`"></div>
 </template>
 
 <script>
@@ -17,20 +17,17 @@ export default {
         return {};
       },
     },
+    id: {
+      type: [String, Number],
+      required: true,
+    },
   },
   computed: {
     left() {
       return parser(`${this.data.styles.left} + ${this.data.styles.width} / 2`);
     },
   },
-  methods: {
-    toggleFold(el) {
-      this.$animateCSS(el, this.data.animate || this.$config.animate).then((res) => {
-        // this.$animateCSS(el, 'widthOut')
-        this.$refs['dataArea'].style.display = 'none';
-      });
-    },
-  },
+  methods: {},
 };
 </script>
 
