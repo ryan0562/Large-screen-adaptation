@@ -1,6 +1,6 @@
 <template>
-  <div :class="['dataAreaBox', `dataAreaBox_${data.id}`]" :style="data.styles" ref="dataArea">
-    <div class="mark" @click="toggleFold($refs['dataArea'])"></div>
+  <div :class="['dataAreaBox', `dataAreaBox_${data.id}`]" :style="data.styles">
+    <!-- <div class="mark" @click="toggleFold($refs['dataArea'])"></div> -->
     <div class="dataArea">
       <div class="tit">{{ data.title }}</div>
       <div class="line"></div>
@@ -24,12 +24,12 @@ export default {
     },
   },
   methods: {
-    toggleFold(el) {
-      this.$animateCSS(el, this.data.animate || this.$config.animate).then((res) => {
-        // this.$animateCSS(el, 'widthOut')
-        this.$refs['dataArea'].style.display = 'none';
-      });
-    },
+    // toggleFold(el) {
+    //   this.$animateCSS(el, this.data.animate || this.$config.animate).then((res) => {
+    //     // this.$animateCSS(el, 'widthOut')
+    //     this.$refs['dataArea'].style.display = 'none';
+    //   });
+    // },
   },
 };
 </script>
