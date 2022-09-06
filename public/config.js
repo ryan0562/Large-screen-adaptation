@@ -71,60 +71,101 @@ let layout = {
       visible: true //默认为true
     },
     dataArea: {
-
-      // 一级页面
-      scence1: [
-        {
-          id: '1',
-          title: '公共安全',
-          animate: 'flipOutX',
-          styles: {
-            width: '440px',
-            height: '972px',
-            top: '93px',
-            left: '20px',
-            zIndex: 1,
-          },
-          modules: [
-            {
-              showHeader: true,
-              title: '实时警情',
-              component: {
-                is: 'aaa',
-              },
-              styles: {
-                height: "133px",
-                marginTop: '12px',
-              }
-            },
-            {
-              showHeader: true,
-              title: '视频监控',
-              styles: {
-                height: "242px",
-                marginTop: '12px',
-              },
-              component: {
-                is: 'bbb',
-              },
-            },
-          ]
+      1: {
+        visible: true,
+        moduleId: 'safe',
+        animate: 'flipOutX',
+        styles: {
+          width: '440px',
+          height: '972px',
+          top: '93px',
+          left: '20px',
+          zIndex: 1,
         },
-        {
-          id: '2',
-          title: '生产运行',
-          styles: {
-            width: '440px',
-            height: '972px',
-            top: '93px',
-            left: '472px',
-            zIndex: 1,
-          },
+      },
+      2: {
+        visible: true,
+        moduleId: 'production',
+        styles: {
+          width: '440px',
+          height: '972px',
+          top: '93px',
+          left: '472px',
+          zIndex: 1,
         },
-      ],
+      },
+      3: {
+        visible: true,
+        styles: {
+          width: '440px',
+          height: '972px',
+          top: '93px',
+          left: '924px',
+          zIndex: 1,
+        },
+      },
+    },
+    dataAreaModules: {
+      'safe': {
+        title: '公共安全',
+        modules: [
+          {
+            showHeader: true,
+            title: '实时警情',
+            component: {
+              is: 'aaa',
+            },
+            styles: {
+              height: "133px",
+              marginTop: '12px',
+            }
+          },
+          {
+            showHeader: true,
+            title: '视频监控',
+            styles: {
+              height: "242px",
+              marginTop: '12px',
+            },
+            component: {
+              is: 'bbb',
+            },
+          },
+        ]
+      },
+      'production': {
+        title: '生产运行',
+        modules: [
+          {
+            showHeader: true,
+            title: '投资促进',
+            styles: {
+              height: "242px",
+              marginTop: '12px',
+            },
+            component: {
+              is: 'bbb',
+            },
+          },
+          {
+            showHeader: true,
+            title: '经济指标',
+            component: {
+              is: 'aaa',
+            },
+            styles: {
+              height: "133px",
+              marginTop: '12px',
+            }
+          },
+        ]
+      },
     }
   },
 };
+
+
+
 
 
 

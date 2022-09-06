@@ -1,5 +1,5 @@
 <template>
-  <div class="mark" :style="`left:${left}`"></div>
+  <div class="mark" :style="`left:${left}`" @click="toggleFold(`.dataAreaBox_${data.id}`)"></div>
 </template>
 
 <script>
@@ -36,7 +36,7 @@ export default {
 
 <style lang="less" scoped>
 .mark {
-  position: fixed;
+  position: absolute;
   width: 28px;
   height: 36px;
   cursor: pointer;
