@@ -1,11 +1,8 @@
 <template>
-  <div :class="['dataAreaBox', `dataAreaBox_${data.id}`]" :style="data.styles">
-    <!-- <div class="mark" @click="toggleFold($refs['dataArea'])"></div> -->
-    <div class="dataArea">
-      <div class="tit">{{ data.title }}</div>
-      <div class="line"></div>
-      <dataBlock v-for="(item, index) in data.modules" :key="index" v-bind="item" />
-    </div>
+  <div class="dataAreaBox" :style="data.styles">
+    <div class="tit">{{ data.title }}</div>
+    <div class="line"></div>
+    <dataBlock v-for="(item, index) in data.modules" :key="index" v-bind="item" />
   </div>
 </template>
 
@@ -23,58 +20,29 @@ export default {
       },
     },
   },
-  methods: {
-    // toggleFold(el) {
-    //   this.$animateCSS(el, this.data.animate || this.$config.animate).then((res) => {
-    //     // this.$animateCSS(el, 'widthOut')
-    //     this.$refs['dataArea'].style.display = 'none';
-    //   });
-    // },
-  },
 };
 </script>
 
 <style lang="less" scoped>
 .dataAreaBox {
-  width: 440px;
+  background: var(--dataArea_background);
+  width: 100%;
   height: 100%;
-  float: left;
-  margin-left: 20px;
-  position: relative;
-  transition: all 2s ease;
-  &:first-child {
-    margin-left: 0;
+  padding: 0 20px;
+  position: absolute;
+  .tit {
+    background: var(--dataArea_mark_title-background);
+    height: 40px;
+    line-height: 40px;
+    font-family: 'myTitle';
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 2px;
   }
-  .mark {
-    position: absolute;
-    width: 28px;
-    height: 36px;
-    cursor: pointer;
-    background: var(--dataArea_mark-background);
-    top: -45px;
-    left: 50%;
-    margin-left: -14px;
-  }
-  .dataArea {
-    background: var(--dataArea_background);
+  .line {
     width: 100%;
-    height: 100%;
-    padding: 0 20px;
-
-    .tit {
-      background: var(--dataArea_mark_title-background);
-      height: 40px;
-      line-height: 40px;
-      font-family: 'myTitle';
-      font-size: 20px;
-      text-align: center;
-      letter-spacing: 2px;
-    }
-    .line {
-      width: 100%;
-      height: 20px;
-      background: var(--dataArea_mark_line-background);
-    }
+    height: 20px;
+    background: var(--dataArea_mark_line-background);
   }
 }
 </style>

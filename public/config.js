@@ -71,18 +71,20 @@ let layout = {
       visible: true //默认为true
     },
     dataArea: {
-      styles: {
-        top: '93px',
-        left: '20px',
-        position: 'absolute',
-        height: "972px",
-      },
+
       // 一级页面
       scence1: [
         {
           id: '1',
           title: '公共安全',
           animate: 'flipOutX',
+          styles: {
+            width: '440px',
+            height: '972px',
+            top: '93px',
+            left: '20px',
+            zIndex: 1,
+          },
           modules: [
             {
               showHeader: true,
@@ -111,6 +113,13 @@ let layout = {
         {
           id: '2',
           title: '生产运行',
+          styles: {
+            width: '440px',
+            height: '972px',
+            top: '93px',
+            left: '472px',
+            zIndex: 1,
+          },
         },
       ],
     }

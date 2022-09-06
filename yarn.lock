@@ -2388,6 +2388,11 @@ css-loader@^6.5.0:
     postcss-value-parser "^4.2.0"
     semver "^7.3.5"
 
+css-math@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.npmmirror.com/css-math/-/css-math-0.4.0.tgz#33a79af33f6fdac3a58d1d2813d591eaa9d98b6c"
+  integrity sha512-u5not9b9HqYKvdQEA5WgpWOwLQXHLHQSjkeGwa4ArEjbtZ40UAYd0+eXJ1H1z5J61LHz010yl7FXrUKbR3Kb2w==
+
 css-minimizer-webpack-plugin@^3.0.2:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/css-minimizer-webpack-plugin/-/css-minimizer-webpack-plugin-3.4.1.tgz#ab78f781ced9181992fe7b6e4f3422e76429878f"

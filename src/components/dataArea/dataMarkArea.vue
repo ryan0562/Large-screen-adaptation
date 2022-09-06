@@ -1,8 +1,10 @@
 <template>
-  <div class="mark" @click="toggleFold($refs['dataArea'])"></div>
+  <div class="mark" :style="`left:${left}`"></div>
 </template>
 
 <script>
+import { parser } from 'css-math';
+
 export default {
   components: {
     dataBlock: () => import('./dataBlock.vue'),
@@ -14,6 +16,11 @@ export default {
       default() {
         return {};
       },
+    },
+  },
+  computed: {
+    left() {
+      return parser(`${this.data.styles.left} + ${this.data.styles.width} / 2`);
     },
   },
   methods: {
@@ -29,12 +36,12 @@ export default {
 
 <style lang="less" scoped>
 .mark {
-  position: absolute;
+  position: fixed;
   width: 28px;
   height: 36px;
   cursor: pointer;
   background: var(--dataArea_mark-background);
-  top: -45px;
+  top: 45px;
   left: 50%;
   margin-left: -14px;
 }
