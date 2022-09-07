@@ -1,5 +1,5 @@
 <template>
-  <div class="mark" :style="`left:${left}`"></div>
+  <div class="mark" :style="style"></div>
 </template>
 
 <script>
@@ -21,18 +21,33 @@ export default {
       type: [String, Number],
       required: true,
     },
+    /* 左还是右 */
+    type: {
+      required: true,
+      validator: function (value) {
+        // 这个值必须匹配下列字符串中的一个
+        return ['left', 'right'].includes(value);
+      },
+    },
   },
   data() {
     return {
-      relativeLeft: 0,
+      relativePX: 0,
     };
   },
   computed: {
-    // initLeft() {
-    //   return parser(`${this.data.styles.left} + ${this.data.styles.width} / 2 + ${this.relativeLeft}`);
-    // },
-    left() {
-      return parser(`${this.data.styles.left} + ${this.data.styles.width} / 2 + ${this.relativeLeft}`);
+    style() {
+      if (this.type === 'left') {
+        return {
+          left: parser(`${this.data.styles.left} + ${this.data.styles.width} / 2 + ${this.relativePX}`),
+        };
+      }
+      if (this.type === 'right') {
+        return {
+          right: parser(`${this.data.styles.right} + ${this.data.styles.width} / 2 + ${this.relativePX}`),
+          left: 'auto',
+        };
+      }
     },
   },
   methods: {},

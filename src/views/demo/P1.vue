@@ -2,21 +2,40 @@
   <div>
     <screen_header v-if="$layout.header" :options="$layout.header" />
     <!-- 数据区 -->
-    <template v-for="(item, index) in $layout.dataArea">
+    <template v-for="(item, index) in $layout.dataAreaLeft">
       <dataArea
         v-if="item.visible"
-        :key="`dataArea_${index}`"
-        :ref="`dataAreaBox_${index}`"
+        :key="`dataAreaLeft_${index}`"
+        :ref="`dataAreaLeft_${index}`"
         :style="item.styles"
         :data="item"
         :id="index"
       />
       <dataMarkArea
-        :ref="`dataMarkArea_${index}`"
-        :key="`dataMarkArea_${index}`"
+        :ref="`dataMarkAreaLeft_${index}`"
+        :key="`dataMarkAreaLeft_${index}`"
         :data="item"
         :id="index"
-        @click.native="toggleFold(index)"
+        type="left"
+        @click.native="toggleFoldLeft(index, 'left')"
+      />
+    </template>
+    <template v-for="(item, index) in $layout.dataAreaRight">
+      <dataArea
+        v-if="item.visible"
+        :key="`dataAreaRight_${index}`"
+        :ref="`dataAreaRight_${index}`"
+        :style="item.styles"
+        :data="item"
+        :id="index"
+      />
+      <dataMarkArea
+        :ref="`dataMarkAreaRight_${index}`"
+        :key="`dataMarkAreaRight_${index}`"
+        :data="item"
+        :id="index"
+        type="right"
+        @click.native="toggleFoldLeft(index, 'right')"
       />
     </template>
     <!-- 数据区标记 -->
@@ -33,35 +52,39 @@ export default {
     dataMarkArea: () => import('@/components/dataArea/dataMarkArea.vue'),
   },
   methods: {
-    toggleFold(index) {
+    toggleFoldLeft(index, type) {
       // vfor后ref会返回数组
-      const dataArea_el = this.$refs[`dataAreaBox_${index}`][0];
+      const dataArea_el =
+        type === 'left' ? this.$refs[`dataAreaLeft_${index}`][0] : this.$refs[`dataAreaRight_${index}`][0];
+      const dataArea = type === 'left' ? this.$layout.dataAreaLeft : this.$layout.dataAreaRight;
+      const dataMarkArea_el =
+        type === 'left' ? this.$refs[`dataMarkAreaLeft_${index}`][0] : this.$refs[`dataMarkAreaRight_${index}`][0];
+
       if (dataArea_el.$el.className.indexOf('fold') > -1) {
         this.$animateCSS(dataArea_el, this.$config.animateIn).then((res) => {
           dataArea_el.$el.classList.remove('fold');
         });
         // 动态后续区域
-        for (const key in this.$layout.dataArea) {
-          const element = this.$layout.dataArea[key];
+        for (const key in dataArea) {
+          const element = dataArea[key];
           if (key > index) {
-            element.styles.left = parser(`${element.styles.left} + 450px`);
+            element.styles[type] = parser(`${element.styles[type]} + 450px`);
           }
         }
-        const dataMarkArea_el = this.$refs[`dataMarkArea_${index}`][0];
-        dataMarkArea_el.relativeLeft = 0;
+        dataMarkArea_el.relativePX = 0;
       } else {
         this.$animateCSS(dataArea_el, this.$config.animateOut).then((res) => {
           dataArea_el.$el.classList.add('fold');
         });
         // 动态后续区域
-        for (const key in this.$layout.dataArea) {
-          const element = this.$layout.dataArea[key];
+        for (const key in dataArea) {
+          const element = dataArea[key];
           if (key > index) {
-            element.styles.left = parser(`${element.styles.left} - 450px`);
+            element.styles[type] = parser(`${element.styles[type]} - 450px`);
           }
         }
-        const dataMarkArea_el = this.$refs[`dataMarkArea_${index}`][0];
-        dataMarkArea_el.relativeLeft = parser(`-200px + 40px*${index}`);
+
+        dataMarkArea_el.relativePX = parser(`-200px + 40px*${index}`);
       }
     },
   },

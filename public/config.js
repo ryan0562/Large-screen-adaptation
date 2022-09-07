@@ -74,7 +74,7 @@ let layout = {
       zindex: 0, //默认为0
       visible: true //默认为true
     },
-    dataArea: {
+    dataAreaLeft: {
       1: {
         visible: true,
         moduleId: 'safe',
@@ -104,6 +104,30 @@ let layout = {
           height: '972px',
           top: '93px',
           left: '924px',
+          zIndex: 1,
+        },
+      },
+    },
+    dataAreaRight: {
+      1: {
+        visible: true,
+        moduleId: 'safe',
+        styles: {
+          width: '440px',
+          height: '972px',
+          top: '93px',
+          right: '20px',
+          zIndex: 1,
+        },
+      },
+      2: {
+        visible: true,
+        moduleId: 'production',
+        styles: {
+          width: '440px',
+          height: '972px',
+          top: '93px',
+          right: '472px',
           zIndex: 1,
         },
       },
