@@ -7,8 +7,9 @@ import store from './store'
 import 'element-ui/lib/theme-chalk/index.css';
 
 /* animate.css */
-import animateCSS from '@/plugins/animate/animate.js'
+import { animateCSS, switchDataArea } from '@/plugins/animate/animate.js'
 Vue.prototype.$animateCSS = animateCSS;
+Vue.prototype.$switchDataArea = switchDataArea;
 /* 样式 */
 
 import '@/styles/index.less'

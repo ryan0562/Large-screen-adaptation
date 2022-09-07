@@ -1,37 +1,44 @@
 <template>
   <div>
     <screen_header v-if="$layout.header" :options="$layout.header" />
-    <!-- 数据区 -->
-    <template v-for="(item, index) in $layout.dataAreaLeft">
+    <!-- 数据区 左 -->
+    <template v-for="(item, index) in $layout.dataArea_left">
       <dataArea
         v-if="item.visible"
-        :key="`dataAreaLeft_${index}`"
-        :ref="`dataAreaLeft_${index}`"
+        :class="`dataArea_left_${index}`"
+        :key="`dataArea_left_${index}`"
+        :ref="`dataArea_left_${index}`"
         :style="item.styles"
         :data="item"
+        type="left"
         :id="index"
       />
       <dataMarkArea
-        :ref="`dataMarkAreaLeft_${index}`"
-        :key="`dataMarkAreaLeft_${index}`"
+        :class="`dataMarkArea_left_${index}`"
+        :ref="`dataMarkArea_left_${index}`"
+        :key="`dataMarkArea_left_${index}`"
         :data="item"
         :id="index"
         type="left"
         @click.native="toggleFoldLeft(index, 'left')"
       />
     </template>
-    <template v-for="(item, index) in $layout.dataAreaRight">
+    <!-- 数据区 右 -->
+    <template v-for="(item, index) in $layout.dataArea_right">
       <dataArea
         v-if="item.visible"
-        :key="`dataAreaRight_${index}`"
-        :ref="`dataAreaRight_${index}`"
+        :class="`dataArea_right_${index}`"
+        :key="`dataArea_right_${index}`"
+        :ref="`dataArea_right_${index}`"
         :style="item.styles"
         :data="item"
+        type="right"
         :id="index"
       />
       <dataMarkArea
-        :ref="`dataMarkAreaRight_${index}`"
-        :key="`dataMarkAreaRight_${index}`"
+        :class="`dataMarkArea_right_${index}`"
+        :ref="`dataMarkArea_right_${index}`"
+        :key="`dataMarkArea_right_${index}`"
         :data="item"
         :id="index"
         type="right"
@@ -52,13 +59,16 @@ export default {
     dataMarkArea: () => import('@/components/dataArea/dataMarkArea.vue'),
   },
   methods: {
+    /**
+     *
+     * @param: index:模块区的索引值
+     * @param: type:left|right
+     */
     toggleFoldLeft(index, type) {
       // vfor后ref会返回数组
-      const dataArea_el =
-        type === 'left' ? this.$refs[`dataAreaLeft_${index}`][0] : this.$refs[`dataAreaRight_${index}`][0];
-      const dataArea = type === 'left' ? this.$layout.dataAreaLeft : this.$layout.dataAreaRight;
-      const dataMarkArea_el =
-        type === 'left' ? this.$refs[`dataMarkAreaLeft_${index}`][0] : this.$refs[`dataMarkAreaRight_${index}`][0];
+      const dataArea_el = this.$refs[`dataArea_${type}_${index}`][0];
+      const dataArea = type === 'left' ? this.$layout.dataArea_left : this.$layout.dataArea_right;
+      const dataMarkArea_el = this.$refs[`dataMarkArea_${type}_${index}`][0];
 
       if (dataArea_el.$el.className.indexOf('fold') > -1) {
         this.$animateCSS(dataArea_el, this.$config.animateIn).then((res) => {

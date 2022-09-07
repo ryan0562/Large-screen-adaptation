@@ -54,4 +54,13 @@ const animateCSS = (element, animation, hasRemove = true) =>
     node.addEventListener('animationend', handleAnimationEnd, { once: true });
   });
 
-export default animateCSS
+// 切换数据区
+export const switchDataArea = function (type, index, moduleId) {
+  const el = `.dataArea_${type}_${index}`;
+  animateCSS(el, this.$config.animateOut).then(() => {
+    this.$layout[`dataArea_${type}`][index].moduleId = moduleId;
+    animateCSS(el, this.$config.animateIn);
+  });
+};
+
+export default { animateCSS, switchDataArea }

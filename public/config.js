@@ -74,7 +74,7 @@ let layout = {
       zindex: 0, //默认为0
       visible: true //默认为true
     },
-    dataAreaLeft: {
+    dataArea_left: {
       1: {
         visible: true,
         moduleId: 'safe',
@@ -99,6 +99,7 @@ let layout = {
       },
       3: {
         visible: true,
+        moduleId: 'emergency',
         styles: {
           width: '440px',
           height: '972px',
@@ -108,7 +109,7 @@ let layout = {
         },
       },
     },
-    dataAreaRight: {
+    dataArea_right: {
       1: {
         visible: true,
         moduleId: 'safe',
@@ -182,6 +183,44 @@ let layout = {
             },
             styles: {
               height: "133px",
+              marginTop: '12px',
+            }
+          },
+        ]
+      },
+      'emergency': {
+        title: '安全应急',
+        modules: [
+          {
+            showHeader: true,
+            title: '累计安全天数',
+            styles: {
+              height: "242px",
+              marginTop: '12px',
+            },
+            component: {
+              is: 'bbb',
+            },
+          },
+          {
+            showHeader: true,
+            title: '接处警情况',
+            component: {
+              is: 'aaa',
+            },
+            styles: {
+              height: "133px",
+              marginTop: '12px',
+            }
+          },
+          {
+            showHeader: true,
+            title: '应急资源',
+            component: {
+              is: 'bbb',
+            },
+            styles: {
+              height: "250px",
               marginTop: '12px',
             }
           },
