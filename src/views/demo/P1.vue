@@ -11,7 +11,13 @@
         :data="item"
         :id="index"
       />
-      <dataMarkArea :key="`dataMarkArea_${index}`" :data="item" :id="index" @click.native="toggleFold(index)" />
+      <dataMarkArea
+        :ref="`dataMarkArea_${index}`"
+        :key="`dataMarkArea_${index}`"
+        :data="item"
+        :id="index"
+        @click.native="toggleFold(index)"
+      />
     </template>
     <!-- 数据区标记 -->
   </div>
@@ -29,15 +35,33 @@ export default {
   methods: {
     toggleFold(index) {
       // vfor后ref会返回数组
-      const el = this.$refs[`dataAreaBox_${index}`][0];
-      this.$animateCSS(el, this.$config.animateOut).then((res) => {
-        el.$el.classList.add('fold')
-      });
-      for (const key in this.$layout.dataArea) {
-        const element = this.$layout.dataArea[key];
-        if (key > index) {
-          element.styles.left = parser(`${element.styles.left} - 450px`);
+      const dataArea_el = this.$refs[`dataAreaBox_${index}`][0];
+      if (dataArea_el.$el.className.indexOf('fold') > -1) {
+        this.$animateCSS(dataArea_el, this.$config.animateIn).then((res) => {
+          dataArea_el.$el.classList.remove('fold');
+        });
+        // 动态后续区域
+        for (const key in this.$layout.dataArea) {
+          const element = this.$layout.dataArea[key];
+          if (key > index) {
+            element.styles.left = parser(`${element.styles.left} + 450px`);
+          }
         }
+        const dataMarkArea_el = this.$refs[`dataMarkArea_${index}`][0];
+        dataMarkArea_el.relativeLeft = 0;
+      } else {
+        this.$animateCSS(dataArea_el, this.$config.animateOut).then((res) => {
+          dataArea_el.$el.classList.add('fold');
+        });
+        // 动态后续区域
+        for (const key in this.$layout.dataArea) {
+          const element = this.$layout.dataArea[key];
+          if (key > index) {
+            element.styles.left = parser(`${element.styles.left} - 450px`);
+          }
+        }
+        const dataMarkArea_el = this.$refs[`dataMarkArea_${index}`][0];
+        dataMarkArea_el.relativeLeft = parser(`-200px + 40px*${index}`);
       }
     },
   },

@@ -22,9 +22,17 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      relativeLeft: 0,
+    };
+  },
   computed: {
+    // initLeft() {
+    //   return parser(`${this.data.styles.left} + ${this.data.styles.width} / 2 + ${this.relativeLeft}`);
+    // },
     left() {
-      return parser(`${this.data.styles.left} + ${this.data.styles.width} / 2`);
+      return parser(`${this.data.styles.left} + ${this.data.styles.width} / 2 + ${this.relativeLeft}`);
     },
   },
   methods: {},
@@ -41,5 +49,6 @@ export default {
   top: 45px;
   left: 50%;
   margin-left: -14px;
+  transition: all 1s ease;
 }
 </style>
