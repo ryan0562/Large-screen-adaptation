@@ -34,7 +34,7 @@ function reNode(el) {
     // Do something after the animation
   }); 
 */
-const animateCSS = (element, animation, hasRemove = true) =>
+export const animateCSS = (element, animation, hasRemove = true) =>
 
   new Promise((resolve, reject) => {
 

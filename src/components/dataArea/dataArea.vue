@@ -41,7 +41,7 @@ export default {
     // 切换页面
     switchPage() {
       this.$switchDataArea('left', 1, 'emergency');
-      this.$switchDataArea('right', 1, 'emergency');
+      this.$switchDataArea('right', 3, 'emergency');
     },
   },
 };
