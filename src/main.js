@@ -5,6 +5,8 @@ import store from './store'
 
 /* element-ui */
 import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+Vue.use(ElementUI)
 
 /* animate.css */
 import { animateCSS, switchDataArea } from '@/plugins/animate/animate.js'

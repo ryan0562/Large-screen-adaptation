@@ -97,7 +97,7 @@ let layout = {
           zIndex: 1,
         },
       },
-      
+
     },
     dataArea_right: {
       1: {
@@ -123,101 +123,7 @@ let layout = {
         },
       },
     },
-    dataAreaModules: {
-      'safe': {
-        title: '公共安全',
-        modules: [
-          {
-            showHeader: true,
-            title: '实时警情',
-            component: {
-              is: 'aaa',
-            },
-            styles: {
-              height: "133px",
-              marginTop: '12px',
-            }
-          },
-          {
-            showHeader: true,
-            title: '视频监控',
-            styles: {
-              height: "242px",
-              marginTop: '12px',
-            },
-            component: {
-              is: 'bbb',
-            },
-          },
-        ]
-      },
-      'production': {
-        title: '生产运行',
-        modules: [
-          {
-            showHeader: true,
-            title: '投资促进',
-            styles: {
-              height: "242px",
-              marginTop: '12px',
-            },
-            component: {
-              is: 'bbb',
-            },
-          },
-          {
-            showHeader: true,
-            title: '经济指标',
-            component: {
-              is: 'aaa',
-            },
-            styles: {
-              height: "133px",
-              marginTop: '12px',
-            }
-          },
-        ]
-      },
-      'emergency': {
-        title: '安全应急',
-        modules: [
-          {
-            showHeader: true,
-            title: '应急资源',
-            component: {
-              is: 'aaa',
-            },
-            styles: {
-              height: "250px",
-              marginTop: '12px',
-            }
-          },
-          {
-            showHeader: true,
-            title: '累计安全天数',
-            styles: {
-              height: "242px",
-              marginTop: '12px',
-            },
-            component: {
-              is: 'bbb',
-            },
-          },
-          {
-            showHeader: true,
-            title: '接处警情况',
-            component: {
-              is: 'ccc',
-            },
-            styles: {
-              height: "133px",
-              marginTop: '12px',
-            }
-          },
-          
-        ]
-      },
-    }
+
   },
   "1920_1080": {
     visible: true, //默认为true
@@ -285,102 +191,105 @@ let layout = {
         },
       },
     },
-    dataAreaModules: {
-      'safe': {
-        title: '公共安全',
-        modules: [
-          {
-            showHeader: true,
-            title: '实时警情',
-            component: {
-              is: 'aaa',
-            },
-            styles: {
-              height: "133px",
-              marginTop: '12px',
-            }
-          },
-          {
-            showHeader: true,
-            title: '视频监控',
-            styles: {
-              height: "242px",
-              marginTop: '12px',
-            },
-            component: {
-              is: 'bbb',
-            },
-          },
-        ]
-      },
-      'production': {
-        title: '生产运行',
-        modules: [
-          {
-            showHeader: true,
-            title: '投资促进',
-            styles: {
-              height: "242px",
-              marginTop: '12px',
-            },
-            component: {
-              is: 'bbb',
-            },
-          },
-          {
-            showHeader: true,
-            title: '经济指标',
-            component: {
-              is: 'aaa',
-            },
-            styles: {
-              height: "133px",
-              marginTop: '12px',
-            }
-          },
-        ]
-      },
-      'emergency': {
-        title: '安全应急',
-        modules: [
-          {
-            showHeader: true,
-            title: '累计安全天数',
-            styles: {
-              height: "242px",
-              marginTop: '12px',
-            },
-            component: {
-              is: 'bbb',
-            },
-          },
-          {
-            showHeader: true,
-            title: '接处警情况',
-            component: {
-              is: 'aaa',
-            },
-            styles: {
-              height: "133px",
-              marginTop: '12px',
-            }
-          },
-          {
-            showHeader: true,
-            title: '应急资源',
-            component: {
-              is: 'bbb',
-            },
-            styles: {
-              height: "250px",
-              marginTop: '12px',
-            }
-          },
-        ]
-      },
-    }
   },
 };
+
+// 数据模块
+const dataAreaModules = {
+  'safe': {
+    title: '公共安全',
+    modules: [
+      {
+        showHeader: true,
+        title: '实时警情',
+        component: {
+          is: 'realTimePolice',
+        },
+        styles: {
+          height: "154px",
+          marginTop: '12px',
+        }
+      },
+      {
+        showHeader: true,
+        title: '视频监控',
+        styles: {
+          height: "242px",
+          marginTop: '12px',
+        },
+        component: {
+          is: 'bbb',
+        },
+      },
+    ]
+  },
+  'production': {
+    title: '生产运行',
+    modules: [
+      {
+        showHeader: true,
+        title: '投资促进',
+        styles: {
+          height: "242px",
+          marginTop: '12px',
+        },
+        component: {
+          is: 'bbb',
+        },
+      },
+      {
+        showHeader: true,
+        title: '经济指标',
+        component: {
+          is: 'realTimePolice',
+        },
+        styles: {
+          height: "154px",
+          marginTop: '12px',
+        }
+      },
+    ]
+  },
+  'emergency': {
+    title: '安全应急',
+    modules: [
+      {
+        showHeader: true,
+        title: '应急资源',
+        component: {
+          is: 'aaa',
+        },
+        styles: {
+          height: "250px",
+          marginTop: '12px',
+        }
+      },
+      {
+        showHeader: true,
+        title: '累计安全天数',
+        styles: {
+          height: "242px",
+          marginTop: '12px',
+        },
+        component: {
+          is: 'bbb',
+        },
+      },
+      {
+        showHeader: true,
+        title: '接处警情况',
+        component: {
+          is: 'ccc',
+        },
+        styles: {
+          height: "133px",
+          marginTop: '12px',
+        }
+      },
+
+    ]
+  },
+}
 
 
 
@@ -395,6 +304,7 @@ const config = {
   layout,
   animateIn,
   animateOut,
+  dataAreaModules
 };
 
 window.$config = config

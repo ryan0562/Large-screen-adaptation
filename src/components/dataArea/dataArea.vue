@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     dataAreaModule() {
-      return this.$layout.dataAreaModules[this.data.moduleId] || {};
+      return this.$config.dataAreaModules[this.data.moduleId] || {};
     },
   },
   methods: {
