@@ -201,24 +201,24 @@ const dataAreaModules = {
     modules: [
       {
         showHeader: true,
-        title: '实时警情',
-        component: {
-          is: 'realTimePolice',
-        },
-        styles: {
-          height: "154px",
-          marginTop: '12px',
-        }
-      },
-      {
-        showHeader: true,
         title: '视频监控',
         styles: {
           height: "242px",
           marginTop: '12px',
         },
         component: {
-          is: 'myVideo',
+          is: 'realTimePolice',
+        },
+      },
+      {
+        showHeader: true,
+        title: '投资促进',
+        styles: {
+          height: "320px",
+          marginTop: '12px',
+        },
+        component: {
+          is: 'investment',
         },
       },
     ]
@@ -242,6 +242,17 @@ const dataAreaModules = {
         title: '经济指标',
         component: {
           is: 'realTimePolice',
+        },
+        styles: {
+          height: "154px",
+          marginTop: '12px',
+        }
+      },
+      {
+        showHeader: true,
+        title: '实时警情',
+        component: {
+          is: 'myVideo',
         },
         styles: {
           height: "154px",

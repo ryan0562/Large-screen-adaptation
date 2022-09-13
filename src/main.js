@@ -3,6 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+/* echarts */
+import * as echarts from "echarts";
+import 'echarts-liquidfill';
+require('echarts/theme/macarons');
+Vue.prototype.$echarts = echarts;
+
+
 /* element-ui */
 import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui'

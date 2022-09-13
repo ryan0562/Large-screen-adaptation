@@ -16,6 +16,7 @@ export default {
     ccc: () => import('@/components/modules/c.vue'),
     realTimePolice: () => import('@/components/modules/realTimePolice/index.vue'),
     myVideo: () => import('@/components/modules/video/video.vue'),
+    investment: () => import('@/components/modules/firstLevel/investment.vue'),
 
   },
   props: {
