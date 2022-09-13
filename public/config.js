@@ -23,8 +23,8 @@
 let useLayout = '3840_1080';
 let useScreen = 'scence1';//使用策略下的哪个幕布
 let theme = 'default';//使用皮肤
-let animateIn = 'rotateYIn'; //使用切屏的动画
-let animateOut = 'rotateYOut'; //使用切屏的动画 fadeOut rotateYOut
+let animateIn = 'fadeIn'; //使用切屏的动画
+let animateOut = 'fadeOut'; //使用切屏的动画 fadeOut rotateYOut
 
 
 
@@ -97,17 +97,7 @@ let layout = {
           zIndex: 1,
         },
       },
-      3: {
-        visible: true,
-        moduleId: 'emergency',
-        styles: {
-          width: '440px',
-          height: '972px',
-          top: '93px',
-          left: '924px',
-          zIndex: 1,
-        },
-      },
+      
     },
     dataArea_right: {
       1: {
@@ -129,6 +119,168 @@ let layout = {
           height: '972px',
           top: '93px',
           right: '472px',
+          zIndex: 1,
+        },
+      },
+    },
+    dataAreaModules: {
+      'safe': {
+        title: '公共安全',
+        modules: [
+          {
+            showHeader: true,
+            title: '实时警情',
+            component: {
+              is: 'aaa',
+            },
+            styles: {
+              height: "133px",
+              marginTop: '12px',
+            }
+          },
+          {
+            showHeader: true,
+            title: '视频监控',
+            styles: {
+              height: "242px",
+              marginTop: '12px',
+            },
+            component: {
+              is: 'bbb',
+            },
+          },
+        ]
+      },
+      'production': {
+        title: '生产运行',
+        modules: [
+          {
+            showHeader: true,
+            title: '投资促进',
+            styles: {
+              height: "242px",
+              marginTop: '12px',
+            },
+            component: {
+              is: 'bbb',
+            },
+          },
+          {
+            showHeader: true,
+            title: '经济指标',
+            component: {
+              is: 'aaa',
+            },
+            styles: {
+              height: "133px",
+              marginTop: '12px',
+            }
+          },
+        ]
+      },
+      'emergency': {
+        title: '安全应急',
+        modules: [
+          {
+            showHeader: true,
+            title: '应急资源',
+            component: {
+              is: 'aaa',
+            },
+            styles: {
+              height: "250px",
+              marginTop: '12px',
+            }
+          },
+          {
+            showHeader: true,
+            title: '累计安全天数',
+            styles: {
+              height: "242px",
+              marginTop: '12px',
+            },
+            component: {
+              is: 'bbb',
+            },
+          },
+          {
+            showHeader: true,
+            title: '接处警情况',
+            component: {
+              is: 'ccc',
+            },
+            styles: {
+              height: "133px",
+              marginTop: '12px',
+            }
+          },
+          
+        ]
+      },
+    }
+  },
+  "1920_1080": {
+    visible: true, //默认为true
+    styles: {
+      width: "1920px",
+      height: "1080px",
+      zIndex: "0",
+      background: '#000',
+      color: '#fff'
+    },
+    header: {
+      visible: true, //默认为true
+      title: '黑色主题模板111',
+      styles: {
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100px',
+        zIndex: 20,
+      },
+      date: {
+        visible: true, //默认为true
+        styles: {
+          top: '15px',
+          left: '80px',
+        },
+      },
+      weather: {
+        visible: true, //默认为true
+        styles: {
+          top: '15px',
+          right: '168px',
+        },
+      },
+    },
+    map: {
+      offset: ['0', '0'], //非空
+      size: ['100%', '50%'], //非空
+      zindex: 0, //默认为0
+      visible: true //默认为true
+    },
+    dataArea_left: {
+      1: {
+        visible: true,
+        moduleId: 'safe',
+        styles: {
+          width: '440px',
+          height: '972px',
+          top: '93px',
+          left: '20px',
+          zIndex: 1,
+        },
+      },
+    },
+    dataArea_right: {
+      1: {
+        visible: true,
+        moduleId: 'safe',
+        styles: {
+          width: '440px',
+          height: '972px',
+          top: '93px',
+          right: '20px',
           zIndex: 1,
         },
       },

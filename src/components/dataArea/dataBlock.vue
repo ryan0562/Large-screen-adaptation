@@ -13,6 +13,7 @@ export default {
   components: {
     aaa: () => import('@/components/modules/a.vue'),
     bbb: () => import('@/components/modules/b.vue'),
+    ccc: () => import('@/components/modules/c.vue'),
   },
   props: {
     component: {
