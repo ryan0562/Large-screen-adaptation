@@ -14,7 +14,8 @@ export default {
     aaa: () => import('@/components/modules/a.vue'),
     bbb: () => import('@/components/modules/b.vue'),
     ccc: () => import('@/components/modules/c.vue'),
-    realTimePolice: () => import('@/components/realTimePolice/index.vue'),
+    realTimePolice: () => import('@/components/modules/realTimePolice/index.vue'),
+    myVideo: () => import('@/components/modules/video/video.vue'),
 
   },
   props: {

@@ -218,7 +218,7 @@ const dataAreaModules = {
           marginTop: '12px',
         },
         component: {
-          is: 'bbb',
+          is: 'myVideo',
         },
       },
     ]
