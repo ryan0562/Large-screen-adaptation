@@ -40,6 +40,8 @@ export default {
   padding: 0 20px;
   position: absolute;
   transition: all 1s ease;
+    backface-visibility: hidden;
+
   .tit {
     background: var(--dataArea_mark_title-background);
     height: 40px;

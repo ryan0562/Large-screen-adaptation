@@ -24,6 +24,7 @@ let useLayout = '3840_1080';
 let theme = 'default';//使用皮肤
 let animateIn = 'rotateYIn'; //使用切屏的动画
 let animateOut = 'rotateYOut'; //使用切屏的动画 fadeOut rotateYOut
+let animate = 'fold'; //使用切屏的动画 fadeOut rotateYOut
 
 
 // 数据模块
@@ -141,7 +142,7 @@ let layout = {
     },
     header: {
       visible: true, //默认为true
-      title: '黑色主题模板111',
+      title: '蓝色主题模板',
       styles: {
         top: 0,
         left: 0,
@@ -240,6 +241,7 @@ const config = {
   layout,
   animateIn,
   animateOut,
+  animate,
   dataAreaModules
 };
 
