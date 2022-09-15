@@ -91,7 +91,7 @@ export default {
         this.setWordcloudAni();
       }
       this.chart.on('mouseover', (params) => {
-        this.$bus.$emit('echartsMouseOver', params);
+        // this.$bus.$emit('echartsMouseOver', params);
       });
     },
     resetChart() {

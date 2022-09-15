@@ -61,6 +61,7 @@ export default {
   border-right-color: #0d3750;
   background-color: #11233c;
   padding:10px;
+  position: relative;
   .head {
     height: 20px;
     margin-bottom: 10px;

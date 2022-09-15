@@ -1,6 +1,6 @@
 <template>
   <div class="dataAreaBox">
-    <div class="tit" @click="switchPage">{{ dataAreaModule.title }}</div>
+    <div class="tit" @click="$emit('clickTitle',data.moduleId)">{{ dataAreaModule.title }}</div>
     <div class="line"></div>
     <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" v-bind="item" />
   </div>
@@ -23,25 +23,10 @@ export default {
       type: [String, Number],
       required: true,
     },
-    /* 左还是右 */
-    // type: {
-    //   required: true,
-    //   validator: function (value) {
-    //     // 这个值必须匹配下列字符串中的一个
-    //     return ['left', 'right'].includes(value);
-    //   },
-    // },
   },
   computed: {
     dataAreaModule() {
       return this.$config.dataAreaModules[this.data.moduleId] || {};
-    },
-  },
-  methods: {
-    // 切换页面
-    switchPage() {
-      this.$switchDataArea('left', 1, 'emergency');
-      this.$switchDataArea('right', 1, 'emergency');
     },
   },
 };

@@ -6,9 +6,10 @@
         <span>{{ dateMsg.week }}</span>
         <span>{{ dateMsg.date }}</span>
       </div>
+      <i class="back" v-if="options.back.visible" :style="options.back.styles" @click="$emit('back')"><img src="./back.svg" alt="" /></i>
     </div>
     <div class="main">
-      <div class="tit">{{ $layout.header.title }}</div>
+      <div class="tit">{{ options.title }}</div>
     </div>
     <div class="right">
       <div class="weather-wrapper" v-if="options.weather.visible" :style="options.weather.styles">
@@ -22,7 +23,6 @@
 </template>
 
 <script>
-import environmentalTesting from '@/api/environmentalTesting.js';
 
 export default {
   name: 'Header',
@@ -161,6 +161,20 @@ export default {
       background: var(--header_main-color);
       background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+  }
+  .back{
+        position: absolute;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    text-align: center;
+    padding: 6px;
+    >img {
+      width: 100%;
+      height: 100%;
     }
   }
 }

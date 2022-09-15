@@ -1,6 +1,6 @@
 <template>
   <div>
-    <screen_header v-if="$layout.header" :options="$layout.header" />
+    <screen_header v-if="$layout.header" :options="$layout.header" @back="switchPage()"/>
     <!-- 数据区 左 -->
     <template v-for="(item, index) in $layout.dataArea_left">
       <dataArea
@@ -12,6 +12,7 @@
         :data="item"
         type="left"
         :id="index"
+        @clickTitle="switchPage"
       />
       <dataMarkArea
         :class="`dataMarkArea_left_${index}`"
@@ -34,6 +35,7 @@
         :data="item"
         type="right"
         :id="index"
+        @clickTitle="switchPage"
       />
       <dataMarkArea
         :class="`dataMarkArea_right_${index}`"
@@ -45,9 +47,8 @@
         @click.native="toggleFoldLeft(index, 'right')"
       />
     </template>
-    <!-- 数据区标记 -->
   </div>
-</template>
+</template>toggleFoldLeft
 
 <script>
 import { parser } from 'css-math';
@@ -59,6 +60,31 @@ export default {
     dataMarkArea: () => import('@/components/dataArea/dataMarkArea.vue'),
   },
   methods: {
+    // 切换页面
+    switchPage(pageKey) {
+      switch (pageKey) {
+        case 'safe':
+          this.$switchDataArea('left', 1, 'safe');
+          this.$switchDataArea('left', 2, 'safe');
+          this.$switchDataArea('right', 1, 'safe');
+          this.$switchDataArea('right', 2, 'safe');
+          break;
+        case 'production':
+          this.$switchDataArea('left', 1, 'production');
+          this.$switchDataArea('left', 2, 'production');
+          this.$switchDataArea('right', 1, 'production');
+          this.$switchDataArea('right', 2, 'production');
+          break;
+        // 默认就是首页
+        default:
+          this.$switchDataArea('left', 1, 'safe');
+          this.$switchDataArea('left', 2, 'production');
+          this.$switchDataArea('right', 1, 'safe');
+          this.$switchDataArea('right', 2, 'production');
+          break;
+      }
+      
+    },
     /**
      *
      * @param: index:模块区的索引值
