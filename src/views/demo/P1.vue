@@ -5,7 +5,7 @@
     <template v-for="(item, index) in $layout.dataArea_left">
       <dataArea
         v-if="item.visible"
-        :class="`dataArea_left_${index}`"
+        :class="[`dataArea_left_${index}`, { 'fold-left': foldAllState }, { offset: foldAllState && index !== '1' }]"
         :key="`dataArea_left_${index}`"
         :style="item.styles"
         :data="item"
@@ -26,7 +26,7 @@
     <template v-for="(item, index) in $layout.dataArea_right">
       <dataArea
         v-if="item.visible"
-        :class="`dataArea_right_${index}`"
+        :class="[`dataArea_right_${index}`, { 'fold-right': foldAllState }, { offset: foldAllState && index !== '1' }]"
         :key="`dataArea_right_${index}`"
         :style="item.styles"
         :data="item"
@@ -43,6 +43,8 @@
         @click.native="$toggleFold('right', index)"
       />
     </template>
+    <!-- 菜单栏 -->
+    <superMenu :options="$layout.menu" @clickMenu="clickMenu" />
   </div>
 </template>
 
@@ -52,13 +54,23 @@ export default {
     screen_header: () => import('@/components/header/screen_header.vue'),
     dataArea: () => import('@/components/dataArea/dataArea.vue'),
     dataMarkArea: () => import('@/components/dataArea/dataMarkArea.vue'),
+    superMenu: () => import('@/components/menu/menu.vue'),
   },
   data() {
     return {
       currentPageKey: null,
+      foldAllState: false,
     };
   },
   methods: {
+    // type==='active'为激活状态
+    clickMenu(key, type) {
+      /* 折叠按钮 */
+      if (key === 'fold') {
+        this.foldAllState = !!type;
+        return;
+      }
+    },
     // 返回
     goback() {
       if (!this.currentPageKey) {
@@ -81,8 +93,8 @@ export default {
     },
     // 切换页面
     switchPage(pageKey) {
-      if(this.currentPageKey){
-        return
+      if (this.currentPageKey) {
+        return;
       }
       switch (pageKey) {
         case 'safe':
@@ -106,8 +118,25 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.fold-left {
+  transform: perspective(1200px) rotateY(60deg) !important;
+  transform-origin: left center;
+  &.offset {
+    margin-left: -300px;
+  }
+}
+.fold-right {
+  transform: perspective(1200px) rotateY(-60deg) !important;
+  transform-origin: right center;
+  &.offset {
+    margin-right: -300px;
+  }
+}
+
 .fold {
   opacity: 0;
   z-index: -1;
+  backface-visibility: hidden;
+  transform: rotateY(-180deg);
 }
 </style>

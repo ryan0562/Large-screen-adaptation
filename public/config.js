@@ -227,6 +227,16 @@ let layout = {
         },
       },
     },
+    menu: {
+      visible: true,
+      styles: {
+        width: '45px',
+        top: '93px',
+        left: '930px',
+        zIndex: 2,
+      },
+      children:['fold']
+    },
   },
 };
 

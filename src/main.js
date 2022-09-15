@@ -16,10 +16,11 @@ import ElementUI from 'element-ui'
 Vue.use(ElementUI)
 
 /* animate.css */
-import { animateCSS, switchDataArea,toggleFold } from '@/plugins/animate/animate.js'
+import { animateCSS, switchDataArea, toggleFold, toggleClass } from '@/plugins/animate/animate.js'
 Vue.prototype.$animateCSS = animateCSS;
 Vue.prototype.$switchDataArea = switchDataArea;
 Vue.prototype.$toggleFold = toggleFold;
+Vue.prototype.$toggleClass = toggleClass;
 /* 样式 */
 
 import '@/styles/index.less'

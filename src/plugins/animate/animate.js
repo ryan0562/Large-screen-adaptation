@@ -86,7 +86,7 @@ export const toggleFold = function (type, index) {
       }
     }
     // mark偏移量
-     Vue.set(dataArea,'markOffset',0)
+    Vue.set(dataArea, 'markOffset', 0)
   } else {
     animateCSS(dataArea_el, window.$config.animateOut).then((res) => {
       dataArea_el.classList.add('fold');
@@ -99,9 +99,34 @@ export const toggleFold = function (type, index) {
       }
     }
     // mark偏移量
-    Vue.set(dataArea,'markOffset',parser(`-200px + 40px*${index}`))
+    Vue.set(dataArea, 'markOffset', parser(`-200px + 40px*${index}`))
 
   }
 }
 
-export default { animateCSS, switchDataArea, toggleFold }
+
+/**
+* 添加删除样式
+* @param: element:选择器或者node、vnode
+* @param: className:样式名
+*/
+export const toggleClass = (element, className) =>
+
+  new Promise((resolve, reject) => {
+
+    const animationName = `${prefix}${animation}`;
+    const node = reNode(element);
+
+    node.classList.add(`${prefix}animated`, animationName);
+
+    // When the animation ends, we clean the classes and resolve the Promise
+    function handleAnimationEnd(event) {
+      event.stopPropagation();
+
+      if (hasRemove) node.classList.remove(`${prefix}animated`, animationName);
+      resolve(element);
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd, { once: true });
+  });
+export default { animateCSS, switchDataArea, toggleFold, toggleClass }
