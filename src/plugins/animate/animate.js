@@ -1,7 +1,7 @@
+import Vue from 'vue'
 import 'animate.css'
 import './custom.less'
-
-import Vue from 'vue'
+import { parser } from 'css-math';
 
 // 前缀
 const prefix = 'animate__';
@@ -57,10 +57,51 @@ export const animateCSS = (element, animation, hasRemove = true) =>
 // 切换数据区
 export const switchDataArea = function (type, index, moduleId) {
   const el = `.dataArea_${type}_${index}`;
-  animateCSS(el, this.$config.animateOut).then(() => {
-    this.$layout[`dataArea_${type}`][index].moduleId = moduleId;
-    animateCSS(el, this.$config.animateIn);
+  animateCSS(el, window.$config.animateOut).then(() => {
+    window.$layout[`dataArea_${type}`][index].moduleId = moduleId;
+    animateCSS(el, window.$config.animateIn);
   });
 };
 
-export default { animateCSS, switchDataArea }
+/**
+     * 折叠动画
+     * @param: index:模块区的索引值
+     * @param: type:left|right
+     */
+export const toggleFold = function (type, index) {
+  // vfor后ref会返回数组
+  const dataAreaAll = window.$layout[`dataArea_${type}`];
+  const dataArea = window.$layout[`dataArea_${type}`][index];
+  const dataArea_el = document.querySelector(`.dataArea_${type}_${index}`);
+
+  if (dataArea_el.className.indexOf('fold') > -1) {
+    animateCSS(dataArea_el, window.$config.animateIn).then((res) => {
+      dataArea_el.classList.remove('fold');
+    });
+    // 动态后续区域
+    for (const key in dataAreaAll) {
+      const element = dataAreaAll[key];
+      if (key > index) {
+        element.styles[type] = parser(`${element.styles[type]} + 450px`);
+      }
+    }
+    // mark偏移量
+     Vue.set(dataArea,'markOffset',0)
+  } else {
+    animateCSS(dataArea_el, window.$config.animateOut).then((res) => {
+      dataArea_el.classList.add('fold');
+    });
+    // 动态后续区域
+    for (const key in dataAreaAll) {
+      const element = dataAreaAll[key];
+      if (key > index) {
+        element.styles[type] = parser(`${element.styles[type]} - 450px`);
+      }
+    }
+    // mark偏移量
+    Vue.set(dataArea,'markOffset',parser(`-200px + 40px*${index}`))
+
+  }
+}
+
+export default { animateCSS, switchDataArea, toggleFold }

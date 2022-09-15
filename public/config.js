@@ -21,7 +21,6 @@
 
 //使用策略
 let useLayout = '3840_1080';
-let useScreen = 'scence1';//使用策略下的哪个幕布
 let theme = 'default';//使用皮肤
 let animateIn = 'rotateYIn'; //使用切屏的动画
 let animateOut = 'rotateYOut'; //使用切屏的动画 fadeOut rotateYOut
@@ -237,7 +236,6 @@ let layout = {
 
 const config = {
   useLayout,
-  useScreen,//使用策略下的哪个幕布
   theme,
   layout,
   animateIn,
