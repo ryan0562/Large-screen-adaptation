@@ -37,21 +37,21 @@ function reNode(el) {
 export const animateCSS = (element, animation, hasRemove = true) =>
 
   new Promise((resolve, reject) => {
+
     const animationName = `${prefix}${animation}`;
     const node = reNode(element);
 
     node.classList.add(`${prefix}animated`, animationName);
 
     // When the animation ends, we clean the classes and resolve the Promise
-    node.addEventListener('animationend', (event) => {
-      setTimeout(() => {
-        event.stopPropagation();
+    function handleAnimationEnd(event) {
+      event.stopPropagation();
 
-        node.classList.remove(`${prefix}animated`, animationName);
-        resolve(element);
-      }, 0);
+      if (hasRemove) node.classList.remove(`${prefix}animated`, animationName);
+      resolve(element);
+    }
 
-    }, { once: true });
+    node.addEventListener('animationend', handleAnimationEnd, { once: true });
   });
 
 // 切换数据区
@@ -86,7 +86,7 @@ export const toggleFold = function (type, index) {
       }
     }
     // mark偏移量
-    Vue.set(dataArea, 'markOffset', 0)
+     Vue.set(dataArea,'markOffset',0)
   } else {
     animateCSS(dataArea_el, window.$config.animateOut).then((res) => {
       dataArea_el.classList.add('fold');
@@ -99,7 +99,7 @@ export const toggleFold = function (type, index) {
       }
     }
     // mark偏移量
-    Vue.set(dataArea, 'markOffset', parser(`-200px + 40px*${index}`))
+    Vue.set(dataArea,'markOffset',parser(`-200px + 40px*${index}`))
 
   }
 }

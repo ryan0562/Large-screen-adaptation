@@ -45,6 +45,7 @@
     </template>
   </div>
 </template>
+
 <script>
 export default {
   components: {
@@ -105,5 +106,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.fold {
+  opacity: 0;
+  z-index: -1;
+}
 </style>
