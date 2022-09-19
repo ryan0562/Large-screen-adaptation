@@ -21,7 +21,7 @@
 
 //使用策略
 let useLayout = '3840_1080';
-let theme = 'default';//使用皮肤
+let theme = 'huagong';//使用主题
 let animateIn = 'rotateYIn'; //使用切屏的动画
 let animateOut = 'rotateYOut'; //使用切屏的动画 fadeOut rotateYOut
 let animate = 'fold'; //使用切屏的动画 fadeOut rotateYOut
@@ -257,4 +257,3 @@ const config = {
 
 window.$config = config
 window.$layout = config.layout[config.useLayout]
-// export default config

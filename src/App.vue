@@ -1,12 +1,11 @@
 <template>
-  <div id="app" :data-theme="$config.theme" :style="$layout.styles">
-    <router-view />
+  <div id="app" :data-theme="$config.theme">
+    <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  computed: {},
 };
 </script>
 

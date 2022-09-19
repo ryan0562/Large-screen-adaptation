@@ -12,9 +12,24 @@ const routes = [
     redirect: '/demo'
   },
   {
+    path: '/mainBox',
+    name: 'mainBox',
+    component: () => import('@/main.vue'),
+    children: [
+      {
+        path: '/main',
+        name: 'main',
+        components: {
+          huagong: () => import('@/views/huagong/index.vue'),
+          anbao: () => import('@/views/anbao/index.vue'),
+        }
+      }
+    ]
+  },
+  {
     path: '/demo',
     name: 'demo',
-    component:Blank,
+    component: Blank,
     redirect: '/demo/menu',
     children: [
       {
