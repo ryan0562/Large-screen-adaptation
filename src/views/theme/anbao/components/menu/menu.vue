@@ -57,9 +57,15 @@ export default {
   cursor: pointer;
 }
 .fold {
-  background-image: url(./fold.png);
+  background-image: url(./assets/fold.png);
   &.act {
-    background-image: url(./open.png);
+    background-image: url(./assets/fold_act.png);
+  }
+}
+.addressBook {
+  background-image: url(./assets/addressBook.png);
+  &.act {
+    background-image: url(./assets/addressBook_act.png);
   }
 }
 </style>

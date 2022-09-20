@@ -187,7 +187,7 @@ let layout = {
                 marginTop: '12px',
               }
             },
-      
+
           ]
         },
         'emergency': {
@@ -226,11 +226,11 @@ let layout = {
                 marginTop: '12px',
               }
             },
-      
+
           ]
         },
-        "video":{
-          title:"视频",
+        "video": {
+          title: "视频",
           modules: [
             {
               showHeader: false,
@@ -317,6 +317,7 @@ let layout = {
         4: {
           visible: true,
           hasBox: true,
+          hasYaw: true,
           moduleId: 'production',
           styles: {
             width: '366px',
@@ -379,7 +380,7 @@ let layout = {
                 marginTop: '12px',
               }
             },
-      
+
           ]
         },
         'emergency': {
@@ -418,15 +419,15 @@ let layout = {
                 marginTop: '12px',
               }
             },
-      
+
           ]
         },
-        "video":{
-          title:"视频",
+        "video": {
+          title: "视频",
           modules: [
             {
               showHeader: false,
-              hasBox:false,
+              hasBox: false,
               title: '实时警情',
               component: {
                 is: 'myVideo',
@@ -444,11 +445,11 @@ let layout = {
         visible: true,
         styles: {
           width: '45px',
-          top: '93px',
-          left: '930px',
+          bottom: '43px',
+          left: '1130px',
           zIndex: 2,
         },
-        children: ['fold']
+        children: ['addressBook', 'fold',]
       },
     },
   },

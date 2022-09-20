@@ -1,5 +1,5 @@
 <template>
-  <div :class="['dataAreaBox', { hasBox: data.hasBox }]">
+  <div :class="['dataAreaBox', { hasBox: data.hasBox },{ hasYaw: data.hasYaw }]">
     <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" v-bind="item" />
   </div>
 </template>
@@ -47,6 +47,10 @@ export default {
     background: url(./assets/b1.png) no-repeat top left, url(./assets/b2.png) no-repeat top right,
       url(./assets/b3.png) no-repeat bottom left, url(./assets/b4.png) no-repeat bottom right;
     background-color: #071733;
+  }
+  &.hasYaw {
+    transform: perspective(1200px) rotateY(10deg);
+    transform-origin: left center;
   }
 }
 </style>
