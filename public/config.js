@@ -21,7 +21,7 @@
 
 //使用策略
 let useLayout = '3840_1080';
-let theme = 'huagong';//使用主题
+let theme = 'anbao';//使用主题
 let animateIn = 'rotateYIn'; //使用切屏的动画
 let animateOut = 'rotateYOut'; //使用切屏的动画 fadeOut rotateYOut
 let animate = 'fold'; //使用切屏的动画 fadeOut rotateYOut
@@ -131,113 +131,198 @@ const dataAreaModules = {
 * 布局
 */
 let layout = {
-  "3840_1080": {
-    visible: true, //默认为true
-    styles: {
-      width: "3840px",
-      height: "1080px",
-      zIndex: "0",
-      background: '#000',
-      color: '#fff'
-    },
-    header: {
+  /* 化工 */
+  huagong: {
+    "3840_1080": {
       visible: true, //默认为true
-      title: '蓝色主题模板',
       styles: {
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100px',
-        zIndex: 20,
+        width: "3840px",
+        height: "1080px",
+        zIndex: "0",
+        background: '#000',
+        color: '#fff'
       },
-      date: {
+      header: {
         visible: true, //默认为true
+        title: '蓝色主题模板',
         styles: {
-          top: '15px',
-          left: '80px',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100px',
+          zIndex: 20,
         },
+        date: {
+          visible: true, //默认为true
+          styles: {
+            top: '15px',
+            left: '80px',
+          },
+        },
+        weather: {
+          visible: true, //默认为true
+          styles: {
+            top: '15px',
+            right: '168px',
+          },
+        },
+        back: {
+          visible: true, //默认为true
+          styles: {
+            top: '16px',
+            left: '25px',
+          },
+        }
       },
-      weather: {
-        visible: true, //默认为true
-        styles: {
-          top: '15px',
-          right: '168px',
-        },
+      map: {
+        offset: ['0', '0'], //非空
+        size: ['100%', '50%'], //非空
+        zindex: 0, //默认为0
+        visible: true //默认为true
       },
-      back: {
-        visible: true, //默认为true
-        styles: {
-          top: '16px',
-          left: '25px',
+      dataArea_left: {
+        1: {
+          visible: true,
+          moduleId: 'safe',
+          styles: {
+            width: '440px',
+            height: '972px',
+            top: '93px',
+            left: '20px',
+            zIndex: 1,
+          },
         },
-      }
-    },
-    map: {
-      offset: ['0', '0'], //非空
-      size: ['100%', '50%'], //非空
-      zindex: 0, //默认为0
-      visible: true //默认为true
-    },
-    dataArea_left: {
-      1: {
-        visible: true,
-        moduleId: 'safe',
-        styles: {
-          width: '440px',
-          height: '972px',
-          top: '93px',
-          left: '20px',
-          zIndex: 1,
+        2: {
+          visible: true,
+          moduleId: 'production',
+          styles: {
+            width: '440px',
+            height: '972px',
+            top: '93px',
+            left: '472px',
+            zIndex: 1,
+          },
         },
-      },
-      2: {
-        visible: true,
-        moduleId: 'production',
-        styles: {
-          width: '440px',
-          height: '972px',
-          top: '93px',
-          left: '472px',
-          zIndex: 1,
-        },
-      },
 
-    },
-    dataArea_right: {
-      1: {
-        visible: true,
-        moduleId: 'safe',
-        styles: {
-          width: '440px',
-          height: '972px',
-          top: '93px',
-          right: '20px',
-          zIndex: 1,
+      },
+      dataArea_right: {
+        1: {
+          visible: true,
+          moduleId: 'safe',
+          styles: {
+            width: '440px',
+            height: '972px',
+            top: '93px',
+            right: '20px',
+            zIndex: 1,
+          },
+        },
+        2: {
+          visible: true,
+          moduleId: 'production',
+          styles: {
+            width: '440px',
+            height: '972px',
+            top: '93px',
+            right: '472px',
+            zIndex: 1,
+          },
         },
       },
-      2: {
+      menu: {
         visible: true,
-        moduleId: 'production',
         styles: {
-          width: '440px',
-          height: '972px',
+          width: '45px',
           top: '93px',
-          right: '472px',
-          zIndex: 1,
+          left: '930px',
+          zIndex: 2,
         },
+        children: ['fold']
       },
-    },
-    menu: {
-      visible: true,
-      styles: {
-        width: '45px',
-        top: '93px',
-        left: '930px',
-        zIndex: 2,
-      },
-      children:['fold']
     },
   },
+  /* 安保 */
+  anbao: {
+    "3840_1080": {
+      visible: true, //默认为true
+      styles: {
+        width: "3840px",
+        height: "1080px",
+        zIndex: "0",
+        background: '#000',
+        color: '#fff'
+      },
+      header: {
+        title: '主题模板',
+      },
+      map: {
+        offset: ['0', '0'], //非空
+        size: ['100%', '50%'], //非空
+        zindex: 0, //默认为0
+        visible: true //默认为true
+      },
+      dataArea_left: {
+        1: {
+          visible: true,
+          moduleId: 'safe',
+          styles: {
+            width: '440px',
+            height: '972px',
+            top: '93px',
+            left: '20px',
+            zIndex: 1,
+          },
+        },
+        2: {
+          visible: true,
+          moduleId: 'production',
+          styles: {
+            width: '440px',
+            height: '972px',
+            top: '93px',
+            left: '472px',
+            zIndex: 1,
+          },
+        },
+
+      },
+      dataArea_right: {
+        1: {
+          visible: true,
+          moduleId: 'safe',
+          styles: {
+            width: '440px',
+            height: '972px',
+            top: '93px',
+            right: '20px',
+            zIndex: 1,
+          },
+        },
+        2: {
+          visible: true,
+          moduleId: 'production',
+          styles: {
+            width: '440px',
+            height: '972px',
+            top: '93px',
+            right: '472px',
+            zIndex: 1,
+          },
+        },
+      },
+      menu: {
+        visible: true,
+        styles: {
+          width: '45px',
+          top: '93px',
+          left: '930px',
+          zIndex: 2,
+        },
+        children: ['fold']
+      },
+    },
+  },
+
 };
 
 
@@ -256,4 +341,4 @@ const config = {
 };
 
 window.$config = config
-window.$layout = config.layout[config.useLayout]
+window.$layout = config.layout[config.theme][config.useLayout]
