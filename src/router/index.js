@@ -14,14 +14,14 @@ const routes = [
   {
     path: '/mainBox',
     name: 'mainBox',
-    component: () => import('@/main.vue'),
+    component: () => import('@/views/theme/main.vue'),
     children: [
       {
         path: '/main',
         name: 'main',
         components: {
-          huagong: () => import('@/views/huagong/index.vue'),
-          anbao: () => import('@/views/anbao/index.vue'),
+          huagong: () => import('@/views/theme/huagong/index.vue'),
+          anbao: () => import('@/views/theme/anbao/index.vue'),
         }
       }
     ]
@@ -46,11 +46,6 @@ const routes = [
         path: 'largeScreen-flex',
         name: 'LargescreenFlex',
         component: () => import('@/views/demo/LargeScreen-flex.vue')
-      },
-      {
-        path: 'P1',
-        name: 'P1',
-        component: () => import('@/views/demo/P1.vue')
       },
     ]
   },

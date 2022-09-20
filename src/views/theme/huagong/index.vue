@@ -49,12 +49,14 @@
 </template>
 
 <script>
+import './styles/index.less';
+
 export default {
   components: {
-    screen_header: () => import('@/components/header/screen_header.vue'),
-    dataArea: () => import('@/components/dataArea/dataArea.vue'),
-    dataMarkArea: () => import('@/components/dataArea/dataMarkArea.vue'),
-    superMenu: () => import('@/components/menu/menu.vue'),
+    screen_header: () => import('./components/header/screen_header.vue'),
+    dataArea: () => import('./components/dataArea/dataArea.vue'),
+    dataMarkArea: () => import('./components/dataArea/dataMarkArea.vue'),
+    superMenu: () => import('./components/menu/menu.vue'),
   },
   data() {
     return {

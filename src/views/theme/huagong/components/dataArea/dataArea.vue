@@ -46,7 +46,7 @@ export default {
     background: var(--dataArea_mark_title-background);
     height: 40px;
     line-height: 40px;
-    font-family: 'myTitle';
+    font-family: 'huagong_fonts';
     font-size: 20px;
     text-align: center;
     letter-spacing: 2px;
