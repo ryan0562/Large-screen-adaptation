@@ -56,11 +56,6 @@ export default {
 .dataBlock {
   display: flex;
   flex-direction: column;
-  border: 1px solid transparent;
-  border-left-color: #0d3750;
-  border-right-color: #0d3750;
-  background-color: #11233c;
-  padding:10px;
   position: relative;
   .head {
     height: 20px;

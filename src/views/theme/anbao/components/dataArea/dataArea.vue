@@ -1,7 +1,5 @@
 <template>
-  <div class="dataAreaBox">
-    <div class="tit" @click="$emit('clickTitle',data.moduleId)">{{ dataAreaModule.title }}</div>
-    <div class="line"></div>
+  <div :class="['dataAreaBox', { hasBox: data.hasBox }]">
     <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" v-bind="item" />
   </div>
 </template>
@@ -26,7 +24,7 @@ export default {
   },
   computed: {
     dataAreaModule() {
-      return this.$config.dataAreaModules[this.data.moduleId] || {};
+      return this.$layout.dataAreaModules[this.data.moduleId] || {};
     },
   },
 };
@@ -34,28 +32,21 @@ export default {
 
 <style lang="less" scoped>
 .dataAreaBox {
-  background: var(--dataArea_background);
   width: 100%;
   height: 100%;
-  padding: 0 20px;
+  
   position: absolute;
   transition: all 1s ease;
-    backface-visibility: hidden;
-
-  .tit {
-    background: var(--dataArea_mark_title-background);
-    height: 40px;
-    line-height: 40px;
-    font-family: 'huagong_fonts';
-    font-size: 20px;
-    text-align: center;
-    letter-spacing: 2px;
-    cursor: pointer;
-  }
-  .line {
-    width: 100%;
-    height: 20px;
-    background: var(--dataArea_mark_line-background);
+  backface-visibility: hidden;
+  &.hasBox {
+    padding: 0 20px;
+    border: 1px solid #00bffd;
+    border-top: none;
+    border-bottom: none;
+    box-shadow: inset 0 0 25px -5px #00bffd;
+    background: url(./assets/b1.png) no-repeat top left, url(./assets/b2.png) no-repeat top right,
+      url(./assets/b3.png) no-repeat bottom left, url(./assets/b4.png) no-repeat bottom right;
+    background-color: #071733;
   }
 }
 </style>

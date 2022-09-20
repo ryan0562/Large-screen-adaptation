@@ -21,109 +21,14 @@
 
 //使用策略
 let useLayout = '3840_1080';
-let theme = 'anbao';//使用主题
+let theme = 'anbao';//使用主题 anbao|huagong
 let animateIn = 'rotateYIn'; //使用切屏的动画
 let animateOut = 'rotateYOut'; //使用切屏的动画 fadeOut rotateYOut
 let animate = 'fold'; //使用切屏的动画 fadeOut rotateYOut
 
 
 // 数据模块
-const dataAreaModules = {
-  'safe': {
-    title: '公共安全',
-    modules: [
-      {
-        showHeader: true,
-        title: '视频监控',
-        styles: {
-          height: "155px",
-          marginTop: '12px',
-        },
-        component: {
-          is: 'realTimePolice',
-        },
-      },
-      {
-        showHeader: true,
-        title: '实时警情',
-        component: {
-          is: 'myVideo',
-        },
-        styles: {
-          height: "320px",
-          marginTop: '12px',
-        }
-      },
-    ]
-  },
-  'production': {
-    title: '生产运行',
-    modules: [
-      {
-        showHeader: true,
-        title: '投资促进',
-        styles: {
-          height: "320px",
-          marginTop: '12px',
-        },
-        component: {
-          is: 'investment',
-        },
-      },
-      {
-        showHeader: true,
-        title: '经济指标',
-        component: {
-          is: 'aaa',
-        },
-        styles: {
-          height: "154px",
-          marginTop: '12px',
-        }
-      },
 
-    ]
-  },
-  'emergency': {
-    title: '安全应急',
-    modules: [
-      {
-        showHeader: true,
-        title: '应急资源',
-        component: {
-          is: 'aaa',
-        },
-        styles: {
-          height: "250px",
-          marginTop: '12px',
-        }
-      },
-      {
-        showHeader: true,
-        title: '累计安全天数',
-        styles: {
-          height: "242px",
-          marginTop: '12px',
-        },
-        component: {
-          is: 'bbb',
-        },
-      },
-      {
-        showHeader: true,
-        title: '接处警情况',
-        component: {
-          is: 'ccc',
-        },
-        styles: {
-          height: "133px",
-          marginTop: '12px',
-        }
-      },
-
-    ]
-  },
-}
 
 
 
@@ -229,6 +134,118 @@ let layout = {
           },
         },
       },
+      dataAreaModules: {
+        'safe': {
+          title: '公共安全',
+          modules: [
+            {
+              showHeader: true,
+              title: '视频监控',
+              styles: {
+                height: "155px",
+                marginTop: '12px',
+              },
+              component: {
+                is: 'realTimePolice',
+              },
+            },
+            {
+              showHeader: true,
+              title: '实时警情',
+              component: {
+                is: 'myVideo',
+              },
+              styles: {
+                height: "320px",
+                marginTop: '12px',
+              }
+            },
+          ]
+        },
+        'production': {
+          title: '生产运行',
+          modules: [
+            {
+              showHeader: true,
+              title: '投资促进',
+              styles: {
+                height: "320px",
+                marginTop: '12px',
+              },
+              component: {
+                is: 'investment',
+              },
+            },
+            {
+              showHeader: true,
+              title: '经济指标',
+              component: {
+                is: 'aaa',
+              },
+              styles: {
+                height: "154px",
+                marginTop: '12px',
+              }
+            },
+      
+          ]
+        },
+        'emergency': {
+          title: '安全应急',
+          modules: [
+            {
+              showHeader: true,
+              title: '应急资源',
+              component: {
+                is: 'aaa',
+              },
+              styles: {
+                height: "250px",
+                marginTop: '12px',
+              }
+            },
+            {
+              showHeader: true,
+              title: '累计安全天数',
+              styles: {
+                height: "242px",
+                marginTop: '12px',
+              },
+              component: {
+                is: 'bbb',
+              },
+            },
+            {
+              showHeader: true,
+              title: '接处警情况',
+              component: {
+                is: 'ccc',
+              },
+              styles: {
+                height: "133px",
+                marginTop: '12px',
+              }
+            },
+      
+          ]
+        },
+        "video":{
+          title:"视频",
+          modules: [
+            {
+              showHeader: false,
+              title: '实时警情',
+              component: {
+                is: 'myVideo',
+              },
+              styles: {
+                height: "320px",
+                marginTop: '12px',
+              }
+            },
+          ]
+        }
+      },
       menu: {
         visible: true,
         styles: {
@@ -253,7 +270,7 @@ let layout = {
         color: '#fff'
       },
       header: {
-        title: '主题模板',
+        title: '安保主题模板',
       },
       map: {
         offset: ['0', '0'], //非空
@@ -264,52 +281,167 @@ let layout = {
       dataArea_left: {
         1: {
           visible: true,
-          moduleId: 'safe',
+          moduleId: 'video',
           styles: {
-            width: '440px',
-            height: '972px',
-            top: '93px',
-            left: '20px',
+            width: '755px',
+            height: '420px',
+            top: '10px',
+            left: '0',
             zIndex: 1,
           },
         },
         2: {
           visible: true,
-          moduleId: 'production',
+          hasBox: true,
+          moduleId: 'safe',
           styles: {
-            width: '440px',
-            height: '972px',
-            top: '93px',
-            left: '472px',
+            width: '370px',
+            height: '600px',
+            top: '450px',
+            left: '0',
             zIndex: 1,
           },
         },
+        // 3: {
+        //   visible: true,
+        //   hasBox: true,
+        //   moduleId: 'safe',
+        //   styles: {
+        //     width: '440px',
+        //     height: '972px',
+        //     top: '93px',
+        //     left: '20px',
+        //     zIndex: 1,
+        //   },
+        // },
+        // 4: {
+        //   visible: true,
+        //   hasBox: true,
+        //   moduleId: 'production',
+        //   styles: {
+        //     width: '440px',
+        //     height: '972px',
+        //     top: '93px',
+        //     left: '472px',
+        //     zIndex: 1,
+        //   },
+        // },
 
       },
-      dataArea_right: {
-        1: {
-          visible: true,
-          moduleId: 'safe',
-          styles: {
-            width: '440px',
-            height: '972px',
-            top: '93px',
-            right: '20px',
-            zIndex: 1,
-          },
+      dataAreaModules: {
+        'safe': {
+          title: '公共安全',
+          modules: [
+            {
+              showHeader: true,
+              title: '视频监控',
+              styles: {
+                height: "155px",
+                marginTop: '12px',
+              },
+              component: {
+                is: 'realTimePolice',
+              },
+            },
+            {
+              showHeader: true,
+              title: '实时警情',
+              component: {
+                is: 'myVideo',
+              },
+              styles: {
+                height: "320px",
+                marginTop: '12px',
+              }
+            },
+          ]
         },
-        2: {
-          visible: true,
-          moduleId: 'production',
-          styles: {
-            width: '440px',
-            height: '972px',
-            top: '93px',
-            right: '472px',
-            zIndex: 1,
-          },
+        'production': {
+          title: '生产运行',
+          modules: [
+            {
+              showHeader: true,
+              title: '投资促进',
+              styles: {
+                height: "320px",
+                marginTop: '12px',
+              },
+              component: {
+                is: 'investment',
+              },
+            },
+            {
+              showHeader: true,
+              title: '经济指标',
+              component: {
+                is: 'aaa',
+              },
+              styles: {
+                height: "154px",
+                marginTop: '12px',
+              }
+            },
+      
+          ]
         },
+        'emergency': {
+          title: '安全应急',
+          modules: [
+            {
+              showHeader: true,
+              title: '应急资源',
+              component: {
+                is: 'aaa',
+              },
+              styles: {
+                height: "250px",
+                marginTop: '12px',
+              }
+            },
+            {
+              showHeader: true,
+              title: '累计安全天数',
+              styles: {
+                height: "242px",
+                marginTop: '12px',
+              },
+              component: {
+                is: 'bbb',
+              },
+            },
+            {
+              showHeader: true,
+              title: '接处警情况',
+              component: {
+                is: 'ccc',
+              },
+              styles: {
+                height: "133px",
+                marginTop: '12px',
+              }
+            },
+      
+          ]
+        },
+        "video":{
+          title:"视频",
+          modules: [
+            {
+              showHeader: false,
+              hasBox:false,
+              title: '实时警情',
+              component: {
+                is: 'myVideo',
+              },
+              styles: {
+                width: "100%",
+                height: "100%",
+              }
+            },
+          ]
+        }
       },
+
       menu: {
         visible: true,
         styles: {
@@ -337,7 +469,6 @@ const config = {
   animateIn,
   animateOut,
   animate,
-  dataAreaModules
 };
 
 window.$config = config

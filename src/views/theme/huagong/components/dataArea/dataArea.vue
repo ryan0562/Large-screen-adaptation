@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     dataAreaModule() {
-      return this.$config.dataAreaModules[this.data.moduleId] || {};
+      return this.$layout.dataAreaModules[this.data.moduleId] || {};
     },
   },
 };
