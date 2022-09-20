@@ -128,7 +128,7 @@ export default {
     padding: 10px;
     font-size: 14px;
     &-left {
-      width: 243px;
+      min-width: 205px;
       margin-right: 8px;
       height: 82px;
       display: flex;

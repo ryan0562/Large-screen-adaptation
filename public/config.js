@@ -295,37 +295,37 @@ let layout = {
           hasBox: true,
           moduleId: 'safe',
           styles: {
-            width: '370px',
-            height: '600px',
-            top: '450px',
+            width: '366px',
+            height: '635px',
+            top: '435px',
             left: '0',
             zIndex: 1,
           },
         },
-        // 3: {
-        //   visible: true,
-        //   hasBox: true,
-        //   moduleId: 'safe',
-        //   styles: {
-        //     width: '440px',
-        //     height: '972px',
-        //     top: '93px',
-        //     left: '20px',
-        //     zIndex: 1,
-        //   },
-        // },
-        // 4: {
-        //   visible: true,
-        //   hasBox: true,
-        //   moduleId: 'production',
-        //   styles: {
-        //     width: '440px',
-        //     height: '972px',
-        //     top: '93px',
-        //     left: '472px',
-        //     zIndex: 1,
-        //   },
-        // },
+        3: {
+          visible: true,
+          hasBox: true,
+          moduleId: 'production',
+          styles: {
+            width: '366px',
+            height: '635px',
+            top: '435px',
+            left: '386px',
+            zIndex: 1,
+          },
+        },
+        4: {
+          visible: true,
+          hasBox: true,
+          moduleId: 'production',
+          styles: {
+            width: '366px',
+            height: '1060px',
+            top: '10px',
+            left: '768px',
+            zIndex: 1,
+          },
+        },
 
       },
       dataAreaModules: {
@@ -336,7 +336,6 @@ let layout = {
               showHeader: true,
               title: '视频监控',
               styles: {
-                height: "155px",
                 marginTop: '12px',
               },
               component: {
@@ -345,14 +344,13 @@ let layout = {
             },
             {
               showHeader: true,
-              title: '实时警情',
-              component: {
-                is: 'myVideo',
-              },
+              title: '视频监控',
               styles: {
-                height: "320px",
                 marginTop: '12px',
-              }
+              },
+              component: {
+                is: 'investment',
+              },
             },
           ]
         },
