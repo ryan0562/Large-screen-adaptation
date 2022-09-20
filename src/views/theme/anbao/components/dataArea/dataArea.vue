@@ -1,5 +1,5 @@
 <template>
-  <div :class="['dataAreaBox', { hasBox: data.hasBox },{ hasYaw: data.hasYaw }]">
+  <div :class="['dataAreaBox', { hasBox: data.hasBox }, { [`hasYaw_${type}`]: data.hasYaw }]">
     <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" v-bind="item" />
   </div>
 </template>
@@ -21,6 +21,14 @@ export default {
       type: [String, Number],
       required: true,
     },
+    /* 左侧还是右侧 */
+    type: {
+      required: true,
+      validator: function (value) {
+        // 这个值必须匹配下列字符串中的一个
+        return ['left', 'right'].includes(value);
+      },
+    },
   },
   computed: {
     dataAreaModule() {
@@ -34,7 +42,7 @@ export default {
 .dataAreaBox {
   width: 100%;
   height: 100%;
-  
+
   position: absolute;
   transition: all 1s ease;
   backface-visibility: hidden;
@@ -48,9 +56,14 @@ export default {
       url(./assets/b3.png) no-repeat bottom left, url(./assets/b4.png) no-repeat bottom right;
     background-color: #071733;
   }
-  &.hasYaw {
+  &.hasYaw_left {
     transform: perspective(1200px) rotateY(10deg);
     transform-origin: left center;
   }
+  &.hasYaw_right {
+    transform: perspective(1200px) rotateY(-10deg);
+    transform-origin: right center;
+  }
+  
 }
 </style>
