@@ -136,7 +136,6 @@ let layout = {
           left: {
             1: {
               visible: true,
-
               type: 2,
               moduleId: 'safe',
               styles: {
@@ -195,8 +194,8 @@ let layout = {
               moduleId: 'fxft_baseInfo',
               styles: {
                 width: '440px',
-                height: '972px',
-                top: '93px',
+                height: '935px',
+                top: '125px',
                 left: '20px',
                 zIndex: 1,
               },
@@ -207,8 +206,8 @@ let layout = {
               moduleId: 'fxft_eventInfo',
               styles: {
                 width: '440px',
-                height: '972px',
-                top: '93px',
+                height: '935px',
+                top: '125px',
                 left: '472px',
                 zIndex: 1,
               },
@@ -221,8 +220,8 @@ let layout = {
               type: 2,
               styles: {
                 width: '440px',
-                height: '972px',
-                top: '93px',
+                height: '935px',
+                top: '125px',
                 right: '20px',
                 zIndex: 1,
               },
@@ -233,8 +232,8 @@ let layout = {
               moduleId: 'safe',
               styles: {
                 width: '440px',
-                height: '972px',
-                top: '93px',
+                height: '935px',
+                top: '125px',
                 right: '472px',
                 zIndex: 1,
               },
@@ -248,6 +247,7 @@ let layout = {
           modules: [
             {
               showHeader: true,
+              hasBox: true,
               title: '视频监控',
               styles: {
                 height: "155px",
@@ -259,6 +259,7 @@ let layout = {
             },
             {
               showHeader: true,
+              hasBox: true,
               title: '实时警情',
               component: {
                 is: 'myVideo',
@@ -275,6 +276,7 @@ let layout = {
           modules: [
             {
               showHeader: true,
+              hasBox: true,
               title: '投资促进',
               styles: {
                 height: "320px",
@@ -286,6 +288,7 @@ let layout = {
             },
             {
               showHeader: true,
+              hasBox: true,
               title: '经济指标',
               component: {
                 is: 'aaa',
@@ -303,6 +306,7 @@ let layout = {
           modules: [
             {
               showHeader: true,
+              hasBox: true,
               title: '应急资源',
               component: {
                 is: 'aaa',
@@ -314,6 +318,7 @@ let layout = {
             },
             {
               showHeader: true,
+              hasBox: true,
               title: '累计安全天数',
               styles: {
                 height: "242px",
@@ -326,6 +331,7 @@ let layout = {
             {
               showHeader: true,
               title: '接处警情况',
+              hasBox: true,
               component: {
                 is: 'ccc',
               },
@@ -342,6 +348,7 @@ let layout = {
           modules: [
             {
               showHeader: false,
+              hasBox: true,
               title: '实时警情',
               component: {
                 is: 'myVideo',
@@ -358,15 +365,45 @@ let layout = {
           modules: [
             {
               showHeader: true,
+              hasBox: true,
               title: '今日值班',
-              type:2,
+              type: 2,
+              hasBox: true,
               styles: {
-                height: "290px",
-                marginTop: '12px',
+                height: "270px",
+                marginTop: '10px',
               },
               component: {
                 is: 'myImg',
                 src: '/demoImg/l_1_1.png',
+              },
+            },
+            {
+              showHeader: true,
+              hasBox: true,
+              title: '防汛物资',
+              type: 2,
+              styles: {
+                height: "310px",
+                marginTop: '10px',
+              },
+              component: {
+                is: 'myImg',
+                src: '/demoImg/l_1_2.png',
+              },
+            },
+            {
+              showHeader: true,
+              hasBox: true,
+              title: '防汛队伍',
+              type: 2,
+              styles: {
+                height: "270px",
+                marginTop: '10px',
+              },
+              component: {
+                is: 'myImg',
+                src: '/demoImg/l_1_3.png',
               },
             },
 
@@ -377,23 +414,30 @@ let layout = {
           modules: [
             {
               showHeader: true,
-              title: '基础信息',
+              title: '防汛预警相应',
+              type: 2,
               styles: {
-                height: "155px",
+                height: "225px",
                 marginTop: '12px',
               },
               component: {
-                is: 'realTimePolice',
+                is: 'myImg',
+                src: '/demoImg/l_2_1.png',
               },
             },
             {
               showHeader: true,
-              title: '实时警情',
+              type: 2,
+              title: '事件列表',
               component: {
-                is: 'myVideo',
+                is: 'myImg',
+                src: '/demoImg/l_2_2.png',
+                style: {
+                  width: "100%"
+                }
               },
               styles: {
-                height: "320px",
+                height: "400px",
                 marginTop: '12px',
               }
             },

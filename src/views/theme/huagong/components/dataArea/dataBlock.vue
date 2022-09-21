@@ -3,11 +3,11 @@
     <div class="head head_2" v-if="data.showHeader">
       {{ data.title }}
     </div>
-    <div class="box flex">
+    <div :class="[{ box: data.hasBox }, 'flex']">
       <component v-bind="data.component"></component>
     </div>
   </div>
-  <div class="dataBlock box" :style="data.styles" v-else>
+  <div :class="['dataBlock', { box: data.hasBox }]" :style="data.styles" v-else>
     <div class="head head_1" v-if="data.showHeader">
       {{ data.title }}
     </div>

@@ -53,14 +53,14 @@ export default {
   .tit {
     background: url(./assets/head_1.png) no-repeat top center;
     height: 40px;
-    line-height: 40px;
+    line-height: 46px;
     font-family: 'huagong_fonts';
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
-    letter-spacing: 2px;
     cursor: pointer;
+    overflow: hidden;
     &.bg2 {
-      background: url(./assets/head_2.png);
+      background: url(./assets/head_2.png) no-repeat 0 0 /100% 100%;
     }
   }
   .line {
