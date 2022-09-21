@@ -1,36 +1,9 @@
-// 场景名称 => 场景
-// 首页 => scence1
-// 公共安全 => panels/publicSafety/index
-// 生产运行 => panels/productionOperation/index
-// 安全应急 => panels/safetyEmergency/index
-// 规划建设 => panels/planningConstruction/index
-// 环境监管 => panels/environmentalTesting/index
-// 管理服务 => panels/managementService/index
-
-// 安全应急 => scence2
-// 安全管理 => panels/securityManagement/index
-// 应急体系 => panels/emergencySystem/index
-// 应急管理制度 => panels/managementSystem/index
-// 应急资源 => panels/emergencyResources/index
-// 应急救援队伍 => panels/rescueTeam/index
-// 安全监督 => panels/safetySupervision/index
-// 基础台帐 => panels/basicAccount/index
-// 综合治理 => panels/securityEmergency/index
-// 安全文化 => panels/safetyCulture/index
-
-
 //使用策略
 let useLayout = '3840_1080';
-let theme = 'anbao';//使用主题 anbao|huagong
+let theme = 'huagong';//使用主题 anbao|huagong
 let animateIn = 'rotateYIn'; //使用切屏的动画
 let animateOut = 'rotateYOut'; //使用切屏的动画 fadeOut rotateYOut
-let animate = 'fold'; //使用切屏的动画 fadeOut rotateYOut
-
-
-// 数据模块
-
-
-
+let screen = 'home'
 
 /**
 * 布局
@@ -85,52 +58,187 @@ let layout = {
         zindex: 0, //默认为0
         visible: true //默认为true
       },
-      dataArea_left: {
-        1: {
-          visible: true,
-          moduleId: 'safe',
-          styles: {
-            width: '440px',
-            height: '972px',
-            top: '93px',
-            left: '20px',
-            zIndex: 1,
+      dataArea: {
+        home: {
+          left: {
+            1: {
+              visible: true,
+              hasMark: true,
+              type: 1,
+              moduleId: 'safe',
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                left: '20px',
+                zIndex: 1,
+              },
+            },
+            2: {
+              visible: true,
+              hasMark: true,
+              type: 1,
+              moduleId: 'production',
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                left: '472px',
+                zIndex: 1,
+              },
+            },
+            3: {
+              visible: true,
+              hasMark: true,
+              type: 1,
+              moduleId: 'emergency',
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                left: '932px',
+                zIndex: 1,
+              },
+            },
           },
-        },
-        2: {
-          visible: true,
-          moduleId: 'production',
-          styles: {
-            width: '440px',
-            height: '972px',
-            top: '93px',
-            left: '472px',
-            zIndex: 1,
-          },
-        },
+          right: {
+            1: {
+              visible: true,
+              moduleId: 'safe',
+              hasMark: true,
 
-      },
-      dataArea_right: {
-        1: {
-          visible: true,
-          moduleId: 'safe',
-          styles: {
-            width: '440px',
-            height: '972px',
-            top: '93px',
-            right: '20px',
-            zIndex: 1,
+              type: 1,
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                right: '20px',
+                zIndex: 1,
+              },
+            },
+            2: {
+              visible: true,
+              hasMark: true,
+
+              type: 1,
+              moduleId: 'production',
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                right: '472px',
+                zIndex: 1,
+              },
+            },
           },
         },
-        2: {
-          visible: true,
-          moduleId: 'production',
-          styles: {
-            width: '440px',
-            height: '972px',
-            top: '93px',
-            right: '472px',
-            zIndex: 1,
+        safe: {
+          left: {
+            1: {
+              visible: true,
+
+              type: 2,
+              moduleId: 'safe',
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                left: '20px',
+                zIndex: 1,
+              },
+            },
+            2: {
+              visible: true,
+              type: 2,
+              moduleId: 'safe',
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                left: '472px',
+                zIndex: 1,
+              },
+            },
+          },
+          right: {
+            1: {
+              visible: true,
+              moduleId: 'safe',
+              type: 2,
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                right: '20px',
+                zIndex: 1,
+              },
+            },
+            2: {
+              visible: true,
+              type: 2,
+              moduleId: 'safe',
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                right: '472px',
+                zIndex: 1,
+              },
+            },
+          },
+        },
+        ftfx: {
+          left: {
+            1: {
+              visible: true,
+              type: 2,
+              moduleId: 'safe',
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                left: '20px',
+                zIndex: 1,
+              },
+            },
+            2: {
+              visible: true,
+              type: 2,
+              moduleId: 'safe',
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                left: '472px',
+                zIndex: 1,
+              },
+            },
+          },
+          right: {
+            1: {
+              visible: true,
+              moduleId: 'safe',
+              type: 2,
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                right: '20px',
+                zIndex: 1,
+              },
+            },
+            2: {
+              visible: true,
+              type: 2,
+              moduleId: 'safe',
+              styles: {
+                width: '440px',
+                height: '972px',
+                top: '93px',
+                right: '472px',
+                zIndex: 1,
+              },
+            },
           },
         },
       },
@@ -244,17 +352,51 @@ let layout = {
               }
             },
           ]
-        }
+        },
+        'fxft_baseInfo': {
+          title: '公共安全',
+          modules: [
+            {
+              showHeader: true,
+              title: '基础信息',
+              styles: {
+                height: "155px",
+                marginTop: '12px',
+              },
+              component: {
+                is: 'realTimePolice',
+              },
+            },
+            {
+              showHeader: true,
+              title: '实时警情',
+              component: {
+                is: 'myVideo',
+              },
+              styles: {
+                height: "320px",
+                marginTop: '12px',
+              }
+            },
+          ]
+        },
       },
       menu: {
         visible: true,
         styles: {
-          width: '45px',
+          width: '60px',
           top: '93px',
-          left: '930px',
+          left: '1390px',
           zIndex: 2,
         },
-        children: ['fold']
+        children: {
+          ftfx:{
+            name:'防台防汛',
+          },
+          fold:{
+            name:'折叠',
+          }
+        }
       },
     },
   },
@@ -518,7 +660,7 @@ const config = {
   layout,
   animateIn,
   animateOut,
-  animate,
+  screen,
 };
 
 window.$config = config

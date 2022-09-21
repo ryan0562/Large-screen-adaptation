@@ -6,7 +6,7 @@
         <span>{{ dateMsg.week }}</span>
         <span>{{ dateMsg.date }}</span>
       </div>
-      <i class="back" v-if="options.back.visible" :style="options.back.styles" @click="$emit('back')"><img src="./back.svg" alt="" /></i>
+      <i class="back" v-if="options.back.visible" :style="options.back.styles" @click="$emit('back')"><img src="./assets/back.svg" alt="" /></i>
     </div>
     <div class="main">
       <div class="tit">{{ options.title }}</div>
@@ -152,7 +152,7 @@ export default {
     height: 100px;
     line-height: 88px;
     text-align: center;
-    background: var(--header_main-background);
+    background: url('./assets/bg-head.png'); 
     font-size: var(--header_main-fontSize);
     font-family: FZZhengHeiS-B-GB;
     font-weight: 900;

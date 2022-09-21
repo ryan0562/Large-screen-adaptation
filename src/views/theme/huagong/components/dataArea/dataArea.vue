@@ -1,6 +1,6 @@
 <template>
   <div class="dataAreaBox">
-    <div class="tit" @click="$emit('clickTitle',data.moduleId)">{{ dataAreaModule.title }}</div>
+    <div :class="['tit',`bg${data.type}`]" @click="$emit('clickTitle', data.moduleId)">{{ dataAreaModule.title }}</div>
     <div class="line"></div>
     <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" v-bind="item" />
   </div>
@@ -34,16 +34,16 @@ export default {
 
 <style lang="less" scoped>
 .dataAreaBox {
-  background: var(--dataArea_background);
+  background: url('./assets/bg.png') no-repeat 0 0 / 100% 100%;
   width: 100%;
   height: 100%;
   padding: 0 20px;
   position: absolute;
   transition: all 1s ease;
-    backface-visibility: hidden;
+  backface-visibility: hidden;
 
   .tit {
-    background: var(--dataArea_mark_title-background);
+    background: url(./assets/head_1.png) no-repeat top center;
     height: 40px;
     line-height: 40px;
     font-family: 'huagong_fonts';
@@ -51,11 +51,14 @@ export default {
     text-align: center;
     letter-spacing: 2px;
     cursor: pointer;
+    &.bg2 {
+      background: url(./assets/head_2.png);
+    }
   }
   .line {
     width: 100%;
     height: 20px;
-    background: var(--dataArea_mark_line-background);
+    background: url('./assets/line.png') no-repeat center bottom;
   }
 }
 </style>

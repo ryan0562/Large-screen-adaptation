@@ -2,7 +2,7 @@
   <div>
     <screen_header v-if="$layout.header" :options="$layout.header" @back="goback()" />
     <!-- 数据区 左 -->
-    <template v-for="(item, index) in $layout.dataArea_left">
+    <template v-for="(item, index) in $layout.dataArea[$config.screen].left">
       <dataArea
         v-if="item.visible"
         :class="[`dataArea_left_${index}`, { 'fold-left': foldAllState }, { offset: foldAllState && index !== '1' }]"
@@ -14,6 +14,7 @@
         @clickTitle="switchPage"
       />
       <dataMarkArea
+        v-if="item.hasMark"
         :class="`dataMarkArea_left_${index}`"
         :key="`dataMarkArea_left_${index}`"
         :data="item"
@@ -23,7 +24,7 @@
       />
     </template>
     <!-- 数据区 右 -->
-    <template v-for="(item, index) in $layout.dataArea_right">
+    <template v-for="(item, index) in $layout.dataArea[$config.screen].right">
       <dataArea
         v-if="item.visible"
         :class="[`dataArea_right_${index}`, { 'fold-right': foldAllState }, { offset: foldAllState && index !== '1' }]"
@@ -35,6 +36,7 @@
         @clickTitle="switchPage"
       />
       <dataMarkArea
+        v-if="item.hasMark"
         :class="`dataMarkArea_right_${index}`"
         :key="`dataMarkArea_right_${index}`"
         :data="item"
@@ -60,7 +62,6 @@ export default {
   },
   data() {
     return {
-      currentPageKey: null,
       foldAllState: false,
     };
   },
@@ -72,10 +73,11 @@ export default {
         this.foldAllState = !!type;
         return;
       }
+      this.switchPage(key);
     },
     // 返回
     goback() {
-      if (!this.currentPageKey) {
+      if (this.$config.screen === 'home') {
         this.$confirm('此操作将退出当前系统, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
@@ -85,34 +87,12 @@ export default {
         });
         return;
       } else {
-        // 默认就是首页
-        this.$switchDataArea('left', 1, 'safe');
-        this.$switchDataArea('left', 2, 'production');
-        this.$switchDataArea('right', 1, 'safe');
-        this.$switchDataArea('right', 2, 'production');
-        this.currentPageKey = null;
+        this.$config.screen = 'home';
       }
     },
     // 切换页面
     switchPage(pageKey) {
-      if (this.currentPageKey) {
-        return;
-      }
-      switch (pageKey) {
-        case 'safe':
-          this.$switchDataArea('left', 1, 'safe');
-          this.$switchDataArea('left', 2, 'safe');
-          this.$switchDataArea('right', 1, 'production');
-          break;
-        case 'production':
-          this.$switchDataArea('left', 1, 'production');
-          this.$switchDataArea('left', 2, 'production');
-          this.$switchDataArea('right', 1, 'production');
-          this.$switchDataArea('right', 2, 'production');
-          break;
-      }
-      // 当前页面赋值
-      this.currentPageKey = pageKey;
+      this.$config.screen = pageKey;
     },
   },
 };

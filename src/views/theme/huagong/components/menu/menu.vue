@@ -1,11 +1,8 @@
 <template>
   <div class="menuBox" :style="options.styles">
-    <div
-      v-for="(item, index) in options.children"
-      :key="index"
-      :class="['btn', item, { act: activeMenu.includes(item) }]"
-      @click="clickMenu(item)"
-    ></div>
+    <div v-for="(item, key) in options.children" :key="key" class="btn" @click="clickMenu(key)">
+      {{ item.name }}
+    </div>
   </div>
 </template>
 
@@ -47,19 +44,26 @@ export default {
   position: absolute;
 }
 .btn {
-  width: 100%;
-  height: 45px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position: 50%;
   border-radius: 50%;
   margin: 3px 0;
   cursor: pointer;
-}
-.fold {
-  background-image: url(./fold.png);
-  &.act {
-    background-image: url(./open.png);
+  background-image: url(./bg.png);
+  font-size: 12px;
+  font-weight: 400;
+  color: #89d1ff;
+  text-align: center;
+  line-height: 15px;
+  &:hover {
+    color:#fff;
   }
 }
 </style>

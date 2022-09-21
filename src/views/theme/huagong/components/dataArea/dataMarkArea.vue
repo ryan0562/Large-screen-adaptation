@@ -58,7 +58,7 @@ export default {
   width: 28px;
   height: 36px;
   cursor: pointer;
-  background: var(--dataArea_mark-background);
+  background: url('./assets/dian.png') no-repeat 0 0 / 100% 100%;
   top: 45px;
   left: 50%;
   margin-left: -14px;
