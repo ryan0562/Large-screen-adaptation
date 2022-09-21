@@ -6,7 +6,7 @@
       <dataArea
         v-if="item.visible"
         :class="[`dataArea_left_${index}`, { 'fold-left': foldAllState }, { offset: foldAllState && index !== '1' }]"
-        :key="`dataArea_left_${index}`"
+        :key="`dataArea_${$config.screen}_left_${index}`"
         :style="item.styles"
         :data="item"
         type="left"
@@ -38,7 +38,7 @@
       <dataMarkArea
         v-if="item.hasMark"
         :class="`dataMarkArea_right_${index}`"
-        :key="`dataMarkArea_right_${index}`"
+        :key="`dataMarkArea_${$config.screen}_right_${index}`"
         :data="item"
         :id="index"
         type="right"
