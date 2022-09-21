@@ -216,25 +216,13 @@ let layout = {
           right: {
             1: {
               visible: true,
-              moduleId: 'safe',
+              moduleId: 'fxft_realtime',
               type: 2,
               styles: {
-                width: '440px',
+                width: '880px',
                 height: '935px',
                 top: '125px',
                 right: '20px',
-                zIndex: 1,
-              },
-            },
-            2: {
-              visible: true,
-              type: 2,
-              moduleId: 'safe',
-              styles: {
-                width: '440px',
-                height: '935px',
-                top: '125px',
-                right: '472px',
                 zIndex: 1,
               },
             },
@@ -376,6 +364,9 @@ let layout = {
               component: {
                 is: 'myImg',
                 src: '/demoImg/l_1_1.png',
+                style: {
+                  width: "100%"
+                }
               },
             },
             {
@@ -384,12 +375,15 @@ let layout = {
               title: '防汛物资',
               type: 2,
               styles: {
-                height: "310px",
+                height: "312px",
                 marginTop: '10px',
               },
               component: {
                 is: 'myImg',
                 src: '/demoImg/l_1_2.png',
+                style: {
+                  width: "100%"
+                }
               },
             },
             {
@@ -404,6 +398,9 @@ let layout = {
               component: {
                 is: 'myImg',
                 src: '/demoImg/l_1_3.png',
+                style: {
+                  width: "100%"
+                }
               },
             },
 
@@ -423,6 +420,9 @@ let layout = {
               component: {
                 is: 'myImg',
                 src: '/demoImg/l_2_1.png',
+                style: {
+                  width: "100%"
+                }
               },
             },
             {
@@ -442,6 +442,49 @@ let layout = {
               }
             },
           ]
+        },
+        'fxft_realtime': {
+          title: '实时气象',
+          type: 2,
+          modules: {
+            left: [{
+              showHeader: true,
+              title: '防汛预警相应',
+              type: 2,
+              styles: {
+                height: "225px",
+                marginTop: '12px',
+              },
+              component: {
+                is: 'myImg',
+                src: '/demoImg/r_1_1.png',
+                style: {
+                  width: "100%"
+                }
+              },
+            },
+            {
+              showHeader: true,
+              type: 2,
+              title: '事件列表',
+              component: {
+                is: 'myImg',
+                src: '/demoImg/r_1_2.png',
+                style: {
+                  width: "100%"
+                }
+              },
+              styles: {
+                height: "400px",
+                marginTop: '12px',
+              }
+            }],
+            right: {
+
+            }
+          }
+
+
         },
       },
       menu: {
