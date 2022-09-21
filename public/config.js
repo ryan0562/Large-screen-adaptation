@@ -1,9 +1,8 @@
 //使用策略
 let useLayout = '3840_1080';
 let theme = 'huagong';//使用主题 anbao|huagong
-let animateIn = 'rotateYIn'; //使用切屏的动画
-let animateOut = 'rotateYOut'; //使用切屏的动画 fadeOut rotateYOut
-let screen = 'ftfx'
+let animate = 'fold'; //使用切屏的动画 fadeOut rotateYOut
+let screen = 'home'; // ftfx|home
 
 /**
 * 布局
@@ -486,7 +485,6 @@ let layout = {
               title: '视频监控',
               type: 2,
               styles: {
-                height: "225px",
                 marginTop: '12px',
               },
               component: {
@@ -813,8 +811,7 @@ const config = {
   useLayout,
   theme,
   layout,
-  animateIn,
-  animateOut,
+  animate,
   screen,
 };
 

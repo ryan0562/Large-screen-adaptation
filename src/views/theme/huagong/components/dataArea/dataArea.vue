@@ -63,7 +63,6 @@ export default {
   height: 100%;
   padding: 0 20px;
   position: absolute;
-  transition: all 1s ease;
   backface-visibility: hidden;
 
   .tit {

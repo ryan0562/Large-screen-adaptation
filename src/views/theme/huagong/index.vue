@@ -3,16 +3,18 @@
     <screen_header v-if="$layout.header" :options="$layout.header" @back="goback()" />
     <!-- 数据区 左 -->
     <template v-for="(item, index) in $layout.dataArea[$config.screen].left">
-      <dataArea
-        v-if="item.visible"
-        :class="[`dataArea_left_${index}`, { 'fold-left': foldAllState }, { offset: foldAllState && index !== '1' }]"
-        :key="`dataArea_${$config.screen}_left_${index}`"
-        :style="item.styles"
-        :data="item"
-        type="left"
-        :id="index"
-        @clickTitle="switchPage"
-      />
+      <transition :name="$config.animate" :key="`dataArea_${$config.screen}_left_${index}`">
+        <dataArea
+          v-if="item.visible"
+          :class="[`dataArea_left_${index}`, { 'fold-left': foldAllState }, { offset: foldAllState && index !== '1' }]"
+          :key="`dataArea_${$config.screen}_left_${index}`"
+          :style="item.styles"
+          :data="item"
+          type="left"
+          :id="index"
+          @clickTitle="switchPage"
+        />
+      </transition>
       <dataMarkArea
         v-if="item.hasMark"
         :class="`dataMarkArea_left_${index}`"
@@ -25,16 +27,22 @@
     </template>
     <!-- 数据区 右 -->
     <template v-for="(item, index) in $layout.dataArea[$config.screen].right">
-      <dataArea
-        v-if="item.visible"
-        :class="[`dataArea_right_${index}`, { 'fold-right': foldAllState }, { offset: foldAllState && index !== '1' }]"
-        :key="`dataArea_right_${index}`"
-        :style="item.styles"
-        :data="item"
-        type="right"
-        :id="index"
-        @clickTitle="switchPage"
-      />
+      <transition :name="$config.animate" :key="`dataArea_right_${index}`">
+        <dataArea
+          v-if="item.visible"
+          :class="[
+            `dataArea_right_${index}`,
+            { 'fold-right': foldAllState },
+            { offset: foldAllState && index !== '1' },
+          ]"
+          :key="`dataArea_right_${index}`"
+          :style="item.styles"
+          :data="item"
+          type="right"
+          :id="index"
+          @clickTitle="switchPage"
+        />
+      </transition>
       <dataMarkArea
         v-if="item.hasMark"
         :class="`dataMarkArea_right_${index}`"
@@ -92,6 +100,10 @@ export default {
     },
     // 切换页面
     switchPage(pageKey) {
+      // const list = document.querySelectorAll('.dataAreaBox');
+      // list.forEach((element) => {
+      //   this.$animateCSS(element, this.$config.animateOut, false).then(() => {});
+      // });
       this.$config.screen = pageKey;
     },
   },
@@ -99,25 +111,25 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.fold-left {
-  transform: perspective(1200px) rotateY(60deg) !important;
-  transform-origin: left center;
-  &.offset {
-    margin-left: -300px;
-  }
-}
-.fold-right {
-  transform: perspective(1200px) rotateY(-60deg) !important;
-  transform-origin: right center;
-  &.offset {
-    margin-right: -300px;
-  }
-}
+// .fold-left {
+//   transform: perspective(1200px) rotateY(60deg) !important;
+//   transform-origin: left center;
+//   &.offset {
+//     margin-left: -300px;
+//   }
+// }
+// .fold-right {
+//   transform: perspective(1200px) rotateY(-60deg) !important;
+//   transform-origin: right center;
+//   &.offset {
+//     margin-right: -300px;
+//   }
+// }
 
-.fold {
-  opacity: 0;
-  z-index: -1;
-  backface-visibility: hidden;
-  transform: rotateY(-180deg);
-}
+// .fold {
+//   opacity: 0;
+//   z-index: -1;
+//   backface-visibility: hidden;
+//   transform: rotateY(-180deg);
+// }
 </style>
