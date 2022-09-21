@@ -3,7 +3,7 @@ let useLayout = '3840_1080';
 let theme = 'huagong';//使用主题 anbao|huagong
 let animateIn = 'rotateYIn'; //使用切屏的动画
 let animateOut = 'rotateYOut'; //使用切屏的动画 fadeOut rotateYOut
-let screen = 'home'
+let screen = 'ftfx'
 
 /**
 * 布局
@@ -192,7 +192,7 @@ let layout = {
             1: {
               visible: true,
               type: 2,
-              moduleId: 'safe',
+              moduleId: 'fxft_baseInfo',
               styles: {
                 width: '440px',
                 height: '972px',
@@ -204,7 +204,7 @@ let layout = {
             2: {
               visible: true,
               type: 2,
-              moduleId: 'safe',
+              moduleId: 'fxft_eventInfo',
               styles: {
                 width: '440px',
                 height: '972px',
@@ -354,7 +354,26 @@ let layout = {
           ]
         },
         'fxft_baseInfo': {
-          title: '公共安全',
+          title: '基础信息',
+          modules: [
+            {
+              showHeader: true,
+              title: '今日值班',
+              type:2,
+              styles: {
+                height: "290px",
+                marginTop: '12px',
+              },
+              component: {
+                is: 'myImg',
+                src: '/demoImg/l_1_1.png',
+              },
+            },
+
+          ]
+        },
+        'fxft_eventInfo': {
+          title: '事件信息',
           modules: [
             {
               showHeader: true,
@@ -390,11 +409,11 @@ let layout = {
           zIndex: 2,
         },
         children: {
-          ftfx:{
-            name:'防台防汛',
+          ftfx: {
+            name: '防台防汛',
           },
-          fold:{
-            name:'折叠',
+          fold: {
+            name: '折叠',
           }
         }
       },

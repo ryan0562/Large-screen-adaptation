@@ -1,8 +1,16 @@
 <template>
-  <div class="dataAreaBox">
-    <div :class="['tit',`bg${data.type}`]" @click="$emit('clickTitle', data.moduleId)">{{ dataAreaModule.title }}</div>
+  <div class="dataAreaBox" v-if="data.type == 1">
+    <div class="tit bg1" @click="$emit('clickTitle', data.moduleId)">
+      {{ dataAreaModule.title }}
+    </div>
     <div class="line"></div>
-    <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" v-bind="item" />
+    <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" :data="item" />
+  </div>
+  <div class="dataAreaBox" v-else-if="data.type == 2">
+    <div class="tit bg2" @click="$emit('clickTitle', data.moduleId)">
+      {{ dataAreaModule.title }}
+    </div>
+    <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" :data="item" />
   </div>
 </template>
 
