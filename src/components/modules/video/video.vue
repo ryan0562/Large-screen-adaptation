@@ -1,5 +1,5 @@
 <template>
-  <video src="/video/video2.mp4" autoplay loop muted style="object-fit: fill"></video>
+  <video src="/video/video2.mp4" autoplay loop muted style="object-fit: fill;display:block"></video>
 </template>
 
 <script>

@@ -217,7 +217,7 @@ let layout = {
             1: {
               visible: true,
               moduleId: 'fxft_realtime',
-              type: 2,
+              type: 3,
               styles: {
                 width: '880px',
                 height: '935px',
@@ -444,15 +444,15 @@ let layout = {
           ]
         },
         'fxft_realtime': {
-          title: '实时气象',
-          type: 2,
+          title: '实时数据',
           modules: {
             left: [{
               showHeader: true,
-              title: '防汛预警相应',
+              title: '实时气象',
+              hasBox: true,
               type: 2,
               styles: {
-                height: "225px",
+                height: "590px",
                 marginTop: '12px',
               },
               component: {
@@ -465,6 +465,7 @@ let layout = {
             },
             {
               showHeader: true,
+              hasBox: true,
               type: 2,
               title: '事件列表',
               component: {
@@ -475,13 +476,61 @@ let layout = {
                 }
               },
               styles: {
-                height: "400px",
+                height: "260px",
                 marginTop: '12px',
               }
             }],
-            right: {
-
-            }
+            right: [{
+              showHeader: true,
+              hasBox: true,
+              title: '视频监控',
+              type: 2,
+              styles: {
+                height: "225px",
+                marginTop: '12px',
+              },
+              component: {
+                is: 'myVideo',
+                style: {
+                  width: "100%",
+                  height: "100%",
+                }
+              },
+            },
+            {
+              showHeader: true,
+              hasBox: true,
+              type: 2,
+              title: '事件列表',
+              component: {
+                is: 'myImg',
+                src: '/demoImg/r_2_2.png',
+                style: {
+                  width: "100%"
+                }
+              },
+              styles: {
+                height: "525px",
+                marginTop: '12px',
+              }
+            },
+            {
+              showHeader: false,
+              hasBox: true,
+              type: 2,
+              title: '事件列表',
+              component: {
+                is: 'myImg',
+                src: '/demoImg/r_2_3.png',
+                style: {
+                  width: "100%"
+                }
+              },
+              styles: {
+                marginTop: '12px',
+              }
+            },
+            ]
           }
 
 
