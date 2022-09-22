@@ -3,10 +3,10 @@
     <screen_header v-if="$layout.header" :options="$layout.header" @back="goback()" />
     <!-- 数据区 左 -->
     <template v-for="(item, index) in $layout.dataArea[$config.screen].left">
-      <transition :name="$config.animate" :key="`dataArea_${$config.screen}_left_${index}`">
+      <transition :name="$config.animate" :key="`animate_${$config.screen}_left_${index}`">
         <dataArea
           v-if="item.visible"
-          :class="[`dataArea_left_${index}`, { 'fold-left': foldAllState }, { offset: foldAllState && index !== '1' }]"
+          :class="[`dataArea_left_${index}`]"
           :key="`dataArea_${$config.screen}_left_${index}`"
           :style="item.styles"
           :data="item"
@@ -27,15 +27,11 @@
     </template>
     <!-- 数据区 右 -->
     <template v-for="(item, index) in $layout.dataArea[$config.screen].right">
-      <transition :name="$config.animate" :key="`dataArea_right_${index}`">
+      <transition :name="$config.animate" :key="`animate_${$config.screen}_right_${index}`">
         <dataArea
           v-if="item.visible"
-          :class="[
-            `dataArea_right_${index}`,
-            { 'fold-right': foldAllState },
-            { offset: foldAllState && index !== '1' },
-          ]"
-          :key="`dataArea_right_${index}`"
+          :class="[`dataArea_right_${index}`]"
+          :key="`dataArea_${$config.screen}_right_${index}`"
           :style="item.styles"
           :data="item"
           type="right"
@@ -61,6 +57,7 @@
 <script>
 import './styles/index.less';
 
+import { switchPage, goback } from '@/utils/utils.js';
 export default {
   components: {
     screen_header: () => import('./components/header/screen_header.vue'),
@@ -69,42 +66,31 @@ export default {
     superMenu: () => import('./components/menu/menu.vue'),
   },
   data() {
-    return {
-      foldAllState: false,
-    };
+    return {};
   },
   methods: {
     // type==='active'为激活状态
     clickMenu(key, type) {
-      /* 折叠按钮 */
-      if (key === 'fold') {
-        this.foldAllState = !!type;
-        return;
-      }
       this.switchPage(key);
     },
     // 返回
     goback() {
-      if (this.$config.screen === 'home') {
-        this.$confirm('此操作将退出当前系统, 是否继续?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning',
-        }).then(() => {
-          //
-        });
-        return;
-      } else {
-        this.$config.screen = 'home';
-      }
+      goback(() => {
+        if (this.$config.screen === 'home') {
+          this.$confirm('此操作将退出当前系统, 是否继续?', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning',
+          }).then(() => {
+            //
+          });
+          return false;
+        }
+      });
     },
     // 切换页面
     switchPage(pageKey) {
-      // const list = document.querySelectorAll('.dataAreaBox');
-      // list.forEach((element) => {
-      //   this.$animateCSS(element, this.$config.animateOut, false).then(() => {});
-      // });
-      this.$config.screen = pageKey;
+      switchPage(pageKey);
     },
   },
 };

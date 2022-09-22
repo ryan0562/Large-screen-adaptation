@@ -1,8 +1,9 @@
 //使用策略
 let useLayout = '3840_1080';
 let theme = 'huagong';//使用主题 anbao|huagong
-let animate = 'fold'; //使用切屏的动画 fadeOut rotateYOut
+let animate = 'fold'; //使用切屏的动画 fade fold
 let screen = 'home'; // ftfx|home
+let histroy_screen = [screen]
 
 /**
 * 布局
@@ -813,6 +814,7 @@ const config = {
   layout,
   animate,
   screen,
+  histroy_screen,
 };
 
 window.$config = config
