@@ -3,6 +3,17 @@ const { defineConfig } = require('@vue/cli-service')
 
 module.exports = defineConfig({
   publicPath: '/',
+  // chainWebpack: config => {
+  //   if (process.env.NODE_ENV === 'production') {
+  //     config.output.filename('js/[name].js').end();
+  //     config.output.chunkFilename('js/[name].js').end();
+  //     // 修改生产配置
+  //     config.plugin('extract-css').tap(args => [{
+  //       filename: `css/[name].css`,
+  //       chunkFilename: `css/[name].css`
+  //     }])
+  //   }
+  // },
   productionSourceMap: false,//生产环境map
   devServer: {
     port: 8010, // 端口号

@@ -19,7 +19,6 @@ let histroy_screen = [screen]
 let layout = templates[theme]
 
 
-debugger
 
 
 
@@ -35,3 +34,4 @@ const config = {
 
 window.$config = config
 window.$layout = layout[config.useLayout] || {}
+window.$mti_templates = templates

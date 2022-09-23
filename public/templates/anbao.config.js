@@ -1,4 +1,5 @@
 export default {
+  "name":'安保模板',
   "3840_1080": {
     "visible": true,
     "styles": {

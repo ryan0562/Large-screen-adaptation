@@ -3,7 +3,9 @@
     <el-tab-pane label="工程库" name="projects" lazy>
       <div class="itemList">
         <div class="item add"><i class="el-icon-plus icon"></i></div>
-        <div class="item" v-for="(item, key) in projects" :key="key">{{ item.name }}</div>
+        <div class="item" v-for="(item, key) in projects" :key="key">
+          {{ item.name }}
+        </div>
       </div>
     </el-tab-pane>
     <el-tab-pane label="模板库" name="templates" lazy> </el-tab-pane>
@@ -16,11 +18,13 @@ export default {
   data() {
     return {
       activeName: 'projects',
+      projects: {},
     };
   },
-  methods: {
-    
+  created() {
+    this.projects = window.$mti_templates;
   },
+  methods: {},
 };
 </script>
 
@@ -60,20 +64,18 @@ export default {
     height: 184px;
     border: 1px solid #3a4659;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
     &.add {
-      height: 184px;
-      width: 258px;
       border: 1px solid #212528;
       font-size: 14px;
       color: #8eeeff;
       background-image: linear-gradient(-90deg, rgba(0, 222, 255, 0.39), rgba(0, 174, 255, 0.19));
       box-shadow: 0 0 10px 0 rgba(55, 224, 255, 0.3);
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
+
       .icon {
         font-size: 30px;
         font-weight: bold;
