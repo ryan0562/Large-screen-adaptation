@@ -10,8 +10,10 @@ export const goback = function (fn) {
 
 // 切换页面
 export const switchPage = function (pageKey) {
-  // 储存历史记录
-  window.$config.histroy_screen.push(pageKey);
-  // 翻页
-  window.$config.screen = pageKey;
+  if (pageKey !== window.$config.screen) {
+    // 储存历史记录
+    window.$config.histroy_screen.push(pageKey);
+    // 翻页
+    window.$config.screen = pageKey;
+  }
 }

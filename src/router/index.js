@@ -12,6 +12,18 @@ const routes = [
     redirect: '/demo'
   },
   {
+    path: '/settings',
+    name: 'settings',
+    component: Blank,
+    children: [
+      {
+        path: '/settings/viewList',
+        name: 'settings_viewList',
+        component: () => import('@/views/settings/viewList.vue'),
+      }
+    ]
+  },
+  {
     path: '/mainBox',
     name: 'mainBox',
     component: () => import('@/views/theme/main.vue'),

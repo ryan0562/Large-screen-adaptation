@@ -1,5 +1,5 @@
 <template>
-  <div :style="$layout.styles">
+  <div :style="$layout.styles" :data-theme="$config.theme">
     <router-view :name="name" />
   </div>
 </template>
