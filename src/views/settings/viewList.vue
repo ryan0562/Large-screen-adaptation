@@ -1,20 +1,29 @@
 <template>
-  <el-tabs v-model="activeName">
-    <el-tab-pane label="工程库" name="projects" lazy>
-      <div class="itemList">
-        <div class="item add"><i class="el-icon-plus icon"></i></div>
-        <div class="item" v-for="(item, key) in projects" :key="key">
-          {{ item.name }}
+  <div class="viewListBox">
+    <el-tabs v-model="activeName">
+      <el-tab-pane label="工程库" name="projects" lazy>
+        <div class="itemList">
+          <div class="item add" @click="$refs['addProject'].visible = true">
+            <i class="el-icon-plus icon"></i>
+            <div>新建大屏</div>
+          </div>
+          <div class="item" v-for="(item, key) in projects" :key="key">
+            {{ item.name }}
+          </div>
         </div>
-      </div>
-    </el-tab-pane>
-    <el-tab-pane label="模板库" name="templates" lazy> </el-tab-pane>
-    <el-tab-pane label="组件库" name="components" lazy> </el-tab-pane>
-  </el-tabs>
+      </el-tab-pane>
+      <el-tab-pane label="模板库" name="templates" lazy> </el-tab-pane>
+      <el-tab-pane label="组件库" name="components" lazy> </el-tab-pane>
+    </el-tabs>
+    <addProject ref="addProject" />
+  </div>
 </template>
 
 <script>
 export default {
+  components: {
+    addProject: () => import('./addProject.vue'),
+  },
   data() {
     return {
       activeName: 'projects',
@@ -29,7 +38,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.el-tabs {
+.viewListBox {
   width: 100%;
   height: 100%;
   background: #171b22;
@@ -77,7 +86,7 @@ export default {
       box-shadow: 0 0 10px 0 rgba(55, 224, 255, 0.3);
 
       .icon {
-        font-size: 30px;
+        font-size: 20px;
         font-weight: bold;
       }
     }

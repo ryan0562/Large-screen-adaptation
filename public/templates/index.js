@@ -1,5 +1,5 @@
-import huagong from './huagong.config.js'
-import anbao from './anbao.config.js'
+import huagong from './huagong/huagong.config.js'
+import anbao from './anbao/anbao.config.js'
 
 export default {
   huagong,

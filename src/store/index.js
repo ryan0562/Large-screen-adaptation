@@ -4,7 +4,8 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
-    $config:window.$config, //Ë«Ïò°ó¶¨ÓÃ£¬ÎðÉ¾
+    $config:window.$config,
+    $layout:window.$layout,
   },
   getters: {
   },

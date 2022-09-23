@@ -153,12 +153,12 @@ export default {
     line-height: 88px;
     text-align: center;
     background: url('./assets/bg-head.png'); 
-    font-size: var(--header_main-fontSize);
+    font-size: 40px;
     font-family: FZZhengHeiS-B-GB;
     font-weight: 900;
     letter-spacing: 6px;
     .tit {
-      background: var(--header_main-color);
+      background: linear-gradient(0deg, #00ccff 0%, #b9e8ff 70.92285%);
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
