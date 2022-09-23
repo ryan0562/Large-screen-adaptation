@@ -1,5 +1,6 @@
 export default {
   "name":'化工模板',
+  "thumbnail": '/templates/huagong/img.png',
   "3840_1080": {
     "visible": true,
     "styles": {

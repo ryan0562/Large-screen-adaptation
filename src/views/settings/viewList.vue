@@ -8,7 +8,8 @@
             <div>新建大屏</div>
           </div>
           <div class="item" v-for="(item, key) in projects" :key="key">
-            {{ item.name }}
+            <img :src="item.thumbnail" alt="" />
+            <span>{{ item.name }}</span>
           </div>
         </div>
       </el-tab-pane>
@@ -78,6 +79,11 @@ export default {
     align-items: center;
     cursor: pointer;
     color: #fff;
+    > img {
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+    }
     &.add {
       border: 1px solid #212528;
       font-size: 14px;

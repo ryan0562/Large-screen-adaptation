@@ -1,5 +1,6 @@
 export default {
-  "name":'安保模板',
+  "name": '安保模板',
+  "thumbnail": '/templates/anbao/img.png',
   "3840_1080": {
     "visible": true,
     "styles": {
