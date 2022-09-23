@@ -3,14 +3,14 @@
     <el-tabs v-model="activeName">
       <el-tab-pane label="工程库" name="projects" lazy>
         <div class="itemList">
-          <div class="item add" @click="$refs['addProject'].visible = true">
-            <i class="el-icon-plus icon"></i>
-            <div>新建大屏</div>
-          </div>
-          <div class="item" v-for="(item, key) in projects" :key="key">
-            <el-image :src="item.thumbnail" :preview-src-list="[item.thumbnail]"/>
-            <span>{{ item.name }}</span>
-          </div>
+          <templateItem type="add" @click.native="$refs['addProject'].visible = true">新建工程</templateItem>
+          <templateItem
+            v-for="(item, key) in projects"
+            :key="key"
+            :src="item.thumbnail"
+            :preview-src-list="[item.thumbnail]"
+            :name="item.name"
+          ></templateItem>
         </div>
       </el-tab-pane>
       <el-tab-pane label="模板库" name="templates" lazy> </el-tab-pane>
@@ -24,6 +24,7 @@
 export default {
   components: {
     addProject: () => import('./addProject.vue'),
+    templateItem: () => import('./templateItem.vue'),
   },
   data() {
     return {
@@ -64,38 +65,5 @@ export default {
 .itemList {
   display: flex;
   flex-wrap: wrap;
-  .item {
-    position: relative;
-    margin: 16px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    width: 258px;
-    height: 184px;
-    border: 1px solid #3a4659;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: #fff;
-    > .el-image {
-      flex: 1;
-      min-height: 0;
-      width: 100%;
-    }
-    &.add {
-      border: 1px solid #212528;
-      font-size: 14px;
-      color: #8eeeff;
-      background-image: linear-gradient(-90deg, rgba(0, 222, 255, 0.39), rgba(0, 174, 255, 0.19));
-      box-shadow: 0 0 10px 0 rgba(55, 224, 255, 0.3);
-
-      .icon {
-        font-size: 20px;
-        font-weight: bold;
-      }
-    }
-  }
 }
 </style>
