@@ -8,7 +8,7 @@
             <div>新建大屏</div>
           </div>
           <div class="item" v-for="(item, key) in projects" :key="key">
-            <img :src="item.thumbnail" alt="" />
+            <el-image :src="item.thumbnail" :preview-src-list="[item.thumbnail]"/>
             <span>{{ item.name }}</span>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default {
     align-items: center;
     cursor: pointer;
     color: #fff;
-    > img {
+    > .el-image {
       flex: 1;
       min-height: 0;
       width: 100%;

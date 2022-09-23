@@ -13,7 +13,7 @@ Vue.prototype.$echarts = echarts;
 /* element-ui */
 import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui'
-Vue.use(ElementUI)
+Vue.use(ElementUI, { size: 'small' })
 
 /* animate.css */
 import { animateCSS, switchDataArea, toggleFold, toggleClass } from '@/plugins/animate/animate.js'

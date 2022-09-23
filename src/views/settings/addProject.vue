@@ -11,6 +11,9 @@
             <el-radio label="32_9">32:9</el-radio>
           </el-radio-group>
         </el-form-item>
+        <el-form-item>
+          
+        </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="visible = false">取 消</el-button>
