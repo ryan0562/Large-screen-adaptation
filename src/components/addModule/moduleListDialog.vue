@@ -63,6 +63,11 @@ export default {
   methods: {
     submit() {
       this.data.component.is = this.moduleId;
+
+      if (this.moduleId === 'myImg') {
+        this.data.component.src = '/demoImg/l_1_1.png';
+      }
+
       this.visible = false;
     },
     open(data) {
