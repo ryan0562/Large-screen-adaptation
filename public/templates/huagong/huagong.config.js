@@ -1,6 +1,6 @@
 export default {
-  "name":'化工模板',
-  "key":"huagong",
+  "name": '化工模板',
+  "key": "huagong",
   "thumbnail": '/templates/huagong/img.png',
   "3840_1080": {
     "visible": true,
@@ -55,7 +55,176 @@ export default {
       "zindex": 0,
       "visible": true
     },
-    "dataArea": {},
+    "dataArea": {
+      "home": {
+        "img": '/templates/huagong/img.png',
+        "left": {
+          "1": {
+            "visible": true,
+            "hasMark": true,
+            "type": 1,
+            "moduleId": "safe",
+            "styles": {
+              "width": "440px",
+              "height": "972px",
+              "top": "93px",
+              "left": "20px",
+              "zIndex": 1
+            }
+          },
+          "2": {
+            "visible": true,
+            "hasMark": true,
+            "type": 1,
+            "moduleId": "production",
+            "styles": {
+              "width": "440px",
+              "height": "972px",
+              "top": "93px",
+              "left": "472px",
+              "zIndex": 1
+            }
+          },
+          "3": {
+            "visible": true,
+            "hasMark": true,
+            "type": 1,
+            "moduleId": "emergency",
+            "styles": {
+              "width": "440px",
+              "height": "972px",
+              "top": "93px",
+              "left": "932px",
+              "zIndex": 1
+            }
+          }
+        },
+        "right": {
+          "1": {
+            "visible": true,
+            "moduleId": "safe",
+            "hasMark": true,
+            "type": 1,
+            "styles": {
+              "width": "440px",
+              "height": "972px",
+              "top": "93px",
+              "right": "20px",
+              "zIndex": 1
+            }
+          },
+          "2": {
+            "visible": true,
+            "hasMark": true,
+            "type": 1,
+            "moduleId": "production",
+            "styles": {
+              "width": "440px",
+              "height": "972px",
+              "top": "93px",
+              "right": "472px",
+              "zIndex": 1
+            }
+          }
+        }
+      },
+      "safe": {
+        "left": {
+          "1": {
+            "visible": true,
+            "type": 2,
+            "moduleId": "safe",
+            "styles": {
+              "width": "440px",
+              "height": "972px",
+              "top": "93px",
+              "left": "20px",
+              "zIndex": 1
+            }
+          },
+          "2": {
+            "visible": true,
+            "type": 2,
+            "moduleId": "safe",
+            "styles": {
+              "width": "440px",
+              "height": "972px",
+              "top": "93px",
+              "left": "472px",
+              "zIndex": 1
+            }
+          }
+        },
+        "right": {
+          "1": {
+            "visible": true,
+            "moduleId": "safe",
+            "type": 2,
+            "styles": {
+              "width": "440px",
+              "height": "972px",
+              "top": "93px",
+              "right": "20px",
+              "zIndex": 1
+            }
+          },
+          "2": {
+            "visible": true,
+            "type": 2,
+            "moduleId": "safe",
+            "styles": {
+              "width": "440px",
+              "height": "972px",
+              "top": "93px",
+              "right": "472px",
+              "zIndex": 1
+            }
+          }
+        }
+      },
+      "ftfx": {
+        "left": {
+          "1": {
+            "visible": true,
+            "type": 2,
+            "moduleId": "fxft_baseInfo",
+            "styles": {
+              "width": "440px",
+              "height": "935px",
+              "top": "125px",
+              "left": "20px",
+              "zIndex": 1
+            }
+          },
+          "2": {
+            "visible": true,
+            "type": 2,
+            "moduleId": "fxft_eventInfo",
+            "styles": {
+              "width": "440px",
+              "height": "935px",
+              "top": "125px",
+              "left": "472px",
+              "zIndex": 1
+            }
+          }
+        },
+        "right": {
+          "1": {
+            "visible": true,
+            "moduleId": "fxft_realtime",
+            "type": 3,
+            "styles": {
+              "width": "880px",
+              "height": "935px",
+              "top": "125px",
+              "right": "20px",
+              "zIndex": 1
+            }
+          }
+        }
+      }
+    },
     "dataAreaModules": {
       "safe": {
         "title": "公共安全",
@@ -399,7 +568,7 @@ export default {
       },
       "date": {
         "visible": true,
-        
+
         "styles": {
           "top": "5px",
           "left": "80px"
@@ -883,73 +1052,5 @@ export default {
         }
       }
     }
-  },
-  "screen": {
-    "home": {
-      "left": {
-        "1": {
-          "visible": true,
-          "hasMark": true,
-          "type": 1,
-          "styles": {
-            "width": "440px",
-            "height": "972px",
-            "top": "93px",
-            "left": "20px",
-            "zIndex": 1
-          }
-        },
-        "2": {
-          "visible": true,
-          "hasMark": true,
-          "type": 1,
-          "styles": {
-            "width": "440px",
-            "height": "972px",
-            "top": "93px",
-            "left": "472px",
-            "zIndex": 1
-          }
-        },
-        "3": {
-          "visible": true,
-          "hasMark": true,
-          "type": 1,
-          "styles": {
-            "width": "440px",
-            "height": "972px",
-            "top": "93px",
-            "left": "932px",
-            "zIndex": 1
-          }
-        }
-      },
-      "right": {
-        "1": {
-          "visible": true,
-          "hasMark": true,
-          "type": 1,
-          "styles": {
-            "width": "440px",
-            "height": "972px",
-            "top": "93px",
-            "right": "20px",
-            "zIndex": 1
-          }
-        },
-        "2": {
-          "visible": true,
-          "hasMark": true,
-          "type": 1,
-          "styles": {
-            "width": "440px",
-            "height": "972px",
-            "top": "93px",
-            "right": "472px",
-            "zIndex": 1
-          }
-        }
-      }
-    },
-  },
+  }
 }

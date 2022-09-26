@@ -27,11 +27,11 @@
           </el-form-item>
         </el-form>
       </template>
-      <layoutList v-if="step === 2" />
+      <layoutList v-if="step === 2" :list="$layout.dataArea" :screen.sync="form.screen" />
       <span slot="footer" class="dialog-footer">
         <template v-if="step === 1">
           <el-button @click="visible = false">取 消</el-button>
-          <el-button type="primary" @click="step = 2">下一步</el-button>
+          <el-button type="primary" @click="nextStep()">下一步</el-button>
         </template>
         <template v-if="step === 2">
           <el-button @click="step = 1">上一步</el-button>
@@ -42,26 +42,35 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   components: {
     templateItem: () => import('./templateItem.vue'),
     layoutList: () => import('./layoutList.vue'),
+  },
+  computed: {
+    ...mapGetters(['$layout']),
   },
   data() {
     return {
       visible: false,
       form: {},
       templates: {}, // 模板群
-      step: 2, //步骤
+      step: 1, //步骤
     };
   },
   created() {
     this.templates = this.$config.templates;
   },
   methods: {
-    submit() {
+    nextStep() {
+      this.step = 2;
       this.$config.useLayout = this.form.size;
       this.$config.theme = this.form.templateKey;
+    },
+    submit() {
+      this.$config.screen = this.form.screen;
       this.$router.push('/main');
     },
   },
