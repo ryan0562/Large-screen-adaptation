@@ -55,7 +55,10 @@ export default {
   data() {
     return {
       visible: false,
-      form: {},
+      form: {
+        size:'3840_1080',
+        templateKey:'huagong'
+      },
       templates: {}, // 模板群
       step: 1, //步骤
     };
