@@ -71,7 +71,7 @@ export default {
                 "hasBox": true,
                 "title": "视频监控",
                 "styles": {
-                  "height": "155px",
+                  "height": "285px",
                   "marginTop": "12px"
                 },
                 "component": {
@@ -81,15 +81,28 @@ export default {
               {
                 "showHeader": true,
                 "hasBox": true,
-                "title": "实时警情",
+                "title": "视频监控",
+                "styles": {
+                  "height": "285px",
+                  "marginTop": "12px"
+                },
                 "component": {
                   "is": "addModule"
-                },
-                "styles": {
-                  "height": "320px",
-                  "marginTop": "12px"
                 }
-              }
+              },
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "视频监控",
+                "styles": {
+                  "height": "285px",
+                  "marginTop": "12px"
+                },
+                "component": {
+                  "is": "addModule"
+                }
+              },
+              
             ],
             "styles": {
               "width": "440px",
@@ -111,7 +124,7 @@ export default {
                 "hasBox": true,
                 "title": "视频监控",
                 "styles": {
-                  "height": "155px",
+                  "height": "285px",
                   "marginTop": "12px"
                 },
                 "component": {
@@ -126,10 +139,22 @@ export default {
                   "is": "addModule"
                 },
                 "styles": {
-                  "height": "320px",
+                  "height": "285px",
                   "marginTop": "12px"
                 }
-              }
+              },
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "实时警情",
+                "component": {
+                  "is": "addModule"
+                },
+                "styles": {
+                  "height": "285px",
+                  "marginTop": "12px"
+                }
+              },
             ],
             "styles": {
               "width": "440px",
@@ -149,13 +174,13 @@ export default {
               {
                 "showHeader": true,
                 "hasBox": true,
-                "title": "视频监控",
-                "styles": {
-                  "height": "155px",
-                  "marginTop": "12px"
-                },
+                "title": "实时警情",
                 "component": {
                   "is": "addModule"
+                },
+                "styles": {
+                  "height": "285px",
+                  "marginTop": "12px"
                 }
               },
               {
@@ -166,10 +191,22 @@ export default {
                   "is": "addModule"
                 },
                 "styles": {
-                  "height": "320px",
+                  "height": "285px",
                   "marginTop": "12px"
                 }
-              }
+              },
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "实时警情",
+                "component": {
+                  "is": "addModule"
+                },
+                "styles": {
+                  "height": "285px",
+                  "marginTop": "12px"
+                }
+              },
             ],
             "styles": {
               "width": "440px",
@@ -189,13 +226,13 @@ export default {
               {
                 "showHeader": true,
                 "hasBox": true,
-                "title": "视频监控",
-                "styles": {
-                  "height": "155px",
-                  "marginTop": "12px"
-                },
+                "title": "实时警情",
                 "component": {
                   "is": "addModule"
+                },
+                "styles": {
+                  "height": "285px",
+                  "marginTop": "12px"
                 }
               },
               {
@@ -206,10 +243,22 @@ export default {
                   "is": "addModule"
                 },
                 "styles": {
-                  "height": "320px",
+                  "height": "285px",
                   "marginTop": "12px"
                 }
-              }
+              },
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "实时警情",
+                "component": {
+                  "is": "addModule"
+                },
+                "styles": {
+                  "height": "285px",
+                  "marginTop": "12px"
+                }
+              },
             ],
             "styles": {
               "width": "440px",
@@ -227,13 +276,13 @@ export default {
               {
                 "showHeader": true,
                 "hasBox": true,
-                "title": "视频监控",
-                "styles": {
-                  "height": "155px",
-                  "marginTop": "12px"
-                },
+                "title": "实时警情",
                 "component": {
                   "is": "addModule"
+                },
+                "styles": {
+                  "height": "285px",
+                  "marginTop": "12px"
                 }
               },
               {
@@ -244,10 +293,22 @@ export default {
                   "is": "addModule"
                 },
                 "styles": {
-                  "height": "320px",
+                  "height": "285px",
                   "marginTop": "12px"
                 }
-              }
+              },
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "实时警情",
+                "component": {
+                  "is": "addModule"
+                },
+                "styles": {
+                  "height": "285px",
+                  "marginTop": "12px"
+                }
+              },
             ],
             "hasMark": true,
             "type": 1,
