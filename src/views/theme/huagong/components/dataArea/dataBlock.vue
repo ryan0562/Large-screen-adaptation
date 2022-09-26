@@ -1,11 +1,11 @@
 <template>
-<!-- 无盒子 -->
+  <!-- 无盒子 -->
   <div class="dataBlock" :style="data.styles" v-if="data.type == 2">
     <div class="head head_2" v-if="data.showHeader">
       {{ data.title }}
     </div>
     <div :class="[{ box: data.hasBox }, 'flex']">
-      <component v-bind="data.component"></component>
+      <component v-bind="data.component" :data="data"></component>
     </div>
   </div>
   <!-- 有盒子 -->
@@ -13,7 +13,7 @@
     <div class="head head_1" v-if="data.showHeader">
       {{ data.title }}
     </div>
-    <component class="flex" v-bind="data.component"></component>
+    <component class="flex" v-bind="data.component" :data="data"></component>
   </div>
 </template>
 
@@ -36,11 +36,6 @@ export default {
         return {};
       },
     },
-    key: {
-      type: 'String',
-      required: true,
-    },
-
   },
   data() {
     return {};

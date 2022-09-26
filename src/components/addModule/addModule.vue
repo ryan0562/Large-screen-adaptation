@@ -1,5 +1,5 @@
 <template>
-  <div class="addModuleBox" @click="$bus.$emit('changeModule')">
+  <div class="addModuleBox" @click="$bus.$emit('changeModule',data)">
     <i class="el-icon-plus icon"></i>
   </div>
 </template>
@@ -12,6 +12,7 @@ export default {
   computed: {
     ...mapGetters(['$layout']),
   },
+  props:['data'],
 };
 </script>
 
