@@ -13,25 +13,30 @@ let screen = 'home'; // ftfx|home
 let histroy_screen = [screen]
 
 
+
+
 /**
 * 布局
 */
-let layout = templates[theme]
-
-
-
-
-
+let useTemplate = templates[theme]
+// let layout = useTemplate[useLayout] || {}
 
 const config = {
   useLayout,
   theme,
-  layout,
+  useTemplate,
   animate,
   screen,
   histroy_screen,
+  templates,
+  // layout,
 };
 
+
+
+
+
+
 window.$config = config
-window.$layout = layout[config.useLayout] || {}
-window.$mti_templates = templates
+// window.$layout = layout
+

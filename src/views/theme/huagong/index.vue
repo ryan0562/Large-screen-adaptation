@@ -58,6 +58,7 @@
 import './styles/index.less';
 
 import { switchPage, goback } from '@/utils/utils.js';
+import { mapGetters } from 'vuex'
 export default {
   components: {
     screen_header: () => import('./components/header/screen_header.vue'),
@@ -67,6 +68,9 @@ export default {
   },
   data() {
     return {};
+  },
+  computed: {
+    ...mapGetters(['$layout']),
   },
   methods: {
     // type==='active'为激活状态

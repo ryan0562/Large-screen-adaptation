@@ -34,6 +34,7 @@
 
 <script>
 import './styles/index.less';
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -47,6 +48,9 @@ export default {
       currentPageKey: null,
       foldAllState: false,
     };
+  },
+  computed: {
+    ...mapGetters(['$layout']),
   },
   methods: {
     // type==='active'为激活状态

@@ -34,7 +34,7 @@ import "@/plugins/dayjs.js";
 
 /* 配置文件 */
 Vue.prototype.$config = window.$config
-Vue.prototype.$layout = window.$layout
+// Vue.prototype.$layout = window.$layout
 
 Vue.config.productionTip = false
 new Vue({

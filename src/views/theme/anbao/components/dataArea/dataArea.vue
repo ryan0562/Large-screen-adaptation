@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   components: {
     dataBlock: () => import('./dataBlock.vue'),
@@ -31,6 +33,10 @@ export default {
     },
   },
   computed: {
+
+
+    ...mapGetters(['$layout']),
+
     dataAreaModule() {
       return this.$layout.dataAreaModules[this.data.moduleId] || {};
     },
