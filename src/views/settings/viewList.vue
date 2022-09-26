@@ -33,7 +33,7 @@ export default {
     };
   },
   created() {
-    this.projects = window.$mti_templates;
+    this.projects = this.$config.projects;
   },
   methods: {},
 };

@@ -7,14 +7,14 @@
         </el-form-item>
         <el-form-item label="页面尺寸">
           <el-radio-group v-model="form.size">
-            <el-radio label="16_9">16:9</el-radio>
-            <el-radio label="32_9">32:9</el-radio>
+            <el-radio label="1920_1080">16:9</el-radio>
+            <el-radio label="3840_1080">32:9</el-radio>
           </el-radio-group>
         </el-form-item>
         <el-form-item>
           <div class="itemList">
             <el-radio-group v-model="form.templateKey">
-              <el-radio v-for="(item, key) in projects" :key="key" :label="item.key">
+              <el-radio v-for="(item, key) in templates" :key="key" :label="item.key">
                 <templateItem
                   :src="item.thumbnail"
                   :preview-src-list="[item.thumbnail]"
@@ -42,18 +42,17 @@ export default {
     return {
       visible: false,
       form: {},
-      projects: {},
+      templates: {},
     };
   },
   created() {
-    this.projects = window.$mti_templates;
+    this.templates = this.$config.templates;
   },
   methods: {
     submit() {
-      let link = document.createElement('a');
-      link.download = 'config.js';
-      link.href = 'data:text/plain,' + `export default ${JSON.stringify(window.$layout)}`;
-      link.click();
+      this.$config.useLayout = this.form.size;
+      this.$config.theme = this.form.templateKey;
+      this.$router.push('/main')
     },
   },
 };

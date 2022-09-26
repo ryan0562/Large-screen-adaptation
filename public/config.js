@@ -1,6 +1,7 @@
 "use strict"
 
 import templates from './templates/index.js'
+import projects from './projects/index.js'
 
 
 
@@ -29,6 +30,7 @@ const config = {
   screen,
   histroy_screen,
   templates,
+  projects,
   // layout,
 };
 
