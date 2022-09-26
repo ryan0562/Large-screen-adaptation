@@ -31,7 +31,7 @@ export default {
         "left": {
           "1": {
             "visible": true,
-            "moduleId": "video",
+            "moduleId": "addModule",
             "styles": {
               "width": "755px",
               "height": "420px",
@@ -43,7 +43,7 @@ export default {
           "2": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -55,7 +55,7 @@ export default {
           "3": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "production",
+            "moduleId": "addModule",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -68,7 +68,7 @@ export default {
             "visible": true,
             "hasBox": true,
             "hasYaw": true,
-            "moduleId": "production",
+            "moduleId": "addModule",
             "styles": {
               "width": "366px",
               "height": "1060px",
@@ -81,7 +81,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "video",
+            "moduleId": "addModule",
             "styles": {
               "width": "755px",
               "height": "420px",
@@ -93,7 +93,7 @@ export default {
           "2": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -105,7 +105,7 @@ export default {
           "3": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "production",
+            "moduleId": "addModule",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -118,7 +118,7 @@ export default {
             "visible": true,
             "hasBox": true,
             "hasYaw": true,
-            "moduleId": "production",
+            "moduleId": "addModule",
             "styles": {
               "width": "366px",
               "height": "1060px",
@@ -133,7 +133,7 @@ export default {
         "left": {
           "1": {
             "visible": true,
-            "moduleId": "video",
+            "moduleId": "addModule",
             "styles": {
               "width": "755px",
               "height": "420px",
@@ -145,7 +145,7 @@ export default {
           "2": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -157,7 +157,7 @@ export default {
           "3": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "production",
+            "moduleId": "addModule",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -170,7 +170,7 @@ export default {
             "visible": true,
             "hasBox": true,
             "hasYaw": true,
-            "moduleId": "production",
+            "moduleId": "addModule",
             "styles": {
               "width": "366px",
               "height": "1060px",
@@ -334,7 +334,7 @@ export default {
       "1": {
         "visible": true,
         "hasBox": true,
-        "moduleId": "safe",
+        "moduleId": "addModule",
         "styles": {
           "width": "366px",
           "height": "1060px",
@@ -347,7 +347,7 @@ export default {
         "visible": true,
         "hasBox": true,
         "hasYaw": true,
-        "moduleId": "production",
+        "moduleId": "addModule",
         "styles": {
           "width": "366px",
           "height": "1060px",
@@ -361,7 +361,7 @@ export default {
       "1": {
         "visible": true,
         "hasBox": true,
-        "moduleId": "safe",
+        "moduleId": "addModule",
         "styles": {
           "width": "366px",
           "height": "1060px",
@@ -374,7 +374,7 @@ export default {
         "visible": true,
         "hasBox": true,
         "hasYaw": true,
-        "moduleId": "production",
+        "moduleId": "addModule",
         "styles": {
           "width": "366px",
           "height": "1060px",

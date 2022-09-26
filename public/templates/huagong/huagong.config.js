@@ -63,7 +63,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -76,7 +76,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "moduleId": "production",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -89,7 +89,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "moduleId": "emergency",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -102,7 +102,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "hasMark": true,
             "type": 1,
             "styles": {
@@ -117,7 +117,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "moduleId": "production",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -133,7 +133,7 @@ export default {
           "1": {
             "visible": true,
             "type": 2,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -145,7 +145,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -158,7 +158,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "type": 2,
             "styles": {
               "width": "440px",
@@ -171,7 +171,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -187,7 +187,7 @@ export default {
           "1": {
             "visible": true,
             "type": 2,
-            "moduleId": "fxft_baseInfo",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "935px",
@@ -199,7 +199,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "fxft_eventInfo",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "935px",
@@ -212,7 +212,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "fxft_realtime",
+            "moduleId": "addModule",
             "type": 3,
             "styles": {
               "width": "880px",
@@ -608,7 +608,7 @@ export default {
             "visible": true,
             "hasMark": false,
             "type": 1,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -621,7 +621,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "production",
+            "moduleId": "addModule",
             "hasMark": false,
             "type": 1,
             "styles": {
@@ -639,7 +639,7 @@ export default {
           "1": {
             "visible": true,
             "type": 2,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -651,7 +651,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -664,7 +664,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "type": 2,
             "styles": {
               "width": "440px",
@@ -677,7 +677,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "safe",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -693,7 +693,7 @@ export default {
           "1": {
             "visible": true,
             "type": 2,
-            "moduleId": "fxft_baseInfo",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "935px",
@@ -705,7 +705,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "fxft_eventInfo",
+            "moduleId": "addModule",
             "styles": {
               "width": "440px",
               "height": "935px",
@@ -718,7 +718,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "fxft_realtime",
+            "moduleId": "addModule",
             "type": 3,
             "styles": {
               "width": "880px",
