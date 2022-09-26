@@ -1,48 +1,58 @@
 <template>
   <div>
     <el-dialog title="新建工程" :visible.sync="visible" width="800px">
-      <el-form :model="form" label-width="100px">
-        <el-form-item label="工程名称">
-          <el-input v-model="form.name" placeholder="请输入工程名称"></el-input>
-        </el-form-item>
-        <el-form-item label="页面尺寸">
-          <el-radio-group v-model="form.size">
-            <el-radio label="1920_1080">16:9</el-radio>
-            <el-radio label="3840_1080">32:9</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item>
-          <div class="itemList">
-            <el-radio-group v-model="form.templateKey">
-              <el-radio v-for="(item, key) in templates" :key="key" :label="item.key">
-                <templateItem
-                  :src="item.thumbnail"
-                  :preview-src-list="[item.thumbnail]"
-                  :name="item.name"
-                ></templateItem>
-              </el-radio>
+      <template v-if="step === 1">
+        <el-form :model="form" label-width="100px">
+          <el-form-item label="工程名称">
+            <el-input v-model="form.name" placeholder="请输入工程名称"></el-input>
+          </el-form-item>
+          <el-form-item label="页面尺寸">
+            <el-radio-group v-model="form.size">
+              <el-radio label="1920_1080">16:9</el-radio>
+              <el-radio label="3840_1080">32:9</el-radio>
             </el-radio-group>
-          </div>
-        </el-form-item>
-      </el-form>
+          </el-form-item>
+          <el-form-item>
+            <div class="itemList">
+              <el-radio-group v-model="form.templateKey">
+                <el-radio v-for="(item, key) in templates" :key="key" :label="item.key">
+                  <templateItem
+                    :src="item.thumbnail"
+                    :preview-src-list="[item.thumbnail]"
+                    :name="item.name"
+                  ></templateItem>
+                </el-radio>
+              </el-radio-group>
+            </div>
+          </el-form-item>
+        </el-form>
+      </template>
+      <layoutList v-if="step === 2" />
       <span slot="footer" class="dialog-footer">
-        <el-button @click="visible = false">取 消</el-button>
-        <el-button type="primary" @click="submit">确 定</el-button>
+        <template v-if="step === 1">
+          <el-button @click="visible = false">取 消</el-button>
+          <el-button type="primary" @click="step = 2">下一步</el-button>
+        </template>
+        <template v-if="step === 2">
+          <el-button @click="step = 1">上一步</el-button>
+          <el-button type="primary" @click="submit">确 定</el-button>
+        </template>
       </span>
     </el-dialog>
   </div>
 </template>
-
 <script>
 export default {
   components: {
     templateItem: () => import('./templateItem.vue'),
+    layoutList: () => import('./layoutList.vue'),
   },
   data() {
     return {
       visible: false,
       form: {},
-      templates: {},
+      templates: {}, // 模板群
+      step: 2, //步骤
     };
   },
   created() {
@@ -52,7 +62,7 @@ export default {
     submit() {
       this.$config.useLayout = this.form.size;
       this.$config.theme = this.form.templateKey;
-      this.$router.push('/main')
+      this.$router.push('/main');
     },
   },
 };
