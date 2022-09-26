@@ -1,10 +1,10 @@
 <template>
   <div>
-    <el-dialog title="组件库" :visible.sync="visible" width="800px">
+    <el-dialog title="组件库" :visible.sync="visible" width="1400px">
       <div class="itemList">
-        <el-radio-group v-model="form.templateKey">
-          <el-radio v-for="(item, key) in templates" :key="key" :label="item.key">
-            <templateItem :src="item.thumbnail" :preview-src-list="[item.thumbnail]" :name="item.name"></templateItem>
+        <el-radio-group v-model="moduleId">
+          <el-radio v-for="(item, key) in modules" :key="item.name" :label="item.name">
+            <templateItem :src="item.img" :preview-src-list="[item.img]" :name="item.name"></templateItem>
           </el-radio>
         </el-radio-group>
       </div>
@@ -20,36 +20,52 @@ import { mapGetters } from 'vuex';
 
 export default {
   components: {
-    templateItem: () => import('./templateItem.vue'),
-    layoutList: () => import('./layoutList.vue'),
+    templateItem: () => import('@/components/templateItem.vue'),
   },
   computed: {
     ...mapGetters(['$layout']),
   },
   data() {
     return {
-      visible: false,
-      form: {
-        size: '3840_1080',
-        templateKey: 'huagong',
-      },
-      templates: {}, // 模板群
-      step: 1, //步骤
+      visible: true,
+      moduleId: null,
+      modules:[
+        {
+          name:'aaa',
+          img:'/demoImg/l_1_1.png'
+        },
+        {
+          name:'bbb',
+          img:'/demoImg/l_1_1.png'
+        },
+        {
+          name:'ccc',
+          img:'/demoImg/l_1_1.png'
+        },
+        {
+          name:'realTimePolice',
+          img:'/demoImg/l_1_1.png'
+        },
+        {
+          name:'myVideo',
+          img:'/demoImg/l_1_1.png'
+        },
+        {
+          name:'investment',
+          img:'/demoImg/l_1_1.png'
+        },
+        {
+          name:'myImg',
+          img:'/demoImg/l_1_1.png'
+        },
+      ]
     };
   },
-  created() {
-    this.templates = this.$config.templates;
-  },
+  created() {},
   methods: {
-    nextStep() {
-      this.step = 2;
-      this.$config.useLayout = this.form.size;
-      this.$config.theme = this.form.templateKey;
-    },
-    submit() {
-      this.$config.screen = this.form.screen;
-      this.$router.push('/main');
-    },
+    submit(){
+
+    }
   },
 };
 </script>

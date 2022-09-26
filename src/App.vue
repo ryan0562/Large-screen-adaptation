@@ -1,11 +1,15 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
+    <moduleListDialog />
   </div>
 </template>
 
 <script>
 export default {
+  components: {
+    moduleListDialog: () => import('@/components/addModule/moduleListDialog.vue'),
+  },
 };
 </script>
 

@@ -20,13 +20,7 @@
 <script>
 export default {
   components: {
-    aaa: () => import('@/components/modules/a.vue'),
-    bbb: () => import('@/components/modules/b.vue'),
-    ccc: () => import('@/components/modules/c.vue'),
-    realTimePolice: () => import('@/components/modules/realTimePolice/index.vue'),
-    myVideo: () => import('@/components/modules/video/video.vue'),
-    investment: () => import('@/components/modules/firstLevel/investment.vue'),
-    myImg: () => import('@/components/image/image.vue'),
+   
   },
   props: {
     data: {

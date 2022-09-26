@@ -43,6 +43,9 @@ Vue.component('addModule', addModule)
 import Bus from '@/plugins/bus.js' //这是我的路径，正确引用你们的路径
 Vue.prototype.$bus = Bus 
 
+/* 组件库 */
+import '@/components/modules/index.js'
+
 Vue.config.productionTip = false
 new Vue({
   router,

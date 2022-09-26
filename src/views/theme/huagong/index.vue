@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     changeDataModule(data){
-      data.component.is = 'myVideo'
+      data.component.is = 'aaa'
       // const {templates,theme,useLayout} = window.$config
       // const layout =  templates[theme][useLayout]
       
