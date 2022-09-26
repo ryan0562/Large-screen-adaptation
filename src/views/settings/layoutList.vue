@@ -3,7 +3,9 @@
     <div class="list">
       <div class="tit">布局列表</div>
       <div class="itemBox">
-        <div class="item" v-for="(item, key) in list" :key="key" @click="showImg(key, item)">{{ key }}</div>
+        <div v-for="(item, key) in list" :key="key" :class="['item', {act:act===key}]" @click="showImg(key, item)">
+          {{ key }}
+        </div>
       </div>
     </div>
     <div class="view">
@@ -18,10 +20,12 @@ export default {
   data() {
     return {
       imgSrc: null,
+      act: null,
     };
   },
   methods: {
     showImg(key, item) {
+      this.act = key;
       this.imgSrc = item.img;
       this.$emit('update:screen', key);
     },
@@ -58,6 +62,9 @@ export default {
         background: #fdd9d9;
         margin-top: 10px;
         cursor: pointer;
+        &.act {
+          background: #fc8c8c;
+        }
       }
     }
   }
