@@ -46,7 +46,7 @@ import { mapGetters } from 'vuex';
 
 export default {
   components: {
-    templateItem: () => import('./templateItem.vue'),
+    templateItem: () => import('@/components/templateItem.vue'),
     layoutList: () => import('./layoutList.vue'),
   },
   computed: {

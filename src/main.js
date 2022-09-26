@@ -34,7 +34,14 @@ import "@/plugins/dayjs.js";
 
 /* 配置文件 */
 Vue.prototype.$config = window.$config
-// Vue.prototype.$layout = window.$layout
+
+/* 添加模块组件 */
+import addModule from '@/components/addModule/addModule.vue'
+Vue.component('addModule', addModule)
+
+/* vue bus */
+import Bus from '@/plugins/bus.js' //这是我的路径，正确引用你们的路径
+Vue.prototype.$bus = Bus 
 
 Vue.config.productionTip = false
 new Vue({

@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { number } from 'echarts';
 export default {
   components: {
     aaa: () => import('@/components/modules/a.vue'),
@@ -35,6 +34,11 @@ export default {
         return {};
       },
     },
+    key: {
+      type: 'String',
+      required: true,
+    },
+
   },
   data() {
     return {};

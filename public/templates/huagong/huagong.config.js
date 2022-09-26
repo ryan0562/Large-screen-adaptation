@@ -63,7 +63,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -76,7 +76,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "moduleId": "addModule",
+            "moduleId": "production",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -89,7 +89,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "moduleId": "addModule",
+            "moduleId": "emergency",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -102,7 +102,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "hasMark": true,
             "type": 1,
             "styles": {
@@ -117,7 +117,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "moduleId": "addModule",
+            "moduleId": "production",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -133,7 +133,7 @@ export default {
           "1": {
             "visible": true,
             "type": 2,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -145,7 +145,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -158,7 +158,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "type": 2,
             "styles": {
               "width": "440px",
@@ -171,7 +171,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -187,7 +187,7 @@ export default {
           "1": {
             "visible": true,
             "type": 2,
-            "moduleId": "addModule",
+            "moduleId": "fxft_baseInfo",
             "styles": {
               "width": "440px",
               "height": "935px",
@@ -199,7 +199,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "addModule",
+            "moduleId": "fxft_eventInfo",
             "styles": {
               "width": "440px",
               "height": "935px",
@@ -212,7 +212,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "addModule",
+            "moduleId": "fxft_realtime",
             "type": 3,
             "styles": {
               "width": "880px",
@@ -238,7 +238,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "realTimePolice"
+              "is": "addModule"
             }
           },
           {
@@ -246,7 +246,7 @@ export default {
             "hasBox": true,
             "title": "实时警情",
             "component": {
-              "is": "myVideo"
+              "is": "addModule"
             },
             "styles": {
               "height": "320px",
@@ -267,7 +267,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "investment"
+              "is": "addModule"
             }
           },
           {
@@ -275,7 +275,7 @@ export default {
             "hasBox": true,
             "title": "经济指标",
             "component": {
-              "is": "aaa"
+              "is": "addModule"
             },
             "styles": {
               "height": "154px",
@@ -292,7 +292,7 @@ export default {
             "hasBox": true,
             "title": "应急资源",
             "component": {
-              "is": "aaa"
+              "is": "addModule"
             },
             "styles": {
               "height": "250px",
@@ -308,7 +308,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "bbb"
+              "is": "addModule"
             }
           },
           {
@@ -316,7 +316,7 @@ export default {
             "title": "接处警情况",
             "hasBox": true,
             "component": {
-              "is": "ccc"
+              "is": "addModule"
             },
             "styles": {
               "height": "133px",
@@ -333,7 +333,7 @@ export default {
             "hasBox": true,
             "title": "实时警情",
             "component": {
-              "is": "myVideo"
+              "is": "addModule"
             },
             "styles": {
               "height": "320px",
@@ -355,7 +355,7 @@ export default {
               "marginTop": "10px"
             },
             "component": {
-              "is": "myImg",
+              "is": "addModule",
               "src": "/demoImg/l_1_1.png",
               "style": {
                 "width": "100%"
@@ -372,7 +372,7 @@ export default {
               "marginTop": "10px"
             },
             "component": {
-              "is": "myImg",
+              "is": "addModule",
               "src": "/demoImg/l_1_2.png",
               "style": {
                 "width": "100%"
@@ -389,7 +389,7 @@ export default {
               "marginTop": "10px"
             },
             "component": {
-              "is": "myImg",
+              "is": "addModule",
               "src": "/demoImg/l_1_3.png",
               "style": {
                 "width": "100%"
@@ -410,7 +410,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "myImg",
+              "is": "addModule",
               "src": "/demoImg/l_2_1.png",
               "style": {
                 "width": "100%"
@@ -422,7 +422,7 @@ export default {
             "type": 2,
             "title": "事件列表",
             "component": {
-              "is": "myImg",
+              "is": "addModule",
               "src": "/demoImg/l_2_2.png",
               "style": {
                 "width": "100%"
@@ -449,7 +449,7 @@ export default {
                 "marginTop": "12px"
               },
               "component": {
-                "is": "myImg",
+                "is": "addModule",
                 "src": "/demoImg/r_1_1.png",
                 "style": {
                   "width": "100%"
@@ -462,7 +462,7 @@ export default {
               "type": 2,
               "title": "事件列表",
               "component": {
-                "is": "myImg",
+                "is": "addModule",
                 "src": "/demoImg/r_1_2.png",
                 "style": {
                   "width": "100%"
@@ -485,7 +485,7 @@ export default {
                 "marginTop": "12px"
               },
               "component": {
-                "is": "myVideo",
+                "is": "addModule",
                 "style": {
                   "width": "100%",
                   "height": "100%"
@@ -498,7 +498,7 @@ export default {
               "type": 2,
               "title": "事件列表",
               "component": {
-                "is": "myImg",
+                "is": "addModule",
                 "src": "/demoImg/r_2_2.png",
                 "style": {
                   "width": "100%"
@@ -515,7 +515,7 @@ export default {
               "type": 2,
               "title": "事件列表",
               "component": {
-                "is": "myImg",
+                "is": "addModule",
                 "src": "/demoImg/r_2_3.png",
                 "style": {
                   "width": "100%"
@@ -608,7 +608,7 @@ export default {
             "visible": true,
             "hasMark": false,
             "type": 1,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -621,7 +621,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "addModule",
+            "moduleId": "production",
             "hasMark": false,
             "type": 1,
             "styles": {
@@ -639,7 +639,7 @@ export default {
           "1": {
             "visible": true,
             "type": 2,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -651,7 +651,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -664,7 +664,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "type": 2,
             "styles": {
               "width": "440px",
@@ -677,7 +677,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -693,7 +693,7 @@ export default {
           "1": {
             "visible": true,
             "type": 2,
-            "moduleId": "addModule",
+            "moduleId": "fxft_baseInfo",
             "styles": {
               "width": "440px",
               "height": "935px",
@@ -705,7 +705,7 @@ export default {
           "2": {
             "visible": true,
             "type": 2,
-            "moduleId": "addModule",
+            "moduleId": "fxft_eventInfo",
             "styles": {
               "width": "440px",
               "height": "935px",
@@ -718,7 +718,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "addModule",
+            "moduleId": "fxft_realtime",
             "type": 3,
             "styles": {
               "width": "880px",
@@ -744,7 +744,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "realTimePolice"
+              "is": "addModule"
             }
           },
           {
@@ -752,7 +752,7 @@ export default {
             "hasBox": true,
             "title": "实时警情",
             "component": {
-              "is": "myVideo"
+              "is": "addModule"
             },
             "styles": {
               "height": "320px",
@@ -773,7 +773,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "investment"
+              "is": "addModule"
             }
           },
           {
@@ -781,7 +781,7 @@ export default {
             "hasBox": true,
             "title": "经济指标",
             "component": {
-              "is": "aaa"
+              "is": "addModule"
             },
             "styles": {
               "height": "154px",
@@ -798,7 +798,7 @@ export default {
             "hasBox": true,
             "title": "应急资源",
             "component": {
-              "is": "aaa"
+              "is": "addModule"
             },
             "styles": {
               "height": "250px",
@@ -814,7 +814,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "bbb"
+              "is": "addModule"
             }
           },
           {
@@ -822,7 +822,7 @@ export default {
             "title": "接处警情况",
             "hasBox": true,
             "component": {
-              "is": "ccc"
+              "is": "addModule"
             },
             "styles": {
               "height": "133px",
@@ -839,7 +839,7 @@ export default {
             "hasBox": true,
             "title": "实时警情",
             "component": {
-              "is": "myVideo"
+              "is": "addModule"
             },
             "styles": {
               "height": "320px",
@@ -861,7 +861,7 @@ export default {
               "marginTop": "10px"
             },
             "component": {
-              "is": "myImg",
+              "is": "addModule",
               "src": "/demoImg/l_1_1.png",
               "style": {
                 "width": "100%"
@@ -878,7 +878,7 @@ export default {
               "marginTop": "10px"
             },
             "component": {
-              "is": "myImg",
+              "is": "addModule",
               "src": "/demoImg/l_1_2.png",
               "style": {
                 "width": "100%"
@@ -895,7 +895,7 @@ export default {
               "marginTop": "10px"
             },
             "component": {
-              "is": "myImg",
+              "is": "addModule",
               "src": "/demoImg/l_1_3.png",
               "style": {
                 "width": "100%"
@@ -916,7 +916,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "myImg",
+              "is": "addModule",
               "src": "/demoImg/l_2_1.png",
               "style": {
                 "width": "100%"
@@ -928,7 +928,7 @@ export default {
             "type": 2,
             "title": "事件列表",
             "component": {
-              "is": "myImg",
+              "is": "addModule",
               "src": "/demoImg/l_2_2.png",
               "style": {
                 "width": "100%"
@@ -955,7 +955,7 @@ export default {
                 "marginTop": "12px"
               },
               "component": {
-                "is": "myImg",
+                "is": "addModule",
                 "src": "/demoImg/r_1_1.png",
                 "style": {
                   "width": "100%"
@@ -968,7 +968,7 @@ export default {
               "type": 2,
               "title": "事件列表",
               "component": {
-                "is": "myImg",
+                "is": "addModule",
                 "src": "/demoImg/r_1_2.png",
                 "style": {
                   "width": "100%"
@@ -991,7 +991,7 @@ export default {
                 "marginTop": "12px"
               },
               "component": {
-                "is": "myVideo",
+                "is": "addModule",
                 "style": {
                   "width": "100%",
                   "height": "100%"
@@ -1004,7 +1004,7 @@ export default {
               "type": 2,
               "title": "事件列表",
               "component": {
-                "is": "myImg",
+                "is": "addModule",
                 "src": "/demoImg/r_2_2.png",
                 "style": {
                   "width": "100%"
@@ -1021,7 +1021,7 @@ export default {
               "type": 2,
               "title": "事件列表",
               "component": {
-                "is": "myImg",
+                "is": "addModule",
                 "src": "/demoImg/r_2_3.png",
                 "style": {
                   "width": "100%"

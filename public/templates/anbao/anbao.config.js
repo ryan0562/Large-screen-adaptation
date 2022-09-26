@@ -31,7 +31,7 @@ export default {
         "left": {
           "1": {
             "visible": true,
-            "moduleId": "addModule",
+            "moduleId": "video",
             "styles": {
               "width": "755px",
               "height": "420px",
@@ -43,7 +43,7 @@ export default {
           "2": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -55,7 +55,7 @@ export default {
           "3": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "addModule",
+            "moduleId": "production",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -68,7 +68,7 @@ export default {
             "visible": true,
             "hasBox": true,
             "hasYaw": true,
-            "moduleId": "addModule",
+            "moduleId": "production",
             "styles": {
               "width": "366px",
               "height": "1060px",
@@ -81,7 +81,7 @@ export default {
         "right": {
           "1": {
             "visible": true,
-            "moduleId": "addModule",
+            "moduleId": "video",
             "styles": {
               "width": "755px",
               "height": "420px",
@@ -93,7 +93,7 @@ export default {
           "2": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -105,7 +105,7 @@ export default {
           "3": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "addModule",
+            "moduleId": "production",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -118,7 +118,7 @@ export default {
             "visible": true,
             "hasBox": true,
             "hasYaw": true,
-            "moduleId": "addModule",
+            "moduleId": "production",
             "styles": {
               "width": "366px",
               "height": "1060px",
@@ -133,7 +133,7 @@ export default {
         "left": {
           "1": {
             "visible": true,
-            "moduleId": "addModule",
+            "moduleId": "video",
             "styles": {
               "width": "755px",
               "height": "420px",
@@ -145,7 +145,7 @@ export default {
           "2": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "addModule",
+            "moduleId": "safe",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -157,7 +157,7 @@ export default {
           "3": {
             "visible": true,
             "hasBox": true,
-            "moduleId": "addModule",
+            "moduleId": "production",
             "styles": {
               "width": "366px",
               "height": "635px",
@@ -170,7 +170,7 @@ export default {
             "visible": true,
             "hasBox": true,
             "hasYaw": true,
-            "moduleId": "addModule",
+            "moduleId": "production",
             "styles": {
               "width": "366px",
               "height": "1060px",
@@ -194,7 +194,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "realTimePolice"
+              "is": "addModule"
             }
           },
           {
@@ -204,7 +204,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "investment"
+              "is": "addModule"
             }
           }
         ]
@@ -220,14 +220,14 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "investment"
+              "is": "addModule"
             }
           },
           {
             "showHeader": true,
             "title": "经济指标",
             "component": {
-              "is": "aaa"
+              "is": "addModule"
             },
             "styles": {
               "height": "154px",
@@ -243,7 +243,7 @@ export default {
             "showHeader": true,
             "title": "应急资源",
             "component": {
-              "is": "aaa"
+              "is": "addModule"
             },
             "styles": {
               "height": "250px",
@@ -258,14 +258,14 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "bbb"
+              "is": "addModule"
             }
           },
           {
             "showHeader": true,
             "title": "接处警情况",
             "component": {
-              "is": "ccc"
+              "is": "addModule"
             },
             "styles": {
               "height": "133px",
@@ -282,7 +282,7 @@ export default {
             "hasBox": false,
             "title": "实时警情",
             "component": {
-              "is": "myVideo"
+              "is": "addModule"
             },
             "styles": {
               "width": "100%",
@@ -334,7 +334,7 @@ export default {
       "1": {
         "visible": true,
         "hasBox": true,
-        "moduleId": "addModule",
+        "moduleId": "safe",
         "styles": {
           "width": "366px",
           "height": "1060px",
@@ -347,7 +347,7 @@ export default {
         "visible": true,
         "hasBox": true,
         "hasYaw": true,
-        "moduleId": "addModule",
+        "moduleId": "production",
         "styles": {
           "width": "366px",
           "height": "1060px",
@@ -361,7 +361,7 @@ export default {
       "1": {
         "visible": true,
         "hasBox": true,
-        "moduleId": "addModule",
+        "moduleId": "safe",
         "styles": {
           "width": "366px",
           "height": "1060px",
@@ -374,7 +374,7 @@ export default {
         "visible": true,
         "hasBox": true,
         "hasYaw": true,
-        "moduleId": "addModule",
+        "moduleId": "production",
         "styles": {
           "width": "366px",
           "height": "1060px",
@@ -395,7 +395,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "realTimePolice"
+              "is": "addModule"
             }
           },
           {
@@ -405,7 +405,7 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "investment"
+              "is": "addModule"
             }
           }
         ]
@@ -421,14 +421,14 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "investment"
+              "is": "addModule"
             }
           },
           {
             "showHeader": true,
             "title": "经济指标",
             "component": {
-              "is": "aaa"
+              "is": "addModule"
             },
             "styles": {
               "height": "154px",
@@ -444,7 +444,7 @@ export default {
             "showHeader": true,
             "title": "应急资源",
             "component": {
-              "is": "aaa"
+              "is": "addModule"
             },
             "styles": {
               "height": "250px",
@@ -459,14 +459,14 @@ export default {
               "marginTop": "12px"
             },
             "component": {
-              "is": "bbb"
+              "is": "addModule"
             }
           },
           {
             "showHeader": true,
             "title": "接处警情况",
             "component": {
-              "is": "ccc"
+              "is": "addModule"
             },
             "styles": {
               "height": "133px",
@@ -483,7 +483,7 @@ export default {
             "hasBox": false,
             "title": "实时警情",
             "component": {
-              "is": "myVideo"
+              "is": "addModule"
             },
             "styles": {
               "width": "100%",

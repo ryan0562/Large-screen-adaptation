@@ -13,7 +13,8 @@
           ></templateItem>
         </div>
       </el-tab-pane>
-      <el-tab-pane label="模板库" name="templates" lazy> </el-tab-pane>
+      <el-tab-pane label="模板库" name="templates" lazy> 
+      </el-tab-pane>
       <el-tab-pane label="组件库" name="components" lazy> </el-tab-pane>
     </el-tabs>
     <addProject ref="addProject" />
@@ -24,7 +25,7 @@
 export default {
   components: {
     addProject: () => import('./addProject.vue'),
-    templateItem: () => import('./templateItem.vue'),
+    templateItem: () => import('@/components/templateItem.vue'),
   },
   data() {
     return {
