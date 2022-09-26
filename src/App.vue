@@ -7,6 +7,9 @@
 
 <script>
 export default {
+  data() {
+    return {};
+  },
   components: {
     moduleListDialog: () => import('@/components/addModule/moduleListDialog.vue'),
   },

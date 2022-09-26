@@ -3,7 +3,7 @@
     <el-dialog title="组件库" :visible.sync="visible" width="1400px">
       <div class="itemList">
         <el-radio-group v-model="moduleId">
-          <el-radio v-for="(item, key) in modules" :key="item.name" :label="item.name">
+          <el-radio v-for="item in modules" :key="item.name" :label="item.name">
             <templateItem :src="item.img" :preview-src-list="[item.img]" :name="item.name"></templateItem>
           </el-radio>
         </el-radio-group>
@@ -16,56 +16,59 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
   components: {
     templateItem: () => import('@/components/templateItem.vue'),
   },
-  computed: {
-    ...mapGetters(['$layout']),
-  },
   data() {
     return {
-      visible: true,
+      visible: false,
       moduleId: null,
-      modules:[
+      modules: [
         {
-          name:'aaa',
-          img:'/demoImg/l_1_1.png'
+          name: 'aaa',
+          img: '/demoImg/l_1_1.png',
         },
         {
-          name:'bbb',
-          img:'/demoImg/l_1_1.png'
+          name: 'bbb',
+          img: '/demoImg/l_1_1.png',
         },
         {
-          name:'ccc',
-          img:'/demoImg/l_1_1.png'
+          name: 'ccc',
+          img: '/demoImg/l_1_1.png',
         },
         {
-          name:'realTimePolice',
-          img:'/demoImg/l_1_1.png'
+          name: 'realTimePolice',
+          img: '/demoImg/l_1_1.png',
         },
         {
-          name:'myVideo',
-          img:'/demoImg/l_1_1.png'
+          name: 'myVideo',
+          img: '/demoImg/l_1_1.png',
         },
         {
-          name:'investment',
-          img:'/demoImg/l_1_1.png'
+          name: 'investment',
+          img: '/demoImg/l_1_1.png',
         },
         {
-          name:'myImg',
-          img:'/demoImg/l_1_1.png'
+          name: 'myImg',
+          img: '/demoImg/l_1_1.png',
         },
-      ]
+      ],
+      data: null, //暂存数据
     };
   },
-  created() {},
+  mounted() {
+    this.$bus.$on('moduleListDialog_open', this.open);
+  },
   methods: {
-    submit(){
-
-    }
+    submit() {
+      this.data.component.is = this.moduleId;
+      this.visible = false;
+    },
+    open(data) {
+      this.data = data;
+      this.visible = true;
+    },
   },
 };
 </script>

@@ -1,18 +1,21 @@
 <template>
-  <div class="addModuleBox" @click="$bus.$emit('changeModule',data)">
+  <div class="addModuleBox" @click="showModules">
     <i class="el-icon-plus icon"></i>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 
 export default {
   name: 'addModuleBox',
   computed: {
-    ...mapGetters(['$layout']),
   },
-  props:['data'],
+  props: ['data'],
+  methods: {
+    showModules() {
+      this.$bus.$emit('moduleListDialog_open', this.data);
+    },
+  },
 };
 </script>
 
