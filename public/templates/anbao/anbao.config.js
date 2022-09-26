@@ -1,6 +1,6 @@
 export default {
   "name": '安保模板',
-  "key":"anbao",
+  "key": "anbao",
   "thumbnail": '/templates/anbao/img.png',
   "3840_1080": {
     "visible": true,
@@ -26,106 +26,163 @@ export default {
       "zindex": 0,
       "visible": true
     },
-    "dataArea_left": {
-      "1": {
-        "visible": true,
-        "moduleId": "video",
-        "styles": {
-          "width": "755px",
-          "height": "420px",
-          "top": "10px",
-          "left": "0",
-          "zIndex": 1
-        }
+    "dataArea": {
+      "home": {
+        "left": {
+          "1": {
+            "visible": true,
+            "moduleId": "video",
+            "styles": {
+              "width": "755px",
+              "height": "420px",
+              "top": "10px",
+              "left": "0",
+              "zIndex": 1
+            }
+          },
+          "2": {
+            "visible": true,
+            "hasBox": true,
+            "moduleId": "safe",
+            "styles": {
+              "width": "366px",
+              "height": "635px",
+              "top": "435px",
+              "left": "0",
+              "zIndex": 1
+            }
+          },
+          "3": {
+            "visible": true,
+            "hasBox": true,
+            "moduleId": "production",
+            "styles": {
+              "width": "366px",
+              "height": "635px",
+              "top": "435px",
+              "left": "386px",
+              "zIndex": 1
+            }
+          },
+          "4": {
+            "visible": true,
+            "hasBox": true,
+            "hasYaw": true,
+            "moduleId": "production",
+            "styles": {
+              "width": "366px",
+              "height": "1060px",
+              "top": "10px",
+              "left": "768px",
+              "zIndex": 1
+            }
+          }
+        },
+        "right": {
+          "1": {
+            "visible": true,
+            "moduleId": "video",
+            "styles": {
+              "width": "755px",
+              "height": "420px",
+              "top": "10px",
+              "right": "0",
+              "zIndex": 1
+            }
+          },
+          "2": {
+            "visible": true,
+            "hasBox": true,
+            "moduleId": "safe",
+            "styles": {
+              "width": "366px",
+              "height": "635px",
+              "top": "435px",
+              "right": "0",
+              "zIndex": 1
+            }
+          },
+          "3": {
+            "visible": true,
+            "hasBox": true,
+            "moduleId": "production",
+            "styles": {
+              "width": "366px",
+              "height": "635px",
+              "top": "435px",
+              "right": "386px",
+              "zIndex": 1
+            }
+          },
+          "4": {
+            "visible": true,
+            "hasBox": true,
+            "hasYaw": true,
+            "moduleId": "production",
+            "styles": {
+              "width": "366px",
+              "height": "1060px",
+              "top": "10px",
+              "right": "768px",
+              "zIndex": 1
+            }
+          }
+        },
       },
-      "2": {
-        "visible": true,
-        "hasBox": true,
-        "moduleId": "safe",
-        "styles": {
-          "width": "366px",
-          "height": "635px",
-          "top": "435px",
-          "left": "0",
-          "zIndex": 1
-        }
-      },
-      "3": {
-        "visible": true,
-        "hasBox": true,
-        "moduleId": "production",
-        "styles": {
-          "width": "366px",
-          "height": "635px",
-          "top": "435px",
-          "left": "386px",
-          "zIndex": 1
-        }
-      },
-      "4": {
-        "visible": true,
-        "hasBox": true,
-        "hasYaw": true,
-        "moduleId": "production",
-        "styles": {
-          "width": "366px",
-          "height": "1060px",
-          "top": "10px",
-          "left": "768px",
-          "zIndex": 1
-        }
+      "half": {
+        "left": {
+          "1": {
+            "visible": true,
+            "moduleId": "video",
+            "styles": {
+              "width": "755px",
+              "height": "420px",
+              "top": "10px",
+              "left": "0",
+              "zIndex": 1
+            }
+          },
+          "2": {
+            "visible": true,
+            "hasBox": true,
+            "moduleId": "safe",
+            "styles": {
+              "width": "366px",
+              "height": "635px",
+              "top": "435px",
+              "left": "0",
+              "zIndex": 1
+            }
+          },
+          "3": {
+            "visible": true,
+            "hasBox": true,
+            "moduleId": "production",
+            "styles": {
+              "width": "366px",
+              "height": "635px",
+              "top": "435px",
+              "left": "386px",
+              "zIndex": 1
+            }
+          },
+          "4": {
+            "visible": true,
+            "hasBox": true,
+            "hasYaw": true,
+            "moduleId": "production",
+            "styles": {
+              "width": "366px",
+              "height": "1060px",
+              "top": "10px",
+              "left": "768px",
+              "zIndex": 1
+            }
+          }
+        },
       }
     },
-    "dataArea_right": {
-      "1": {
-        "visible": true,
-        "moduleId": "video",
-        "styles": {
-          "width": "755px",
-          "height": "420px",
-          "top": "10px",
-          "right": "0",
-          "zIndex": 1
-        }
-      },
-      "2": {
-        "visible": true,
-        "hasBox": true,
-        "moduleId": "safe",
-        "styles": {
-          "width": "366px",
-          "height": "635px",
-          "top": "435px",
-          "right": "0",
-          "zIndex": 1
-        }
-      },
-      "3": {
-        "visible": true,
-        "hasBox": true,
-        "moduleId": "production",
-        "styles": {
-          "width": "366px",
-          "height": "635px",
-          "top": "435px",
-          "right": "386px",
-          "zIndex": 1
-        }
-      },
-      "4": {
-        "visible": true,
-        "hasBox": true,
-        "hasYaw": true,
-        "moduleId": "production",
-        "styles": {
-          "width": "366px",
-          "height": "1060px",
-          "top": "10px",
-          "right": "768px",
-          "zIndex": 1
-        }
-      }
-    },
+
     "dataAreaModules": {
       "safe": {
         "title": "公共安全",
@@ -273,7 +330,7 @@ export default {
       "zindex": 0,
       "visible": true
     },
-    "dataArea_left": {
+    "dataArea": {
       "1": {
         "visible": true,
         "hasBox": true,

@@ -2,11 +2,11 @@
   <div>
     <screen_header v-if="$layout.header" :options="$layout.header" @back="goback()" />
     <!-- 数据区 左 -->
-    <template v-for="(item, index) in $layout.dataArea_left">
+    <template v-for="(item, index) in $layout.dataArea[$config.screen].left">
       <dataArea
         v-if="item.visible"
         :class="[`dataArea_left_${index}`, { 'fold-left': foldAllState }, { offset: foldAllState && index !== '1' }]"
-        :key="`dataArea_left_${index}`"
+        :key="`dataArea_${$config.screen}_left_${index}`"
         :style="item.styles"
         :data="item"
         type="left"
@@ -15,11 +15,11 @@
       />
     </template>
     <!-- 数据区 右 -->
-    <template v-for="(item, index) in $layout.dataArea_right">
+    <template v-for="(item, index) in $layout.dataArea[$config.screen].right">
       <dataArea
         v-if="item.visible"
         :class="[`dataArea_right_${index}`, { 'fold-right': foldAllState }, { offset: foldAllState && index !== '1' }]"
-        :key="`dataArea_right_${index}`"
+        :key="`dataArea_${$config.screen}_right_${index}`"
         :style="item.styles"
         :data="item"
         type="right"
