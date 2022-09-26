@@ -1,53 +1,19 @@
 <template>
   <div>
     <screen_header v-if="$layout.header" :options="$layout.header" @back="goback()" />
-    <!-- 数据区 左 -->
-    <template v-for="(item, index) in $layout.dataArea[$config.screen].left">
-      <transition :name="$config.animate" :key="`animate_${$config.screen}_left_${index}`">
+    <!-- 面板 -->
+    <template v-for="(item, index) in $layout.dataArea[$config.screen].panels">
+      <transition :name="$config.animate" :key="`animate_${$config.screen}_${index}`">
         <dataArea
           v-if="item.visible"
-          :class="[`dataArea_left_${index}`]"
-          :key="`dataArea_${$config.screen}_left_${index}`"
+          :key="`dataArea_${$config.screen}_${index}`"
           :style="item.styles"
           :data="item"
-          type="left"
+          :type="item.place"
           :id="index"
           @clickTitle="switchPage"
         />
       </transition>
-      <dataMarkArea
-        v-if="item.hasMark"
-        :class="`dataMarkArea_left_${index}`"
-        :key="`dataMarkArea_left_${index}`"
-        :data="item"
-        :id="index"
-        type="left"
-        @click.native="$toggleFold('left', index)"
-      />
-    </template>
-    <!-- 数据区 右 -->
-    <template v-for="(item, index) in $layout.dataArea[$config.screen].right">
-      <transition :name="$config.animate" :key="`animate_${$config.screen}_right_${index}`">
-        <dataArea
-          v-if="item.visible"
-          :class="[`dataArea_right_${index}`]"
-          :key="`dataArea_${$config.screen}_right_${index}`"
-          :style="item.styles"
-          :data="item"
-          type="right"
-          :id="index"
-          @clickTitle="switchPage"
-        />
-      </transition>
-      <dataMarkArea
-        v-if="item.hasMark"
-        :class="`dataMarkArea_right_${index}`"
-        :key="`dataMarkArea_${$config.screen}_right_${index}`"
-        :data="item"
-        :id="index"
-        type="right"
-        @click.native="$toggleFold('right', index)"
-      />
     </template>
     <!-- 菜单栏 -->
     <superMenu :options="$layout.menu" @clickMenu="clickMenu" />
@@ -58,7 +24,7 @@
 import './styles/index.less';
 
 import { switchPage, goback } from '@/utils/utils.js';
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 export default {
   components: {
     screen_header: () => import('./components/header/screen_header.vue'),

@@ -5,22 +5,27 @@
 </template>
 
 <script>
-  export default {
-    name:'addModuleBox'
-  }
+import { mapGetters } from 'vuex';
+
+export default {
+  name: 'addModuleBox',
+  computed: {
+    ...mapGetters(['$layout']),
+  },
+};
 </script>
 
 <style lang="less" scoped>
-  .addModuleBox {
-    width: 100%;
-    height: 100%;
-    border: 1px dashed #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    .icon {
-      font-size: 30px;
-    }
+.addModuleBox {
+  width: 100%;
+  height: 100%;
+  border: 1px dashed #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  .icon {
+    font-size: 30px;
   }
+}
 </style>

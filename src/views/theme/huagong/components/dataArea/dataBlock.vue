@@ -1,4 +1,5 @@
 <template>
+<!-- 无盒子 -->
   <div class="dataBlock" :style="data.styles" v-if="data.type == 2">
     <div class="head head_2" v-if="data.showHeader">
       {{ data.title }}
@@ -7,6 +8,7 @@
       <component v-bind="data.component"></component>
     </div>
   </div>
+  <!-- 有盒子 -->
   <div :class="['dataBlock', { box: data.hasBox }]" :style="data.styles" v-else>
     <div class="head head_1" v-if="data.showHeader">
       {{ data.title }}

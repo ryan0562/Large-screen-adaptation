@@ -2,36 +2,35 @@
   <!-- 类型2 -->
   <div class="dataAreaBox" v-if="data.type == 2">
     <div class="tit bg2" @click="$emit('clickTitle', data.moduleId)">
-      {{ dataAreaModule.title }}
+      {{ data.title }}
     </div>
-    <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" :data="item" />
+    <dataBlock v-for="(item, index) in data.modules" :key="index" :data="item" />
   </div>
   <!-- 类型3 -->
   <div class="dataAreaBox dataAreaBox_3" v-else-if="data.type == 3">
     <div class="tit bg2" @click="$emit('clickTitle', data.moduleId)">
-      {{ dataAreaModule.title }}
+      {{ data.title }}
     </div>
     <div class="con">
       <div class="dataBlock_left">
-        <dataBlock v-for="(item, index) in dataAreaModule.modules.left" :key="index" :data="item" />
+        <dataBlock v-for="(item, index) in data.modules.left" :key="index" :data="item" />
       </div>
       <div class="dataBlock_right">
-        <dataBlock v-for="(item, index) in dataAreaModule.modules.right" :key="index" :data="item" />
+        <dataBlock v-for="(item, index) in data.modules.right" :key="index" :data="item" />
       </div>
     </div>
   </div>
   <!-- 类型1 -->
   <div class="dataAreaBox" v-else>
     <div class="tit bg1" @click="$emit('clickTitle', data.moduleId)">
-      {{ dataAreaModule.title }}
+      {{ data.title }}
     </div>
     <div class="line"></div>
-    <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" :data="item" />
+    <dataBlock v-for="(item, index) in data.modules" :key="index" :data="item" />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -51,11 +50,6 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['$layout']),
-
-    dataAreaModule() {
-      return this.$layout.dataAreaModules[this.data.moduleId] || {};
-    },
   },
 };
 </script>

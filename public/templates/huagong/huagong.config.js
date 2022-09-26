@@ -58,12 +58,39 @@ export default {
     "dataArea": {
       "home": {
         "img": '/templates/huagong/img.png',
-        "left": {
+        "panels": {
           "1": {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "moduleId": "safe",
+            "place":'left',
+            "title": "公共安全",
+            "modules": [
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "视频监控",
+                "styles": {
+                  "height": "155px",
+                  "marginTop": "12px"
+                },
+                "component": {
+                  "is": "addModule"
+                }
+              },
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "实时警情",
+                "component": {
+                  "is": "addModule"
+                },
+                "styles": {
+                  "height": "320px",
+                  "marginTop": "12px"
+                }
+              }
+            ],
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -76,7 +103,34 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "moduleId": "production",
+            "place":'left',
+            "title": "公共安全",
+            "modules": [
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "视频监控",
+                "styles": {
+                  "height": "155px",
+                  "marginTop": "12px"
+                },
+                "component": {
+                  "is": "addModule"
+                }
+              },
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "实时警情",
+                "component": {
+                  "is": "addModule"
+                },
+                "styles": {
+                  "height": "320px",
+                  "marginTop": "12px"
+                }
+              }
+            ],
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -88,8 +142,35 @@ export default {
           "3": {
             "visible": true,
             "hasMark": true,
+            "title": "公共安全",
+            "place":'left',
             "type": 1,
-            "moduleId": "emergency",
+            "modules": [
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "视频监控",
+                "styles": {
+                  "height": "155px",
+                  "marginTop": "12px"
+                },
+                "component": {
+                  "is": "addModule"
+                }
+              },
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "实时警情",
+                "component": {
+                  "is": "addModule"
+                },
+                "styles": {
+                  "height": "320px",
+                  "marginTop": "12px"
+                }
+              }
+            ],
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -97,12 +178,77 @@ export default {
               "left": "932px",
               "zIndex": 1
             }
-          }
-        },
-        "right": {
-          "1": {
+          },
+          "4": {
             "visible": true,
-            "moduleId": "safe",
+            "title": "公共安全",
+            "place":'right',
+            "hasMark": true,
+            "type": 1,
+            "modules": [
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "视频监控",
+                "styles": {
+                  "height": "155px",
+                  "marginTop": "12px"
+                },
+                "component": {
+                  "is": "addModule"
+                }
+              },
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "实时警情",
+                "component": {
+                  "is": "addModule"
+                },
+                "styles": {
+                  "height": "320px",
+                  "marginTop": "12px"
+                }
+              }
+            ],
+            "styles": {
+              "width": "440px",
+              "height": "972px",
+              "top": "93px",
+              "right": "472px",
+              "zIndex": 1
+            }
+          },
+          "5": {
+            "visible": true, 
+            "title": "公共安全",
+            "place":'right',
+            "modules": [
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "视频监控",
+                "styles": {
+                  "height": "155px",
+                  "marginTop": "12px"
+                },
+                "component": {
+                  "is": "addModule"
+                }
+              },
+              {
+                "showHeader": true,
+                "hasBox": true,
+                "title": "实时警情",
+                "component": {
+                  "is": "addModule"
+                },
+                "styles": {
+                  "height": "320px",
+                  "marginTop": "12px"
+                }
+              }
+            ],
             "hasMark": true,
             "type": 1,
             "styles": {
@@ -113,421 +259,8 @@ export default {
               "zIndex": 1
             }
           },
-          "2": {
-            "visible": true,
-            "hasMark": true,
-            "type": 1,
-            "moduleId": "production",
-            "styles": {
-              "width": "440px",
-              "height": "972px",
-              "top": "93px",
-              "right": "472px",
-              "zIndex": 1
-            }
-          }
         }
       },
-      "safe": {
-        "left": {
-          "1": {
-            "visible": true,
-            "type": 2,
-            "moduleId": "safe",
-            "styles": {
-              "width": "440px",
-              "height": "972px",
-              "top": "93px",
-              "left": "20px",
-              "zIndex": 1
-            }
-          },
-          "2": {
-            "visible": true,
-            "type": 2,
-            "moduleId": "safe",
-            "styles": {
-              "width": "440px",
-              "height": "972px",
-              "top": "93px",
-              "left": "472px",
-              "zIndex": 1
-            }
-          }
-        },
-        "right": {
-          "1": {
-            "visible": true,
-            "moduleId": "safe",
-            "type": 2,
-            "styles": {
-              "width": "440px",
-              "height": "972px",
-              "top": "93px",
-              "right": "20px",
-              "zIndex": 1
-            }
-          },
-          "2": {
-            "visible": true,
-            "type": 2,
-            "moduleId": "safe",
-            "styles": {
-              "width": "440px",
-              "height": "972px",
-              "top": "93px",
-              "right": "472px",
-              "zIndex": 1
-            }
-          }
-        }
-      },
-      "ftfx": {
-        "left": {
-          "1": {
-            "visible": true,
-            "type": 2,
-            "moduleId": "fxft_baseInfo",
-            "styles": {
-              "width": "440px",
-              "height": "935px",
-              "top": "125px",
-              "left": "20px",
-              "zIndex": 1
-            }
-          },
-          "2": {
-            "visible": true,
-            "type": 2,
-            "moduleId": "fxft_eventInfo",
-            "styles": {
-              "width": "440px",
-              "height": "935px",
-              "top": "125px",
-              "left": "472px",
-              "zIndex": 1
-            }
-          }
-        },
-        "right": {
-          "1": {
-            "visible": true,
-            "moduleId": "fxft_realtime",
-            "type": 3,
-            "styles": {
-              "width": "880px",
-              "height": "935px",
-              "top": "125px",
-              "right": "20px",
-              "zIndex": 1
-            }
-          }
-        }
-      }
-    },
-    "dataAreaModules": {
-      "safe": {
-        "title": "公共安全",
-        "modules": [
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "视频监控",
-            "styles": {
-              "height": "155px",
-              "marginTop": "12px"
-            },
-            "component": {
-              "is": "addModule"
-            }
-          },
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "实时警情",
-            "component": {
-              "is": "addModule"
-            },
-            "styles": {
-              "height": "320px",
-              "marginTop": "12px"
-            }
-          }
-        ]
-      },
-      "production": {
-        "title": "生产运行",
-        "modules": [
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "投资促进",
-            "styles": {
-              "height": "320px",
-              "marginTop": "12px"
-            },
-            "component": {
-              "is": "addModule"
-            }
-          },
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "经济指标",
-            "component": {
-              "is": "addModule"
-            },
-            "styles": {
-              "height": "154px",
-              "marginTop": "12px"
-            }
-          }
-        ]
-      },
-      "emergency": {
-        "title": "安全应急",
-        "modules": [
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "应急资源",
-            "component": {
-              "is": "addModule"
-            },
-            "styles": {
-              "height": "250px",
-              "marginTop": "12px"
-            }
-          },
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "累计安全天数",
-            "styles": {
-              "height": "242px",
-              "marginTop": "12px"
-            },
-            "component": {
-              "is": "addModule"
-            }
-          },
-          {
-            "showHeader": true,
-            "title": "接处警情况",
-            "hasBox": true,
-            "component": {
-              "is": "addModule"
-            },
-            "styles": {
-              "height": "133px",
-              "marginTop": "12px"
-            }
-          }
-        ]
-      },
-      "video": {
-        "title": "视频",
-        "modules": [
-          {
-            "showHeader": false,
-            "hasBox": true,
-            "title": "实时警情",
-            "component": {
-              "is": "addModule"
-            },
-            "styles": {
-              "height": "320px",
-              "marginTop": "12px"
-            }
-          }
-        ]
-      },
-      "fxft_baseInfo": {
-        "title": "基础信息",
-        "modules": [
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "今日值班",
-            "type": 2,
-            "styles": {
-              "height": "270px",
-              "marginTop": "10px"
-            },
-            "component": {
-              "is": "addModule",
-              "src": "/demoImg/l_1_1.png",
-              "style": {
-                "width": "100%"
-              }
-            }
-          },
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "防汛物资",
-            "type": 2,
-            "styles": {
-              "height": "312px",
-              "marginTop": "10px"
-            },
-            "component": {
-              "is": "addModule",
-              "src": "/demoImg/l_1_2.png",
-              "style": {
-                "width": "100%"
-              }
-            }
-          },
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "防汛队伍",
-            "type": 2,
-            "styles": {
-              "height": "270px",
-              "marginTop": "10px"
-            },
-            "component": {
-              "is": "addModule",
-              "src": "/demoImg/l_1_3.png",
-              "style": {
-                "width": "100%"
-              }
-            }
-          }
-        ]
-      },
-      "fxft_eventInfo": {
-        "title": "事件信息",
-        "modules": [
-          {
-            "showHeader": true,
-            "title": "防汛预警相应",
-            "type": 2,
-            "styles": {
-              "height": "225px",
-              "marginTop": "12px"
-            },
-            "component": {
-              "is": "addModule",
-              "src": "/demoImg/l_2_1.png",
-              "style": {
-                "width": "100%"
-              }
-            }
-          },
-          {
-            "showHeader": true,
-            "type": 2,
-            "title": "事件列表",
-            "component": {
-              "is": "addModule",
-              "src": "/demoImg/l_2_2.png",
-              "style": {
-                "width": "100%"
-              }
-            },
-            "styles": {
-              "height": "400px",
-              "marginTop": "12px"
-            }
-          }
-        ]
-      },
-      "fxft_realtime": {
-        "title": "实时数据",
-        "modules": {
-          "left": [
-            {
-              "showHeader": true,
-              "title": "实时气象",
-              "hasBox": true,
-              "type": 2,
-              "styles": {
-                "height": "590px",
-                "marginTop": "12px"
-              },
-              "component": {
-                "is": "addModule",
-                "src": "/demoImg/r_1_1.png",
-                "style": {
-                  "width": "100%"
-                }
-              }
-            },
-            {
-              "showHeader": true,
-              "hasBox": true,
-              "type": 2,
-              "title": "事件列表",
-              "component": {
-                "is": "addModule",
-                "src": "/demoImg/r_1_2.png",
-                "style": {
-                  "width": "100%"
-                }
-              },
-              "styles": {
-                "height": "260px",
-                "marginTop": "12px"
-              }
-            }
-          ],
-          "right": [
-            {
-              "showHeader": true,
-              "hasBox": true,
-              "title": "视频监控",
-              "type": 2,
-              "styles": {
-                "height": "225px",
-                "marginTop": "12px"
-              },
-              "component": {
-                "is": "addModule",
-                "style": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              }
-            },
-            {
-              "showHeader": true,
-              "hasBox": true,
-              "type": 2,
-              "title": "事件列表",
-              "component": {
-                "is": "addModule",
-                "src": "/demoImg/r_2_2.png",
-                "style": {
-                  "width": "100%"
-                }
-              },
-              "styles": {
-                "height": "525px",
-                "marginTop": "12px"
-              }
-            },
-            {
-              "showHeader": false,
-              "hasBox": true,
-              "type": 2,
-              "title": "事件列表",
-              "component": {
-                "is": "addModule",
-                "src": "/demoImg/r_2_3.png",
-                "style": {
-                  "width": "100%"
-                }
-              },
-              "styles": {
-                "marginTop": "12px"
-              }
-            }
-          ]
-        }
-      }
     },
     "menu": {
       "visible": true,
@@ -728,310 +461,6 @@ export default {
               "zIndex": 1
             }
           }
-        }
-      }
-    },
-    "dataAreaModules": {
-      "safe": {
-        "title": "公共安全",
-        "modules": [
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "视频监控",
-            "styles": {
-              "height": "155px",
-              "marginTop": "12px"
-            },
-            "component": {
-              "is": "addModule"
-            }
-          },
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "实时警情",
-            "component": {
-              "is": "addModule"
-            },
-            "styles": {
-              "height": "320px",
-              "marginTop": "12px"
-            }
-          }
-        ]
-      },
-      "production": {
-        "title": "生产运行",
-        "modules": [
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "投资促进",
-            "styles": {
-              "height": "320px",
-              "marginTop": "12px"
-            },
-            "component": {
-              "is": "addModule"
-            }
-          },
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "经济指标",
-            "component": {
-              "is": "addModule"
-            },
-            "styles": {
-              "height": "154px",
-              "marginTop": "12px"
-            }
-          }
-        ]
-      },
-      "emergency": {
-        "title": "安全应急",
-        "modules": [
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "应急资源",
-            "component": {
-              "is": "addModule"
-            },
-            "styles": {
-              "height": "250px",
-              "marginTop": "12px"
-            }
-          },
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "累计安全天数",
-            "styles": {
-              "height": "242px",
-              "marginTop": "12px"
-            },
-            "component": {
-              "is": "addModule"
-            }
-          },
-          {
-            "showHeader": true,
-            "title": "接处警情况",
-            "hasBox": true,
-            "component": {
-              "is": "addModule"
-            },
-            "styles": {
-              "height": "133px",
-              "marginTop": "12px"
-            }
-          }
-        ]
-      },
-      "video": {
-        "title": "视频",
-        "modules": [
-          {
-            "showHeader": false,
-            "hasBox": true,
-            "title": "实时警情",
-            "component": {
-              "is": "addModule"
-            },
-            "styles": {
-              "height": "320px",
-              "marginTop": "12px"
-            }
-          }
-        ]
-      },
-      "fxft_baseInfo": {
-        "title": "基础信息",
-        "modules": [
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "今日值班",
-            "type": 2,
-            "styles": {
-              "height": "270px",
-              "marginTop": "10px"
-            },
-            "component": {
-              "is": "addModule",
-              "src": "/demoImg/l_1_1.png",
-              "style": {
-                "width": "100%"
-              }
-            }
-          },
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "防汛物资",
-            "type": 2,
-            "styles": {
-              "height": "312px",
-              "marginTop": "10px"
-            },
-            "component": {
-              "is": "addModule",
-              "src": "/demoImg/l_1_2.png",
-              "style": {
-                "width": "100%"
-              }
-            }
-          },
-          {
-            "showHeader": true,
-            "hasBox": true,
-            "title": "防汛队伍",
-            "type": 2,
-            "styles": {
-              "height": "270px",
-              "marginTop": "10px"
-            },
-            "component": {
-              "is": "addModule",
-              "src": "/demoImg/l_1_3.png",
-              "style": {
-                "width": "100%"
-              }
-            }
-          }
-        ]
-      },
-      "fxft_eventInfo": {
-        "title": "事件信息",
-        "modules": [
-          {
-            "showHeader": true,
-            "title": "防汛预警相应",
-            "type": 2,
-            "styles": {
-              "height": "225px",
-              "marginTop": "12px"
-            },
-            "component": {
-              "is": "addModule",
-              "src": "/demoImg/l_2_1.png",
-              "style": {
-                "width": "100%"
-              }
-            }
-          },
-          {
-            "showHeader": true,
-            "type": 2,
-            "title": "事件列表",
-            "component": {
-              "is": "addModule",
-              "src": "/demoImg/l_2_2.png",
-              "style": {
-                "width": "100%"
-              }
-            },
-            "styles": {
-              "height": "400px",
-              "marginTop": "12px"
-            }
-          }
-        ]
-      },
-      "fxft_realtime": {
-        "title": "实时数据",
-        "modules": {
-          "left": [
-            {
-              "showHeader": true,
-              "title": "实时气象",
-              "hasBox": true,
-              "type": 2,
-              "styles": {
-                "height": "590px",
-                "marginTop": "12px"
-              },
-              "component": {
-                "is": "addModule",
-                "src": "/demoImg/r_1_1.png",
-                "style": {
-                  "width": "100%"
-                }
-              }
-            },
-            {
-              "showHeader": true,
-              "hasBox": true,
-              "type": 2,
-              "title": "事件列表",
-              "component": {
-                "is": "addModule",
-                "src": "/demoImg/r_1_2.png",
-                "style": {
-                  "width": "100%"
-                }
-              },
-              "styles": {
-                "height": "260px",
-                "marginTop": "12px"
-              }
-            }
-          ],
-          "right": [
-            {
-              "showHeader": true,
-              "hasBox": true,
-              "title": "视频监控",
-              "type": 2,
-              "styles": {
-                "height": "225px",
-                "marginTop": "12px"
-              },
-              "component": {
-                "is": "addModule",
-                "style": {
-                  "width": "100%",
-                  "height": "100%"
-                }
-              }
-            },
-            {
-              "showHeader": true,
-              "hasBox": true,
-              "type": 2,
-              "title": "事件列表",
-              "component": {
-                "is": "addModule",
-                "src": "/demoImg/r_2_2.png",
-                "style": {
-                  "width": "100%"
-                }
-              },
-              "styles": {
-                "height": "525px",
-                "marginTop": "12px"
-              }
-            },
-            {
-              "showHeader": false,
-              "hasBox": true,
-              "type": 2,
-              "title": "事件列表",
-              "component": {
-                "is": "addModule",
-                "src": "/demoImg/r_2_3.png",
-                "style": {
-                  "width": "100%"
-                }
-              },
-              "styles": {
-                "marginTop": "12px"
-              }
-            }
-          ]
         }
       }
     },
