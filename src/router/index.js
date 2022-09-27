@@ -19,9 +19,8 @@ import { getTemplateList } from '@/api/template.js'
 async function getTemplateListApi() {
   const { data = [] } = await getTemplateList();
   data.forEach(item => {
-    window.$config.templates[item.key] = item;
+    Vue.set(window.$config.templates,item.key,item)
   });
-  
 }
 
 
