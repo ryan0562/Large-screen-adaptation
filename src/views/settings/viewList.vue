@@ -7,8 +7,8 @@
           <templateItem
             v-for="(item, key) in projects"
             :key="key"
-            :src="item.thumbnail"
-            :preview-src-list="[item.thumbnail]"
+            :src="item.img"
+            :preview-src-list="[item.img]"
             :name="item.name"
           ></templateItem>
         </div>

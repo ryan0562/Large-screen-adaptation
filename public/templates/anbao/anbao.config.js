@@ -1,7 +1,7 @@
 export default {
   "name": '安保模板',
   "key": "anbao",
-  "thumbnail": '/templates/anbao/img.png',
+  "img": '/templates/anbao/img.png',
   "3840_1080": {
     "visible": true,
     "styles": {

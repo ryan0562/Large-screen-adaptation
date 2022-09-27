@@ -17,8 +17,8 @@
               <el-radio-group v-model="form.templateKey">
                 <el-radio v-for="(item, key) in templates" :key="key" :label="item.key">
                   <templateItem
-                    :src="item.thumbnail"
-                    :preview-src-list="[item.thumbnail]"
+                    :src="item.img"
+                    :preview-src-list="[item.img]"
                     :name="item.name"
                   ></templateItem>
                 </el-radio>

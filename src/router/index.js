@@ -1,74 +1,57 @@
+// import store from '@/store/index.js'
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Blank from '@/components/layout/Blank.vue'
+import list from './list.js'
+// 权限管理
 
 Vue.use(VueRouter)
-
-const routes = [
-
-  {
-    path: '/',
-    name: 'home',
-    redirect: '/demo'
-  },
-  {
-    path: '/settings',
-    name: 'settings',
-    component: Blank,
-    children: [
-      {
-        path: '/settings/viewList',
-        name: 'settings_viewList',
-        component: () => import('@/views/settings/viewList.vue'),
-      }
-    ]
-  },
-  {
-    path: '/mainBox',
-    name: 'mainBox',
-    component: () => import('@/views/theme/main.vue'),
-    children: [
-      {
-        path: '/main',
-        name: 'main',
-        components: {
-          huagong: () => import('@/views/theme/huagong/index.vue'),
-          anbao: () => import('@/views/theme/anbao/index.vue'),
-        }
-      }
-    ]
-  },
-  {
-    path: '/demo',
-    name: 'demo',
-    component: Blank,
-    redirect: '/demo/menu',
-    children: [
-      {
-        path: 'menu',
-        name: 'demoMenu',
-        component: () => import('@/views/demo/index.vue'),
-      },
-      {
-        path: 'largeScreen-grid',
-        name: 'LargeScreen',
-        component: () => import('@/views/demo/LargeScreen-grid.vue')
-      },
-      {
-        path: 'largeScreen-flex',
-        name: 'LargescreenFlex',
-        component: () => import('@/views/demo/LargeScreen-flex.vue')
-      },
-    ]
-  },
-
-
-]
 
 const router = new VueRouter({
   // mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes: list
 })
+
+
+
+router.beforeEach(async (to, from, next) => {
+
+  // 页面标题
+  // document.title = to.meta.title
+
+
+
+
+  // 不需要加载前置接口与权限的
+  // if (['/cropper'].includes(to.path)) {
+  //   next()
+  //   return
+  // }
+
+  // 初次打开
+  // if (firstTime) {
+  //   firstTime = false
+  //   await Promise.all([
+  //     // 页面打开前置数据请求放在这里
+  //     store.dispatch('getCurrentPermissions'),
+  //     store.dispatch('getUserInfo')
+
+  //   ])
+  //   // 菜单跟权限 
+  //   const res = await store.dispatch('getPermission') // 生成可访问的路由表
+  //   next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
+
+
+  //   return
+  // }
+
+  next()
+})
+
+router.afterEach((to, from) => {
+  // 
+})
+
 
 export default router

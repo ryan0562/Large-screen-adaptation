@@ -1,6 +1,5 @@
 "use strict";
 import Axios from "axios";
-import router from "../../router";
 import { Message } from "element-ui";
 
 import getQueryParam from '@/utils/getQueryParam.js';

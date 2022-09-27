@@ -1,7 +1,7 @@
 export default {
-  "name": '化工模板',
+  "name": "化工模板",
   "key": "huagong",
-  "thumbnail": '/templates/huagong/img.png',
+  "img": "/templates/huagong/img.png",
   "3840_1080": {
     "visible": true,
     "styles": {
@@ -57,13 +57,13 @@ export default {
     },
     "dataArea": {
       "home": {
-        "img": '/templates/huagong/img.png',
+        "img": "/templates/huagong/img.png",
         "panels": {
           "1": {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "place":'left',
+            "place": "left",
             "title": "公共安全",
             "modules": [
               {
@@ -101,8 +101,7 @@ export default {
                 "component": {
                   "is": "addModule"
                 }
-              },
-              
+              }
             ],
             "styles": {
               "width": "440px",
@@ -116,7 +115,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "place":'left',
+            "place": "left",
             "title": "公共安全",
             "modules": [
               {
@@ -154,7 +153,7 @@ export default {
                   "height": "285px",
                   "marginTop": "12px"
                 }
-              },
+              }
             ],
             "styles": {
               "width": "440px",
@@ -168,7 +167,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "title": "公共安全",
-            "place":'left',
+            "place": "left",
             "type": 1,
             "modules": [
               {
@@ -206,8 +205,7 @@ export default {
                   "height": "285px",
                   "marginTop": "12px"
                 }
-              },
-            ],
+              }],
             "styles": {
               "width": "440px",
               "height": "972px",
@@ -219,7 +217,7 @@ export default {
           "4": {
             "visible": true,
             "title": "公共安全",
-            "place":'right',
+            "place": "right",
             "hasMark": true,
             "type": 1,
             "modules": [
@@ -258,7 +256,7 @@ export default {
                   "height": "285px",
                   "marginTop": "12px"
                 }
-              },
+              }
             ],
             "styles": {
               "width": "440px",
@@ -269,9 +267,9 @@ export default {
             }
           },
           "5": {
-            "visible": true, 
+            "visible": true,
             "title": "公共安全",
-            "place":'right',
+            "place": "right",
             "modules": [
               {
                 "showHeader": true,
@@ -308,7 +306,7 @@ export default {
                   "height": "285px",
                   "marginTop": "12px"
                 }
-              },
+              }
             ],
             "hasMark": true,
             "type": 1,
@@ -319,17 +317,17 @@ export default {
               "right": "20px",
               "zIndex": 1
             }
-          },
-        },
+          }
+        }
       },
       "safe": {
-        "img": '/templates/huagong/img.png',
+        "img": "/templates/huagong/img.png",
         "panels": {
           "1": {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "place":'left',
+            "place": "left",
             "title": "公共安全",
             "modules": [
               {
@@ -367,8 +365,7 @@ export default {
                 "component": {
                   "is": "addModule"
                 }
-              },
-              
+              }
             ],
             "styles": {
               "width": "440px",
@@ -382,7 +379,7 @@ export default {
             "visible": true,
             "hasMark": true,
             "type": 1,
-            "place":'left',
+            "place": "left",
             "title": "公共安全",
             "modules": [
               {
@@ -420,7 +417,7 @@ export default {
                   "height": "285px",
                   "marginTop": "12px"
                 }
-              },
+              }
             ],
             "styles": {
               "width": "440px",
@@ -431,9 +428,9 @@ export default {
             }
           },
           "3": {
-            "visible": true, 
+            "visible": true,
             "title": "公共安全",
-            "place":'right',
+            "place": "right",
             "modules": [
               {
                 "showHeader": true,
@@ -470,7 +467,7 @@ export default {
                   "height": "285px",
                   "marginTop": "12px"
                 }
-              },
+              }
             ],
             "hasMark": true,
             "type": 1,
@@ -481,9 +478,9 @@ export default {
               "right": "20px",
               "zIndex": 1
             }
-          },
-        },
-      },
+          }
+        }
+      }
     },
     "menu": {
       "visible": true,
@@ -524,7 +521,6 @@ export default {
       },
       "date": {
         "visible": true,
-
         "styles": {
           "top": "5px",
           "left": "80px"
@@ -572,7 +568,7 @@ export default {
               "left": "20px",
               "zIndex": 1
             }
-          },
+          }
         },
         "right": {
           "1": {
@@ -587,7 +583,7 @@ export default {
               "right": "20px",
               "zIndex": 1
             }
-          },
+          }
         }
       },
       "safe": {
