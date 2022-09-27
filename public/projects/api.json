@@ -1,0 +1,12 @@
+{
+  "code": 200,
+  "message": "成功",
+  "data": {
+    "config": {
+      "useLayout": "3840_1080",
+      "theme": "huagong",
+      "animate": "fold",
+      "screen": "home"
+    }
+  }
+}
