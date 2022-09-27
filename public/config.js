@@ -1,6 +1,7 @@
 "use strict"
 
-import templates from './templates/index.js'
+// import templates from './templates/index.js'
+const templates = {}
 import projects from './projects/index.js'
 
 

@@ -74,7 +74,7 @@ export default {
     },
     submit() {
       this.$config.screen = this.form.screen;
-      this.$router.push('/main');
+      this.$router.push('/main?edit=1');
     },
   },
 };

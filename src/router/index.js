@@ -13,8 +13,16 @@ const router = new VueRouter({
   routes: list
 })
 
-import {getTemplateList} from '@/api/template.js'
+import { getTemplateList } from '@/api/template.js'
 
+// 获取模板
+async function getTemplateListApi() {
+  const { data = [] } = await getTemplateList();
+  data.forEach(item => {
+    window.$config.templates[item.key] = item;
+  });
+  
+}
 
 
 
@@ -39,9 +47,8 @@ router.beforeEach(async (to, from, next) => {
     firstTime = false
     await Promise.all([
       // 页面打开前置数据请求放在这里
-      getTemplateList(),
+      getTemplateListApi(),
     ])
-    debugger
     // 菜单跟权限 
     next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
 

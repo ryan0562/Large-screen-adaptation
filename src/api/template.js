@@ -5,7 +5,7 @@ const mock = '/mock' //mock
 // 获取模板数据
 export async function getTemplateList(params) {
   return request({
-    url: `${mock}/getTemplateList`,
+    url: `/templates/templates.json`,
     method: 'GET',
     params,
   });
