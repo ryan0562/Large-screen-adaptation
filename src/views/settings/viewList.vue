@@ -14,6 +14,15 @@
         </div>
       </el-tab-pane>
       <el-tab-pane label="模板库" name="templates" lazy> 
+        <div class="itemList">
+          <templateItem
+            v-for="(item, key) in templates"
+            :key="key"
+            :src="item.img"
+            :preview-src-list="[item.img]"
+            :name="item.name"
+          ></templateItem>
+        </div>
       </el-tab-pane>
       <el-tab-pane label="组件库" name="components" lazy> </el-tab-pane>
     </el-tabs>
@@ -35,6 +44,7 @@ export default {
   },
   created() {
     this.projects = this.$config.projects;
+    this.templates = this.$config.templates;
   },
   methods: {},
 };

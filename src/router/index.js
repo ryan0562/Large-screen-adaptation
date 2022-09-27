@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import list from './list.js'
-// 权限管理
+
 
 Vue.use(VueRouter)
 
@@ -13,8 +13,13 @@ const router = new VueRouter({
   routes: list
 })
 
+import {getTemplateList} from '@/api/template.js'
 
 
+
+
+
+let firstTime = true;
 router.beforeEach(async (to, from, next) => {
 
   // 页面标题
@@ -30,21 +35,19 @@ router.beforeEach(async (to, from, next) => {
   // }
 
   // 初次打开
-  // if (firstTime) {
-  //   firstTime = false
-  //   await Promise.all([
-  //     // 页面打开前置数据请求放在这里
-  //     store.dispatch('getCurrentPermissions'),
-  //     store.dispatch('getUserInfo')
-
-  //   ])
-  //   // 菜单跟权限 
-  //   const res = await store.dispatch('getPermission') // 生成可访问的路由表
-  //   next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
+  if (firstTime) {
+    firstTime = false
+    await Promise.all([
+      // 页面打开前置数据请求放在这里
+      getTemplateList(),
+    ])
+    debugger
+    // 菜单跟权限 
+    next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
 
 
-  //   return
-  // }
+    return
+  }
 
   next()
 })

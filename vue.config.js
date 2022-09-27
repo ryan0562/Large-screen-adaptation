@@ -26,6 +26,13 @@ module.exports = defineConfig({
           "^/lanhei": "",
         },
       },
+      "/mock": {
+        target: "http://127.0.0.1:4523/m1/1682092-0-default",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/mock": "",
+        },
+      },
     }
   },
 }

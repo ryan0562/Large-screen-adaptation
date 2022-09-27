@@ -1,5 +1,5 @@
 export default {
-  "name":'化工模板',
+  "name":'化工工程',
   "key":"huagong",
   "img": '/templates/huagong/img.png',
   "3840_1080": {

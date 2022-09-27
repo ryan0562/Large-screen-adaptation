@@ -1,5 +1,5 @@
 export default {
-  "name": '安保模板',
+  "name": '安保工程',
   "key":"anbao",
   "img": '/templates/anbao/img.png',
   "3840_1080": {
