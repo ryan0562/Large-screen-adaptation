@@ -4115,6 +4115,11 @@
     "is-docker" "^2.1.1"
     "is-wsl" "^2.2.0"
 
+"opencollective-postinstall@^2.0.2":
+  "integrity" "sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q=="
+  "resolved" "https://registry.npmmirror.com/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz"
+  "version" "2.0.3"
+
 "opener@^1.5.2":
   "integrity" "sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A=="
   "resolved" "https://registry.npmjs.org/opener/-/opener-1.5.2.tgz"
@@ -5492,6 +5497,13 @@
     "chalk" "^4.1.0"
     "hash-sum" "^2.0.0"
     "loader-utils" "^2.0.0"
+
+"vue-ls@^4.2.0":
+  "integrity" "sha512-aEQvaFzIH6A0u0in4ghsxiqMgXNxf2+mtgOW8BaiLM6f3gTfvJMjZBjSrycDgdde7P5VfXOqLFGk4+Tf0Mre6Q=="
+  "resolved" "https://registry.npmmirror.com/vue-ls/-/vue-ls-4.2.0.tgz"
+  "version" "4.2.0"
+  dependencies:
+    "opencollective-postinstall" "^2.0.2"
 
 "vue-router@^3.5.1":
   "integrity" "sha512-QSJs5aKKPiwBH++gelVbnq0ZFbUZXjlsjAklUM+F8dtd49YY72QsD1uGpBk/cqLK1bkZ8HiqPjS8NkhaGtpqHw=="

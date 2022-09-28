@@ -53,12 +53,7 @@ export default {
   },
   methods: {
     loadProject(item) {
-      this.$config.useLayout = item.config.useLayout;
-      this.$config.theme = item.config.theme;
-      this.$config.screen = item.config.screen;
-
-      
-      window.$layout = item.layout;
+      this.$ls.set('project', item);
       this.$router.push('/main?edit=1&project=1');
     },
   },

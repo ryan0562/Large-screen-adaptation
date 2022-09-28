@@ -26,8 +26,16 @@ export default {
   },
   created() {
     if (this.$route.query.project === '1') {
-      this.layout = window.$layout;
-      return
+      const {
+        config: { useLayout, theme, screen },
+        layout,
+      } = this.$ls.get('project');
+      this.$config.useLayout = useLayout;
+      this.$config.theme = theme;
+      this.$config.screen = screen;
+
+      this.layout = layout;
+      return;
     }
     this.layout = getLayout(this.$config);
   },

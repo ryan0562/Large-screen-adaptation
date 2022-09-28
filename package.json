@@ -17,6 +17,7 @@
     "echarts-wordcloud": "^2.0.0",
     "element-ui": "^2.15.9",
     "vue": "^2.6.14",
+    "vue-ls": "^4.2.0",
     "vue-router": "^3.5.1",
     "vuex": "^3.6.2"
   },
