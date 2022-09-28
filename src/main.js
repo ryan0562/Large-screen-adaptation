@@ -32,7 +32,8 @@ Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
 /* dayjs */
 import "@/plugins/dayjs.js";
 /* vue_ls */
-import "@/plugins/vue_ls.js";
+import ls from "@/plugins/vue_ls.js";
+Vue.prototype.$ls = ls
 
 /* 配置文件 */
 Vue.prototype.$config = window.$config

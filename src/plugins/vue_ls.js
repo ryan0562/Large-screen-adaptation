@@ -4,7 +4,6 @@
  * @LastEditors: Waker
  * @LastEditTime: 2020-11-13 14:52:32
  */
-import Vue from 'vue';
 import Storage from 'vue-ls';
  
 const storageOptions = {
@@ -12,4 +11,7 @@ const storageOptions = {
   name: 'ls', // 命名Vue变量.[ls]或this.[$ls],
   storage: 'local', // 存储名称: session, local, memory
 }
-Vue.use(Storage, storageOptions);
+
+const { ls } = Storage.useStorage(storageOptions)
+
+export default ls
