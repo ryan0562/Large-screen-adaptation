@@ -1,8 +1,8 @@
 <template>
   <div>
-    <screen_header v-if="$layout.header" :options="$layout.header" @back="goback()" />
+    <screen_header v-if="layout.header" :options="layout.header" @back="goback()" />
     <!-- 面板 -->
-    <template v-for="(item, index) in $layout.dataArea[$config.screen].panels">
+    <template v-for="(item, index) in layout.dataArea[$config.screen].panels">
       <transition :name="$config.animate" :key="`animate_${$config.screen}_${index}`">
         <dataArea
           v-if="item.visible"
@@ -16,7 +16,7 @@
       </transition>
     </template>
     <!-- 菜单栏 -->
-    <superMenu :options="$layout.menu" @clickMenu="clickMenu" />
+    <superMenu :options="layout.menu" @clickMenu="clickMenu" />
   </div>
 </template>
 
@@ -24,7 +24,7 @@
 import './styles/index.less';
 
 import { switchPage, goback } from '@/utils/utils.js';
-import { mapGetters } from 'vuex';
+// import { mapGetters } from 'vuex';
 export default {
   components: {
     screen_header: () => import('./components/header/screen_header.vue'),
@@ -33,10 +33,15 @@ export default {
     superMenu: () => import('./components/menu/menu.vue'),
   },
   data() {
-    return {};
+    return {
+      layout:window.$layout
+    };
   },
   computed: {
-    ...mapGetters(['$layout']),
+    // ...mapGetters(['layout']),
+    // layout(){
+
+    // }
   },
   created(){
     this.$bus.$on('changeModule',this.changeDataModule)

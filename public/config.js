@@ -2,7 +2,8 @@
 
 // import templates from './templates/index.js'
 const templates = {}
-import projects from './projects/index.js'
+// import projects from './projects/index.js'
+const projects = {}
 
 
 

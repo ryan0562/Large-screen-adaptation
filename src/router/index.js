@@ -13,20 +13,22 @@ const router = new VueRouter({
   routes: list
 })
 
-import { getTemplateList,getProjectList } from '@/api/before.js'
+import { getTemplateList, getProjectList } from '@/api/before.js'
 
 // 获取模板
 async function getTemplateListApi() {
   const { data = [] } = await getTemplateList();
   data.forEach(item => {
-    Vue.set(window.$config.templates,item.key,item)
+    Vue.set(window.$config.templates, item.key, item)
   });
 }
 
 // 获取模板
 async function getProjectListApi() {
-  // const { data = [] } = await getProjectList();
-  
+  const { data = [] } = await getProjectList();
+  data.forEach(item => {
+    Vue.set(window.$config.projects, item.key, item)
+  });
 }
 
 

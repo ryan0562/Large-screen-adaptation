@@ -4,8 +4,12 @@
     <slot></slot>
   </div>
   <div class="templateItem" v-else>
-    <el-image :src="src" :preview-src-list="previewSrcList" />
+    <el-image :src="src" :preview-src-list="previewSrcList" ref="img"/>
     <span class="name">{{ name }}</span>
+    <!-- <div class="mask">
+      <div class="btn" @click="$refs.img.showViewer=true">预览</div>
+      <slot></slot>
+    </div> -->
   </div>
 </template>
 
@@ -13,9 +17,12 @@
 export default {
   props: ['src', 'previewSrcList', 'name', 'type'],
   data() {
-    return {
-      
-    };
+    return {};
+  },
+  methods: {
+    a() {
+      console.log(1);
+    },
   },
 };
 </script>
@@ -37,6 +44,11 @@ export default {
   align-items: center;
   cursor: pointer;
   color: #fff;
+  &:hover {
+    .mask {
+      display: flex;
+    }
+  }
   &.add {
     border: 1px solid #212528;
     font-size: 14px;
@@ -56,7 +68,33 @@ export default {
   }
   .name {
     line-height: 32px;
-    color:#bcc9d4;
+    color: #bcc9d4;
+  }
+  .mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(29, 38, 46, 0.8);
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    .btn {
+      display: inline-block;
+      vertical-align: middle;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 30px;
+      box-sizing: border-box;
+      outline: 0;
+      text-align: center;
+      font-size: 14px;
+      background-image: linear-gradient(-225deg, #00d3f1, #12b3ff);
+      color: #293f52;
+      border: none;
+      cursor: pointer;
+    }
   }
 }
 </style>

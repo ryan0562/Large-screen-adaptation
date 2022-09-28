@@ -8,12 +8,12 @@
             v-for="(item, key) in projects"
             :key="key"
             :src="item.img"
-            :preview-src-list="[item.img]"
             :name="item.name"
-          ></templateItem>
+            @click.native="loadProject(item)"
+          />
         </div>
       </el-tab-pane>
-      <el-tab-pane label="模板库" name="templates" lazy> 
+      <el-tab-pane label="模板库" name="templates" lazy>
         <div class="itemList">
           <templateItem
             v-for="(item, key) in templates"
@@ -31,10 +31,15 @@
 </template>
 
 <script>
+// import { mapGetters } from 'vuex';
+
 export default {
   components: {
     addProject: () => import('./addProject.vue'),
     templateItem: () => import('@/components/templateItem.vue'),
+  },
+  computed: {
+    // ...mapGetters(['$layout']),
   },
   data() {
     return {
@@ -43,10 +48,20 @@ export default {
     };
   },
   created() {
-    this.projects = this.$config.projects;
-    this.templates = this.$config.templates;
+    this.projects = window.$config.projects;
+    this.templates = window.$config.templates;
   },
-  methods: {},
+  methods: {
+    loadProject(item) {
+      this.$config.useLayout = item.config.useLayout;
+      this.$config.theme = item.config.theme;
+      this.$config.screen = item.config.screen;
+
+      
+      this.$layout = item.layout;
+      this.$router.push('/main?edit=1');
+    },
+  },
 };
 </script>
 

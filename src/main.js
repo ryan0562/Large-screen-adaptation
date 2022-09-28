@@ -33,7 +33,8 @@ Object.keys(filters).forEach(key => Vue.filter(key, filters[key]));
 import "@/plugins/dayjs.js";
 
 /* 配置文件 */
-Vue.prototype.$config = window.$config
+// Vue.prototype.$config = window.$config
+// Vue.prototype.$layout = window.$layout
 
 /* 添加模块组件 */
 import addModule from '@/components/addModule/addModule.vue'
