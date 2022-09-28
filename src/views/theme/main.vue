@@ -1,20 +1,18 @@
 <template>
   <div :style="layout.styles" :data-theme="$config.theme" class="sceenMain">
-    <component :is="name" :layout="layout"/>
+    <component :is="name" :layout="layout" />
     <controlPanel v-if="$route.query.edit === '1'" />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 import { getLayout } from '@/utils/utils.js';
-
 
 export default {
   data() {
     return {
-      layout: {}
-    }
+      layout: {},
+    };
   },
   components: {
     controlPanel: () => import('./controlPanel.vue'),
@@ -22,14 +20,16 @@ export default {
     anbao: () => import('@/views/theme/anbao/index.vue'),
   },
   computed: {
-    ...mapGetters(['$layout']),
     name() {
       return this.$config.theme || 'default';
     },
   },
   created() {
-      this.layout = getLayout(this.$config);
-
+    if (this.$route.query.project === '1') {
+      this.layout = window.$layout;
+      return
+    }
+    this.layout = getLayout(this.$config);
   },
 };
 </script>

@@ -58,8 +58,8 @@ export default {
       this.$config.screen = item.config.screen;
 
       
-      this.$layout = item.layout;
-      this.$router.push('/main?edit=1');
+      window.$layout = item.layout;
+      this.$router.push('/main?edit=1&project=1');
     },
   },
 };
