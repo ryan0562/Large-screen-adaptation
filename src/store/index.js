@@ -9,6 +9,7 @@ export default new Vuex.Store({
   },
   getters: {
     // $layout(state){
+    //   debugger
     //   const config = window.$config
     //   return config.templates[config.theme][config.useLayout]
     // }

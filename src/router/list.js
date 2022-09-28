@@ -21,19 +21,9 @@ const routes = [
     ]
   },
   {
-    path: '/mainBox',
-    name: 'mainBox',
+    path: '/main',
+    name: 'main',
     component: () => import('@/views/theme/main.vue'),
-    children: [
-      {
-        path: '/main',
-        name: 'main',
-        components: {
-          huagong: () => import('@/views/theme/huagong/index.vue'),
-          anbao: () => import('@/views/theme/anbao/index.vue'),
-        }
-      }
-    ]
   },
   {
     path: '/demo',

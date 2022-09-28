@@ -17,3 +17,9 @@ export const switchPage = function (pageKey) {
     window.$config.screen = pageKey;
   }
 }
+
+// 切换页面
+export const getLayout = function ({ templates, theme, useLayout }) {
+  return templates[theme][useLayout]
+}
+

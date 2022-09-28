@@ -2,7 +2,7 @@
   <div>
     <screen_header v-if="layout.header" :options="layout.header" @back="goback()" />
     <!-- 面板 -->
-    <template v-for="(item, index) in layout.dataArea[$config.screen].panels">
+    <template v-for="(item, index) in layout.dataArea[$config.screen]?.panels">
       <transition :name="$config.animate" :key="`animate_${$config.screen}_${index}`">
         <dataArea
           v-if="item.visible"
@@ -32,27 +32,29 @@ export default {
     dataMarkArea: () => import('./components/dataArea/dataMarkArea.vue'),
     superMenu: () => import('./components/menu/menu.vue'),
   },
+  props: {
+    layout: {
+      type: Object,
+      require: true,
+    },
+  },
   data() {
     return {
-      layout:window.$layout
     };
   },
   computed: {
     // ...mapGetters(['layout']),
     // layout(){
-
     // }
   },
-  created(){
-    this.$bus.$on('changeModule',this.changeDataModule)
+  created() {
+    this.$bus.$on('changeModule', this.changeDataModule);
   },
   methods: {
-    changeDataModule(data){
-      data.component.is = 'aaa'
+    changeDataModule(data) {
+      data.component.is = 'aaa';
       // const {templates,theme,useLayout} = window.$config
       // const layout =  templates[theme][useLayout]
-      
-
     },
     // type==='active'为激活状态
     clickMenu(key, type) {

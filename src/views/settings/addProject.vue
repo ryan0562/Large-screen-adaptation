@@ -16,18 +16,14 @@
             <div class="itemList">
               <el-radio-group v-model="form.templateKey">
                 <el-radio v-for="(item, key) in templates" :key="key" :label="item.key">
-                  <templateItem
-                    :src="item.img"
-                    :preview-src-list="[item.img]"
-                    :name="item.name"
-                  ></templateItem>
+                  <templateItem :src="item.img" :preview-src-list="[item.img]" :name="item.name"></templateItem>
                 </el-radio>
               </el-radio-group>
             </div>
           </el-form-item>
         </el-form>
       </template>
-      <layoutList v-if="step === 2" :list="$layout.dataArea" :screen.sync="form.screen" />
+      <layoutList v-if="step === 2" :list="layout.dataArea" :screen.sync="form.screen" />
       <span slot="footer" class="dialog-footer">
         <template v-if="step === 1">
           <el-button @click="visible = false">取 消</el-button>
@@ -42,7 +38,9 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex';
+// import { mapGetters } from 'vuex';
+
+import { getLayout } from '@/utils/utils.js';
 
 export default {
   components: {
@@ -50,16 +48,17 @@ export default {
     layoutList: () => import('./layoutList.vue'),
   },
   computed: {
-    ...mapGetters(['$layout']),
+    // ...mapGetters(['$layout']),
   },
   data() {
     return {
       visible: false,
       form: {
-        size:'3840_1080',
-        templateKey:'huagong'
+        size: '3840_1080',
+        templateKey: 'huagong',
       },
       templates: {}, // 模板群
+      layout: {}, //布局
       step: 1, //步骤
     };
   },
@@ -71,6 +70,7 @@ export default {
       this.step = 2;
       this.$config.useLayout = this.form.size;
       this.$config.theme = this.form.templateKey;
+      this.layout = getLayout(this.$config);
     },
     submit() {
       this.$config.screen = this.form.screen;
