@@ -46,11 +46,16 @@ export default {
     this.getProjectListApi();
   },
   methods: {
+    // 删除项目
+    delProject(item){
+
+    },
     // 获取项目
     async getProjectListApi() {
       const { data = [] } = await getProjectList();
       this.list = data;
     },
+    // 载入项目
     loadProject(item) {
       this.$config.useLayout = item.config.useLayout;
       this.$config.theme = item.config.theme;
