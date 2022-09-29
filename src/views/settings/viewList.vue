@@ -4,13 +4,10 @@
       <el-tab-pane label="工程库" name="projects" lazy>
         <div class="itemList">
           <templateItem type="add" @click.native="$refs['addProject'].visible = true">新建工程</templateItem>
-          <templateItem
-            v-for="(item, key) in $mti_projects"
-            :key="key"
-            :src="item.img"
-            :name="item.name"
-            @click.native="loadProject(item)"
-          />
+          <templateItem v-for="(item, key) in list" :key="key" :src="item.img" :preview-src-list="[item.img]" :name="item.name">
+            <span @click="loadProject(item)">编辑</span>
+            <span @click="delProject(item)">删除</span>
+          </templateItem>
         </div>
       </el-tab-pane>
       <el-tab-pane label="模板库" name="templates" lazy>
@@ -31,25 +28,29 @@
 </template>
 
 <script>
-// import { mapGetters } from 'vuex';
+import { getProjectList } from '@/api/before.js';
 
 export default {
   components: {
     addProject: () => import('./addProject.vue'),
     templateItem: () => import('@/components/templateItem.vue'),
   },
-  computed: {
-    // ...mapGetters(['$layout']),
-  },
+  computed: {},
   data() {
     return {
       activeName: 'projects',
-      projects: {},
+      list: {},
     };
   },
   created() {
+    this.getProjectListApi();
   },
   methods: {
+    // 获取项目
+    async getProjectListApi() {
+      const { data = [] } = await getProjectList();
+      this.list = data;
+    },
     loadProject(item) {
       this.$config.useLayout = item.config.useLayout;
       this.$config.theme = item.config.theme;

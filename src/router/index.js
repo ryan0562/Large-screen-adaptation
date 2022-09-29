@@ -13,7 +13,7 @@ const router = new VueRouter({
   routes: list
 })
 
-import { getTemplateList, getProjectList } from '@/api/before.js'
+import { getTemplateList } from '@/api/before.js'
 
 // 获取模板
 async function getTemplateListApi() {
@@ -27,17 +27,17 @@ async function getTemplateListApi() {
   Vue.prototype.$mti_templates = templates
 }
 
-// 获取模板
-async function getProjectListApi() {
-  const { data = [] } = await getProjectList();
-  const projects = {}
-  data.forEach(item => {
-    // Vue.set(window.$config.projects, item.key, item)
-    projects[item.key] = item
-  });
-  Vue.prototype.$mti_projects = projects
+// // 获取项目
+// async function getProjectListApi() {
+//   const { data = [] } = await getProjectList();
+//   const projects = {}
+//   data.forEach(item => {
+//     // Vue.set(window.$config.projects, item.key, item)
+//     projects[item.key] = item
+//   });
+//   Vue.prototype.$mti_projects = projects
 
-}
+// }
 
 
 
@@ -63,7 +63,7 @@ router.beforeEach(async (to, from, next) => {
     await Promise.all([
       // 页面打开前置数据请求放在这里
       getTemplateListApi(),
-      getProjectListApi(),
+      // getProjectListApi(),
     ])
     // 菜单跟权限 
     next({ ...to, replace: true }) // hack方法 确保addRoutes已完成

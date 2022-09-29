@@ -33,6 +33,13 @@ module.exports = defineConfig({
           "^/mock": "",
         },
       },
+      "/api": {
+        target: "http://10.168.4.210:9999/",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/api": "",
+        },
+      },
     }
   },
 }

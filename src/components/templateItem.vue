@@ -6,10 +6,10 @@
   <div class="templateItem" v-else>
     <el-image :src="src" :preview-src-list="previewSrcList" ref="img"/>
     <span class="name">{{ name }}</span>
-    <!-- <div class="mask">
-      <div class="btn" @click="$refs.img.showViewer=true">预览</div>
+    <div class="mask">
+      <span @click="$refs.img.showViewer=true">预览</span>
       <slot></slot>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -80,14 +80,14 @@ export default {
     height: 100%;
     align-items: center;
     justify-content: center;
-    .btn {
+    flex-wrap: wrap;
+    align-content: center;
+    > span {
       display: inline-block;
-      vertical-align: middle;
       height: 32px;
       line-height: 32px;
-      padding: 0 30px;
-      box-sizing: border-box;
-      outline: 0;
+      padding: 0 15px;
+      margin: 5px;
       text-align: center;
       font-size: 14px;
       background-image: linear-gradient(-225deg, #00d3f1, #12b3ff);
