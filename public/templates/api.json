@@ -1438,6 +1438,147 @@
             "fold"
           ]
         }
+      },
+      "1920_1080": {
+        "visible": true,
+        "styles": {
+          "width": "1920px",
+          "height": "1080px",
+          "zIndex": "0",
+          "background": "#000",
+          "color": "#fff"
+        },
+        "header": {
+          "title": "安保主题模板"
+        },
+        "map": {
+          "offset": [
+            "0",
+            "0"
+          ],
+          "size": [
+            "100%",
+            "50%"
+          ],
+          "zindex": 0,
+          "visible": true
+        },
+        "dataArea": {
+          "1_1": {
+            "img": "/templates/anbao/img.png",
+            "panels": {
+              "1": {
+                "visible": true,
+                "hasBox": true,
+                "hasYaw": true,
+                "place": "left",
+                "modules": [
+                  {
+                    "showHeader": false,
+                    "hasBox": false,
+                    "styles": {
+                      "marginTop": "12px",
+                      "height": "295px"
+                    },
+                    "component": {
+                      "is": "addModule"
+                    }
+                  },
+                  {
+                    "showHeader": false,
+                    "hasBox": false,
+                    "styles": {
+                      "marginTop": "12px",
+                      "height": "295px"
+                    },
+                    "component": {
+                      "is": "addModule"
+                    }
+                  },
+                  {
+                    "showHeader": false,
+                    "hasBox": false,
+                    "styles": {
+                      "marginTop": "12px",
+                      "height": "415px"
+                    },
+                    "component": {
+                      "is": "addModule"
+                    }
+                  }
+                ],
+                "styles": {
+                  "width": "366px",
+                  "height": "1060px",
+                  "top": "10px",
+                  "left": "20px",
+                  "zIndex": 1
+                }
+              },
+              "2": {
+                "visible": true,
+                "hasBox": true,
+                "hasYaw": true,
+                "place": "right",
+                "modules": [
+                  {
+                    "showHeader": false,
+                    "hasBox": false,
+                    "styles": {
+                      "marginTop": "12px",
+                      "height": "295px"
+                    },
+                    "component": {
+                      "is": "addModule"
+                    }
+                  },
+                  {
+                    "showHeader": false,
+                    "hasBox": false,
+                    "styles": {
+                      "marginTop": "12px",
+                      "height": "295px"
+                    },
+                    "component": {
+                      "is": "addModule"
+                    }
+                  },
+                  {
+                    "showHeader": false,
+                    "hasBox": false,
+                    "styles": {
+                      "marginTop": "12px",
+                      "height": "415px"
+                    },
+                    "component": {
+                      "is": "addModule"
+                    }
+                  }
+                ],
+                "styles": {
+                  "width": "366px",
+                  "height": "1060px",
+                  "top": "10px",
+                  "right": "20px",
+                  "zIndex": 1
+                }
+              }
+            }
+          }
+        },
+        "menu": {
+          "visible": true,
+          "styles": {
+            "width": "45px",
+            "bottom": "43px",
+            "left": "1130px",
+            "zIndex": 2
+          },
+          "children": [
+            "addressBook",
+            "fold"
+          ]
+        }
       }
     }
   ]
