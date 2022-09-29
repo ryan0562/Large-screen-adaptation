@@ -1,44 +1,25 @@
 <template>
-  <div class="dataBlock" :style="styles">
-    <div class="head" v-if="showHeader">
+  <div class="dataBlock" :style="data.styles">
+    <div class="head" v-if="data.showHeader">
       <span class="out-circle"></span>
-      <span class="tit">{{ title }}</span>
+      <span class="tit">{{ data.title }}</span>
     </div>
-    <component class="component" v-bind="component"></component>
+    <component class="component" v-bind="data.component" :data="data"></component>
   </div>
 </template>
 
 <script>
 export default {
   components: {
-    aaa: () => import('@/components/modules/a.vue'),
-    bbb: () => import('@/components/modules/b.vue'),
-    ccc: () => import('@/components/modules/c.vue'),
-    realTimePolice: () => import('@/components/modules/realTimePolice/index.vue'),
-    myVideo: () => import('@/components/modules/video/video.vue'),
-    investment: () => import('@/components/modules/firstLevel/investment.vue'),
-
+  
   },
   props: {
-    component: {
+     data: {
       type: Object,
+      required: true,
       default() {
         return {};
       },
-    },
-    styles: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
-    title: {
-      type: String,
-      default: '',
-    },
-    showHeader: {
-      type: Boolean,
-      default: false,
     },
   },
   data() {

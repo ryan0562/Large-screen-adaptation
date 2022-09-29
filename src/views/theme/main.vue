@@ -1,12 +1,11 @@
 <template>
   <div :style="layout.styles" :data-theme="$config.theme" class="sceenMain">
-    <component :is="name" :layout="layout" />
+    <component :is="$config.theme" :layout="layout" />
     <controlPanel v-if="$route.query.edit === '1'" />
   </div>
 </template>
 
 <script>
-import { getLayout } from '@/utils/utils.js';
 
 export default {
   data() {
@@ -20,9 +19,6 @@ export default {
     anbao: () => import('@/views/theme/anbao/index.vue'),
   },
   computed: {
-    name() {
-      return this.$config.theme || 'default';
-    },
     layout() {
       const { useLayout, theme, screen } = this.$config;
 

@@ -48,7 +48,7 @@ export default {
     }
   },
   created() {
-    this.$bus.$on('changeModule', this.changeDataModule);
+    // this.$bus.$on('changeModule', this.changeDataModule);
   },
   methods: {
     changeDataModule(data) {

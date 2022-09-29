@@ -1,11 +1,10 @@
 <template>
   <div :class="['dataAreaBox', { hasBox: data.hasBox }, { [`hasYaw_${type}`]: data.hasYaw }]">
-    <dataBlock v-for="(item, index) in dataAreaModule.modules" :key="index" v-bind="item" />
+    <dataBlock v-for="(item, index) in data.modules" :key="index" :data="item" />
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -35,11 +34,6 @@ export default {
   computed: {
 
 
-    ...mapGetters(['$layout']),
-
-    dataAreaModule() {
-      return this.$layout.dataAreaModules[this.data.moduleId] || {};
-    },
   },
 };
 </script>
