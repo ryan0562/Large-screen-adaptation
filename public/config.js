@@ -3,9 +3,9 @@
 
 //使用策略
 let useLayout = '3840_1080';
-let theme = 'huagong';//使用主题 anbao|huagong
+let theme = 'anbao';//使用主题 anbao|huagong
 let animate = 'fold'; //使用切屏的动画 fade fold
-let screen = '3_2'; // ftfx|home
+let screen = '3_3'; // ftfx|home
 let histroy_screen = [screen]
 
 

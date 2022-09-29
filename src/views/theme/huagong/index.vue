@@ -48,14 +48,9 @@ export default {
     }
   },
   created() {
-    // this.$bus.$on('changeModule', this.changeDataModule);
   },
   methods: {
-    changeDataModule(data) {
-      data.component.is = 'aaa';
-      // const {templates,theme,useLayout} = window.$config
-      // const layout =  templates[theme][useLayout]
-    },
+   
     // type==='active'为激活状态
     clickMenu(key, type) {
       this.switchPage(key);

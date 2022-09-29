@@ -6,11 +6,10 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
-      // layout: {},
+      layout: {},
     };
   },
   components: {
@@ -18,20 +17,26 @@ export default {
     huagong: () => import('@/views/theme/huagong/index.vue'),
     anbao: () => import('@/views/theme/anbao/index.vue'),
   },
-  computed: {
-    layout() {
-      const { useLayout, theme, screen } = this.$config;
-
-      if (this.$route.query.project === '1') {
-        const layout = this.$ls.get('project');
-        return layout[useLayout];
-      }
-
-      return this.$mti_templates[theme][useLayout];
+  computed: {},
+  watch: {
+    $config: {
+      immediate: true,
+      deep: true,
+      handler() {
+        const { useLayout, theme, screen } = window.$config;
+        if (this.$route.query.project === '1') {
+          const layout = this.$ls.get('project');
+          this.layout = layout[useLayout];
+          return;
+        }
+        this.layout = this.$mti_templates[theme]?.[useLayout];
+        if (!this.layout) {
+          this.$message.error('没有该模板或者分辨率');
+        }
+      },
     },
   },
-  created() {
-  },
+  created() {},
 };
 </script>
 <style lang="less">

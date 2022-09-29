@@ -15,7 +15,7 @@
           <el-form-item>
             <div class="itemList">
               <el-radio-group v-model="form.templateKey">
-                <el-radio v-for="(item, key) in templates" :key="key" :label="item.key">
+                <el-radio v-for="(item, key) in $mti_templates" :key="key" :label="item.key">
                   <templateItem :src="item.img" :preview-src-list="[item.img]" :name="item.name"></templateItem>
                 </el-radio>
               </el-radio-group>
@@ -57,13 +57,13 @@ export default {
         size: '3840_1080',
         templateKey: 'huagong',
       },
-      templates: {}, // 模板群
+      // templates: {}, // 模板群
       layout: {}, //布局
       step: 1, //步骤
     };
   },
   created() {
-    this.templates = this.$mti_templates;
+    // this.templates = this.$mti_templates;
   },
   methods: {
     nextStep() {

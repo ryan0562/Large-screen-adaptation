@@ -37,8 +37,6 @@ Vue.prototype.$ls = ls
 
 /* 配置文件 */
 Vue.prototype.$config = window.$config
-Vue.prototype.$mti_templates = {}
-Vue.prototype.$mti_projects = {}
 
 
 /* 添加模块组件 */
