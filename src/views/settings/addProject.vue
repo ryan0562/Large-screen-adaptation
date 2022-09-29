@@ -63,14 +63,14 @@ export default {
     };
   },
   created() {
-    this.templates = this.$config.templates;
+    this.templates = this.$mti_templates;
   },
   methods: {
     nextStep() {
       this.step = 2;
       this.$config.useLayout = this.form.size;
       this.$config.theme = this.form.templateKey;
-      this.layout = getLayout(this.$config);
+      this.layout = getLayout(this.$mti_templates,this.$config);
     },
     submit() {
       this.$config.screen = this.form.screen;

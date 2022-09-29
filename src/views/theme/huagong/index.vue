@@ -2,7 +2,7 @@
   <div>
     <screen_header v-if="layout.header" :options="layout.header" @back="goback()" />
     <!-- 面板 -->
-    <template v-for="(item, index) in layout.dataArea[$config.screen]?.panels">
+    <template v-for="(item, index) in panels">
       <transition :name="$config.animate" :key="`animate_${$config.screen}_${index}`">
         <dataArea
           v-if="item.visible"
@@ -43,9 +43,9 @@ export default {
     };
   },
   computed: {
-    // ...mapGetters(['layout']),
-    // layout(){
-    // }
+    panels(){
+      return this.layout.dataArea[this.$config.screen]?.panels
+    }
   },
   created() {
     this.$bus.$on('changeModule', this.changeDataModule);

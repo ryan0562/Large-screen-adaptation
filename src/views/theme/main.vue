@@ -11,7 +11,7 @@ import { getLayout } from '@/utils/utils.js';
 export default {
   data() {
     return {
-      layout: {},
+      // layout: {},
     };
   },
   components: {
@@ -23,21 +23,18 @@ export default {
     name() {
       return this.$config.theme || 'default';
     },
+    layout() {
+      const { useLayout, theme, screen } = this.$config;
+
+      if (this.$route.query.project === '1') {
+        const layout = this.$ls.get('project');
+        return layout[useLayout];
+      }
+
+      return this.$mti_templates[theme][useLayout];
+    },
   },
   created() {
-    if (this.$route.query.project === '1') {
-      const {
-        config: { useLayout, theme, screen },
-        layout,
-      } = this.$ls.get('project');
-      this.$config.useLayout = useLayout;
-      this.$config.theme = theme;
-      this.$config.screen = screen;
-
-      this.layout = layout;
-      return;
-    }
-    this.layout = getLayout(this.$config);
   },
 };
 </script>

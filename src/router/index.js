@@ -18,17 +18,25 @@ import { getTemplateList, getProjectList } from '@/api/before.js'
 // 获取模板
 async function getTemplateListApi() {
   const { data = [] } = await getTemplateList();
+  const templates = {}
   data.forEach(item => {
-    Vue.set(window.$config.templates, item.key, item)
+    // Vue.set(window.$config.templates, item.key, item)
+    templates[item.key] = item
   });
+
+  Vue.prototype.$mti_templates = templates
 }
 
 // 获取模板
 async function getProjectListApi() {
   const { data = [] } = await getProjectList();
+  const projects = {}
   data.forEach(item => {
-    Vue.set(window.$config.projects, item.key, item)
+    // Vue.set(window.$config.projects, item.key, item)
+    projects[item.key] = item
   });
+  Vue.prototype.$mti_projects = projects
+
 }
 
 

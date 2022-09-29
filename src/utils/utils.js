@@ -19,7 +19,7 @@ export const switchPage = function (pageKey) {
 }
 
 // 切换页面
-export const getLayout = function ({ templates, theme, useLayout }) {
+export const getLayout = function (templates, { theme, useLayout }) {
   return templates[theme][useLayout]
 }
 

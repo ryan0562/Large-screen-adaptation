@@ -5,7 +5,7 @@
         <div class="itemList">
           <templateItem type="add" @click.native="$refs['addProject'].visible = true">新建工程</templateItem>
           <templateItem
-            v-for="(item, key) in projects"
+            v-for="(item, key) in $mti_projects"
             :key="key"
             :src="item.img"
             :name="item.name"
@@ -16,7 +16,7 @@
       <el-tab-pane label="模板库" name="templates" lazy>
         <div class="itemList">
           <templateItem
-            v-for="(item, key) in templates"
+            v-for="(item, key) in $mti_templates"
             :key="key"
             :src="item.img"
             :preview-src-list="[item.img]"
@@ -48,12 +48,14 @@ export default {
     };
   },
   created() {
-    this.projects = window.$config.projects;
-    this.templates = window.$config.templates;
   },
   methods: {
     loadProject(item) {
-      this.$ls.set('project', item);
+      this.$config.useLayout = item.config.useLayout;
+      this.$config.theme = item.config.theme;
+      this.$config.screen = item.config.screen;
+
+      this.$ls.set('project', item.layout);
       this.$router.push('/main?edit=1&project=1');
     },
   },
