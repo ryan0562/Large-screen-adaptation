@@ -1,10 +1,13 @@
 <template>
-  <component v-bind="data"></component>
+  <addModule v-if="data.component.is === 'addModule' || !data.component.is" :data="data" :style="data.style"/>
+  <dataBlock :data="data" v-else />
 </template>
 
 <script>
 export default {
-  components: {},
+  components: {
+    dataBlock: () => import('./dataBlock.vue'),
+  },
   props: {
     data: {
       type: Object,

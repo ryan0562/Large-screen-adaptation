@@ -1,5 +1,5 @@
 <template>
-  <div class="menuBox" :style="options.styles">
+  <div class="menuBox" :style="options.style">
     <div
       v-for="(item, index) in options.children"
       :key="index"
@@ -17,7 +17,7 @@ export default {
       required: true,
       default() {
         return {
-          styles: {},
+          style: {},
         };
       },
     },
