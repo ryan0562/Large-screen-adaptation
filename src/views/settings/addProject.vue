@@ -70,10 +70,18 @@ export default {
       this.step = 2;
       this.$config.useLayout = this.form.size;
       this.$config.theme = this.form.templateKey;
-      this.layout = getLayout(this.$mti_templates,this.$config);
+      this.layout = getLayout(this.$mti_templates, this.$config);
     },
     submit() {
       this.$config.screen = this.form.screen;
+      this.$ls.set('project', {
+        name: this.form.name || '测试',
+        img: '/templates/huagong/img.png',
+        config: this.$config,
+        layout: {
+          [this.$config.useLayout]: this.layout,
+        },
+      });
       this.$router.push('/main?edit=1');
     },
   },

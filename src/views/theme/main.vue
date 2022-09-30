@@ -24,15 +24,15 @@ export default {
       deep: true,
       handler() {
         const { useLayout, theme, screen } = window.$config;
-        if (this.$route.query.project === '1') {
+        // if (this.$route.query.project === '1') {
           const layout = this.$ls.get('project').layout;
           this.layout = window.$layout = layout[useLayout];
           return;
-        }
-        this.layout = window.$layout = this.$mti_templates[theme]?.[useLayout];
-        if (!this.layout) {
-          this.$message.error('没有该模板或者分辨率');
-        }
+        // }
+        // this.layout = window.$layout = this.$mti_templates[theme]?.[useLayout];
+        // if (!this.layout) {
+        //   this.$message.error('没有该模板或者分辨率');
+        // }
       },
     },
   },

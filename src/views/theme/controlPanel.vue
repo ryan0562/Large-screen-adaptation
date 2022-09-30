@@ -13,17 +13,20 @@ export default {
   created() {},
   methods: {
     saveProject() {
-      const data = {
-        name: '接口测试',
-        img: '/templates/huagong/img.png',
-        config: window.$config,
-        layout: {
-          [window.$config.useLayout]: window.$layout,
-        },
-      };
-      projectSave(data).then(res=>{
+      // const data = {
+      //   name: '接口测试',
+      //   img: '/templates/huagong/img.png',
+      //   config: window.$config,
+      //   layout: {
+      //     [window.$config.useLayout]: window.$layout,
+      //   },
+      // };
+      const data = this.$ls.get('project');
+      data.layout[window.$config.useLayout] = window.$layout;
+      
+      projectSave(data).then((res) => {
         this.$router.replace('/settings/viewList');
-      })
+      });
     },
   },
 };
