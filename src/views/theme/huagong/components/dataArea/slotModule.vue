@@ -1,10 +1,15 @@
 <template>
-  <div class="slotModule">
-    <addModule v-if="data.component.is === 'addModule'" :data="data" :style="data.style" />
+  <!-- 编辑状态 -->
+  <div class="slotModule" v-if="$route.query.edit === '1'">
+    <addModule v-if="!data.component.is" :data="data" :style="data.style" />
     <template v-else>
       <dataBlock :data="data" />
-      <span class="el-icon-circle-close delete" @click="data.component.is='addModule'"></span>
+      <span class="el-icon-circle-close delete" @click="data.component = { is: '' }"></span>
     </template>
+  </div>
+  <!-- 展示状态 -->
+  <div class="slotModule" v-else>
+    <dataBlock :data="data" v-if="data.component.is"/>
   </div>
 </template>
 
@@ -25,7 +30,9 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    type() {},
+  },
   created() {},
   mounted() {},
   watch: {},

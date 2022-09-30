@@ -1,15 +1,13 @@
 <template>
-  <div class="addModuleBox" @click="showModules">
+  <div class="addModuleBox" @click="showModules" :style="data.style">
     <i class="el-icon-plus icon"></i>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'addModuleBox',
-  computed: {
-  },
+  computed: {},
   props: ['data'],
   methods: {
     showModules() {

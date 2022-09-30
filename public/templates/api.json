@@ -79,7 +79,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -91,7 +91,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -103,7 +103,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -131,7 +131,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -139,7 +139,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -151,7 +151,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -179,7 +179,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -191,7 +191,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -203,7 +203,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -231,7 +231,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -243,7 +243,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -255,7 +255,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -281,7 +281,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -293,7 +293,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -305,7 +305,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -344,7 +344,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -356,7 +356,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -368,7 +368,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -396,7 +396,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -404,7 +404,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -416,7 +416,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -442,7 +442,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -454,7 +454,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -466,7 +466,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -578,7 +578,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -590,7 +590,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -602,7 +602,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -630,7 +630,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -638,7 +638,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -650,7 +650,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -678,7 +678,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -690,7 +690,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -702,7 +702,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -728,7 +728,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -740,7 +740,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -752,7 +752,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -791,7 +791,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -803,7 +803,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -815,7 +815,7 @@
                       "marginTop": "12px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -837,7 +837,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -849,7 +849,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -861,7 +861,7 @@
                     "hasBox": true,
                     "title": "实时警情",
                     "component": {
-                      "is": "addModule"
+                      
                     },
                     "style": {
                       "height": "285px",
@@ -946,7 +946,7 @@
                       "height": "100%"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -971,7 +971,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -982,7 +982,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1007,7 +1007,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1018,7 +1018,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1044,7 +1044,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1055,7 +1055,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1066,7 +1066,7 @@
                       "height": "415px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1091,7 +1091,7 @@
                       "height": "100%"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1116,7 +1116,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1127,7 +1127,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1152,7 +1152,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1163,7 +1163,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1189,7 +1189,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1200,7 +1200,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1211,7 +1211,7 @@
                       "height": "415px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1241,7 +1241,7 @@
                       "height": "100%"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1266,7 +1266,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1277,7 +1277,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1302,7 +1302,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1313,7 +1313,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1338,7 +1338,7 @@
                       "height": "100%"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1363,7 +1363,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1374,7 +1374,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1399,7 +1399,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1410,7 +1410,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1481,7 +1481,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1492,7 +1492,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1503,7 +1503,7 @@
                       "height": "415px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],
@@ -1529,7 +1529,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1540,7 +1540,7 @@
                       "height": "295px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   },
                   {
@@ -1551,7 +1551,7 @@
                       "height": "415px"
                     },
                     "component": {
-                      "is": "addModule"
+                      
                     }
                   }
                 ],

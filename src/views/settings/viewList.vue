@@ -66,7 +66,7 @@ export default {
       this.$config.theme = item.config.theme;
       this.$config.screen = item.config.screen;
 
-      this.$ls.set('project', item.layout);
+      this.$ls.set('project', item);
 
       const params = qs.stringify({
         edit: type === 'edit' ? '1' : undefined,

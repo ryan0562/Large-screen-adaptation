@@ -25,7 +25,7 @@ export default {
       handler() {
         const { useLayout, theme, screen } = window.$config;
         if (this.$route.query.project === '1') {
-          const layout = this.$ls.get('project');
+          const layout = this.$ls.get('project').layout;
           this.layout = window.$layout = layout[useLayout];
           return;
         }
