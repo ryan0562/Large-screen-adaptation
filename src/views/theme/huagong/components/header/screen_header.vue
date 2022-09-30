@@ -1,18 +1,18 @@
 <template>
-  <div class="headerBox" :style="options.styles">
+  <div class="headerBox" :style="options.style">
     <div class="left">
-      <div class="date-wrapper" v-if="options.date.visible" :style="options.date.styles">
+      <div class="date-wrapper" v-if="options.date.visible" :style="options.date.style">
         <span>{{ dateMsg.time }}</span>
         <span>{{ dateMsg.week }}</span>
         <span>{{ dateMsg.date }}</span>
       </div>
-      <i class="back" v-if="options.back.visible" :style="options.back.styles" @click="$emit('back')"><img src="./assets/back.svg" alt="" /></i>
+      <i class="back" v-if="options.back.visible" :style="options.back.style" @click="$emit('back')"><img src="./assets/back.svg" alt="" /></i>
     </div>
     <div class="main">
       <div class="tit">{{ options.title }}</div>
     </div>
     <div class="right">
-      <div class="weather-wrapper" v-if="options.weather.visible" :style="options.weather.styles">
+      <div class="weather-wrapper" v-if="options.weather.visible" :style="options.weather.style">
         <span>温度：{{ weather['温度'] | unitFil(1, '℃') }}</span>
         <span>湿度：{{ weather['湿度'] | unitFil(2, '%') }}</span>
         <span>风向：{{ weather['风向'] || '/' }}</span>
@@ -32,7 +32,7 @@ export default {
       required: true,
       default() {
         return {
-          styles: {},
+          style: {},
         };
       },
     },
@@ -128,8 +128,6 @@ export default {
     height: 68px;
     .weather-wrapper {
       position: absolute;
-      top: 18px;
-      right: 168px;
       font-size: 18px;
       font-family: DIN;
       font-weight: 500;
