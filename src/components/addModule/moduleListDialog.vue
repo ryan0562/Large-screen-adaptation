@@ -55,14 +55,16 @@ export default {
         },
       ],
       data: null, //暂存数据
-    };
+  };
   },
   mounted() {
     this.$bus.$on('moduleListDialog_open', this.open);
   },
   methods: {
     submit() {
-      this.data.component.is = this.moduleId;
+      this.data.component = {
+        is:this.moduleId
+      } 
 
       if (this.moduleId === 'myImg') {
         this.data.component.src = '/demoImg/l_1_1.png';
