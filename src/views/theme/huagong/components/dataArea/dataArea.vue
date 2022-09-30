@@ -4,7 +4,7 @@
     <div class="tit bg2" @click="$emit('clickTitle', data.moduleId)">
       {{ data.title }}
     </div>
-    <dataBlock v-for="(item, index) in data.modules" :key="index" :data="item" />
+    <slotModule v-for="(item, index) in data.modules" :key="index" :data="item" />
   </div>
   <!-- 类型3 -->
   <div class="dataAreaBox dataAreaBox_3" v-else-if="data.type == 3">
@@ -13,10 +13,10 @@
     </div>
     <div class="con">
       <div class="dataBlock_left">
-        <dataBlock v-for="(item, index) in data.modules.left" :key="index" :data="item" />
+        <slotModule v-for="(item, index) in data.modules.left" :key="index" :data="item" />
       </div>
       <div class="dataBlock_right">
-        <dataBlock v-for="(item, index) in data.modules.right" :key="index" :data="item" />
+        <slotModule v-for="(item, index) in data.modules.right" :key="index" :data="item" />
       </div>
     </div>
   </div>
@@ -26,7 +26,7 @@
       {{ data.title }}
     </div>
     <div class="line"></div>
-    <dataBlock v-for="(item, index) in data.modules" :key="index" :data="item" />
+    <slotModule v-for="(item, index) in data.modules" :key="index" :data="item" />
   </div>
 </template>
 
@@ -34,7 +34,8 @@
 
 export default {
   components: {
-    dataBlock: () => import('./dataBlock.vue'),
+    slotModule: () => import('./slotModule.vue'),
+    // dataBlock: () => import('./dataBlock.vue'),
   },
   props: {
     data: {

@@ -4,8 +4,9 @@
       <el-tab-pane label="工程库" name="projects" lazy>
         <div class="itemList">
           <templateItem type="add" @click.native="$refs['addProject'].visible = true">新建工程</templateItem>
-          <templateItem v-for="(item, key) in list" :key="key" :src="item.img" :preview-src-list="[item.img]" :name="item.name">
-            <span @click="loadProject(item)">编辑</span>
+          <templateItem v-for="(item, key) in list" :key="key" :src="item.img" :name="item.name">
+            <span @click="loadProject(item)">预览</span>
+            <span @click="loadProject(item, 'edit')">编辑</span>
             <span @click="delProject(item)">删除</span>
           </templateItem>
         </div>
@@ -28,7 +29,8 @@
 </template>
 
 <script>
-import { getProjectList } from '@/api/before.js';
+import { getProjectList, projectDelete } from '@/api/project.js';
+import qs from 'qs';
 
 export default {
   components: {
@@ -47,8 +49,11 @@ export default {
   },
   methods: {
     // 删除项目
-    delProject(item){
-
+    delProject(item) {
+      projectDelete({ path: item.projectId }).then((res) => {
+        this.$message.success('删除成功');
+        this.getProjectListApi();
+      });
     },
     // 获取项目
     async getProjectListApi() {
@@ -56,13 +61,18 @@ export default {
       this.list = data;
     },
     // 载入项目
-    loadProject(item) {
+    loadProject(item, type) {
       this.$config.useLayout = item.config.useLayout;
       this.$config.theme = item.config.theme;
       this.$config.screen = item.config.screen;
 
       this.$ls.set('project', item.layout);
-      this.$router.push('/main?edit=1&project=1');
+
+      const params = qs.stringify({
+        edit: type === 'edit' ? '1' : undefined,
+        project: 1,
+      });
+      this.$router.push(`/main?${params}`);
     },
   },
 };

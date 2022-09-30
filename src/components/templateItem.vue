@@ -7,7 +7,7 @@
     <el-image :src="src" :preview-src-list="previewSrcList" ref="img"/>
     <span class="name">{{ name }}</span>
     <div class="mask">
-      <span @click="$refs.img.showViewer=true">预览</span>
+      <span @click="$refs.img.showViewer=true" v-if="previewSrcList">预览图</span>
       <slot></slot>
     </div>
   </div>

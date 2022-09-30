@@ -1,6 +1,6 @@
 <template>
   <!-- 无盒子 -->
-  <div class="dataBlock" :style="data.styles" v-if="data.type == 2">
+  <div class="dataBlock" :style="data.style" v-if="data.type == 2">
     <div class="head head_2" v-if="data.showHeader">
       {{ data.title }}
     </div>
@@ -9,7 +9,7 @@
     </div>
   </div>
   <!-- 有盒子 -->
-  <div :class="['dataBlock', { box: data.hasBox }]" :style="data.styles" v-else>
+  <div :class="['dataBlock', { box: data.hasBox }]" :style="data.style" v-else>
     <div class="head head_1" v-if="data.showHeader">
       {{ data.title }}
     </div>

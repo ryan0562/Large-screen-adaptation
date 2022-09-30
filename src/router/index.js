@@ -13,7 +13,7 @@ const router = new VueRouter({
   routes: list
 })
 
-import { getTemplateList } from '@/api/before.js'
+import { getTemplateList } from '@/api/project.js'
 
 // 获取模板
 async function getTemplateListApi() {

@@ -1,5 +1,5 @@
 <template>
-  <div class="menuBox" :style="options.styles">
+  <div class="menuBox" :style="options.style">
     <div v-for="(item, key) in options.children" :key="key" class="btn" @click="clickMenu(key)">
       {{ item.name }}
     </div>
@@ -14,7 +14,7 @@ export default {
       required: true,
       default() {
         return {
-          styles: {},
+          style: {},
         };
       },
     },

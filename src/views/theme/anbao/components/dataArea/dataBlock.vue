@@ -1,5 +1,5 @@
 <template>
-  <div class="dataBlock" :style="data.styles">
+  <div class="dataBlock" :style="data.style">
     <div class="head" v-if="data.showHeader">
       <span class="out-circle"></span>
       <span class="tit">{{ data.title }}</span>

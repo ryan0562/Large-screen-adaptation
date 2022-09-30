@@ -1,5 +1,5 @@
 <template>
-  <div :style="layout.styles" :data-theme="$config.theme" class="sceenMain">
+  <div :style="layout.style" :data-theme="$config.theme" class="sceenMain">
     <component :is="$config.theme" :layout="layout" />
     <controlPanel v-if="$route.query.edit === '1'" />
   </div>

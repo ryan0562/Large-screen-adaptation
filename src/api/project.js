@@ -28,3 +28,10 @@ export async function projectSave(data) {
     data,
   });
 }
+// 删除项目
+export async function projectDelete(data) {
+  return request({
+    url: `/config/project/delete/${data.path}`,
+    method: 'POST',
+  });
+}

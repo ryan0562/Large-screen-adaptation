@@ -37,12 +37,12 @@ export default {
     style() {
       if (this.type === 'left') {
         return {
-          left: parser(`${this.data.styles.left} + ${this.data.styles.width} / 2 + ${this.data.markOffset || 0}`),
+          left: parser(`${this.data.style.left} + ${this.data.style.width} / 2 + ${this.data.markOffset || 0}`),
         };
       }
       if (this.type === 'right') {
         return {
-          right: parser(`${this.data.styles.right} + ${this.data.styles.width} / 2 + ${this.data.markOffset|| 0}`),
+          right: parser(`${this.data.style.right} + ${this.data.style.width} / 2 + ${this.data.markOffset|| 0}`),
           left: 'auto',
         };
       }

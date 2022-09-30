@@ -7,7 +7,7 @@
         <dataArea
           v-if="item.visible"
           :key="`dataArea_${$config.screen}_${index}`"
-          :style="item.styles"
+          :style="item.style"
           :data="item"
           :type="item.place"
           :id="index"
