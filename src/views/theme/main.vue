@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       layout: {},
+      config: window.$config,
     };
   },
   components: {
@@ -19,25 +20,24 @@ export default {
   },
   computed: {},
   watch: {
-    $config: {
+    config: {
       immediate: true,
       deep: true,
-      handler() {
-        const { useLayout, theme, screen } = window.$config;
-        // if (this.$route.query.project === '1') {
-          const layout = this.$ls.get('project').layout;
-          this.layout = window.$layout = layout[useLayout];
-          return;
-        // }
-        // this.layout = window.$layout = this.$mti_templates[theme]?.[useLayout];
-        // if (!this.layout) {
-        //   this.$message.error('没有该模板或者分辨率');
-        // }
+      handler(a,b) {
+        const { layout, config } = this.$ls.get('project');
+        Object.assign(this.config, config);
+        this.layout = window.$layout = layout[this.config.useLayout];
       },
     },
   },
-  created() {},
-  methods:{}
+  created() {
+    // const { config } = this.$ls.get('project');
+    // Object.assign(this.config, config);
+  },
+  destroyed() {
+    // this.$ls.remove('project');
+  },
+  methods: {},
 };
 </script>
 <style lang="less">

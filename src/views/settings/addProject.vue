@@ -38,7 +38,6 @@
   </div>
 </template>
 <script>
-// import { mapGetters } from 'vuex';
 
 import { getLayout } from '@/utils/utils.js';
 
@@ -48,7 +47,6 @@ export default {
     layoutList: () => import('./layoutList.vue'),
   },
   computed: {
-    // ...mapGetters(['$layout']),
   },
   data() {
     return {
@@ -68,18 +66,25 @@ export default {
   methods: {
     nextStep() {
       this.step = 2;
-      this.$config.useLayout = this.form.size;
-      this.$config.theme = this.form.templateKey;
-      this.layout = getLayout(this.$mti_templates, this.$config);
+      // this.$config.useLayout = this.form.size;
+      // this.$config.theme = this.form.templateKey;
+      this.layout = getLayout(this.$mti_templates, {
+        useLayout: this.form.size,
+        theme: this.form.templateKey,
+      });
     },
     submit() {
-      this.$config.screen = this.form.screen;
+      
       this.$ls.set('project', {
         name: this.form.name || '测试',
         img: '/templates/huagong/img.png',
-        config: this.$config,
+        config: Object.assign(this.$config, {
+          useLayout: this.form.size,
+          theme: this.form.templateKey,
+          screen: this.form.screen,
+        }),
         layout: {
-          [this.$config.useLayout]: this.layout,
+          [this.form.size]: this.layout,
         },
       });
       this.$router.push('/main?edit=1');

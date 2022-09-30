@@ -62,9 +62,9 @@ export default {
     },
     // 载入项目
     loadProject(item, type) {
-      this.$config.useLayout = item.config.useLayout;
-      this.$config.theme = item.config.theme;
-      this.$config.screen = item.config.screen;
+      // this.$config.useLayout = item.config.useLayout;
+      // this.$config.theme = item.config.theme;
+      // this.$config.screen = item.config.screen;
 
       this.$ls.set('project', item);
 
