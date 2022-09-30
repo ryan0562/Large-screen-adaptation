@@ -8,9 +8,7 @@
     </template>
   </div>
   <!-- 展示状态 -->
-  <div class="slotModule" v-else>
-    <dataBlock :data="data" v-if="data.component.is"/>
-  </div>
+  <dataBlock :data="data" v-else-if="data.component.is" />
 </template>
 
 <script>

@@ -57,18 +57,18 @@ export default {
     },
     // 返回
     goback() {
-      goback(() => {
-        if (this.$config.screen === 'home') {
-          this.$confirm('此操作将退出当前系统, 是否继续?', '提示', {
-            confirmButtonText: '确定',
-            cancelButtonText: '取消',
-            type: 'warning',
-          }).then(() => {
-            //
-          });
-          return false;
-        }
-      });
+      // goback(() => {
+      //   if (this.$config.screen === 'home') {
+      //     this.$confirm('此操作将退出当前系统, 是否继续?', '提示', {
+      //       confirmButtonText: '确定',
+      //       cancelButtonText: '取消',
+      //       type: 'warning',
+      //     }).then(() => {
+      //       //
+      //     });
+      //     return false;
+      //   }
+      // });
     },
     // 切换页面
     switchPage(pageKey) {
