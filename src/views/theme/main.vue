@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      layout: {},
+      layout: window.$layout,
       config: window.$config,
     };
   },
@@ -20,24 +20,31 @@ export default {
   },
   computed: {},
   watch: {
-    config: {
-      immediate: true,
+    $config: {
+      // immediate: true,
       deep: true,
-      handler(a,b) {
-        const { layout, config } = this.$ls.get('project');
-        Object.assign(this.config, config);
-        this.layout = window.$layout = layout[this.config.useLayout];
-      },
+      handler:'getLayout',
     },
   },
-  created() {
-    // const { config } = this.$ls.get('project');
-    // Object.assign(this.config, config);
+  mounted() {
+    this.getLayout();
+  },
+  methods: {
+    getLayout(v, nv) {
+      let { layout, config } = this.$ls.get('project');
+      if (!nv) {
+        Object.assign(this.$config, config);
+        return;
+      }
+
+      config = this.$config;
+
+      this.layout = window.$layout = layout[config.useLayout];
+    },
   },
   destroyed() {
-    // this.$ls.remove('project');
+    // this.$ls.remove('project'); 
   },
-  methods: {},
 };
 </script>
 <style lang="less">
