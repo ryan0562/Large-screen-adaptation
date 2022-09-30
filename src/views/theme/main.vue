@@ -1,6 +1,6 @@
 <template>
-  <div :style="layout.style" :data-theme="$config.theme" class="sceenMain">
-    <component :is="$config.theme" :layout="layout" />
+  <div :style="layout.style" :data-theme="config.theme" class="sceenMain">
+    <component :is="config.theme" :layout="layout" />
     <controlPanel v-if="$route.query.edit === '1'" />
   </div>
 </template>
@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      layout: window.$layout,
+      layout: {},
       config: window.$config,
     };
   },
@@ -20,30 +20,29 @@ export default {
   },
   computed: {},
   watch: {
-    $config: {
-      // immediate: true,
+    config: {
+      immediate: true,
       deep: true,
-      handler:'getLayout',
+      handler: 'getLayout',
     },
   },
   mounted() {
-    this.getLayout();
   },
   methods: {
     getLayout(v, nv) {
       let { layout, config } = this.$ls.get('project');
+      // 初次赋值给config
       if (!nv) {
-        Object.assign(this.$config, config);
-        return;
+        Object.assign(this.config, config);
+        // 这里不能return，浏览器返回操作不会触发第二次赋值
       }
 
-      config = this.$config;
-
+      config = this.config;
       this.layout = window.$layout = layout[config.useLayout];
     },
   },
   destroyed() {
-    // this.$ls.remove('project'); 
+    // this.$ls.remove('project');
   },
 };
 </script>
