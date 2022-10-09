@@ -30,11 +30,15 @@
       v-for="(item, index) in data.modules"
       :key="index"
       :data="{ module_index: index, modules: data.modules }"
+      :maxGrid="grid_residue"
       @useGrid="useGrid"
       @change="changeItem($event, index)"
       @delete="deleteItem(index)"
     />
-    <addModule v-if="grid_used < grid" :data="{ module_index: module_index, modules: data.modules }" />
+    <addModule
+      v-if="grid_residue > 0"
+      :data="{ module_index: add_index, modules: data.modules, grid_residue: grid_residue }"
+    />
   </div>
 </template>
 
@@ -60,14 +64,21 @@ export default {
   data() {
     return {
       grid: 12, //总栅格
-      grid_used: 0, //使用了多少的栅格
+      // grid_used: 0, //使用了多少的栅格8
     };
   },
   computed: {
     // module指针
-    module_index() {
+    add_index() {
       const m = this.data.modules.length;
       return m > 0 ? m : 0;
+    },
+    // 剩余的栅格
+    grid_residue() {
+      const use = this.data.modules.reduce((total, { grid = 0 }, index) => {
+        return total + grid;
+      }, 0);
+      return this.grid - use;
     },
   },
   created() {

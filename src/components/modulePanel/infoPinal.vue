@@ -1,5 +1,5 @@
 <template>
-  <el-dialog class="infoPinal" title="信息面板" :visible.sync="visible" width="600px">
+  <el-dialog class="infoPinal" title="信息面板" :visible.sync="visible" width="600px" @close="close">
     <el-form :model="form" :rules="rules" ref="form" label-width="100px">
       <el-form-item label="标题" prop="title">
         <el-input v-model="form.title"></el-input>
@@ -15,6 +15,9 @@
           <el-radio-button :label="true">显示</el-radio-button>
           <el-radio-button :label="false">隐藏</el-radio-button>
         </el-radio-group>
+      </el-form-item>
+      <el-form-item label="栅格" prop="grid">
+        <el-input-number v-model="form.grid" :min="1" :max="12"></el-input-number>
       </el-form-item>
       <el-form-item label="选择组件" prop="component">
         <templateItem v-if="!form.component.is" type="add" @click.native="addComponent" />
@@ -41,6 +44,7 @@ function initForm() {
   return {
     showHeader: false,
     hasBox: false,
+    grid: 4,
     component: {},
   };
 }
@@ -61,9 +65,11 @@ export default {
     return {
       visible: false,
       form: initForm(),
+      grid_gesidue:0,
       rules: {
         title: [{ required: true, message: '请输入标题', trigger: 'blur' }],
         component: [{ validator: checkComponent, required: true, message: '请选择组件' }],
+        grid: [{ required: true, message: '请选择栅格' }],
       },
     };
   },
@@ -72,11 +78,12 @@ export default {
   },
   methods: {
     open(data) {
-      const { module_index, modules } = data;
+      const { module_index, modules, grid_gesidue } = data;
       const form = modules[module_index] ? JSON.parse(JSON.stringify(modules[module_index])) : initForm();
       this.visible = true;
       this.form = form;
       this.sourceData = data;
+      this.grid_gesidue = grid_gesidue;
     },
     submit() {
       this.$refs['form'].validate((valid) => {
@@ -87,13 +94,16 @@ export default {
       });
     },
     addComponent() {
-      this.$bus.$emit('componentsList', 1);
+      this.$bus.$emit('componentsList');
     },
     changeComponent(data) {
       this.form.component = {
         is: data.name,
         src: data.src,
       };
+    },
+    close() {
+      this.form = initForm();
     },
   },
 };
