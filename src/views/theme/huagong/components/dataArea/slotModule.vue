@@ -1,7 +1,10 @@
 <template>
   <div class="slotModule">
-    <dataBlock :data="data" />
-    <span v-if="$route.query.edit === '1'" class="el-icon-circle-close delete" @click="deleteData"></span>
+    <dataBlock :data="data.modules[data.module_index]" />
+    <template v-if="isEdit">
+      <div class="keepOut" @click.stop="editPanel"></div>
+      <span class="el-icon-circle-close delete" @click="deleteData"></span>
+    </template>
   </div>
 </template>
 
@@ -19,10 +22,18 @@ export default {
   data() {
     return {};
   },
+  computed: {
+    isEdit() {
+      return this.$route.query.edit === '1';
+    },
+  },
   methods: {
-    deleteData(){
-      this.$emit('delete')
-    }
+    editPanel() {
+      this.$bus.$emit('moduleInfoPanel', this.data, 'edit');
+    },
+    deleteData() {
+      this.$emit('delete');
+    },
   },
 };
 </script>
@@ -35,6 +46,15 @@ export default {
     position: absolute;
     top: -15px;
     right: -15px;
+    z-index: 2;
+  }
+  .keepOut {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
   }
 }
 </style>

@@ -29,7 +29,7 @@
     <slotModule
       v-for="(item, index) in data.modules"
       :key="index"
-      :data="item"
+      :data="{ module_index: index, modules: data.modules }"
       @useGrid="useGrid"
       @change="changeItem($event, index)"
       @delete="deleteItem(index)"

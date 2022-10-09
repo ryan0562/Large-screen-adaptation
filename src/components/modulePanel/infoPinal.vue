@@ -73,7 +73,7 @@ export default {
   methods: {
     open(data) {
       const { module_index, modules } = data;
-      const form = modules[module_index] || initForm();
+      const form = modules[module_index] ? JSON.parse(JSON.stringify(modules[module_index])) : initForm();
       this.visible = true;
       this.form = form;
       this.sourceData = data;
