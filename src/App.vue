@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-    <moduleListDialog />
+    <infoPinal />
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
     return {};
   },
   components: {
-    moduleListDialog: () => import('@/components/addModule/moduleListDialog.vue'),
+    infoPinal: () => import('@/components/modulePanel/infoPinal.vue'),
   },
 };
 </script>

@@ -1,19 +1,17 @@
 <template>
-  <div>
-    <el-dialog title="组件库" :visible.sync="visible" width="1400px">
-      <div class="itemList">
-        <el-radio-group v-model="moduleId">
-          <el-radio v-for="item in modules" :key="item.name" :label="item.name">
-            <templateItem :src="item.img" :preview-src-list="[item.img]" :name="item.name"></templateItem>
-          </el-radio>
-        </el-radio-group>
-      </div>
-      <span slot="footer" class="dialog-footer">
-        <el-button @click="visible = false">取 消</el-button>
-        <el-button type="primary" @click="submit">确 定</el-button>
-      </span>
-    </el-dialog>
-  </div>
+  <el-dialog title="组件库" :visible.sync="visible" width="1400px" append-to-body	>
+    <div class="itemList">
+      <el-radio-group v-model="moduleOB">
+        <el-radio v-for="item in modules" :key="item.name" :label="item">
+          <templateItem :src="item.img" :preview-src-list="[item.img]" :name="item.name"></templateItem>
+        </el-radio>
+      </el-radio-group>
+    </div>
+    <span slot="footer" class="dialog-footer">
+      <el-button @click="visible = false">取 消</el-button>
+      <el-button type="primary" @click="submit">确 定</el-button>
+    </span>
+  </el-dialog>
 </template>
 <script>
 export default {
@@ -23,7 +21,7 @@ export default {
   data() {
     return {
       visible: false,
-      moduleId: null,
+      moduleOB: null,
       modules: [
         {
           name: 'aaa',
@@ -55,21 +53,24 @@ export default {
         },
       ],
       data: null, //暂存数据
-  };
+    };
   },
   mounted() {
-    this.$bus.$on('moduleListDialog_open', this.open);
+    this.$bus.$on('componentsList', this.open);
   },
   methods: {
     submit() {
-      this.data.component = {
-        is:this.moduleId
-      } 
+      // this.data.component = {
+      //   is: this.moduleId,
+      // };
 
-      if (this.moduleId === 'myImg') {
-        this.data.component.src = '/demoImg/l_1_1.png';
-      }
-
+      // if (this.moduleId === 'myImg') {
+      //   this.data.component.src = '/demoImg/l_1_1.png';
+      // }
+      this.$emit('change',{
+        src:this.moduleOB.img,
+        name:this.moduleOB.name,
+      })
       this.visible = false;
     },
     open(data) {
@@ -105,6 +106,11 @@ export default {
       min-height: 0;
       width: 100%;
     }
+  }
+}
+::v-deep {
+  .el-dialog__footer {
+    text-align: left;
   }
 }
 </style>

@@ -568,44 +568,19 @@
                 "type": 1,
                 "place": "left",
                 "title": "公共安全",
-                "modules": [
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "视频监控",
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    },
-                    "component": {
-                      
-                    }
+                "comment":{
+                  "showHeader": true,
+                  "hasBox": true,
+                  "title": "视频监控",
+                  "style": {
+                    "height": "285px",
+                    "marginTop": "12px"
                   },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "视频监控",
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    },
-                    "component": {
-                      
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "视频监控",
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    },
-                    "component": {
-                      
-                    }
+                  "component": {
+                    
                   }
-                ],
+                },
+                "modules": [],
                 "style": {
                   "width": "440px",
                   "height": "972px",
@@ -620,44 +595,7 @@
                 "type": 1,
                 "place": "left",
                 "title": "公共安全",
-                "modules": [
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "视频监控",
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    },
-                    "component": {
-                      
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  }
-                ],
+                "modules": [],
                 "style": {
                   "width": "440px",
                   "height": "972px",
@@ -672,44 +610,7 @@
                 "place": "right",
                 "hasMark": true,
                 "type": 1,
-                "modules": [
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  }
-                ],
+                "modules": [],
                 "style": {
                   "width": "440px",
                   "height": "972px",
@@ -722,44 +623,7 @@
                 "visible": true,
                 "title": "公共安全",
                 "place": "right",
-                "modules": [
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  }
-                ],
+                "modules": [],
                 "hasMark": true,
                 "type": 1,
                 "style": {
@@ -781,44 +645,7 @@
                 "type": 1,
                 "place": "left",
                 "title": "公共安全",
-                "modules": [
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "视频监控",
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    },
-                    "component": {
-                      
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "视频监控",
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    },
-                    "component": {
-                      
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "视频监控",
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    },
-                    "component": {
-                      
-                    }
-                  }
-                ],
+                "modules": [],
                 "style": {
                   "width": "440px",
                   "height": "972px",
@@ -831,44 +658,7 @@
                 "visible": true,
                 "title": "公共安全",
                 "place": "right",
-                "modules": [
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  },
-                  {
-                    "showHeader": true,
-                    "hasBox": true,
-                    "title": "实时警情",
-                    "component": {
-                      
-                    },
-                    "style": {
-                      "height": "285px",
-                      "marginTop": "12px"
-                    }
-                  }
-                ],
+                "modules": [],
                 "hasMark": true,
                 "type": 1,
                 "style": {

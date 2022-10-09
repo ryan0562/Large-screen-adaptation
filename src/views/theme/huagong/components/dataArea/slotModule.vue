@@ -1,14 +1,8 @@
 <template>
-  <!-- 编辑状态 -->
-  <div class="slotModule" v-if="$route.query.edit === '1'">
-    <addModule v-if="!data.component.is" :data="data" :style="data.style" />
-    <template v-else>
-      <dataBlock :data="data" />
-      <span class="el-icon-circle-close delete" @click="data.component = { is: '' }"></span>
-    </template>
+  <div class="slotModule">
+    <dataBlock :data="data" />
+    <span v-if="$route.query.edit === '1'" class="el-icon-circle-close delete" @click="deleteData"></span>
   </div>
-  <!-- 展示状态 -->
-  <dataBlock :data="data" v-else-if="data.component.is" />
 </template>
 
 <script>
@@ -18,23 +12,18 @@ export default {
   },
   props: {
     data: {
-      type: Object,
+      // type: Object,
       required: true,
-      default() {
-        return {};
-      },
     },
   },
   data() {
     return {};
   },
-  computed: {
-    type() {},
+  methods: {
+    deleteData(){
+      this.$emit('delete')
+    }
   },
-  created() {},
-  mounted() {},
-  watch: {},
-  methods: {},
 };
 </script>
 

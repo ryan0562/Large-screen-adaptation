@@ -26,12 +26,19 @@
       {{ data.title }}
     </div>
     <div class="line"></div>
-    <slotModule v-for="(item, index) in data.modules" :key="index" :data="item" />
+    <slotModule
+      v-for="(item, index) in data.modules"
+      :key="index"
+      :data="item"
+      @useGrid="useGrid"
+      @change="changeItem($event, index)"
+      @delete="deleteItem(index)"
+    />
+    <addModule v-if="grid_used < grid" :data="{ module_index: module_index, modules: data.modules }" />
   </div>
 </template>
 
 <script>
-
 export default {
   components: {
     slotModule: () => import('./slotModule.vue'),
@@ -50,7 +57,38 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      grid: 12, //总栅格
+      grid_used: 0, //使用了多少的栅格
+    };
+  },
   computed: {
+    // module指针
+    module_index() {
+      const m = this.data.modules.length;
+      return m > 0 ? m : 0;
+    },
+  },
+  created() {
+    // this.initModule();
+  },
+  methods: {
+    deleteItem(index) {
+      this.data.modules.splice(index, 1);
+    },
+    changeItem(data, index) {
+      this.$set(this.data.modules, index, data);
+    },
+    // initModule() {
+    //   if (!this.data.modules[this.module_index]) {
+    //     this.$set(this.data.modules, this.module_index, { component: {} });
+    //   }
+    //   // return this.data.modules[this.module_index];
+    // },
+    useGrid(n) {
+      this.grid_used += n;
+    },
   },
 };
 </script>

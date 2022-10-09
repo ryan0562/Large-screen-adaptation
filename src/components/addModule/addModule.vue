@@ -1,5 +1,5 @@
 <template>
-  <div class="addModuleBox" @click="showModules" :style="data.style">
+  <div class="addModuleBox" @click="showModules">
     <i class="el-icon-plus icon"></i>
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
   props: ['data'],
   methods: {
     showModules() {
-      this.$bus.$emit('moduleListDialog_open', this.data);
+      this.$bus.$emit('moduleInfoPanel', this.data);
     },
   },
 };
@@ -20,7 +20,7 @@ export default {
 <style lang="less" scoped>
 .addModuleBox {
   width: 100%;
-  height: 100%;
+  height: calc(100% / 12);
   border: 1px dashed #ddd;
   display: flex;
   align-items: center;

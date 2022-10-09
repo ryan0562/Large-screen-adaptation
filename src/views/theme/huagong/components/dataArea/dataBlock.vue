@@ -5,7 +5,7 @@
       {{ data.title }}
     </div>
     <div :class="[{ box: data.hasBox }, 'flex']">
-      <component v-bind="data.component" :data="data"></component>
+      <component v-bind="data.component" :data="data" :is="data.component?.is"></component>
     </div>
   </div>
   <!-- 有盒子 -->
@@ -13,15 +13,13 @@
     <div class="head head_1" v-if="data.showHeader">
       {{ data.title }}
     </div>
-    <component class="flex" v-bind="data.component" :data="data"></component>
+    <component v-bind="data.component" :data="data" :is="data.component?.is"></component>
   </div>
 </template>
 
 <script>
 export default {
-  components: {
-   
-  },
+  components: {},
   props: {
     data: {
       type: Object,
