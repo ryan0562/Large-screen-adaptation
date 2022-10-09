@@ -65,6 +65,7 @@ export default {
     return {
       visible: false,
       form: initForm(),
+      maxGrid:null,
       rules: {
         title: [{ required: true, message: '请输入标题', trigger: 'blur' }],
         component: [{ validator: checkComponent, required: true, message: '请选择组件' }],

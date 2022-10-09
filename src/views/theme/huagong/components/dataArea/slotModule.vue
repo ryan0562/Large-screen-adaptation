@@ -1,6 +1,6 @@
 <template>
-  <div class="slotModule">
-    <dataBlock :data="data.modules[data.module_index]" />
+  <div class="slotModule" :style="css">
+    <dataBlock :data="OB" />
     <template v-if="isEdit">
       <div class="keepOut" @click.stop="editPanel"></div>
       <span class="el-icon-circle-close delete" @click="deleteData"></span>
@@ -23,9 +23,18 @@ export default {
     return {};
   },
   computed: {
+    OB(){
+      return this.data.modules[this.data.module_index]
+    },
     isEdit() {
       return this.$route.query.edit === '1';
     },
+    css(){
+      return {
+        height:`calc(70px * ${this.OB.grid})`,
+        ...this.data.style
+      }
+    }
   },
   methods: {
     editPanel() {
@@ -41,6 +50,8 @@ export default {
 <style scoped lang="less">
 .slotModule {
   position: relative;
+  padding-top: 12px;
+
   .delete {
     font-size: 30px;
     position: absolute;
