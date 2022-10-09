@@ -17,7 +17,7 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item label="栅格" prop="grid">
-        <el-input-number v-model="form.grid" :min="1" :max="12"></el-input-number>
+        <el-input-number v-model="form.grid" :min="1" :max="maxGrid"></el-input-number>
       </el-form-item>
       <el-form-item label="选择组件" prop="component">
         <templateItem v-if="!form.component.is" type="add" @click.native="addComponent" />
@@ -65,7 +65,6 @@ export default {
     return {
       visible: false,
       form: initForm(),
-      grid_gesidue:0,
       rules: {
         title: [{ required: true, message: '请输入标题', trigger: 'blur' }],
         component: [{ validator: checkComponent, required: true, message: '请选择组件' }],
@@ -78,12 +77,17 @@ export default {
   },
   methods: {
     open(data) {
-      const { module_index, modules, grid_gesidue } = data;
-      const form = modules[module_index] ? JSON.parse(JSON.stringify(modules[module_index])) : initForm();
+      const { module_index, modules, grid_residue } = data;
+      // 编辑
+      if (modules[module_index]) {
+        this.form = JSON.parse(JSON.stringify(modules[module_index]));
+        this.maxGrid = grid_residue + this.form.grid;
+      } else {
+        this.maxGrid = grid_residue;
+      }
+
       this.visible = true;
-      this.form = form;
       this.sourceData = data;
-      this.grid_gesidue = grid_gesidue;
     },
     submit() {
       this.$refs['form'].validate((valid) => {

@@ -29,7 +29,7 @@
     <slotModule
       v-for="(item, index) in data.modules"
       :key="index"
-      :data="{ module_index: index, modules: data.modules }"
+      :data="{ module_index: index, modules: data.modules, grid_residue }"
       :maxGrid="grid_residue"
       @useGrid="useGrid"
       @change="changeItem($event, index)"
@@ -37,7 +37,7 @@
     />
     <addModule
       v-if="grid_residue > 0"
-      :data="{ module_index: add_index, modules: data.modules, grid_residue: grid_residue }"
+      :data="{ module_index: add_index, modules: data.modules, grid_residue }"
     />
   </div>
 </template>
