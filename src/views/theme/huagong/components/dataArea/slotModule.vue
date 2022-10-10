@@ -23,25 +23,31 @@ export default {
     return {};
   },
   computed: {
-    OB(){
-      return this.data.modules[this.data.module_index]
+    OB() {
+      return this.data.modules[this.data.module_index];
     },
     isEdit() {
       return this.$route.query.edit === '1';
     },
-    css(){
+    css() {
       return {
-        height:`calc((100% - 90px) / 12 * ${this.OB.grid})`,
-        ...this.data.style
-      }
-    }
+        height: `calc((100% - 90px) / 12 * ${this.OB.grid})`,
+        ...this.data.style,
+      };
+    },
   },
   methods: {
     editPanel() {
       this.$bus.$emit('moduleInfoPanel', this.data, 'edit');
     },
     deleteData() {
-      this.$emit('delete');
+      this.$confirm('是否删除?', '提示', {
+        type: 'warning',
+      })
+        .then(() => {
+          this.$emit('delete');
+        })
+        .catch(() => {});
     },
   },
 };

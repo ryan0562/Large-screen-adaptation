@@ -1,6 +1,7 @@
 <template>
   <div class="controlPanelBox">
     <div class="toolsbar">
+      <el-button type="danger" @click="cancelProject">取消</el-button>
       <el-button type="primary" @click="saveProject">保存</el-button>
     </div>
   </div>
@@ -13,20 +14,21 @@ export default {
   created() {},
   methods: {
     saveProject() {
-      // const data = {
-      //   name: '接口测试',
-      //   img: '/templates/huagong/img.png',
-      //   config: window.$config,
-      //   layout: {
-      //     [window.$config.useLayout]: window.$layout,
-      //   },
-      // };
       const data = this.$ls.get('project');
       data.layout[window.$config.useLayout] = window.$layout;
-      
+
       projectSave(data).then((res) => {
         this.$router.replace('/settings/viewList');
       });
+    },
+    cancelProject() {
+      this.$confirm('是否取消?', '提示', {
+        type: 'warning',
+      })
+        .then(() => {
+          this.$router.replace('/settings/viewList');
+        })
+        .catch(() => {});
     },
   },
 };

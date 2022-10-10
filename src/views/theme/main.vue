@@ -14,7 +14,7 @@ export default {
     };
   },
   components: {
-    controlPanel: () => import('./controlPanel.vue'),
+    controlPanel: () => import('@/components/modulePanel/controlPanel.vue'),
     huagong: () => import('@/views/theme/huagong/index.vue'),
     anbao: () => import('@/views/theme/anbao/index.vue'),
   },
