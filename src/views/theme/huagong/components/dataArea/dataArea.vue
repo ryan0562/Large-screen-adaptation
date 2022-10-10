@@ -35,8 +35,9 @@
       @change="changeItem($event, index)"
       @delete="deleteItem(index)"
     />
+    <!-- 编辑且有剩余栅格才会显示 -->
     <addModule
-      v-if="grid_residue > 0"
+      v-if="grid_residue > 0 && $route.query.edit === '1'"
       :data="{ module_index: add_index, modules: data.modules, grid_residue }"
     />
   </div>

@@ -31,7 +31,7 @@ export default {
     },
     css(){
       return {
-        height:`calc(74px * ${this.OB.grid})`,
+        height:`calc((100% - 90px) / 12 * ${this.OB.grid})`,
         ...this.data.style
       }
     }

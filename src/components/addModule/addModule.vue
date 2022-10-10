@@ -21,6 +21,7 @@ export default {
 .addModuleBox {
   width: 100%;
   height: calc(100% / 12);
+  margin-top: 12px;
   border: 1px dashed #ddd;
   display: flex;
   align-items: center;
