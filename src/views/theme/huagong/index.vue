@@ -11,7 +11,7 @@
           :data="item"
           :type="item.place"
           :id="index"
-          @clickTitle="switchPage"
+          @clickTitle="showInfoDialog(item)"
         />
       </transition>
     </template>
@@ -39,18 +39,15 @@ export default {
     },
   },
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
-    panels(){
-      return this.layout.dataArea[this.$config.screen]?.panels
-    }
+    panels() {
+      return this.layout.dataArea[this.$config.screen]?.panels;
+    },
   },
-  created() {
-  },
+  created() {},
   methods: {
-   
     // type==='active'为激活状态
     clickMenu(key, type) {
       this.switchPage(key);
@@ -73,6 +70,9 @@ export default {
     // 切换页面
     switchPage(pageKey) {
       switchPage(pageKey);
+    },
+    showInfoDialog(item) {
+      this.$bus.$emit('dataAreaPanel', item);
     },
   },
 };
