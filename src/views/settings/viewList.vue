@@ -4,7 +4,7 @@
       <el-tab-pane label="工程库" name="projects" lazy>
         <div class="itemList">
           <templateItem type="add" @click.native="$refs['addProject'].visible = true">新建工程</templateItem>
-          <templateItem v-for="(item, key) in list" :key="key" :src="item.img" :name="item.name">
+          <templateItem v-for="(item, key) in list" :key="key" :src="item.img" :name="item.config.name">
             <span @click="loadProject(item)">预览</span>
             <span @click="loadProject(item, 'edit')">编辑</span>
             <span @click="delProject(item)">删除</span>
