@@ -76,12 +76,12 @@ export default {
     submit() {
       
       this.$ls.set('project', {
-        name: this.form.name || '测试',
         img: '/templates/huagong/img.png',
         config: Object.assign(this.$config, {
           useLayout: this.form.size,
           theme: this.form.templateKey,
           screen: this.form.screen,
+          name: this.form.name,
         }),
         layout: {
           [this.form.size]: this.layout,

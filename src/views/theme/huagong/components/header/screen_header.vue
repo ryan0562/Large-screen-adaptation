@@ -9,7 +9,7 @@
       <i class="back" v-if="options.back.visible" :style="options.back.style" @click="$emit('back')"><img src="./assets/back.svg" alt="" /></i>
     </div>
     <div class="main">
-      <div class="tit">{{ options.title }}</div>
+      <div class="tit">{{ $config.name }}</div>
     </div>
     <div class="right">
       <div class="weather-wrapper" v-if="options.weather.visible" :style="options.weather.style">
