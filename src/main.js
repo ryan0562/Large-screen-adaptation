@@ -4,6 +4,12 @@ import router from './router'
 import store from './store'
 import request from '@/utils/axios/request.js';
 
+const compiler = require('vue-template-compiler')
+import { parse } from "@vue/compiler-sfc";
+import { genComponent } from "@/utils/sfc/parse.js";
+
+
+// const compiler_sfc= require("vue/compiler-sfc");
 
 /* echarts */
 import * as echarts from "echarts";
@@ -16,7 +22,7 @@ Vue.prototype.$echarts = echarts;
 // import 'element-ui/lib/theme-chalk/index.css';
 // import ElementUI from 'element-ui'
 // Vue.use(ElementUI, { size: 'small' })
-Vue.prototype.$ELEMENT = { size: 'small'};
+Vue.prototype.$ELEMENT = { size: 'small' };
 
 /* animate.css */
 import { animateCSS, switchDataArea, toggleFold, toggleClass } from '@/plugins/animate/animate.js'
@@ -48,31 +54,16 @@ Vue.component('addModule', addModule)
 
 const list = await request({
   baseURL: '',
-  url: `/components/api.json`,
+  url: ` http://10.168.4.28:17011/ng-onlineDesform/eng/formData/1579654289469607936?current=1&size=20&desFormCode=component_list`,
   method: 'GET',
 });
 
-list.data.records.forEach(item => {
-  // const blob = new Blob([item.comCode], {
-  //   type: "text/plain;charset=utf-8"
-  // })
-  // const objectURL = URL.createObjectURL(blob)
-  // const cm = import(objectURL)
-
-  Vue.component(item.code, item.comCode)
+list.data.records.forEach(async item => {
+  const descriptorOB = parse(item.comCode);
+  const cm = await genComponent(descriptorOB.descriptor, descriptorOB.errors, `wk-${item.code}`)
+  Vue.component(item.code, { ...cm.component, _scopeId: `data-wk-${item.code}` })
 })
 
-var Profile = Vue.extend({
-  template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
-  data: function () {
-    return {
-      firstName: 'Walter',
-      lastName: 'White',
-      alias: 'Heisenberg'
-    }
-  }
-})
-console.log(new Profile());
 
 /* vue bus */
 import Bus from '@/plugins/bus.js' //这是我的路径，正确引用你们的路径

@@ -14,6 +14,11 @@ module.exports = defineConfig({
       },
     }
   },
+  runtimeCompiler: true,
+  chainWebpack: (config) => { 
+    config.resolve.alias
+      .set("vue$", "vue/dist/vue.esm.js");
+  },
   // chainWebpack: config => {
   //   if (process.env.NODE_ENV === 'production') {
   //     config.output.filename('js/[name].js').end();
