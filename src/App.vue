@@ -3,7 +3,6 @@
     <router-view />
     <infoPinal />
     <dataAreaPinal />
-    <wk-button>aaa</wk-button>
   </div>
 </template>
 
