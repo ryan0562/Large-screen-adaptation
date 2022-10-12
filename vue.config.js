@@ -3,6 +3,17 @@ const { defineConfig } = require('@vue/cli-service')
 
 module.exports = defineConfig({
   publicPath: '/',
+
+  configureWebpack: config => {
+    return {
+      experiments: {
+        topLevelAwait: true
+      },
+      externals: {
+        vue: 'Vue',
+      },
+    }
+  },
   // chainWebpack: config => {
   //   if (process.env.NODE_ENV === 'production') {
   //     config.output.filename('js/[name].js').end();

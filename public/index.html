@@ -7,6 +7,8 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script src="./config.js" type="module" defer></script>
+    <link rel="stylesheet" href="./libs/element-ui/index.css">
+    
   </head>
   <body>
     <noscript>
@@ -15,4 +17,9 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script src="./libs/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="./libs/element-ui/index.js"></script>
+  <!-- 放在项目根目录 -->
+  <script src="./libs/wkui.umd.js"></script>
 </html>
