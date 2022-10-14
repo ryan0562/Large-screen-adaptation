@@ -2,8 +2,8 @@
   <el-dialog title="组件库" :visible.sync="visible" width="1400px" append-to-body	>
     <div class="itemList">
       <el-radio-group v-model="moduleOB">
-        <el-radio v-for="item in modules" :key="item.name" :label="item">
-          <templateItem :src="item.img" :preview-src-list="[item.img]" :name="item.name"></templateItem>
+        <el-radio v-for="item in $moduleList" :key="item.comCode" :label="item">
+          <templateItem :src="`http://10.168.4.28:17011${item.comImg}`" :preview-src-list="[`http://10.168.4.28:17011${item.comImg}`]" :name="item.name"></templateItem>
         </el-radio>
       </el-radio-group>
     </div>
@@ -22,36 +22,6 @@ export default {
     return {
       visible: false,
       moduleOB: null,
-      modules: [
-        {
-          name: 'aaa',
-          img: '/demoImg/l_1_1.png',
-        },
-        {
-          name: 'bbb',
-          img: '/demoImg/l_1_1.png',
-        },
-        {
-          name: 'ccc',
-          img: '/demoImg/l_1_1.png',
-        },
-        {
-          name: 'realTimePolice',
-          img: '/demoImg/l_1_1.png',
-        },
-        {
-          name: 'myVideo',
-          img: '/demoImg/l_1_1.png',
-        },
-        {
-          name: 'investment',
-          img: '/demoImg/l_1_1.png',
-        },
-        {
-          name: 'myImg',
-          img: '/demoImg/l_1_1.png',
-        },
-      ],
       data: null, //暂存数据
     };
   },
@@ -68,8 +38,8 @@ export default {
       //   this.data.component.src = '/demoImg/l_1_1.png';
       // }
       this.$emit('change',{
-        src:this.moduleOB.img,
-        name:this.moduleOB.name,
+        src:`http://10.168.4.28:17011${this.moduleOB.comImg}`,
+        is:this.moduleOB.code,
       })
       this.visible = false;
     },

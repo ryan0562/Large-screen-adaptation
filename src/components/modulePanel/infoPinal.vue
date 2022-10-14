@@ -102,10 +102,7 @@ export default {
       this.$bus.$emit('componentsList');
     },
     changeComponent(data) {
-      this.form.component = {
-        is: data.name,
-        src: data.src,
-      };
+      this.form.component = data;
     },
     close() {
       this.form = initForm();
