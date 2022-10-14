@@ -4,7 +4,6 @@ import router from './router'
 import store from './store'
 import request from '@/utils/axios/request.js';
 
-const compiler = require('vue-template-compiler')
 import { parse } from "@vue/compiler-sfc";
 import { genComponent } from "@/utils/sfc/parse.js";
 
