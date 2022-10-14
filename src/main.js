@@ -63,6 +63,8 @@ list.data.records.forEach(async item => {
   Vue.component(item.code, { ...cm.component, _scopeId: `data-wk-${item.code}` })
 })
 
+Vue.prototype.$moduleList = list.data.records
+
 
 /* vue bus */
 import Bus from '@/plugins/bus.js' //这是我的路径，正确引用你们的路径

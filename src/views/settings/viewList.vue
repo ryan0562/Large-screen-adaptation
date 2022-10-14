@@ -22,7 +22,17 @@
           ></templateItem>
         </div>
       </el-tab-pane>
-      <el-tab-pane label="组件库" name="components" lazy> </el-tab-pane>
+      <el-tab-pane label="组件库" name="components" lazy>
+        <div class="itemList">
+          <templateItem
+            v-for="(item, key) in $moduleList"
+            :key="key"
+            :src="`http://10.168.4.28:17011${item.comImg}`"
+            :preview-src-list="[`http://10.168.4.28:17011${item.comImg}`]"
+            :name="item.name"
+          ></templateItem>
+        </div>
+      </el-tab-pane>
     </el-tabs>
     <addProject ref="addProject" />
   </div>
