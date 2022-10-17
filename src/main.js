@@ -50,10 +50,11 @@ Vue.prototype.$config = window.$config
 /* 添加模块组件 */
 import addModule from '@/components/addModule/addModule.vue'
 Vue.component('addModule', addModule)
+console.log(addModule);
 
 const list = await request({
   baseURL: '',
-  url: ` http://10.168.4.28:17011/ng-onlineDesform/eng/formData/1579654289469607936?current=1&size=20&desFormCode=component_list`,
+  url: ` http://10.168.4.28:17011/ng-onlineDesform/eng/formData/1579654289469607936?current=1&size=1000&desFormCode=component_list`,
   method: 'GET',
 });
 
@@ -61,13 +62,14 @@ list.data.records.forEach(async item => {
   const descriptorOB = parse(item.comCode);
   const cm = await genComponent(descriptorOB.descriptor, descriptorOB.errors, `wk-${item.code}`)
   Vue.component(item.code, { ...cm.component, _scopeId: `data-wk-${item.code}` })
+  console.log(cm);
 })
 
 Vue.prototype.$moduleList = list.data.records
 
 
 /* vue bus */
-import Bus from '@/plugins/bus.js' //这是我的路径，正确引用你们的路径
+import Bus from '@/plugins/bus.js' 
 Vue.prototype.$bus = Bus
 
 /* 组件库 */

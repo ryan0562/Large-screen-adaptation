@@ -26,6 +26,11 @@ const routes = [
     component: () => import('@/views/theme/main.vue'),
   },
   {
+    path: '/bigscreen/designerConfig',
+    name: 'bigscreenDesignerConfig',
+    component: () => import('@/views/bigscreenDesigner/designer/index.vue'),
+  },
+  {
     path: '/demo',
     name: 'demo',
     component: Blank,

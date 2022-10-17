@@ -2,7 +2,7 @@ export default async function lessLoader(source) {
   try {
     require.resolve("less");
   } catch (ignoreError) {
-    console.log("Failed to resolve loader: less ！You may need to install it.");
+    console.error("Failed to resolve loader: less ！You may need to install it.");
   }
 
   let lessOptions = {};
