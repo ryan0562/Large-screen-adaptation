@@ -1,7 +1,7 @@
 <template>
   <div :style="layout.style" :data-theme="config.theme" class="sceenMain">
     <component :is="config.theme" :layout="layout" />
-    <controlPanel v-if="$route.query.edit === '1'" />
+    <!-- <controlPanel v-if="$route.query.edit === '1'" /> -->
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
     };
   },
   components: {
-    controlPanel: () => import('@/components/modulePanel/controlPanel.vue'),
+    // controlPanel: () => import('@/components/modulePanel/controlPanel.vue'),
     huagong: () => import('@/views/theme/huagong/index.vue'),
     anbao: () => import('@/views/theme/anbao/index.vue'),
   },

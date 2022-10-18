@@ -5,8 +5,8 @@
         <div class="itemList">
           <templateItem type="add" @click.native="$refs['addProject'].visible = true">新建工程</templateItem>
           <templateItem v-for="(item, key) in list" :key="key" :src="item.img" :name="item.config.name">
-            <span @click="loadProject(item)">预览</span>
-            <span @click="loadProject(item, 'edit')">编辑</span>
+            <span @click="previewProject(item)">预览</span>
+            <span @click="editProject(item)">编辑</span>
             <span @click="delProject(item)">删除</span>
           </templateItem>
         </div>
@@ -70,19 +70,20 @@ export default {
       const { data = [] } = await getProjectList();
       this.list = data;
     },
-    // 载入项目
-    loadProject(item, type) {
-      // this.$config.useLayout = item.config.useLayout;
-      // this.$config.theme = item.config.theme;
-      // this.$config.screen = item.config.screen;
-
+    // 编辑项目
+    editProject(item) {
       this.$ls.set('project', item);
 
       const params = qs.stringify({
-        edit: type === 'edit' ? '1' : undefined,
+        edit: 1,
         project: 1,
       });
-      this.$router.push(`/main?${params}`);
+      this.$router.push(`/bigscreen/designerConfig?${params}`);
+    },
+    // 预览
+    previewProject(item) {
+      this.$ls.set('project', item);
+      open('/#/main');
     },
   },
 };

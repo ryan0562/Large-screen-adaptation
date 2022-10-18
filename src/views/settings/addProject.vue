@@ -87,7 +87,8 @@ export default {
           [this.form.size]: this.layout,
         },
       });
-      this.$router.push('/main?edit=1');
+      // this.$router.push('/main?edit=1');
+      this.$router.push('/bigscreen/designerConfig');
     },
   },
 };

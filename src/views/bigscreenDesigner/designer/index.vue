@@ -13,7 +13,7 @@
         :is-scale-revise="true"
         :visible.sync="dashboard.presetLineVisible"
       >
-        <pageMain />
+        <pageMain :type="page.type" />
       </rulerTool>
       <div class="m-r"></div>
     </div>
@@ -42,16 +42,21 @@ export default {
         presetLine: [], // 辅助线
         presetLineVisible: true, // 辅助线是否显示
       },
-      menu:[
+      // 左侧菜单
+      menu: [
         {
-          icon:'el-icon-edit',
-          name:'场景',
+          icon: 'el-icon-data-analysis',
+          name: '场景',
         },
-        {
-          icon:'el-icon-edit',
-          name:'布局',
-        },
-      ]
+        // {
+        //   icon: 'el-icon-film',
+        //   name: '布局',
+        // },
+      ],
+      // 页面主体
+      page: {
+        type: 'edit',
+      },
     };
   },
 };
