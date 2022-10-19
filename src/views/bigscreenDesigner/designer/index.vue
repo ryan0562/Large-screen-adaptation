@@ -45,6 +45,10 @@ export default {
       // 左侧菜单
       menu: [
         {
+          icon: 'el-icon-monitor',
+          name: '分辨率',
+        },
+        {
           icon: 'el-icon-data-analysis',
           name: '场景',
         },

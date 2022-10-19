@@ -1,9 +1,14 @@
 <!-- 大屏设计器 -->
 <template>
   <div class="head">
-    <div class="h-l"></div>
+    <div class="h-l">
+      <el-select v-model="screen" placeholder="选择场景">
+        <el-option v-for="(item, key) in screenList" :key="key" :label="key" :value="key"> </el-option>
+      </el-select>
+    </div>
     <div class="h-r">
       <el-button class="wk-btn" icon="el-icon-switch-button" @click="cancel">取消</el-button>
+      <el-button class="wk-btn" icon="el-icon-data-line" @click="save(true)">保存</el-button>
       <el-button class="wk-btn" icon="el-icon-data-line" @click="preview">预览</el-button>
       <el-button class="wk-btn" icon="el-icon-position" @click="publish">发布</el-button>
     </div>
@@ -16,14 +21,38 @@ import { projectSave } from '@/api/project.js';
 export default {
   components: {},
   data() {
-    return {};
+    return {
+      screen: null,
+      screenList: {},
+    };
+  },
+  watch: {
+    screen: {
+      // immediate: true,
+      handler(v, ov) {
+        if (!ov) {
+        }
+        window.$config.screen = v;
+      },
+    },
+  },
+  created() {
+    this.getScreen();
   },
   methods: {
-    // 保存
-    save() {
+    getScreen() {
       const data = this.$ls.get('project');
-      data.layout[window.$config.useLayout] = window.$layout;
+      this.screenList = data.layout[data.config.useLayout]?.dataArea;
+      this.screen = window.$config.screen;
+    },
+    // 保存
+    save(hasMsg) {
+      const data = this.$ls.get('project');
+      data.layout[data.config.useLayout] = window.$layout;
       this.$ls.set('project', data);
+      if (hasMsg) {
+        this.$message.success('操作成功');
+      }
     },
     // 预览
     preview() {

@@ -52,6 +52,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.el-radio {
+  vertical-align: top;
+}
 .itemList {
   display: flex;
   flex-wrap: wrap;

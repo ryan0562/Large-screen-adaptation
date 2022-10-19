@@ -55,6 +55,7 @@ console.log(addModule);
 const list = await request({
   baseURL: '',
   url: ` http://10.168.4.28:17011/ng-onlineDesform/eng/formData/1579654289469607936?current=1&size=1000&desFormCode=component_list`,
+  // url: `/components/api.json`, // mock
   method: 'GET',
 });
 
