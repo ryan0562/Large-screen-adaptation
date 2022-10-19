@@ -1,6 +1,6 @@
 <template>
   <div class="menuBox">
-    <div class="item act" v-for="(item, key) in menu" :key="key">
+    <div class="item act" v-for="(item) in menu" :key="item.key" @click="$emit('handle', item.key)">
       <div :class="['icon', item.icon]"></div>
       <div>{{ item.name }}</div>
     </div>
@@ -25,7 +25,7 @@ export default {
     margin: 10px auto;
     text-align: center;
     border-radius: 8px;
-    padding:10px 0;
+    padding: 10px 0;
     cursor: pointer;
     &.act {
       background: rgba(64, 158, 255, 0.1);

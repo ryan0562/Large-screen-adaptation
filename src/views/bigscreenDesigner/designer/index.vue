@@ -3,7 +3,7 @@
   <div class="layout">
     <headBox />
     <div class="main">
-      <menuBox class="m-l" :menu="menu" />
+      <menuBox class="m-l" :menu="menu" @handle="menuHandle" />
       <rulerTool
         v-model="dashboard.presetLine"
         class="vueRuler"
@@ -13,18 +13,20 @@
         :is-scale-revise="true"
         :visible.sync="dashboard.presetLineVisible"
       >
-        <pageMain :type="page.type" />
+        <pageMain :type="page.type" @hook:mounted="getLayout" />
       </rulerTool>
       <div class="m-r">
-        <propsPanel :data="panel" />
+        <propsPanel :data="propsPanel" />
       </div>
     </div>
+    <screenDialog ref="screenDialog" :data="screen.data" @changeData="changeScreen"/>
   </div>
 </template>
 
 <script>
 export default {
   components: {
+    screenDialog: () => import('./screenDialog.vue'),
     rulerTool: () => import('vue-ruler-tool'),
     pageMain: () => import('@/views/theme/main.vue'),
     headBox: () => import('./head.vue'),
@@ -49,10 +51,12 @@ export default {
       menu: [
         {
           icon: 'el-icon-monitor',
+          key: 'screenRatio',
           name: '分辨率',
         },
         {
           icon: 'el-icon-data-analysis',
+          key: 'screen',
           name: '场景',
         },
         // {
@@ -64,19 +68,50 @@ export default {
       page: {
         type: 'edit',
       },
-      panel: {
+      // 属性面板
+      propsPanel: {
         sourceData: null,
         form: null,
+      },
+      // 场景
+      screen: {
+        data: null,
       },
     };
   },
   created() {
     this.$bus.$on('changePanelForm', this.changePanelForm);
   },
+  watch: {
+    // "layout": {
+    //   deep: true,
+    //   handler(v, ov) {
+    //     debugger;
+    //     this.screenData = v?.dataArea;
+    //   },
+    // },
+  },
   methods: {
-    changePanelForm({data, form}) {
-      this.panel.sourceData = data;
-      this.panel.form = form;
+    changeScreen(data){
+      debugger
+    },
+    getLayout() {
+      this.screen.data = window.$layout.dataArea;
+    },
+    // 触发菜单
+    menuHandle(key) {
+      switch (key) {
+        case 'screenRatio':
+          break;
+        case 'screen':
+          this.$refs.screenDialog.open();
+          break;
+      }
+    },
+    // 切换面板
+    changePanelForm({ data, form }) {
+      this.propsPanel.sourceData = data;
+      this.propsPanel.form = form;
     },
   },
 };

@@ -19,7 +19,8 @@
 import { projectSave } from '@/api/project.js';
 
 export default {
-  components: {},
+  components: {
+  },
   data() {
     return {
       screen: null,
@@ -38,6 +39,8 @@ export default {
     this.getScreen();
   },
   methods: {
+    
+    // 获取场景数据
     getScreen() {
       const data = this.$ls.get('project');
       this.screenList = data.layout[data.config.useLayout]?.dataArea;
