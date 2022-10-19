@@ -15,7 +15,9 @@
       >
         <pageMain :type="page.type" />
       </rulerTool>
-      <div class="m-r"></div>
+      <div class="m-r">
+        <propsPanel :data="panel" />
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +29,7 @@ export default {
     pageMain: () => import('@/views/theme/main.vue'),
     headBox: () => import('./head.vue'),
     menuBox: () => import('./menu.vue'),
+    propsPanel: () => import('./propsPanel.vue'),
   },
   data() {
     return {
@@ -61,7 +64,20 @@ export default {
       page: {
         type: 'edit',
       },
+      panel: {
+        sourceData: null,
+        form: null,
+      },
     };
+  },
+  created() {
+    this.$bus.$on('changePanelForm', this.changePanelForm);
+  },
+  methods: {
+    changePanelForm({data, form}) {
+      this.panel.sourceData = data;
+      this.panel.form = form;
+    },
   },
 };
 </script>
@@ -88,6 +104,7 @@ export default {
     }
     .m-r {
       width: 350px;
+      overflow: overlay;
     }
   }
 }

@@ -2,7 +2,7 @@
 <template>
   <div class="head">
     <div class="h-l">
-      <el-select class="wk-select" v-model="screen" placeholder="选择场景">
+      <el-select v-model="screen" placeholder="选择场景">
         <el-option v-for="(item, key) in screenList" :key="key" :label="key" :value="key"> </el-option>
       </el-select>
     </div>
@@ -30,8 +30,6 @@ export default {
     screen: {
       // immediate: true,
       handler(v, ov) {
-        if (!ov) {
-        }
         window.$config.screen = v;
       },
     },
@@ -43,7 +41,7 @@ export default {
     getScreen() {
       const data = this.$ls.get('project');
       this.screenList = data.layout[data.config.useLayout]?.dataArea;
-      this.screen = window.$config.screen;
+      this.screen = data.config.screen;
     },
     // 保存
     save(hasMsg) {

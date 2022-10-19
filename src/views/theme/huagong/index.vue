@@ -77,7 +77,17 @@ export default {
     },
     showInfoDialog(item) {
       if (this.pageType === 'edit') {
-        this.$bus.$emit('dataAreaPanel', item);
+        this.$bus.$emit('changePanelForm', {
+          data:item,
+          form:{
+            title:{
+              label:'标题',
+              component:{
+                is:'el-input',
+              },
+            }
+          }
+        });
       }
     },
   },

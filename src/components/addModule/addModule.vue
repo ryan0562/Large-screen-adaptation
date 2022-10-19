@@ -1,5 +1,5 @@
 <template>
-  <div class="addModuleBox" @click="showModules">
+  <div class="addModuleBox" @click.stop="showModules">
     <i class="el-icon-plus icon"></i>
   </div>
 </template>
