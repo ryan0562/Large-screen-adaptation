@@ -3,11 +3,30 @@
 // 基础
 @import url(./base.less);
 
+// 编辑器按钮
 .wk-btn {
   background: none !important;
   color:rgb(255 255 255 / 82%);
   &:hover {
     color: #409eff;
     border-color: #409eff;
+  }
+}
+
+// 编辑器下拉框
+.wk-select {
+  ::v-deep {
+    .el-input__inner {
+      background-color: #39393a;
+    }
+  }
+}
+
+// 编辑盒子
+
+.editBox {
+  cursor: pointer;
+  &:hover {
+    outline: 1px dashed #409eff;
   }
 }

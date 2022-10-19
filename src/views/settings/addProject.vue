@@ -88,7 +88,7 @@ export default {
         },
       });
       // this.$router.push('/main?edit=1');
-      this.$router.push('/bigscreen/designerConfig');
+      this.$router.push('/bigscreen/designer');
     },
   },
 };

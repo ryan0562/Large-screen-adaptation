@@ -5,13 +5,14 @@
     <template v-for="(item, index) in panels">
       <transition :name="$config.animate" :key="`animate_${$config.screen}_${index}`">
         <dataArea
+          :class="{ editBox: pageType === 'edit' }"
           v-if="item.visible"
           :key="`dataArea_${$config.screen}_${index}`"
           :style="item.style"
           :data="item"
           :type="item.place"
           :id="index"
-          @clickTitle="showInfoDialog(item)"
+          @click.native="showInfoDialog(item)"
         />
       </transition>
     </template>
@@ -45,6 +46,9 @@ export default {
     panels() {
       return this.layout.dataArea[this.$config.screen]?.panels;
     },
+    pageType() {
+      return this.$route.query.edit === '1' ? 'edit' : 'view';
+    },
   },
   created() {},
   methods: {
@@ -72,7 +76,9 @@ export default {
       switchPage(pageKey);
     },
     showInfoDialog(item) {
-      this.$bus.$emit('dataAreaPanel', item);
+      if (this.pageType === 'edit') {
+        this.$bus.$emit('dataAreaPanel', item);
+      }
     },
   },
 };

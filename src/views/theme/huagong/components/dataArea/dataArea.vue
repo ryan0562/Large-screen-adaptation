@@ -1,14 +1,14 @@
 <template>
   <!-- 类型2 -->
   <div class="dataAreaBox" v-if="data.type == 2">
-    <div class="tit bg2" @click="$emit('clickTitle', data.moduleId)">
+    <div class="tit bg2">
       {{ data.title }}
     </div>
     <slotModule v-for="(item, index) in data.modules" :key="index" :data="item" />
   </div>
   <!-- 类型3 -->
   <div class="dataAreaBox dataAreaBox_3" v-else-if="data.type == 3">
-    <div class="tit bg2" @click="$emit('clickTitle', data.moduleId)">
+    <div class="tit bg2">
       {{ data.title }}
     </div>
     <div class="con">
@@ -22,7 +22,7 @@
   </div>
   <!-- 类型1 -->
   <div class="dataAreaBox" v-else>
-    <div class="tit bg1" @click="$emit('clickTitle', data.moduleId)">
+    <div class="tit bg1">
       {{ data.title }}
     </div>
     <div class="line"></div>

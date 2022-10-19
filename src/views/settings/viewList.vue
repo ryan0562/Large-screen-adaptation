@@ -78,7 +78,7 @@ export default {
         edit: 1,
         project: 1,
       });
-      this.$router.push(`/bigscreen/designerConfig?${params}`);
+      this.$router.push(`/bigscreen/designer?${params}`);
     },
     // 预览
     previewProject(item) {

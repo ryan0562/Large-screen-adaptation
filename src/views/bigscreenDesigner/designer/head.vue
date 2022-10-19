@@ -2,7 +2,7 @@
 <template>
   <div class="head">
     <div class="h-l">
-      <el-select v-model="screen" placeholder="选择场景">
+      <el-select class="wk-select" v-model="screen" placeholder="选择场景">
         <el-option v-for="(item, key) in screenList" :key="key" :label="key" :value="key"> </el-option>
       </el-select>
     </div>
