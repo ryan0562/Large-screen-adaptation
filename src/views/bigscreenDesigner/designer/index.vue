@@ -19,7 +19,7 @@
         <propsPanel :data="propsPanel" />
       </div>
     </div>
-    <screenDialog ref="screenDialog" :data="screen.data" @changeData="changeScreen"/>
+    <screenDialog ref="screenDialog" @changeData="changeScreen"/>
   </div>
 </template>
 
@@ -57,7 +57,7 @@ export default {
         {
           icon: 'el-icon-data-analysis',
           key: 'screen',
-          name: '场景',
+          name: '新增场景',
         },
         // {
         //   icon: 'el-icon-film',
@@ -104,7 +104,7 @@ export default {
         case 'screenRatio':
           break;
         case 'screen':
-          this.$refs.screenDialog.open();
+          this.$refs.screenDialog.open(this.screen.data);
           break;
       }
     },
@@ -134,7 +134,7 @@ export default {
       min-width: 0;
     }
     .m-l {
-      width: 65px;
+      width: 90px;
       background: #1e1e1f;
     }
     .m-r {

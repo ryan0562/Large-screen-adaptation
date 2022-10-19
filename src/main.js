@@ -50,7 +50,6 @@ Vue.prototype.$config = window.$config
 /* 添加模块组件 */
 import addModule from '@/components/addModule/addModule.vue'
 Vue.component('addModule', addModule)
-console.log(addModule);
 
 const list = await request({
   baseURL: '',
@@ -63,7 +62,6 @@ list.data.records.forEach(async item => {
   const descriptorOB = parse(item.comCode);
   const cm = await genComponent(descriptorOB.descriptor, descriptorOB.errors, `wk-${item.code}`)
   Vue.component(item.code, { ...cm.component, _scopeId: `data-wk-${item.code}` })
-  console.log(cm);
 })
 
 Vue.prototype.$moduleList = list.data.records
