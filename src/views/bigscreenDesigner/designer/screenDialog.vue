@@ -101,10 +101,12 @@ export default {
     submit() {
       this.$refs['form'].validate((valid) => {
         if (valid) {
-          const empty = {
-            modules: [],
-            type: 1,
-            visible: true,
+          const empty = function () {
+            return {
+              modules: [],
+              type: 1,
+              visible: true,
+            };
           };
 
           let panels = {};
@@ -112,7 +114,7 @@ export default {
           for (let index = 1; index <= num; index++) {
             if (index > this.form.left) {
               panels[index] = {
-                ...empty,
+                ...empty(),
                 place: 'right',
                 style: {
                   top: '93px',
@@ -123,7 +125,7 @@ export default {
               };
             } else {
               panels[index] = {
-                ...empty,
+                ...empty(),
                 place: 'left',
                 style: {
                   top: '93px',
