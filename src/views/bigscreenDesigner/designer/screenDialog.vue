@@ -104,8 +104,6 @@ export default {
 
           let panels = {};
           const num = this.form.left + this.form.right;
-          // panels.fill(Object.assign({}, empty, { place: 'left' }));
-          // panels.fill(Object.assign({}, empty, { place: 'right' }), this.form.left);
           for (let index = 1; index <= num; index++) {
             if (index > this.form.left) {
               panels[index] = { ...empty, place: 'right' };
@@ -113,12 +111,6 @@ export default {
               panels[index] = { ...empty, place: 'left' };
             }
           }
-
-          const postData = {
-            [this.form.name]: {
-              panels,
-            },
-          };
 
           this.sourceData[this.form.name]=panels;
           this.visible = false;
