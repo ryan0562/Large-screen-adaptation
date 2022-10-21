@@ -37,6 +37,8 @@
   </el-dialog>
 </template>
 <script>
+import { mapState } from 'vuex';
+
 function initForm() {
   return {
     left: null,
@@ -58,6 +60,9 @@ export default {
         right: [{ required: true, message: '请输入右侧面板数', trigger: 'blur' }],
       },
     };
+  },
+  computed: {
+    ...mapState(['config']),
   },
   methods: {
     add() {
@@ -131,6 +136,7 @@ export default {
           }
 
           this.$set(this.sourceData, this.form.name, { panels });
+          this.config.screen = this.form.name;
           this.visible = false;
         }
       });

@@ -44,6 +44,8 @@ export default {
       const data = this.$ls.get('project');
 
       data.bigScreenModel = this.bigScreenModel;
+      data.config = this.config;
+
       this.$ls.set('project', data);
       if (hasMsg) {
         this.$message.success('操作成功');
