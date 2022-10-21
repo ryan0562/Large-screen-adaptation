@@ -13,7 +13,7 @@
         :is-scale-revise="true"
         :visible.sync="dashboard.presetLineVisible"
       >
-        <pageMain :type="page.type" @hook:mounted="getLayout" />
+        <pageMain :type="page.type" />
       </rulerTool>
       <div class="m-r">
         <propsPanel :data="propsPanel" />
@@ -75,17 +75,14 @@ export default {
         sourceData: null,
         form: null,
       },
-      // 场景
-      screen: {
-        data: null,
-      },
+     
     };
   },
   created() {
     this.$bus.$on('changePanelForm', this.changePanelForm);
   },
   computed: {
-    ...mapState(['config', 'bigScreenModel']),
+    // ...mapState(['config', 'bigScreenModel']),
     ...mapGetters(['layout']),
   },
   watch: {
@@ -101,16 +98,13 @@ export default {
     changeScreen(data) {
       debugger;
     },
-    getLayout() {
-      this.screen.data = this.bigScreenModel[this.config.screenResolution].dataArea;
-    },
     // 触发菜单
     menuHandle(key) {
       switch (key) {
         case 'screenRatio':
           break;
         case 'screen':
-          this.$refs.screenDialog.open(this.screen.data);
+          this.$refs.screenDialog.open(this.layout.dataArea);
           break;
       }
     },

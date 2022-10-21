@@ -97,7 +97,7 @@ export default {
       this.$refs['form'].validate((valid) => {
         if (valid) {
           const empty = {
-            module: [],
+            modules: [],
             type: 1,
             visible: true,
           };
@@ -106,13 +106,31 @@ export default {
           const num = this.form.left + this.form.right;
           for (let index = 1; index <= num; index++) {
             if (index > this.form.left) {
-              panels[index] = { ...empty, place: 'right' };
+              panels[index] = {
+                ...empty,
+                place: 'right',
+                style: {
+                  top: '93px',
+                  right: `calc((12px + 440px) * ${num - index} + 20px)`,
+                  width: '440px',
+                  height: '972px',
+                },
+              };
             } else {
-              panels[index] = { ...empty, place: 'left' };
+              panels[index] = {
+                ...empty,
+                place: 'left',
+                style: {
+                  top: '93px',
+                  left: `calc((12px + 440px) * ${index - 1} + 20px)`,
+                  width: '440px',
+                  height: '972px',
+                },
+              };
             }
           }
 
-          this.sourceData[this.form.name]=panels;
+          this.$set(this.sourceData, this.form.name, { panels });
           this.visible = false;
         }
       });
