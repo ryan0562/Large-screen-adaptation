@@ -6,7 +6,7 @@
       "name": "化工工程",
       "img": "/templates/huagong/img.png",
       "config": {
-        "useLayout": "1920_1080",
+        "screenResolution": "1920_1080",
         "theme": "huagong",
         "screen": "1_1"
       },

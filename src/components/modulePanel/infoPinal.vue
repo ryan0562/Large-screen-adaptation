@@ -93,6 +93,7 @@ export default {
     submit() {
       this.$refs['form'].validate((valid) => {
         if (valid) {
+          debugger
           this.$set(this.sourceData.modules, this.sourceData.module_index, this.form);
           this.visible = false;
         }

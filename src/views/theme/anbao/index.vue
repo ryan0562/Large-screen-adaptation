@@ -53,8 +53,8 @@ export default {
   methods: {
     changeDataModule(data) {
       data.component.is = 'aaa';
-      // const {templates,theme,useLayout} = window.$config
-      // const layout =  templates[theme][useLayout]
+      // const {templates,theme,screenResolution} = window.$config
+      // const layout =  templates[theme][screenResolution]
     },
     // type==='active'为激活状态
     clickMenu(key, type) {

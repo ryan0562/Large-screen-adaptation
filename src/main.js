@@ -44,7 +44,8 @@ import ls from "@/plugins/vue_ls.js";
 Vue.prototype.$ls = ls
 
 /* 配置文件 */
-Vue.prototype.$config = window.$config
+// Vue.prototype.$config = window.$config;
+// Vue.prototype.$bigScreenModel = window.$bigScreenModel;
 
 
 /* 添加模块组件 */

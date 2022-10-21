@@ -6,10 +6,12 @@
         <span>{{ dateMsg.week }}</span>
         <span>{{ dateMsg.date }}</span>
       </div>
-      <i class="back" v-if="options.back.visible" :style="options.back.style" @click="$emit('back')"><img src="./assets/back.svg" alt="" /></i>
+      <i class="back" v-if="options.back.visible" :style="options.back.style" @click="$emit('back')"
+        ><img src="./assets/back.svg" alt=""
+      /></i>
     </div>
     <div class="main">
-      <div class="tit">{{ $config.name }}</div>
+      <div class="tit">{{ $store.state.config.name }}</div>
     </div>
     <div class="right">
       <div class="weather-wrapper" v-if="options.weather.visible" :style="options.weather.style">
@@ -23,7 +25,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'Header',
   props: {
@@ -150,7 +151,7 @@ export default {
     height: 100px;
     line-height: 88px;
     text-align: center;
-    background: url('./assets/bg-head.png'); 
+    background: url('./assets/bg-head.png');
     font-size: 40px;
     font-family: FZZhengHeiS-B-GB;
     font-weight: 900;
@@ -161,8 +162,8 @@ export default {
       -webkit-text-fill-color: transparent;
     }
   }
-  .back{
-        position: absolute;
+  .back {
+    position: absolute;
     cursor: pointer;
     width: 34px;
     height: 34px;
@@ -170,7 +171,7 @@ export default {
     border-radius: 50%;
     text-align: center;
     padding: 6px;
-    >img {
+    > img {
       width: 100%;
       height: 100%;
     }

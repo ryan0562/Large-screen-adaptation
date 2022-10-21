@@ -3,11 +3,11 @@
     <screen_header v-if="layout.header" :options="layout.header" @back="goback()" />
     <!-- 面板 -->
     <template v-for="(item, index) in panels">
-      <transition :name="$config.animate" :key="`animate_${$config.screen}_${index}`">
+      <transition :name="config.animate" :key="`animate_${config.screen}_${index}`">
         <dataArea
           :class="{ editBox: pageType === 'edit' }"
           v-if="item.visible"
-          :key="`dataArea_${$config.screen}_${index}`"
+          :key="`dataArea_${config.screen}_${index}`"
           :style="item.style"
           :data="item"
           :type="item.place"
@@ -25,7 +25,9 @@
 import './styles/index.less';
 
 import { switchPage, goback } from '@/utils/utils.js';
-// import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
+
+
 export default {
   components: {
     screen_header: () => import('./components/header/screen_header.vue'),
@@ -43,8 +45,9 @@ export default {
     return {};
   },
   computed: {
+    ...mapState(['config', 'bigScreenModel']),
     panels() {
-      return this.layout.dataArea[this.$config.screen]?.panels;
+      return this.layout.dataArea[this.config.screen]?.panels;
     },
     pageType() {
       return this.$route.query.edit === '1' ? 'edit' : 'view';

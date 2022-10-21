@@ -2,7 +2,7 @@
 <template>
   <div class="head">
     <div class="h-l">
-      <el-select v-model="screen" placeholder="选择场景">
+      <el-select v-model="config.screen" placeholder="选择场景">
         <el-option v-for="(item, key) in screenList" :key="key" :label="key" :value="key"> </el-option>
       </el-select>
     </div>
@@ -17,39 +17,33 @@
 
 <script>
 import { projectSave } from '@/api/project.js';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
-  components: {
-  },
+  components: {},
   data() {
     return {
       screen: null,
-      screenList: {},
     };
   },
-  watch: {
-    screen: {
-      // immediate: true,
-      handler(v, ov) {
-        window.$config.screen = v;
-      },
+  computed: {
+    ...mapState(['config', 'bigScreenModel']),
+    ...mapGetters(['layout']),
+    screenList() {
+      return this.layout?.dataArea;
     },
   },
+  watch: {},
   created() {
-    this.getScreen();
   },
   methods: {
-    
     // 获取场景数据
-    getScreen() {
-      const data = this.$ls.get('project');
-      this.screenList = data.layout[data.config.useLayout]?.dataArea;
-      this.screen = data.config.screen;
-    },
+
     // 保存
     save(hasMsg) {
       const data = this.$ls.get('project');
-      data.layout[data.config.useLayout] = window.$layout;
+
+      data.bigScreenModel = this.bigScreenModel;
       this.$ls.set('project', data);
       if (hasMsg) {
         this.$message.success('操作成功');

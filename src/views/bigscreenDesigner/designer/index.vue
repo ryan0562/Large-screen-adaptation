@@ -19,11 +19,13 @@
         <propsPanel :data="propsPanel" />
       </div>
     </div>
-    <screenDialog ref="screenDialog" @changeData="changeScreen"/>
+    <screenDialog ref="screenDialog" @changeData="changeScreen" />
   </div>
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex';
+
 export default {
   components: {
     screenDialog: () => import('./screenDialog.vue'),
@@ -82,6 +84,10 @@ export default {
   created() {
     this.$bus.$on('changePanelForm', this.changePanelForm);
   },
+  computed: {
+    ...mapState(['config', 'bigScreenModel']),
+    ...mapGetters(['layout']),
+  },
   watch: {
     // "layout": {
     //   deep: true,
@@ -92,11 +98,11 @@ export default {
     // },
   },
   methods: {
-    changeScreen(data){
-      debugger
+    changeScreen(data) {
+      debugger;
     },
     getLayout() {
-      this.screen.data = window.$layout.dataArea;
+      this.screen.data = this.bigScreenModel[this.config.screenResolution].dataArea;
     },
     // 触发菜单
     menuHandle(key) {

@@ -6,11 +6,11 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex';
 export default {
   data() {
     return {
-      layout: {},
-      config: window.$config,
+      // layout: {},
     };
   },
   components: {
@@ -18,29 +18,23 @@ export default {
     huagong: () => import('@/views/theme/huagong/index.vue'),
     anbao: () => import('@/views/theme/anbao/index.vue'),
   },
-  computed: {},
-  watch: {
-    config: {
-      immediate: true,
-      deep: true,
-      handler: 'getLayout',
-    },
+  computed: {
+    ...mapState(['config', 'bigScreenModel']),
+    ...mapGetters(['layout']),
   },
-  mounted() {
+  watch: {},
+  created() {
+    let { bigScreenModel, config } = this.$ls.get('project');
+    this.$store.commit('SET_ROOT_STATE', {
+      key: 'bigScreenModel',
+      data: bigScreenModel,
+    });
+    this.$store.commit('SET_ROOT_STATE', {
+      key: 'config',
+      data: config,
+    });
   },
-  methods: {
-    getLayout(v, nv) {
-      let { layout, config } = this.$ls.get('project');
-      // 初次赋值给config
-      if (!nv) {
-        Object.assign(this.config, config);
-        // 这里不能return，浏览器返回操作不会触发第二次赋值
-      }
-
-      config = this.config;
-      this.layout = window.$layout = layout[config.useLayout];
-    },
-  },
+  methods: {},
   destroyed() {
     // this.$ls.remove('project');
   },

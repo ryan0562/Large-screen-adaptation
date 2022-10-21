@@ -66,10 +66,10 @@ export default {
   methods: {
     nextStep() {
       this.step = 2;
-      // this.$config.useLayout = this.form.size;
+      // this.$config.screenResolution = this.form.size;
       // this.$config.theme = this.form.templateKey;
       this.layout = getLayout(this.$mti_templates, {
-        useLayout: this.form.size,
+        screenResolution: this.form.size,
         theme: this.form.templateKey,
       });
     },
@@ -77,13 +77,13 @@ export default {
       
       this.$ls.set('project', {
         img: '/templates/huagong/img.png',
-        config: Object.assign(this.$config, {
-          useLayout: this.form.size,
+        config: Object.assign(window.$config, {
+          screenResolution: this.form.size,
           theme: this.form.templateKey,
           screen: this.form.screen,
           name: this.form.name,
         }),
-        layout: {
+        bigScreenModel: {
           [this.form.size]: this.layout,
         },
       });

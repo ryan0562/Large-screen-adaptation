@@ -15,7 +15,7 @@ export default {
   methods: {
     saveProject() {
       const data = this.$ls.get('project');
-      data.layout[window.$config.useLayout] = window.$layout;
+      data.layout[window.$config.screenResolution] = window.$layout;
 
       projectSave(data).then((res) => {
         this.$router.replace('/settings/viewList');
