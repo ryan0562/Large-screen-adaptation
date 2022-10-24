@@ -46,6 +46,10 @@ export default {
     screenResolutionChange() {
       const firstKey = Object.keys(this.layout.dataArea)[0];
       this.config.screen = firstKey;
+      // 修改分辨率后，重新渲染地图
+      this.$nextTick(() => {
+        window.map.map.updateSize();
+      });
     },
     // 删除当前场景
     delScreen() {
