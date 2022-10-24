@@ -22,7 +22,7 @@
       <el-form-item label="左侧面板" prop="left">
         <el-input-number v-model="form.left" :min="0"></el-input-number>
       </el-form-item>
-      <el-form-item label="左侧面板" prop="right">
+      <el-form-item label="右侧面板" prop="right">
         <el-input-number v-model="form.right" :min="0"></el-input-number>
       </el-form-item>
     </el-form>
