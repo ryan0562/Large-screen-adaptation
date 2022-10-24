@@ -1,6 +1,6 @@
 <!-- 大屏设计器 -->
 <template>
-  <div class="layout">
+  <div class="editor">
     <headBox />
     <div class="main">
       <menuBox class="m-l" :menu="menu" @handle="menuHandle" />
@@ -75,7 +75,6 @@ export default {
         sourceData: null,
         form: null,
       },
-     
     };
   },
   created() {
@@ -118,7 +117,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.layout {
+.editor {
   width: 100vw;
   height: 100vh;
   background: #18181c;
@@ -141,6 +140,9 @@ export default {
       width: 350px;
       overflow: overlay;
     }
+  }
+  ::v-deep {
+    @import url('~@/styles/editor.less');
   }
 }
 .vueRuler {

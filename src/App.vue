@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-    <infoPinal />
+    <!-- <infoPinal /> -->
     <!-- <dataAreaPinal /> -->
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
     return {};
   },
   components: {
-    infoPinal: () => import('@/components/modulePanel/infoPinal.vue'),
+    // infoPinal: () => import('@/components/modulePanel/infoPinal.vue'),
     // dataAreaPinal: () => import('@/components/dataAreaPanel/dataAreaPanel.vue'),
   },
 };

@@ -10,11 +10,11 @@
       </el-select>
     </div>
     <div class="h-r">
-      <el-button class="wk-btn" icon="el-icon-switch-button" @click="cancel">取消</el-button>
-      <el-button class="wk-btn" icon="el-icon-data-line" @click="save(true)">保存</el-button>
-      <el-button class="wk-btn" icon="el-icon-data-line" @click="delScreen(true)">删除场景</el-button>
-      <el-button class="wk-btn" icon="el-icon-data-line" @click="preview">预览</el-button>
-      <el-button class="wk-btn" icon="el-icon-position" @click="publish">发布</el-button>
+      <el-button  icon="el-icon-switch-button" @click="cancel">取消</el-button>
+      <el-button  icon="el-icon-data-line" @click="save(true)">保存</el-button>
+      <el-button  icon="el-icon-data-line" @click="delScreen(true)">删除场景</el-button>
+      <el-button  icon="el-icon-data-line" @click="preview">预览</el-button>
+      <el-button  icon="el-icon-position" @click="publish">发布</el-button>
     </div>
   </div>
 </template>
