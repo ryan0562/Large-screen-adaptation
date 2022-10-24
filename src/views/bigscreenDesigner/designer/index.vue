@@ -51,11 +51,11 @@ export default {
       },
       // 左侧菜单
       menu: [
-        {
-          icon: 'el-icon-monitor',
-          key: 'screenRatio',
-          name: '分辨率',
-        },
+        // {
+        //   icon: 'el-icon-monitor',
+        //   key: 'screenRatio',
+        //   name: '分辨率',
+        // },
         {
           icon: 'el-icon-data-analysis',
           key: 'screen',
