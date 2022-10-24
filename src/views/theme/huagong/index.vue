@@ -18,6 +18,7 @@
     </template>
     <!-- 菜单栏 -->
     <superMenu :options="layout.menu" @clickMenu="clickMenu" />
+    <mtiMap />
   </div>
 </template>
 
@@ -27,13 +28,13 @@ import './styles/index.less';
 import { switchPage, goback } from '@/utils/utils.js';
 import { mapState } from 'vuex';
 
-
 export default {
   components: {
     screen_header: () => import('./components/header/screen_header.vue'),
     dataArea: () => import('./components/dataArea/dataArea.vue'),
     dataMarkArea: () => import('./components/dataArea/dataMarkArea.vue'),
     superMenu: () => import('./components/menu/menu.vue'),
+    mtiMap: () => import('@/components/mtiMap.vue'),
   },
   props: {
     layout: {
@@ -81,15 +82,15 @@ export default {
     showInfoDialog(item) {
       if (this.pageType === 'edit') {
         this.$bus.$emit('changePanelForm', {
-          data:item,
-          form:{
-            title:{
-              label:'标题',
-              component:{
-                is:'el-input',
+          data: item,
+          form: {
+            title: {
+              label: '标题',
+              component: {
+                is: 'el-input',
               },
-            }
-          }
+            },
+          },
         });
       }
     },
