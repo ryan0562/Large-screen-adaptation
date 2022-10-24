@@ -9,7 +9,6 @@ export default new Vuex.Store({
   },
   getters: {
     layout({config,bigScreenModel}){
-      debugger
       return bigScreenModel[config.screenResolution]
     }
   },

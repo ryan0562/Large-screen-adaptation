@@ -1,44 +1,34 @@
 <template>
   <div>
     <el-dialog title="新建工程" :visible.sync="visible" width="800px">
-      <template v-if="step === 1">
-        <el-form :model="form" label-width="100px">
-          <el-form-item label="工程名称">
-            <el-input v-model="form.name" placeholder="请输入工程名称"></el-input>
-          </el-form-item>
-          <el-form-item label="页面尺寸">
-            <el-radio-group v-model="form.size">
-              <el-radio label="1920_1080">16:9</el-radio>
-              <el-radio label="3840_1080">32:9</el-radio>
+      <el-form :model="form" label-width="100px">
+        <el-form-item label="工程名称">
+          <el-input v-model="form.name" placeholder="请输入工程名称"></el-input>
+        </el-form-item>
+        <el-form-item label="页面尺寸">
+          <el-radio-group v-model="form.size">
+            <el-radio label="1920_1080">16:9</el-radio>
+            <el-radio label="3840_1080">32:9</el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item>
+          <div class="itemList">
+            <el-radio-group v-model="form.templateKey">
+              <el-radio v-for="(item, key) in $mti_templates" :key="key" :label="item.key">
+                <templateItem :src="item.img" :preview-src-list="[item.img]" :name="item.name"></templateItem>
+              </el-radio>
             </el-radio-group>
-          </el-form-item>
-          <el-form-item>
-            <div class="itemList">
-              <el-radio-group v-model="form.templateKey">
-                <el-radio v-for="(item, key) in $mti_templates" :key="key" :label="item.key">
-                  <templateItem :src="item.img" :preview-src-list="[item.img]" :name="item.name"></templateItem>
-                </el-radio>
-              </el-radio-group>
-            </div>
-          </el-form-item>
-        </el-form>
-      </template>
-      <layoutList v-if="step === 2" :list="layout.dataArea" :screen.sync="form.screen" />
+          </div>
+        </el-form-item>
+      </el-form>
       <span slot="footer" class="dialog-footer">
-        <template v-if="step === 1">
-          <el-button @click="visible = false">取 消</el-button>
-          <el-button type="primary" @click="nextStep()">下一步</el-button>
-        </template>
-        <template v-if="step === 2">
-          <el-button @click="step = 1">上一步</el-button>
-          <el-button type="primary" @click="submit">确 定</el-button>
-        </template>
+        <el-button @click="visible = false">取 消</el-button>
+        <el-button type="primary" @click="submit">确 定</el-button>
       </span>
     </el-dialog>
   </div>
 </template>
 <script>
-
 import { getLayout } from '@/utils/utils.js';
 
 export default {
@@ -46,8 +36,7 @@ export default {
     templateItem: () => import('@/components/templateItem.vue'),
     layoutList: () => import('./layoutList.vue'),
   },
-  computed: {
-  },
+  computed: {},
   data() {
     return {
       visible: false,
@@ -57,24 +46,13 @@ export default {
       },
       // templates: {}, // 模板群
       layout: {}, //布局
-      step: 1, //步骤
     };
   },
   created() {
     // this.templates = this.$mti_templates;
   },
   methods: {
-    nextStep() {
-      this.step = 2;
-      // this.$config.screenResolution = this.form.size;
-      // this.$config.theme = this.form.templateKey;
-      this.layout = getLayout(this.$mti_templates, {
-        screenResolution: this.form.size,
-        theme: this.form.templateKey,
-      });
-    },
     submit() {
-      
       this.$ls.set('project', {
         img: '/templates/huagong/img.png',
         config: Object.assign(window.$config, {
@@ -83,9 +61,7 @@ export default {
           screen: this.form.screen,
           name: this.form.name,
         }),
-        bigScreenModel: {
-          [this.form.size]: this.layout,
-        },
+        bigScreenModel: this.$mti_templates[this.form.templateKey],
       });
       // this.$router.push('/main?edit=1');
       this.$router.push('/bigscreen/designer?edit=1');

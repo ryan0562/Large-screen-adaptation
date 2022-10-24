@@ -2,7 +2,7 @@
 <template>
   <div class="head">
     <div class="h-l">
-      <el-select v-model="config.screenResolution" placeholder="选择分辨率">
+      <el-select v-model="config.screenResolution" placeholder="选择分辨率" @change="screenResolutionChange">
         <el-option v-for="item in screenResolutionList" :key="item" :label="item" :value="item"> </el-option>
       </el-select>
       <el-select v-model="config.screen" placeholder="选择场景">
@@ -37,12 +37,16 @@ export default {
       return this.layout?.dataArea;
     },
     screenResolutionList() {
-      return Object.keys(this.bigScreenModel);
+      const list = ['1920_1080', '3840_1080'];
+      return Object.keys(this.bigScreenModel).filter((item) => list.includes(item));
     },
   },
-  watch: {},
   created() {},
   methods: {
+    screenResolutionChange() {
+      const firstKey = Object.keys(this.layout.dataArea)[0];
+      this.config.screen = firstKey;
+    },
     // 删除当前场景
     delScreen() {
       delete this.layout.dataArea[this.config.screen];
