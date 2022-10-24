@@ -45,8 +45,8 @@ export default {
   methods: {
     // 删除当前场景
     delScreen() {
-      delete this.bigScreenModel[this.config.screenResolution].dataArea[this.config.screen];
-      const firstKey = Object.keys(this.bigScreenModel[this.config.screenResolution].dataArea)[0];
+      delete this.layout.dataArea[this.config.screen];
+      const firstKey = Object.keys(this.layout.dataArea)[0];
       this.config.screen = firstKey;
     },
     // 保存
