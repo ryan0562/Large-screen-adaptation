@@ -11,7 +11,16 @@ export default {
   props: ['data'],
   methods: {
     showModules() {
-      this.$bus.$emit('moduleInfoPanel', this.data);
+      // this.$bus.$emit('moduleInfoPanel', this.data);
+      this.$set(this.data.modules, this.data.module_index, {
+        component:{},
+        grid:4,
+      });
+
+      this.$bus.$emit('changePanelForm', {
+        data: this.data.modules[this.data.module_index],
+        key: 'moduleProps',
+      });
     },
   },
 };

@@ -83,14 +83,7 @@ export default {
       if (this.pageType === 'edit') {
         this.$bus.$emit('changePanelForm', {
           data: item,
-          form: {
-            title: {
-              label: '标题',
-              component: {
-                is: 'el-input',
-              },
-            },
-          },
+          key:'panelProps',
         });
       }
     },

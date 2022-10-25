@@ -6,7 +6,8 @@
           <templateItem type="add" @click.native="$refs['addProject'].visible = true">新建工程</templateItem>
           <templateItem v-for="(item, key) in list" :key="key" :src="item.img" :name="item.config.name">
             <span @click="previewProject(item)">预览</span>
-            <span @click="editProject(item)">编辑</span>
+            <span @click="toEditor(item)">编辑</span>
+            <span @click="showScreenDialog(item)">场景</span>
             <span @click="delProject(item)">删除</span>
           </templateItem>
         </div>
@@ -35,6 +36,7 @@
       </el-tab-pane>
     </el-tabs>
     <addProject ref="addProject" />
+    <editProject ref="editProject" />
   </div>
 </template>
 
@@ -70,10 +72,13 @@ export default {
       const { data = [] } = await getProjectList();
       this.list = data;
     },
-    // 编辑项目
-    editProject(item) {
-      this.$ls.set('project', item);
+    // 显示场景列表
+    showScreenDialog() {
 
+    },
+    // 前往编辑器
+    toEditor(item) {
+      this.$ls.set('project', item);
       const params = qs.stringify({
         edit: 1,
         project: 1,

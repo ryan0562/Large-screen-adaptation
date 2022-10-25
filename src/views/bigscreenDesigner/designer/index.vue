@@ -16,7 +16,7 @@
         <pageMain :type="page.type" />
       </rulerTool>
       <div class="m-r">
-        <propsPanel :data="propsPanel" />
+        <propsInfo :data="propsInfo.sourceData" :componentKey="propsInfo.componentKey"  />
       </div>
     </div>
     <screenDialog ref="screenDialog" @changeData="changeScreen" />
@@ -33,7 +33,7 @@ export default {
     pageMain: () => import('@/views/theme/main.vue'),
     headBox: () => import('./head.vue'),
     menuBox: () => import('./menu.vue'),
-    propsPanel: () => import('./propsPanel.vue'),
+    propsInfo: () => import('./propsInfo/index.vue'),
   },
   data() {
     return {
@@ -71,9 +71,9 @@ export default {
         type: 'edit',
       },
       // 属性面板
-      propsPanel: {
+      propsInfo: {
         sourceData: null,
-        form: null,
+        componentKey: null,
       },
     };
   },
@@ -108,9 +108,9 @@ export default {
       }
     },
     // 切换面板
-    changePanelForm({ data, form }) {
-      this.propsPanel.sourceData = data;
-      this.propsPanel.form = form;
+    changePanelForm({ data, key }) {
+      this.propsInfo.sourceData = data;
+      this.propsInfo.componentKey = key;
     },
   },
 };
