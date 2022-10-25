@@ -1,5 +1,5 @@
 <template>
-  <el-form>
+  <el-form  label-position="top">
     <el-form-item label="标题" prop="title">
       <el-input v-model="data.title"></el-input>
     </el-form-item>
