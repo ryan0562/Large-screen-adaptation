@@ -38,7 +38,10 @@ export default {
   },
   methods: {
     editPanel() {
-      this.$bus.$emit('moduleInfoPanel', this.data, 'edit');
+      this.$bus.$emit('changePanelForm', {
+        data: this.data.modules[this.data.module_index],
+        key: 'moduleProps',
+      });
     },
     deleteData() {
       this.$confirm('是否删除?', '提示', {

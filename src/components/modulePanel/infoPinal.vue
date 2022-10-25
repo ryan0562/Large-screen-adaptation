@@ -74,7 +74,7 @@ export default {
     };
   },
   mounted() {
-    this.$bus.$on('moduleInfoPanel', this.open);
+    // this.$bus.$on('moduleInfoPanel', this.open);
   },
   methods: {
     open(data) {
