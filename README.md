@@ -7,3 +7,8 @@ this.$bus.$emit('changePanelForm', {
   key:'panelProps', // 组件key
 });
 ```
+### 全局打开组件库弹窗
+``` js
+      this.$bus.$emit('componentsList');
+
+```

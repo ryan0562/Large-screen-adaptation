@@ -63,6 +63,7 @@ export default {
 
       data.bigScreenModel = this.bigScreenModel;
       data.config = this.config;
+      
 
       this.$ls.set('project', data);
       if (hasMsg) {

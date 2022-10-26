@@ -11,7 +11,7 @@
       /></i>
     </div>
     <div class="main">
-      <div class="tit">{{ $store.state.config.name }}</div>
+      <div class="tit">{{ options.name }}</div>
     </div>
     <div class="right">
       <div class="weather-wrapper" v-if="options.weather.visible" :style="options.weather.style">

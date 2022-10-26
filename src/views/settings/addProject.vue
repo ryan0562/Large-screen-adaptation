@@ -55,11 +55,11 @@ export default {
     submit() {
       this.$ls.set('project', {
         img: '/templates/huagong/img.png',
+        name: this.form.name,
         config: Object.assign(window.$config, {
           screenResolution: this.form.size,
           theme: this.form.templateKey,
           screen: this.form.screen,
-          name: this.form.name,
         }),
         bigScreenModel: this.$mti_templates[this.form.templateKey],
       });
