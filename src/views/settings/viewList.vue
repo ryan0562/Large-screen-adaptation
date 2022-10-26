@@ -4,7 +4,7 @@
       <el-tab-pane label="工程库" name="projects" lazy>
         <div class="itemList">
           <templateItem type="add" @click.native="$refs['addProject'].visible = true">新建工程</templateItem>
-          <templateItem v-for="(item, key) in list" :key="key" :src="item.img" :name="item.config.name">
+          <templateItem v-for="(item, key) in list" :key="key" :src="item.img" :name="item.name">
             <span @click="previewProject(item)">预览</span>
             <span @click="toEditor(item)">编辑</span>
             <span @click="showScreenDialog(item)">场景</span>
@@ -36,7 +36,6 @@
       </el-tab-pane>
     </el-tabs>
     <addProject ref="addProject" />
-    <editProject ref="editProject" />
   </div>
 </template>
 
@@ -62,7 +61,7 @@ export default {
   methods: {
     // 删除项目
     delProject(item) {
-      projectDelete({ path: item.projectId }).then((res) => {
+      projectDelete({ path: item.key }).then((res) => {
         this.$message.success('删除成功');
         this.getProjectListApi();
       });
